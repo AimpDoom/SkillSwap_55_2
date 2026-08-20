@@ -1,0 +1,51 @@
+:root {
+  /* Palette */
+  --color-lilac: #eee7f7;
+  --color-sand: #ebe5c5;
+  --color-peach: #f7ebe5;
+  --color-pink: #f7e7f2;
+  --color-sky: #e7f2f6;
+  --color-mint: #e9f7e7;
+
+  /* UI-colors */
+  --color-bg-primary: #fff;
+  --color-bg-secondary: #f9faf7;
+  --color-text-primary: #253017;
+  --color-text-secondary: #69735d;
+  --color-accent: #abd27a;
+
+  /* tag-colors */
+  --color-tag-business: var(--color-lilac);
+  --color-tag-languages: var(--color-sand);
+  --color-tag-home: var(--color-peach);
+  --color-tag-art: var(--color-pink);
+  --color-tag-education: var(--color-sky);
+  --color-tag-health: var(--color-mint);
+
+  /* font-families */
+  --font-family-primary: 'Jost', sans-serif;
+  --font-family-secondary: 'Roboto', sans-serif;
+  --font-family-accent: 'OpenSans', sans-serif;
+
+  /* font-sizes */
+  --font-size-xs: 12px;
+  --font-size-s: 16px;
+  --font-size-m: 20px;
+  --font-size-l: 24px;
+  --font-size-xl: 32px;
+
+  /* border-radius */
+  --border-radius: 16px;
+
+  /* font-weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* line-heights */
+  --line-height-xs: 16px;
+  --line-height-s: 24px;
+  --line-height-m: 28px;
+  --line-height-l: 32px;
+  --line-height-xl: 40px;
+}

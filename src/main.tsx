@@ -1,3 +1,8 @@
+import './app/styles/reset.css'
+import './app/styles/fonts.css'
+import './app/styles/variables.css'
+import './app/styles/global.css'
+
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { App } from './app/App'
