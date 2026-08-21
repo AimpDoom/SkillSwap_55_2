@@ -7,10 +7,11 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: var(--font-family-primary);
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-s);
   font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-s);
   color: var(--color-text-primary);
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-bg-secondary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

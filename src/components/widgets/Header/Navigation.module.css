@@ -1,0 +1,31 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-s);
+  white-space: nowrap;
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+
+.chevron {
+  width: 13px;
+  height: 13px;
+  fill: none;
+  stroke: currentcolor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.4;
+}

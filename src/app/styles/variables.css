@@ -35,7 +35,8 @@
   --font-size-xl: 32px;
 
   /* border-radius */
-  --border-radius: 16px;
+  --border-radius-s: 12px;
+  --border-radius-m: 16px;
 
   /* font-weights */
   --font-weight-regular: 400;
@@ -48,4 +49,7 @@
   --line-height-m: 28px;
   --line-height-l: 32px;
   --line-height-xl: 40px;
+
+  /* layout */
+  --page-padding-inline: 36px;
 }
