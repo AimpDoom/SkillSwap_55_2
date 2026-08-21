@@ -1,0 +1,48 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 13px 12px 24px;
+  background-color: transparent;
+}
+
+.content {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 19px 0 21px;
+  border-radius: 10px;
+}
+
+.leftGroup,
+.rightGroup {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.leftGroup {
+  gap: 28px;
+}
+
+.rightGroup {
+  gap: 19px;
+  margin-left: auto;
+}
+
+@media (width <= 900px) {
+  .content {
+    gap: 14px;
+    padding-inline: 16px;
+  }
+
+  .leftGroup {
+    gap: 18px;
+  }
+
+  .rightGroup {
+    gap: 12px;
+  }
+}
