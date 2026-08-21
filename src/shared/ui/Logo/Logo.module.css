@@ -3,15 +3,16 @@
   align-items: center;
   gap: 8px;
   color: var(--color-text-primary);
-  font-size: 15px;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-l);
   font-weight: var(--font-weight-semibold);
-  line-height: 1;
+  line-height: var(--line-height-l);
   white-space: nowrap;
 }
 
 .mark {
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
   flex-shrink: 0;

@@ -1,14 +1,13 @@
 .button {
-  width: 20px;
-  height: 20px;
   display: grid;
   place-items: center;
+  padding: 8px;
   color: var(--color-text-primary);
 }
 
 .button svg {
-  width: 17px;
-  height: 17px;
+  width: 24px;
+  height: 24px;
   fill: none;
   stroke: currentcolor;
   stroke-linecap: round;

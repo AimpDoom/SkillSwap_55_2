@@ -1,13 +1,15 @@
 .button {
-  height: 31px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 16px;
-  border-radius: 7px;
+  padding: 8px 20px;
+  border-radius: var(--border-radius-s);
   color: var(--color-text-primary);
   background-color: var(--color-accent);
-  font-size: 10px;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-s);
   white-space: nowrap;
 }
 
