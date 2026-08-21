@@ -1,15 +1,11 @@
 // ─── Skill ───────────────────────────────────────────────
 
-export type SkillType = 'teach' | 'learn'
-
 export interface Skill {
   id: string
   title: string
   description: string
-  type: SkillType
   categoryId: string
   subcategoryId: string
-  tags: string[]
   imageUrl: string | null
   authorId: string
   createdAt: string
@@ -46,7 +42,7 @@ export interface User {
   birthDate: string
   cityId: string
   teachSkillId: string
-  learnSkillIds: string[]
+  learnSubcategoryIds: string[]
   likesCount: number
   createdAt: string
   about: string
