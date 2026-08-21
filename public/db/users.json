@@ -4,92 +4,91 @@
     "name": "Иван",
     "email": "user01@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=1",
-    "birthDate": "1988-01-01",
+    "birthDate": "1985-01-01",
     "cityId": "city-01",
     "teachSkillId": "skill-001",
-    "learnSkillIds": [
-      "skill-002",
-      "skill-008",
-      "skill-014",
-      "skill-003"
+    "learnSubcategoryIds": [
+      "marketing-advertising",
+      "sales-negotiations",
+      "personal-brand",
+      "resume-interview"
     ],
     "likesCount": 7,
     "createdAt": "2025-01-01T00:00:00Z",
-    "about": "Люблю учиться новому, делиться опытом и находить людей с похожими интересами.",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
     "likedUserIds": [
-      "user-04",
-      "user-12",
-      "user-30"
+      "user-05",
+      "user-13",
+      "user-29"
     ]
   },
   {
     "id": "user-02",
-    "name": "Виктория",
+    "name": "Мария",
     "email": "user02@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=2",
-    "birthDate": "1995-04-06",
+    "birthDate": "1992-04-06",
     "cityId": "city-02",
     "teachSkillId": "skill-002",
-    "learnSkillIds": [
-      "skill-003",
-      "skill-009",
-      "skill-015",
-      "skill-008"
+    "learnSubcategoryIds": [
+      "sales-negotiations",
+      "personal-brand",
+      "resume-interview",
+      "time-management"
     ],
     "likesCount": 20,
-    "createdAt": "2025-01-18T03:00:00Z",
-    "about": "Интересуюсь творчеством, технологиями и саморазвитием. Всегда рад новым знакомствам.",
+    "createdAt": "2025-12-08T03:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
     "likedUserIds": [
-      "user-05",
-      "user-13",
-      "user-31"
+      "user-06",
+      "user-14",
+      "user-30"
     ]
   },
   {
     "id": "user-03",
-    "name": "Елена",
+    "name": "Александр",
     "email": "user03@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=3",
-    "birthDate": "2002-07-11",
+    "birthDate": "1999-07-11",
     "cityId": "city-03",
     "teachSkillId": "skill-003",
-    "learnSkillIds": [
-      "skill-004",
-      "skill-010",
-      "skill-016",
-      "skill-015",
-      "skill-017"
+    "learnSubcategoryIds": [
+      "personal-brand",
+      "resume-interview",
+      "time-management",
+      "project-management"
     ],
     "likesCount": 33,
-    "createdAt": "2025-02-04T06:00:00Z",
-    "about": "Ценю практику и спокойный темп обучения. Люблю превращать сложное в понятное.",
+    "createdAt": "2025-11-15T06:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
     "likedUserIds": [
-      "user-06",
-      "user-14",
-      "user-32"
+      "user-07",
+      "user-15",
+      "user-31"
     ]
   },
   {
     "id": "user-04",
-    "name": "Константин",
+    "name": "Виктория",
     "email": "user04@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=4",
-    "birthDate": "1991-10-16",
+    "birthDate": "2006-10-16",
     "cityId": "city-04",
     "teachSkillId": "skill-004",
-    "learnSkillIds": [
-      "skill-005",
-      "skill-011",
-      "skill-017",
-      "skill-022"
+    "learnSubcategoryIds": [
+      "resume-interview",
+      "time-management",
+      "project-management",
+      "entrepreneurship"
     ],
     "likesCount": 46,
-    "createdAt": "2025-02-21T09:00:00Z",
-    "about": "Работаю, учусь и постоянно пробую новые хобби. За обмен знаниями и хорошее общение.",
+    "createdAt": "2025-10-22T09:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
     "likedUserIds": [
-      "user-07",
-      "user-15",
-      "user-33"
+      "user-08",
+      "user-16",
+      "user-32"
     ]
   },
   {
@@ -97,22 +96,22 @@
     "name": "София",
     "email": "user05@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=5",
-    "birthDate": "1998-01-21",
+    "birthDate": "1990-01-21",
     "cityId": "city-05",
     "teachSkillId": "skill-005",
-    "learnSkillIds": [
-      "skill-006",
-      "skill-012",
-      "skill-018",
-      "skill-029"
+    "learnSubcategoryIds": [
+      "time-management",
+      "project-management",
+      "entrepreneurship",
+      "drawing-illustration"
     ],
     "likesCount": 59,
-    "createdAt": "2025-03-10T12:00:00Z",
-    "about": "Люблю учиться новому, делиться опытом и находить людей с похожими интересами.",
+    "createdAt": "2025-09-02T12:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
     "likedUserIds": [
-      "user-08",
-      "user-16",
-      "user-34"
+      "user-09",
+      "user-17",
+      "user-33"
     ]
   },
   {
@@ -120,23 +119,22 @@
     "name": "Екатерина",
     "email": "user06@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=6",
-    "birthDate": "2005-04-26",
+    "birthDate": "1997-04-01",
     "cityId": "city-06",
     "teachSkillId": "skill-006",
-    "learnSkillIds": [
-      "skill-007",
-      "skill-013",
-      "skill-019",
-      "skill-036",
-      "skill-037"
+    "learnSubcategoryIds": [
+      "project-management",
+      "entrepreneurship",
+      "drawing-illustration",
+      "photography"
     ],
     "likesCount": 72,
-    "createdAt": "2025-03-27T15:00:00Z",
-    "about": "Интересуюсь творчеством, технологиями и саморазвитием. Всегда рад новым знакомствам.",
+    "createdAt": "2025-08-09T15:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
     "likedUserIds": [
-      "user-09",
-      "user-17",
-      "user-35"
+      "user-10",
+      "user-18",
+      "user-34"
     ]
   },
   {
@@ -144,139 +142,137 @@
     "name": "Дарья",
     "email": "user07@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=7",
-    "birthDate": "1994-07-04",
+    "birthDate": "2004-07-06",
     "cityId": "city-07",
     "teachSkillId": "skill-007",
-    "learnSkillIds": [
-      "skill-008",
-      "skill-014",
-      "skill-020",
-      "skill-043"
+    "learnSubcategoryIds": [
+      "entrepreneurship",
+      "drawing-illustration",
+      "photography",
+      "video-editing"
     ],
     "likesCount": 85,
-    "createdAt": "2025-04-13T18:00:00Z",
-    "about": "Ценю практику и спокойный темп обучения. Люблю превращать сложное в понятное.",
+    "createdAt": "2025-07-16T18:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
     "likedUserIds": [
-      "user-10",
-      "user-18",
-      "user-36"
+      "user-11",
+      "user-19",
+      "user-35"
     ]
   },
   {
     "id": "user-08",
-    "name": "Алла",
+    "name": "Михаил",
     "email": "user08@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=8",
-    "birthDate": "2001-10-09",
+    "birthDate": "1988-10-11",
     "cityId": "city-08",
     "teachSkillId": "skill-008",
-    "learnSkillIds": [
-      "skill-009",
-      "skill-015",
-      "skill-021",
-      "skill-050"
+    "learnSubcategoryIds": [
+      "drawing-illustration",
+      "photography",
+      "video-editing",
+      "music-sound"
     ],
     "likesCount": 98,
-    "createdAt": "2025-04-30T21:00:00Z",
-    "about": "Работаю, учусь и постоянно пробую новые хобби. За обмен знаниями и хорошее общение.",
+    "createdAt": "2025-06-23T21:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
     "likedUserIds": [
-      "user-11",
-      "user-19",
-      "user-37"
+      "user-12",
+      "user-20",
+      "user-36"
     ]
   },
   {
     "id": "user-09",
-    "name": "Мария",
+    "name": "Алина",
     "email": "user09@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=9",
-    "birthDate": "1990-01-14",
+    "birthDate": "1995-01-16",
     "cityId": "city-09",
     "teachSkillId": "skill-009",
-    "learnSkillIds": [
-      "skill-010",
-      "skill-016",
-      "skill-022",
-      "skill-007",
-      "skill-008"
+    "learnSubcategoryIds": [
+      "photography",
+      "video-editing",
+      "music-sound",
+      "acting"
     ],
     "likesCount": 111,
-    "createdAt": "2025-05-17T00:00:00Z",
-    "about": "Люблю учиться новому, делиться опытом и находить людей с похожими интересами.",
+    "createdAt": "2025-05-03T00:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
     "likedUserIds": [
-      "user-12",
-      "user-20",
-      "user-38"
+      "user-13",
+      "user-21",
+      "user-37"
     ]
   },
   {
     "id": "user-10",
-    "name": "Максим",
+    "name": "Дмитрий",
     "email": "user10@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=10",
-    "birthDate": "1997-04-19",
+    "birthDate": "2002-04-21",
     "cityId": "city-10",
     "teachSkillId": "skill-010",
-    "learnSkillIds": [
-      "skill-011",
-      "skill-017",
-      "skill-023",
-      "skill-014"
+    "learnSubcategoryIds": [
+      "video-editing",
+      "music-sound",
+      "acting",
+      "creative-writing"
     ],
     "likesCount": 124,
-    "createdAt": "2025-06-03T03:00:00Z",
-    "about": "Интересуюсь творчеством, технологиями и саморазвитием. Всегда рад новым знакомствам.",
+    "createdAt": "2025-04-10T03:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
     "likedUserIds": [
-      "user-13",
-      "user-21",
-      "user-39"
+      "user-14",
+      "user-22",
+      "user-38"
     ]
   },
   {
     "id": "user-11",
-    "name": "Михаил",
+    "name": "Елена",
     "email": "user11@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=11",
-    "birthDate": "2004-07-24",
+    "birthDate": "1986-07-01",
     "cityId": "city-11",
     "teachSkillId": "skill-011",
-    "learnSkillIds": [
-      "skill-012",
-      "skill-018",
-      "skill-024",
-      "skill-021"
+    "learnSubcategoryIds": [
+      "music-sound",
+      "acting",
+      "creative-writing",
+      "art-therapy"
     ],
     "likesCount": 137,
-    "createdAt": "2025-06-20T06:00:00Z",
-    "about": "Ценю практику и спокойный темп обучения. Люблю превращать сложное в понятное.",
+    "createdAt": "2025-03-17T06:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
     "likedUserIds": [
-      "user-14",
-      "user-22",
-      "user-40"
+      "user-15",
+      "user-23",
+      "user-39"
     ]
   },
   {
     "id": "user-12",
-    "name": "Илона",
+    "name": "Артём",
     "email": "user12@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=12",
-    "birthDate": "1993-10-02",
+    "birthDate": "1993-10-06",
     "cityId": "city-12",
     "teachSkillId": "skill-012",
-    "learnSkillIds": [
-      "skill-013",
-      "skill-019",
-      "skill-025",
-      "skill-028",
-      "skill-029"
+    "learnSubcategoryIds": [
+      "acting",
+      "creative-writing",
+      "art-therapy",
+      "decor-diy"
     ],
-    "likesCount": 3,
-    "createdAt": "2025-07-07T09:00:00Z",
-    "about": "Работаю, учусь и постоянно пробую новые хобби. За обмен знаниями и хорошее общение.",
+    "likesCount": 150,
+    "createdAt": "2025-02-24T09:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
     "likedUserIds": [
-      "user-15",
-      "user-23",
-      "user-41"
+      "user-16",
+      "user-24",
+      "user-40"
     ]
   },
   {
@@ -284,22 +280,22 @@
     "name": "Алексей",
     "email": "user13@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=13",
-    "birthDate": "2000-01-07",
+    "birthDate": "2000-01-11",
     "cityId": "city-13",
     "teachSkillId": "skill-013",
-    "learnSkillIds": [
-      "skill-014",
-      "skill-020",
-      "skill-026",
-      "skill-035"
+    "learnSubcategoryIds": [
+      "creative-writing",
+      "art-therapy",
+      "decor-diy",
+      "english"
     ],
-    "likesCount": 16,
-    "createdAt": "2025-07-24T12:00:00Z",
-    "about": "Люблю учиться новому, делиться опытом и находить людей с похожими интересами.",
+    "likesCount": 12,
+    "createdAt": "2025-01-04T12:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
     "likedUserIds": [
-      "user-16",
-      "user-24",
-      "user-42"
+      "user-17",
+      "user-25",
+      "user-41"
     ]
   },
   {
@@ -307,22 +303,22 @@
     "name": "Анна",
     "email": "user14@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=14",
-    "birthDate": "1989-04-12",
+    "birthDate": "2007-04-16",
     "cityId": "city-14",
     "teachSkillId": "skill-014",
-    "learnSkillIds": [
-      "skill-015",
-      "skill-021",
-      "skill-027",
-      "skill-042"
+    "learnSubcategoryIds": [
+      "art-therapy",
+      "decor-diy",
+      "english",
+      "french"
     ],
-    "likesCount": 29,
-    "createdAt": "2025-08-10T15:00:00Z",
-    "about": "Интересуюсь творчеством, технологиями и саморазвитием. Всегда рад новым знакомствам.",
+    "likesCount": 25,
+    "createdAt": "2025-12-11T15:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
     "likedUserIds": [
-      "user-17",
-      "user-25",
-      "user-43"
+      "user-18",
+      "user-26",
+      "user-42"
     ]
   },
   {
@@ -330,46 +326,45 @@
     "name": "Полина",
     "email": "user15@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=15",
-    "birthDate": "1996-07-17",
+    "birthDate": "1991-07-21",
     "cityId": "city-15",
     "teachSkillId": "skill-015",
-    "learnSkillIds": [
-      "skill-016",
-      "skill-022",
-      "skill-028",
-      "skill-049",
-      "skill-050"
+    "learnSubcategoryIds": [
+      "decor-diy",
+      "english",
+      "french",
+      "spanish"
     ],
-    "likesCount": 42,
-    "createdAt": "2025-08-27T18:00:00Z",
-    "about": "Ценю практику и спокойный темп обучения. Люблю превращать сложное в понятное.",
+    "likesCount": 38,
+    "createdAt": "2025-11-18T18:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
     "likedUserIds": [
-      "user-18",
-      "user-26",
-      "user-44"
+      "user-19",
+      "user-27",
+      "user-43"
     ]
   },
   {
     "id": "user-16",
-    "name": "Артём",
+    "name": "Никита",
     "email": "user16@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=16",
-    "birthDate": "2003-10-22",
+    "birthDate": "1998-10-01",
     "cityId": "city-01",
     "teachSkillId": "skill-016",
-    "learnSkillIds": [
-      "skill-017",
-      "skill-023",
-      "skill-029",
-      "skill-006"
+    "learnSubcategoryIds": [
+      "english",
+      "french",
+      "spanish",
+      "german"
     ],
-    "likesCount": 55,
-    "createdAt": "2025-09-13T21:00:00Z",
-    "about": "Работаю, учусь и постоянно пробую новые хобби. За обмен знаниями и хорошее общение.",
+    "likesCount": 51,
+    "createdAt": "2025-10-25T21:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
     "likedUserIds": [
-      "user-19",
-      "user-27",
-      "user-45"
+      "user-20",
+      "user-28",
+      "user-44"
     ]
   },
   {
@@ -377,162 +372,160 @@
     "name": "Ольга",
     "email": "user17@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=17",
-    "birthDate": "1992-01-27",
+    "birthDate": "2005-01-06",
     "cityId": "city-02",
     "teachSkillId": "skill-017",
-    "learnSkillIds": [
-      "skill-018",
-      "skill-024",
-      "skill-030",
-      "skill-013"
+    "learnSubcategoryIds": [
+      "french",
+      "spanish",
+      "german",
+      "chinese"
     ],
-    "likesCount": 68,
-    "createdAt": "2025-09-30T00:00:00Z",
-    "about": "Люблю учиться новому, делиться опытом и находить людей с похожими интересами.",
+    "likesCount": 64,
+    "createdAt": "2025-09-05T00:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
     "likedUserIds": [
-      "user-20",
-      "user-28",
-      "user-46"
+      "user-21",
+      "user-29",
+      "user-45"
     ]
   },
   {
     "id": "user-18",
-    "name": "Дмитрий",
+    "name": "Максим",
     "email": "user18@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=18",
-    "birthDate": "1999-04-05",
+    "birthDate": "1989-04-11",
     "cityId": "city-03",
     "teachSkillId": "skill-018",
-    "learnSkillIds": [
-      "skill-019",
-      "skill-025",
-      "skill-031",
-      "skill-020",
-      "skill-021"
+    "learnSubcategoryIds": [
+      "spanish",
+      "german",
+      "chinese",
+      "japanese"
     ],
-    "likesCount": 81,
-    "createdAt": "2025-10-17T03:00:00Z",
-    "about": "Интересуюсь творчеством, технологиями и саморазвитием. Всегда рад новым знакомствам.",
+    "likesCount": 77,
+    "createdAt": "2025-08-12T03:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
     "likedUserIds": [
-      "user-21",
-      "user-29",
-      "user-47"
+      "user-22",
+      "user-30",
+      "user-46"
     ]
   },
   {
     "id": "user-19",
-    "name": "Анастасия",
+    "name": "Ксения",
     "email": "user19@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=19",
-    "birthDate": "1988-07-10",
+    "birthDate": "1996-07-16",
     "cityId": "city-04",
     "teachSkillId": "skill-019",
-    "learnSkillIds": [
-      "skill-020",
-      "skill-026",
-      "skill-032",
-      "skill-027"
+    "learnSubcategoryIds": [
+      "german",
+      "chinese",
+      "japanese",
+      "language-exams"
     ],
-    "likesCount": 94,
-    "createdAt": "2025-11-03T06:00:00Z",
-    "about": "Ценю практику и спокойный темп обучения. Люблю превращать сложное в понятное.",
+    "likesCount": 90,
+    "createdAt": "2025-07-19T06:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
     "likedUserIds": [
-      "user-22",
-      "user-30",
-      "user-48"
+      "user-23",
+      "user-31",
+      "user-47"
     ]
   },
   {
     "id": "user-20",
-    "name": "Никита",
+    "name": "Роман",
     "email": "user20@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=20",
-    "birthDate": "1995-10-15",
+    "birthDate": "2003-10-21",
     "cityId": "city-05",
     "teachSkillId": "skill-020",
-    "learnSkillIds": [
-      "skill-021",
-      "skill-027",
-      "skill-033",
-      "skill-034"
+    "learnSubcategoryIds": [
+      "chinese",
+      "japanese",
+      "language-exams",
+      "personal-development"
     ],
-    "likesCount": 107,
-    "createdAt": "2025-11-20T09:00:00Z",
-    "about": "Работаю, учусь и постоянно пробую новые хобби. За обмен знаниями и хорошее общение.",
+    "likesCount": 103,
+    "createdAt": "2025-06-26T09:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
     "likedUserIds": [
-      "user-23",
-      "user-31",
-      "user-49"
+      "user-24",
+      "user-32",
+      "user-48"
     ]
   },
   {
     "id": "user-21",
-    "name": "Ксения",
+    "name": "Вероника",
     "email": "user21@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=21",
-    "birthDate": "2002-01-20",
+    "birthDate": "1987-01-01",
     "cityId": "city-06",
     "teachSkillId": "skill-021",
-    "learnSkillIds": [
-      "skill-022",
-      "skill-028",
-      "skill-034",
-      "skill-041",
-      "skill-042"
+    "learnSubcategoryIds": [
+      "japanese",
+      "language-exams",
+      "personal-development",
+      "learning-skills"
     ],
-    "likesCount": 120,
-    "createdAt": "2025-12-07T12:00:00Z",
-    "about": "Люблю учиться новому, делиться опытом и находить людей с похожими интересами.",
+    "likesCount": 116,
+    "createdAt": "2025-05-06T12:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
     "likedUserIds": [
-      "user-24",
-      "user-32",
-      "user-50"
+      "user-25",
+      "user-33",
+      "user-49"
     ]
   },
   {
     "id": "user-22",
-    "name": "Роман",
+    "name": "Кирилл",
     "email": "user22@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=22",
-    "birthDate": "1991-04-25",
+    "birthDate": "1994-04-06",
     "cityId": "city-07",
     "teachSkillId": "skill-022",
-    "learnSkillIds": [
-      "skill-023",
-      "skill-029",
-      "skill-035",
-      "skill-048"
+    "learnSubcategoryIds": [
+      "language-exams",
+      "personal-development",
+      "learning-skills",
+      "cognitive-techniques"
     ],
-    "likesCount": 133,
-    "createdAt": "2025-12-24T15:00:00Z",
-    "about": "Интересуюсь творчеством, технологиями и саморазвитием. Всегда рад новым знакомствам.",
+    "likesCount": 129,
+    "createdAt": "2025-04-13T15:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
     "likedUserIds": [
-      "user-25",
-      "user-33",
-      "user-01"
+      "user-26",
+      "user-34",
+      "user-50"
     ]
   },
   {
     "id": "user-23",
-    "name": "Вероника",
+    "name": "Татьяна",
     "email": "user23@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=23",
-    "birthDate": "1998-07-03",
+    "birthDate": "2001-07-11",
     "cityId": "city-08",
     "teachSkillId": "skill-023",
-    "learnSkillIds": [
-      "skill-024",
-      "skill-030",
-      "skill-036",
-      "skill-005"
+    "learnSubcategoryIds": [
+      "personal-development",
+      "learning-skills",
+      "cognitive-techniques",
+      "speed-reading"
     ],
-    "likesCount": 146,
-    "createdAt": "2026-01-10T18:00:00Z",
-    "about": "Ценю практику и спокойный темп обучения. Люблю превращать сложное в понятное.",
+    "likesCount": 142,
+    "createdAt": "2025-03-20T18:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
     "likedUserIds": [
-      "user-26",
-      "user-34",
-      "user-02"
+      "user-27",
+      "user-35",
+      "user-01"
     ]
   },
   {
@@ -540,489 +533,482 @@
     "name": "Сергей",
     "email": "user24@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=24",
-    "birthDate": "2005-10-08",
+    "birthDate": "1985-10-16",
     "cityId": "city-09",
     "teachSkillId": "skill-024",
-    "learnSkillIds": [
-      "skill-025",
-      "skill-031",
-      "skill-037",
-      "skill-012",
-      "skill-013"
+    "learnSubcategoryIds": [
+      "learning-skills",
+      "cognitive-techniques",
+      "speed-reading",
+      "teaching-skills"
     ],
-    "likesCount": 12,
-    "createdAt": "2026-01-27T21:00:00Z",
-    "about": "Работаю, учусь и постоянно пробую новые хобби. За обмен знаниями и хорошее общение.",
+    "likesCount": 4,
+    "createdAt": "2025-02-27T21:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
     "likedUserIds": [
-      "user-27",
-      "user-35",
-      "user-03"
+      "user-28",
+      "user-36",
+      "user-02"
     ]
   },
   {
     "id": "user-25",
-    "name": "Лиза",
+    "name": "Наталья",
     "email": "user25@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=25",
-    "birthDate": "1994-01-13",
+    "birthDate": "1992-01-21",
     "cityId": "city-10",
     "teachSkillId": "skill-025",
-    "learnSkillIds": [
-      "skill-026",
-      "skill-032",
-      "skill-038",
-      "skill-019"
+    "learnSubcategoryIds": [
+      "cognitive-techniques",
+      "speed-reading",
+      "teaching-skills",
+      "coaching"
     ],
-    "likesCount": 25,
-    "createdAt": "2026-02-13T00:00:00Z",
-    "about": "Люблю учиться новому, делиться опытом и находить людей с похожими интересами.",
+    "likesCount": 17,
+    "createdAt": "2025-01-07T00:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
     "likedUserIds": [
-      "user-28",
-      "user-36",
-      "user-04"
+      "user-29",
+      "user-37",
+      "user-03"
     ]
   },
   {
     "id": "user-26",
-    "name": "Алина",
+    "name": "Илья",
     "email": "user26@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=26",
-    "birthDate": "2001-04-18",
+    "birthDate": "1999-04-01",
     "cityId": "city-11",
     "teachSkillId": "skill-026",
-    "learnSkillIds": [
-      "skill-027",
-      "skill-033",
-      "skill-039",
-      "skill-028"
+    "learnSubcategoryIds": [
+      "speed-reading",
+      "teaching-skills",
+      "coaching",
+      "cleaning-organization"
     ],
-    "likesCount": 38,
-    "createdAt": "2026-03-02T03:00:00Z",
-    "about": "Интересуюсь творчеством, технологиями и саморазвитием. Всегда рад новым знакомствам.",
+    "likesCount": 30,
+    "createdAt": "2025-12-14T03:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
     "likedUserIds": [
-      "user-29",
-      "user-37",
-      "user-05"
+      "user-30",
+      "user-38",
+      "user-04"
     ]
   },
   {
     "id": "user-27",
-    "name": "Павел",
+    "name": "Юлия",
     "email": "user27@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=27",
-    "birthDate": "1990-07-23",
+    "birthDate": "2006-07-06",
     "cityId": "city-12",
     "teachSkillId": "skill-027",
-    "learnSkillIds": [
-      "skill-028",
-      "skill-034",
-      "skill-040",
-      "skill-033",
-      "skill-035"
+    "learnSubcategoryIds": [
+      "teaching-skills",
+      "coaching",
+      "cleaning-organization",
+      "home-finances"
     ],
-    "likesCount": 51,
-    "createdAt": "2026-03-19T06:00:00Z",
-    "about": "Ценю практику и спокойный темп обучения. Люблю превращать сложное в понятное.",
+    "likesCount": 43,
+    "createdAt": "2025-11-21T06:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
     "likedUserIds": [
-      "user-30",
-      "user-38",
-      "user-06"
+      "user-31",
+      "user-39",
+      "user-05"
     ]
   },
   {
     "id": "user-28",
-    "name": "Юлия",
+    "name": "Андрей",
     "email": "user28@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=28",
-    "birthDate": "1997-10-01",
+    "birthDate": "1990-10-11",
     "cityId": "city-13",
     "teachSkillId": "skill-028",
-    "learnSkillIds": [
-      "skill-029",
-      "skill-035",
-      "skill-041",
-      "skill-040"
+    "learnSubcategoryIds": [
+      "coaching",
+      "cleaning-organization",
+      "home-finances",
+      "cooking"
     ],
-    "likesCount": 64,
-    "createdAt": "2026-04-05T09:00:00Z",
-    "about": "Работаю, учусь и постоянно пробую новые хобби. За обмен знаниями и хорошее общение.",
+    "likesCount": 56,
+    "createdAt": "2025-10-01T09:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
     "likedUserIds": [
-      "user-31",
-      "user-39",
-      "user-07"
+      "user-32",
+      "user-40",
+      "user-06"
     ]
   },
   {
     "id": "user-29",
-    "name": "Андрей",
+    "name": "Карина",
     "email": "user29@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=29",
-    "birthDate": "2004-01-06",
+    "birthDate": "1997-01-16",
     "cityId": "city-14",
     "teachSkillId": "skill-029",
-    "learnSkillIds": [
-      "skill-030",
-      "skill-036",
-      "skill-042",
-      "skill-047"
+    "learnSubcategoryIds": [
+      "cleaning-organization",
+      "home-finances",
+      "cooking",
+      "home-plants"
     ],
-    "likesCount": 77,
-    "createdAt": "2026-04-22T12:00:00Z",
-    "about": "Люблю учиться новому, делиться опытом и находить людей с похожими интересами.",
+    "likesCount": 69,
+    "createdAt": "2025-09-08T12:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
     "likedUserIds": [
-      "user-32",
-      "user-40",
-      "user-08"
+      "user-33",
+      "user-41",
+      "user-07"
     ]
   },
   {
     "id": "user-30",
-    "name": "Валерия",
+    "name": "Владислав",
     "email": "user30@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=30",
-    "birthDate": "1993-04-11",
+    "birthDate": "2004-04-21",
     "cityId": "city-15",
     "teachSkillId": "skill-030",
-    "learnSkillIds": [
-      "skill-031",
-      "skill-037",
-      "skill-043",
-      "skill-004",
-      "skill-005"
+    "learnSubcategoryIds": [
+      "home-finances",
+      "cooking",
+      "home-plants",
+      "repair"
     ],
-    "likesCount": 90,
-    "createdAt": "2026-05-09T15:00:00Z",
-    "about": "Интересуюсь творчеством, технологиями и саморазвитием. Всегда рад новым знакомствам.",
+    "likesCount": 82,
+    "createdAt": "2025-08-15T15:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
     "likedUserIds": [
-      "user-33",
-      "user-41",
-      "user-09"
+      "user-34",
+      "user-42",
+      "user-08"
     ]
   },
   {
     "id": "user-31",
-    "name": "Марина",
+    "name": "Диана",
     "email": "user31@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=31",
-    "birthDate": "2000-07-16",
+    "birthDate": "1988-07-01",
     "cityId": "city-01",
     "teachSkillId": "skill-031",
-    "learnSkillIds": [
-      "skill-032",
-      "skill-038",
-      "skill-044",
-      "skill-011"
+    "learnSubcategoryIds": [
+      "cooking",
+      "home-plants",
+      "repair",
+      "storage"
     ],
-    "likesCount": 103,
-    "createdAt": "2026-05-26T18:00:00Z",
-    "about": "Ценю практику и спокойный темп обучения. Люблю превращать сложное в понятное.",
+    "likesCount": 95,
+    "createdAt": "2025-07-22T18:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
     "likedUserIds": [
-      "user-34",
-      "user-42",
-      "user-10"
+      "user-35",
+      "user-43",
+      "user-09"
     ]
   },
   {
     "id": "user-32",
-    "name": "Илья",
+    "name": "Матвей",
     "email": "user32@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=32",
-    "birthDate": "1989-10-21",
+    "birthDate": "1995-10-06",
     "cityId": "city-02",
     "teachSkillId": "skill-032",
-    "learnSkillIds": [
-      "skill-033",
-      "skill-039",
-      "skill-045",
-      "skill-018"
+    "learnSubcategoryIds": [
+      "home-plants",
+      "repair",
+      "storage",
+      "yoga-meditation"
     ],
-    "likesCount": 116,
-    "createdAt": "2026-06-12T21:00:00Z",
-    "about": "Работаю, учусь и постоянно пробую новые хобби. За обмен знаниями и хорошее общение.",
+    "likesCount": 108,
+    "createdAt": "2025-06-02T21:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
     "likedUserIds": [
-      "user-35",
-      "user-43",
-      "user-11"
+      "user-36",
+      "user-44",
+      "user-10"
     ]
   },
   {
     "id": "user-33",
-    "name": "Татьяна",
+    "name": "Ирина",
     "email": "user33@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=33",
-    "birthDate": "1996-01-26",
+    "birthDate": "2002-01-11",
     "cityId": "city-03",
     "teachSkillId": "skill-033",
-    "learnSkillIds": [
-      "skill-034",
-      "skill-040",
-      "skill-046",
-      "skill-025",
-      "skill-026"
+    "learnSubcategoryIds": [
+      "repair",
+      "storage",
+      "yoga-meditation",
+      "nutrition-healthy-lifestyle"
     ],
-    "likesCount": 129,
-    "createdAt": "2026-06-29T00:00:00Z",
-    "about": "Люблю учиться новому, делиться опытом и находить людей с похожими интересами.",
+    "likesCount": 121,
+    "createdAt": "2025-05-09T00:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
     "likedUserIds": [
-      "user-36",
-      "user-44",
-      "user-12"
+      "user-37",
+      "user-45",
+      "user-11"
     ]
   },
   {
     "id": "user-34",
-    "name": "Евгений",
+    "name": "Павел",
     "email": "user34@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=34",
-    "birthDate": "2003-04-04",
+    "birthDate": "1986-04-16",
     "cityId": "city-04",
     "teachSkillId": "skill-034",
-    "learnSkillIds": [
-      "skill-035",
-      "skill-041",
-      "skill-047",
-      "skill-032"
+    "learnSubcategoryIds": [
+      "storage",
+      "yoga-meditation",
+      "nutrition-healthy-lifestyle",
+      "mental-health"
     ],
-    "likesCount": 142,
-    "createdAt": "2025-01-02T03:00:00Z",
-    "about": "Интересуюсь творчеством, технологиями и саморазвитием. Всегда рад новым знакомствам.",
+    "likesCount": 134,
+    "createdAt": "2025-04-16T03:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
     "likedUserIds": [
-      "user-37",
-      "user-45",
-      "user-13"
+      "user-38",
+      "user-46",
+      "user-12"
     ]
   },
   {
     "id": "user-35",
-    "name": "Светлана",
+    "name": "Людмила",
     "email": "user35@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=35",
-    "birthDate": "1992-07-09",
+    "birthDate": "1993-07-21",
     "cityId": "city-05",
     "teachSkillId": "skill-035",
-    "learnSkillIds": [
-      "skill-036",
-      "skill-042",
-      "skill-048",
-      "skill-039"
+    "learnSubcategoryIds": [
+      "yoga-meditation",
+      "nutrition-healthy-lifestyle",
+      "mental-health",
+      "mindfulness"
     ],
-    "likesCount": 8,
-    "createdAt": "2025-01-19T06:00:00Z",
-    "about": "Ценю практику и спокойный темп обучения. Люблю превращать сложное в понятное.",
+    "likesCount": 147,
+    "createdAt": "2025-03-23T06:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
     "likedUserIds": [
-      "user-38",
-      "user-46",
-      "user-14"
+      "user-39",
+      "user-47",
+      "user-13"
     ]
   },
   {
     "id": "user-36",
-    "name": "Кирилл",
+    "name": "Тимур",
     "email": "user36@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=36",
-    "birthDate": "1999-10-14",
+    "birthDate": "2000-10-01",
     "cityId": "city-06",
     "teachSkillId": "skill-036",
-    "learnSkillIds": [
-      "skill-037",
-      "skill-043",
-      "skill-049",
-      "skill-046",
-      "skill-047"
+    "learnSubcategoryIds": [
+      "nutrition-healthy-lifestyle",
+      "mental-health",
+      "mindfulness",
+      "physical-training"
     ],
-    "likesCount": 21,
-    "createdAt": "2025-02-05T09:00:00Z",
-    "about": "Работаю, учусь и постоянно пробую новые хобби. За обмен знаниями и хорошее общение.",
+    "likesCount": 9,
+    "createdAt": "2025-02-03T09:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
     "likedUserIds": [
-      "user-39",
-      "user-47",
-      "user-15"
+      "user-40",
+      "user-48",
+      "user-14"
     ]
   },
   {
     "id": "user-37",
-    "name": "Наталья",
+    "name": "Анастасия",
     "email": "user37@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=37",
-    "birthDate": "1988-01-19",
+    "birthDate": "2007-01-06",
     "cityId": "city-07",
     "teachSkillId": "skill-037",
-    "learnSkillIds": [
-      "skill-038",
-      "skill-044",
-      "skill-050",
-      "skill-003"
+    "learnSubcategoryIds": [
+      "mental-health",
+      "mindfulness",
+      "physical-training",
+      "sleep-recovery"
     ],
-    "likesCount": 34,
-    "createdAt": "2025-02-22T12:00:00Z",
-    "about": "Люблю учиться новому, делиться опытом и находить людей с похожими интересами.",
+    "likesCount": 22,
+    "createdAt": "2025-01-10T12:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
     "likedUserIds": [
-      "user-40",
-      "user-48",
-      "user-16"
+      "user-41",
+      "user-49",
+      "user-15"
     ]
   },
   {
     "id": "user-38",
-    "name": "Максим",
+    "name": "Егор",
     "email": "user38@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=38",
-    "birthDate": "1995-04-24",
+    "birthDate": "1991-04-11",
     "cityId": "city-08",
     "teachSkillId": "skill-038",
-    "learnSkillIds": [
-      "skill-039",
-      "skill-045",
-      "skill-001",
-      "skill-010"
+    "learnSubcategoryIds": [
+      "mindfulness",
+      "physical-training",
+      "sleep-recovery",
+      "work-life-balance"
     ],
-    "likesCount": 47,
-    "createdAt": "2025-03-11T15:00:00Z",
-    "about": "Интересуюсь творчеством, технологиями и саморазвитием. Всегда рад новым знакомствам.",
+    "likesCount": 35,
+    "createdAt": "2025-12-17T15:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
     "likedUserIds": [
-      "user-41",
-      "user-49",
-      "user-17"
+      "user-42",
+      "user-50",
+      "user-16"
     ]
   },
   {
     "id": "user-39",
-    "name": "Карина",
+    "name": "Марина",
     "email": "user39@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=39",
-    "birthDate": "2002-07-02",
+    "birthDate": "1998-07-16",
     "cityId": "city-09",
     "teachSkillId": "skill-039",
-    "learnSkillIds": [
-      "skill-040",
-      "skill-046",
-      "skill-002",
-      "skill-017",
-      "skill-018"
+    "learnSubcategoryIds": [
+      "physical-training",
+      "sleep-recovery",
+      "work-life-balance",
+      "team-management"
     ],
-    "likesCount": 60,
-    "createdAt": "2025-03-28T18:00:00Z",
-    "about": "Ценю практику и спокойный темп обучения. Люблю превращать сложное в понятное.",
+    "likesCount": 48,
+    "createdAt": "2025-11-24T18:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
     "likedUserIds": [
-      "user-42",
-      "user-50",
-      "user-18"
+      "user-43",
+      "user-01",
+      "user-17"
     ]
   },
   {
     "id": "user-40",
-    "name": "Владислав",
+    "name": "Степан",
     "email": "user40@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=40",
-    "birthDate": "1991-10-07",
+    "birthDate": "2005-10-21",
     "cityId": "city-10",
     "teachSkillId": "skill-040",
-    "learnSkillIds": [
-      "skill-041",
-      "skill-047",
-      "skill-003",
-      "skill-024"
+    "learnSubcategoryIds": [
+      "sleep-recovery",
+      "work-life-balance",
+      "team-management",
+      "marketing-advertising"
     ],
-    "likesCount": 73,
-    "createdAt": "2025-04-14T21:00:00Z",
-    "about": "Работаю, учусь и постоянно пробую новые хобби. За обмен знаниями и хорошее общение.",
+    "likesCount": 61,
+    "createdAt": "2025-10-04T21:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
     "likedUserIds": [
-      "user-43",
-      "user-01",
-      "user-19"
+      "user-44",
+      "user-02",
+      "user-18"
     ]
   },
   {
     "id": "user-41",
-    "name": "Диана",
+    "name": "Светлана",
     "email": "user41@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=41",
-    "birthDate": "1998-01-12",
+    "birthDate": "1989-01-01",
     "cityId": "city-11",
     "teachSkillId": "skill-041",
-    "learnSkillIds": [
-      "skill-042",
-      "skill-048",
-      "skill-004",
-      "skill-031"
+    "learnSubcategoryIds": [
+      "work-life-balance",
+      "team-management",
+      "marketing-advertising",
+      "sales-negotiations"
     ],
-    "likesCount": 86,
-    "createdAt": "2025-05-01T00:00:00Z",
-    "about": "Люблю учиться новому, делиться опытом и находить людей с похожими интересами.",
+    "likesCount": 74,
+    "createdAt": "2025-09-11T00:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
     "likedUserIds": [
-      "user-44",
-      "user-02",
-      "user-20"
+      "user-45",
+      "user-03",
+      "user-19"
     ]
   },
   {
     "id": "user-42",
-    "name": "Степан",
+    "name": "Вадим",
     "email": "user42@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=42",
-    "birthDate": "2005-04-17",
+    "birthDate": "1996-04-06",
     "cityId": "city-12",
     "teachSkillId": "skill-042",
-    "learnSkillIds": [
-      "skill-043",
-      "skill-049",
-      "skill-005",
-      "skill-038",
-      "skill-039"
+    "learnSubcategoryIds": [
+      "team-management",
+      "marketing-advertising",
+      "sales-negotiations",
+      "personal-brand"
     ],
-    "likesCount": 99,
-    "createdAt": "2025-05-18T03:00:00Z",
-    "about": "Интересуюсь творчеством, технологиями и саморазвитием. Всегда рад новым знакомствам.",
+    "likesCount": 87,
+    "createdAt": "2025-08-18T03:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
     "likedUserIds": [
-      "user-45",
-      "user-03",
-      "user-21"
+      "user-46",
+      "user-04",
+      "user-20"
     ]
   },
   {
     "id": "user-43",
-    "name": "Вера",
+    "name": "Евгения",
     "email": "user43@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=43",
-    "birthDate": "1994-07-22",
+    "birthDate": "2003-07-11",
     "cityId": "city-13",
     "teachSkillId": "skill-043",
-    "learnSkillIds": [
-      "skill-044",
-      "skill-050",
-      "skill-006",
-      "skill-045"
+    "learnSubcategoryIds": [
+      "team-management",
+      "marketing-advertising",
+      "personal-brand",
+      "resume-interview"
     ],
-    "likesCount": 112,
-    "createdAt": "2025-06-04T06:00:00Z",
-    "about": "Ценю практику и спокойный темп обучения. Люблю превращать сложное в понятное.",
+    "likesCount": 100,
+    "createdAt": "2025-07-25T06:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
     "likedUserIds": [
-      "user-46",
-      "user-04",
-      "user-22"
+      "user-47",
+      "user-05",
+      "user-21"
     ]
   },
   {
     "id": "user-44",
-    "name": "Денис",
+    "name": "Роман",
     "email": "user44@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=44",
-    "birthDate": "2001-10-27",
+    "birthDate": "1987-10-16",
     "cityId": "city-14",
     "teachSkillId": "skill-044",
-    "learnSkillIds": [
-      "skill-045",
-      "skill-001",
-      "skill-007",
-      "skill-002"
+    "learnSubcategoryIds": [
+      "marketing-advertising",
+      "sales-negotiations",
+      "personal-brand",
+      "resume-interview"
     ],
-    "likesCount": 125,
-    "createdAt": "2025-06-21T09:00:00Z",
-    "about": "Работаю, учусь и постоянно пробую новые хобби. За обмен знаниями и хорошее общение.",
+    "likesCount": 113,
+    "createdAt": "2025-06-05T09:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
     "likedUserIds": [
-      "user-47",
-      "user-05",
-      "user-23"
+      "user-48",
+      "user-06",
+      "user-22"
     ]
   },
   {
@@ -1030,23 +1016,22 @@
     "name": "Софья",
     "email": "user45@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=45",
-    "birthDate": "1990-01-05",
+    "birthDate": "1994-01-21",
     "cityId": "city-15",
     "teachSkillId": "skill-045",
-    "learnSkillIds": [
-      "skill-046",
-      "skill-002",
-      "skill-008",
-      "skill-009",
-      "skill-010"
+    "learnSubcategoryIds": [
+      "sales-negotiations",
+      "personal-brand",
+      "resume-interview",
+      "time-management"
     ],
-    "likesCount": 138,
-    "createdAt": "2025-07-08T12:00:00Z",
-    "about": "Люблю учиться новому, делиться опытом и находить людей с похожими интересами.",
+    "likesCount": 126,
+    "createdAt": "2025-05-12T12:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
     "likedUserIds": [
-      "user-48",
-      "user-06",
-      "user-24"
+      "user-49",
+      "user-07",
+      "user-23"
     ]
   },
   {
@@ -1054,22 +1039,22 @@
     "name": "Матвей",
     "email": "user46@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=46",
-    "birthDate": "1997-04-10",
+    "birthDate": "2001-04-01",
     "cityId": "city-01",
     "teachSkillId": "skill-046",
-    "learnSkillIds": [
-      "skill-047",
-      "skill-003",
-      "skill-009",
-      "skill-016"
+    "learnSubcategoryIds": [
+      "personal-brand",
+      "resume-interview",
+      "time-management",
+      "project-management"
     ],
-    "likesCount": 4,
-    "createdAt": "2025-07-25T15:00:00Z",
-    "about": "Интересуюсь творчеством, технологиями и саморазвитием. Всегда рад новым знакомствам.",
+    "likesCount": 139,
+    "createdAt": "2025-04-19T15:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
     "likedUserIds": [
-      "user-49",
-      "user-07",
-      "user-25"
+      "user-50",
+      "user-08",
+      "user-24"
     ]
   },
   {
@@ -1077,46 +1062,45 @@
     "name": "Ирина",
     "email": "user47@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=47",
-    "birthDate": "2004-07-15",
+    "birthDate": "1985-07-06",
     "cityId": "city-02",
     "teachSkillId": "skill-047",
-    "learnSkillIds": [
-      "skill-048",
-      "skill-004",
-      "skill-010",
-      "skill-023"
+    "learnSubcategoryIds": [
+      "resume-interview",
+      "time-management",
+      "project-management",
+      "entrepreneurship"
     ],
-    "likesCount": 17,
-    "createdAt": "2025-08-11T18:00:00Z",
-    "about": "Ценю практику и спокойный темп обучения. Люблю превращать сложное в понятное.",
+    "likesCount": 1,
+    "createdAt": "2025-03-26T18:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
     "likedUserIds": [
-      "user-50",
-      "user-08",
-      "user-26"
+      "user-01",
+      "user-09",
+      "user-25"
     ]
   },
   {
     "id": "user-48",
-    "name": "Глеб",
+    "name": "Денис",
     "email": "user48@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=48",
-    "birthDate": "1993-10-20",
+    "birthDate": "1992-10-11",
     "cityId": "city-03",
     "teachSkillId": "skill-048",
-    "learnSkillIds": [
-      "skill-049",
-      "skill-005",
-      "skill-011",
-      "skill-030",
-      "skill-031"
+    "learnSubcategoryIds": [
+      "time-management",
+      "project-management",
+      "entrepreneurship",
+      "drawing-illustration"
     ],
-    "likesCount": 30,
-    "createdAt": "2025-08-28T21:00:00Z",
-    "about": "Работаю, учусь и постоянно пробую новые хобби. За обмен знаниями и хорошее общение.",
+    "likesCount": 14,
+    "createdAt": "2025-02-06T21:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
     "likedUserIds": [
-      "user-01",
-      "user-09",
-      "user-27"
+      "user-02",
+      "user-10",
+      "user-26"
     ]
   },
   {
@@ -1124,22 +1108,22 @@
     "name": "Людмила",
     "email": "user49@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=49",
-    "birthDate": "2000-01-25",
+    "birthDate": "1999-01-16",
     "cityId": "city-04",
     "teachSkillId": "skill-049",
-    "learnSkillIds": [
-      "skill-050",
-      "skill-006",
-      "skill-012",
-      "skill-037"
+    "learnSubcategoryIds": [
+      "project-management",
+      "entrepreneurship",
+      "drawing-illustration",
+      "photography"
     ],
-    "likesCount": 43,
-    "createdAt": "2025-09-14T00:00:00Z",
-    "about": "Люблю учиться новому, делиться опытом и находить людей с похожими интересами.",
+    "likesCount": 27,
+    "createdAt": "2025-01-13T00:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
     "likedUserIds": [
-      "user-02",
-      "user-10",
-      "user-28"
+      "user-03",
+      "user-11",
+      "user-27"
     ]
   },
   {
@@ -1147,22 +1131,22 @@
     "name": "Тимур",
     "email": "user50@skillswap.test",
     "avatarUrl": "https://i.pravatar.cc/300?img=50",
-    "birthDate": "1989-04-03",
+    "birthDate": "2006-04-21",
     "cityId": "city-05",
     "teachSkillId": "skill-050",
-    "learnSkillIds": [
-      "skill-001",
-      "skill-007",
-      "skill-013",
-      "skill-044"
+    "learnSubcategoryIds": [
+      "entrepreneurship",
+      "drawing-illustration",
+      "photography",
+      "video-editing"
     ],
-    "likesCount": 56,
-    "createdAt": "2025-10-01T03:00:00Z",
-    "about": "Интересуюсь творчеством, технологиями и саморазвитием. Всегда рад новым знакомствам.",
+    "likesCount": 40,
+    "createdAt": "2025-12-20T03:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
     "likedUserIds": [
-      "user-03",
-      "user-11",
-      "user-29"
+      "user-04",
+      "user-12",
+      "user-28"
     ]
   }
 ]

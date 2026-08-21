@@ -1,752 +1,502 @@
 [
   {
     "id": "skill-001",
-    "title": "Как выстроить работу команды",
-    "description": "Расскажу, как распределять задачи, поддерживать команду в рабочем состоянии и не превращать управление в бесконечный контроль.",
-    "type": "teach",
+    "title": "Управление командой",
+    "description": "Научу выстраивать работу команды и распределять задачи.",
     "categoryId": "business-career",
     "subcategoryId": "team-management",
-    "tags": [
-      "Управление командой",
-      "Бизнес и карьера"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-1/1200/800",
+    "imageUrl": null,
     "authorId": "user-01",
     "createdAt": "2025-01-01T00:00:00Z"
   },
   {
     "id": "skill-002",
-    "title": "Маркетинг без лишней теории",
-    "description": "Покажу, как находить аудиторию, формулировать предложение и проверять маркетинговые идеи на практике.",
-    "type": "teach",
+    "title": "Маркетинг и реклама",
+    "description": "Помогу разобраться в продвижении проектов и рекламных инструментах.",
     "categoryId": "business-career",
     "subcategoryId": "marketing-advertising",
-    "tags": [
-      "Маркетинг и реклама",
-      "Бизнес и карьера"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-2/1200/800",
+    "imageUrl": null,
     "authorId": "user-02",
-    "createdAt": "2025-01-18T03:00:00Z"
+    "createdAt": "2025-01-02T00:00:00Z"
   },
   {
     "id": "skill-003",
-    "title": "Переговоры и продажи без давления",
-    "description": "Разберём, как задавать правильные вопросы, понимать интересы собеседника и договариваться без навязчивости.",
-    "type": "teach",
+    "title": "Продажи и переговоры",
+    "description": "Расскажу об основных приёмах продаж и ведения переговоров.",
     "categoryId": "business-career",
     "subcategoryId": "sales-negotiations",
-    "tags": [
-      "Продажи и переговоры",
-      "Бизнес и карьера"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-3/1200/800",
+    "imageUrl": null,
     "authorId": "user-03",
-    "createdAt": "2025-02-04T06:00:00Z"
+    "createdAt": "2025-01-03T00:00:00Z"
   },
   {
     "id": "skill-004",
-    "title": "Личный бренд без показухи",
-    "description": "Покажу, как сформулировать свою экспертность, выбрать площадки и постепенно сделать себя заметнее.",
-    "type": "teach",
+    "title": "Личный бренд",
+    "description": "Поделюсь опытом развития личного бренда в профессиональной среде.",
     "categoryId": "business-career",
     "subcategoryId": "personal-brand",
-    "tags": [
-      "Личный бренд",
-      "Бизнес и карьера"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-4/1200/800",
+    "imageUrl": null,
     "authorId": "user-04",
-    "createdAt": "2025-02-21T09:00:00Z"
+    "createdAt": "2025-01-04T00:00:00Z"
   },
   {
     "id": "skill-005",
-    "title": "Резюме, которое хочется открыть",
-    "description": "Разберём структуру резюме, формулировки опыта и типичные ошибки, из-за которых хороший специалист выглядит слабее.",
-    "type": "teach",
+    "title": "Резюме и собеседование",
+    "description": "Помогу подготовить резюме и пройти собеседование увереннее.",
     "categoryId": "business-career",
     "subcategoryId": "resume-interview",
-    "tags": [
-      "Резюме и собеседование",
-      "Бизнес и карьера"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-5/1200/800",
+    "imageUrl": null,
     "authorId": "user-05",
-    "createdAt": "2025-03-10T12:00:00Z"
+    "createdAt": "2025-01-05T00:00:00Z"
   },
   {
     "id": "skill-006",
-    "title": "Планирование без перегруза",
-    "description": "Покажу, как расставлять приоритеты и планировать день так, чтобы список задач не превращался в отдельную работу.",
-    "type": "teach",
+    "title": "Тайм-менеджмент",
+    "description": "Покажу практические подходы к планированию времени.",
     "categoryId": "business-career",
     "subcategoryId": "time-management",
-    "tags": [
-      "Тайм-менеджмент",
-      "Бизнес и карьера"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-6/1200/800",
+    "imageUrl": null,
     "authorId": "user-06",
-    "createdAt": "2025-03-27T15:00:00Z"
+    "createdAt": "2025-01-06T00:00:00Z"
   },
   {
     "id": "skill-007",
-    "title": "Управление проектами без хаоса",
-    "description": "Расскажу, как разбивать большую задачу на этапы, следить за сроками и не терять важные детали по дороге.",
-    "type": "teach",
+    "title": "Проектное управление",
+    "description": "Научу основам планирования и ведения проектов.",
     "categoryId": "business-career",
     "subcategoryId": "project-management",
-    "tags": [
-      "Проектное управление",
-      "Бизнес и карьера"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-7/1200/800",
+    "imageUrl": null,
     "authorId": "user-07",
-    "createdAt": "2025-04-13T18:00:00Z"
+    "createdAt": "2025-01-07T00:00:00Z"
   },
   {
     "id": "skill-008",
-    "title": "Первый шаг в предпринимательстве",
-    "description": "Разберём, как превратить идею в понятный план действий и проверить её до того, как потратить все силы и деньги.",
-    "type": "teach",
+    "title": "Предпринимательство",
+    "description": "Поделюсь практическими основами запуска собственного проекта.",
     "categoryId": "business-career",
     "subcategoryId": "entrepreneurship",
-    "tags": [
-      "Предпринимательство",
-      "Бизнес и карьера"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-8/1200/800",
+    "imageUrl": null,
     "authorId": "user-08",
-    "createdAt": "2025-04-30T21:00:00Z"
+    "createdAt": "2025-01-08T00:00:00Z"
   },
   {
     "id": "skill-009",
-    "title": "Рисование персонажей с нуля",
-    "description": "Покажу, как собирать персонажа от простых форм до выразительной иллюстрации и где чаще всего возникают ошибки.",
-    "type": "teach",
+    "title": "Рисование и иллюстрация",
+    "description": "Научу базовым приёмам рисования и создания иллюстраций.",
     "categoryId": "creativity-art",
     "subcategoryId": "drawing-illustration",
-    "tags": [
-      "Рисование и иллюстрация",
-      "Творчество и искусство"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-9/1200/800",
+    "imageUrl": null,
     "authorId": "user-09",
-    "createdAt": "2025-05-17T00:00:00Z"
+    "createdAt": "2025-01-09T00:00:00Z"
   },
   {
     "id": "skill-010",
-    "title": "Фотография без дорогой камеры",
-    "description": "Расскажу, как работать со светом, композицией и настройками камеры, чтобы получать хорошие кадры без огромного бюджета.",
-    "type": "teach",
+    "title": "Фотография",
+    "description": "Помогу освоить основы композиции, света и съёмки.",
     "categoryId": "creativity-art",
     "subcategoryId": "photography",
-    "tags": [
-      "Фотография",
-      "Творчество и искусство"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-10/1200/800",
+    "imageUrl": null,
     "authorId": "user-10",
-    "createdAt": "2025-06-03T03:00:00Z"
+    "createdAt": "2025-01-10T00:00:00Z"
   },
   {
     "id": "skill-011",
-    "title": "Видеомонтаж для начинающих",
-    "description": "Покажу базовый процесс монтажа: от отбора материала до склеек, музыки, титров и готового ролика.",
-    "type": "teach",
+    "title": "Видеомонтаж",
+    "description": "Научу базовому монтажу видео и работе с материалом.",
     "categoryId": "creativity-art",
     "subcategoryId": "video-editing",
-    "tags": [
-      "Видеомонтаж",
-      "Творчество и искусство"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-11/1200/800",
+    "imageUrl": null,
     "authorId": "user-11",
-    "createdAt": "2025-06-20T06:00:00Z"
+    "createdAt": "2025-01-11T00:00:00Z"
   },
   {
     "id": "skill-012",
-    "title": "Музыка и работа со звуком",
-    "description": "Разберём основы записи, обработки звука и построения простых музыкальных проектов.",
-    "type": "teach",
+    "title": "Музыка и звук",
+    "description": "Расскажу об основах работы со звуком и музыкой.",
     "categoryId": "creativity-art",
     "subcategoryId": "music-sound",
-    "tags": [
-      "Музыка и звук",
-      "Творчество и искусство"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-12/1200/800",
+    "imageUrl": null,
     "authorId": "user-12",
-    "createdAt": "2025-07-07T09:00:00Z"
+    "createdAt": "2025-01-12T00:00:00Z"
   },
   {
     "id": "skill-013",
-    "title": "Актёрское мастерство для начинающих",
-    "description": "Покажу упражнения на речь, внимание, импровизацию и работу с образом, которые можно выполнять без сцены.",
-    "type": "teach",
+    "title": "Актёрское мастерство",
+    "description": "Помогу развить сценическую выразительность и уверенность.",
     "categoryId": "creativity-art",
     "subcategoryId": "acting",
-    "tags": [
-      "Актёрское мастерство",
-      "Творчество и искусство"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-13/1200/800",
+    "imageUrl": null,
     "authorId": "user-13",
-    "createdAt": "2025-07-24T12:00:00Z"
+    "createdAt": "2025-01-13T00:00:00Z"
   },
   {
     "id": "skill-014",
-    "title": "Креативное письмо без ступора",
-    "description": "Разберём упражнения, которые помогают находить идеи, строить тексты и наконец перестать смотреть на пустой лист.",
-    "type": "teach",
+    "title": "Креативное письмо",
+    "description": "Научу находить идеи и превращать их в связные тексты.",
     "categoryId": "creativity-art",
     "subcategoryId": "creative-writing",
-    "tags": [
-      "Креативное письмо",
-      "Творчество и искусство"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-14/1200/800",
+    "imageUrl": null,
     "authorId": "user-14",
-    "createdAt": "2025-08-10T15:00:00Z"
+    "createdAt": "2025-01-14T00:00:00Z"
   },
   {
     "id": "skill-015",
-    "title": "Творческие практики для разгрузки",
-    "description": "Поделюсь простыми творческими упражнениями, которые помогают переключиться и выразить мысли без требования сделать шедевр.",
-    "type": "teach",
+    "title": "Арт-терапия",
+    "description": "Познакомлю с творческими практиками для самовыражения.",
     "categoryId": "creativity-art",
     "subcategoryId": "art-therapy",
-    "tags": [
-      "Арт-терапия",
-      "Творчество и искусство"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-15/1200/800",
+    "imageUrl": null,
     "authorId": "user-15",
-    "createdAt": "2025-08-27T18:00:00Z"
+    "createdAt": "2025-01-15T00:00:00Z"
   },
   {
     "id": "skill-016",
-    "title": "Декор и DIY своими руками",
-    "description": "Покажу простые идеи для дома и расскажу, как превращать обычные материалы в полезные и красивые вещи.",
-    "type": "teach",
+    "title": "Декор и DIY",
+    "description": "Поделюсь идеями и приёмами создания вещей своими руками.",
     "categoryId": "creativity-art",
     "subcategoryId": "decor-diy",
-    "tags": [
-      "Декор и DIY",
-      "Творчество и искусство"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-16/1200/800",
+    "imageUrl": null,
     "authorId": "user-16",
-    "createdAt": "2025-09-13T21:00:00Z"
+    "createdAt": "2025-01-16T00:00:00Z"
   },
   {
     "id": "skill-017",
-    "title": "Английский для живого общения",
-    "description": "Помогу разговориться, разберём повседневные фразы и ситуации, в которых английский действительно нужен.",
-    "type": "teach",
+    "title": "Английский",
+    "description": "Помогу улучшить разговорный английский и расширить словарный запас.",
     "categoryId": "foreign-languages",
     "subcategoryId": "english",
-    "tags": [
-      "Английский",
-      "Иностранные языки"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-17/1200/800",
+    "imageUrl": null,
     "authorId": "user-17",
-    "createdAt": "2025-09-30T00:00:00Z"
+    "createdAt": "2025-01-17T00:00:00Z"
   },
   {
     "id": "skill-018",
-    "title": "Французский для общения",
-    "description": "Будем разбирать живые фразы, бытовые диалоги и произношение без попытки выучить весь язык за выходные.",
-    "type": "teach",
+    "title": "Французский",
+    "description": "Научу основам французского языка для повседневного общения.",
     "categoryId": "foreign-languages",
     "subcategoryId": "french",
-    "tags": [
-      "Французский",
-      "Иностранные языки"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-18/1200/800",
+    "imageUrl": null,
     "authorId": "user-18",
-    "createdAt": "2025-10-17T03:00:00Z"
+    "createdAt": "2025-01-18T00:00:00Z"
   },
   {
     "id": "skill-019",
-    "title": "Испанский с нуля",
-    "description": "Разберём базовые фразы, произношение и полезную лексику для повседневного общения.",
-    "type": "teach",
+    "title": "Испанский",
+    "description": "Помогу освоить базовый испанский и разговорные конструкции.",
     "categoryId": "foreign-languages",
     "subcategoryId": "spanish",
-    "tags": [
-      "Испанский",
-      "Иностранные языки"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-19/1200/800",
+    "imageUrl": null,
     "authorId": "user-19",
-    "createdAt": "2025-11-03T06:00:00Z"
+    "createdAt": "2025-01-19T00:00:00Z"
   },
   {
     "id": "skill-020",
-    "title": "Немецкий для повседневных ситуаций",
-    "description": "Покажу, как учить базовые фразы и конструкции через реальные бытовые ситуации.",
-    "type": "teach",
+    "title": "Немецкий",
+    "description": "Научу основам немецкого языка и повседневной лексике.",
     "categoryId": "foreign-languages",
     "subcategoryId": "german",
-    "tags": [
-      "Немецкий",
-      "Иностранные языки"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-20/1200/800",
+    "imageUrl": null,
     "authorId": "user-20",
-    "createdAt": "2025-11-20T09:00:00Z"
+    "createdAt": "2025-01-20T00:00:00Z"
   },
   {
     "id": "skill-021",
-    "title": "Китайский с нуля",
-    "description": "Разберём произношение, тоны и базовые фразы через понятные жизненные ситуации.",
-    "type": "teach",
+    "title": "Китайский",
+    "description": "Познакомлю с основами китайского языка и произношения.",
     "categoryId": "foreign-languages",
     "subcategoryId": "chinese",
-    "tags": [
-      "Китайский",
-      "Иностранные языки"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-21/1200/800",
+    "imageUrl": null,
     "authorId": "user-21",
-    "createdAt": "2025-12-07T12:00:00Z"
+    "createdAt": "2025-01-21T00:00:00Z"
   },
   {
     "id": "skill-022",
-    "title": "Японский для начинающих",
-    "description": "Познакомлю с базовой грамматикой, полезными фразами и принципами изучения японского без хаотичной зубрёжки.",
-    "type": "teach",
+    "title": "Японский",
+    "description": "Помогу начать изучать японский язык и письменность.",
     "categoryId": "foreign-languages",
     "subcategoryId": "japanese",
-    "tags": [
-      "Японский",
-      "Иностранные языки"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-22/1200/800",
+    "imageUrl": null,
     "authorId": "user-22",
-    "createdAt": "2025-12-24T15:00:00Z"
+    "createdAt": "2025-01-22T00:00:00Z"
   },
   {
     "id": "skill-023",
     "title": "Подготовка к IELTS и TOEFL",
-    "description": "Разберём структуру экзаменов, стратегии подготовки и способы тренировать основные типы заданий.",
-    "type": "teach",
+    "description": "Поделюсь подходами к подготовке к языковым экзаменам.",
     "categoryId": "foreign-languages",
-    "subcategoryId": "ielts-toefl",
-    "tags": [
-      "Подготовка к экзаменам (IELTS, TOEFL)",
-      "Иностранные языки"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-23/1200/800",
+    "subcategoryId": "language-exams",
+    "imageUrl": null,
     "authorId": "user-23",
-    "createdAt": "2026-01-10T18:00:00Z"
+    "createdAt": "2025-01-23T00:00:00Z"
   },
   {
     "id": "skill-024",
-    "title": "Разобраться в себе",
-    "description": "Поговорим о целях, привычках и личных изменениях без мотивационных лозунгов и обещаний новой жизни с понедельника.",
-    "type": "teach",
+    "title": "Личностное развитие",
+    "description": "Помогу выстроить полезные привычки и план личного развития.",
     "categoryId": "education-development",
     "subcategoryId": "personal-development",
-    "tags": [
-      "Личностное развитие",
-      "Образование и развитие"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-24/1200/800",
+    "imageUrl": null,
     "authorId": "user-24",
-    "createdAt": "2026-01-27T21:00:00Z"
+    "createdAt": "2025-01-24T00:00:00Z"
   },
   {
     "id": "skill-025",
-    "title": "Навыки обучения без зубрёжки",
-    "description": "Покажу техники, которые помогают лучше запоминать информацию и организовать самостоятельное обучение.",
-    "type": "teach",
+    "title": "Навыки обучения",
+    "description": "Расскажу о методах, которые помогают учиться эффективнее.",
     "categoryId": "education-development",
     "subcategoryId": "learning-skills",
-    "tags": [
-      "Навыки обучения",
-      "Образование и развитие"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-25/1200/800",
+    "imageUrl": null,
     "authorId": "user-25",
-    "createdAt": "2026-02-13T00:00:00Z"
+    "createdAt": "2025-01-25T00:00:00Z"
   },
   {
     "id": "skill-026",
-    "title": "Когнитивные техники в жизни",
-    "description": "Разберём практические способы работать с вниманием, мышлением и привычными ошибками восприятия.",
-    "type": "teach",
+    "title": "Когнитивные техники",
+    "description": "Познакомлю с практическими техниками работы с вниманием и мышлением.",
     "categoryId": "education-development",
     "subcategoryId": "cognitive-techniques",
-    "tags": [
-      "Когнитивные техники",
-      "Образование и развитие"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-26/1200/800",
+    "imageUrl": null,
     "authorId": "user-26",
-    "createdAt": "2026-03-02T03:00:00Z"
+    "createdAt": "2025-01-26T00:00:00Z"
   },
   {
     "id": "skill-027",
-    "title": "Скорочтение без потери смысла",
-    "description": "Покажу, как работать с большими текстами, быстро находить главное и при этом сохранять понимание материала.",
-    "type": "teach",
+    "title": "Скорочтение",
+    "description": "Научу приёмам быстрого чтения и работы с текстом.",
     "categoryId": "education-development",
     "subcategoryId": "speed-reading",
-    "tags": [
-      "Скорочтение",
-      "Образование и развитие"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-27/1200/800",
+    "imageUrl": null,
     "authorId": "user-27",
-    "createdAt": "2026-03-19T06:00:00Z"
+    "createdAt": "2025-01-27T00:00:00Z"
   },
   {
     "id": "skill-028",
-    "title": "Как научиться преподавать",
-    "description": "Разберём, как объяснять сложные вещи простыми словами, строить занятие и давать понятную обратную связь.",
-    "type": "teach",
+    "title": "Навыки преподавания",
+    "description": "Поделюсь методами объяснения материала и построения занятий.",
     "categoryId": "education-development",
     "subcategoryId": "teaching-skills",
-    "tags": [
-      "Навыки преподавания",
-      "Образование и развитие"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-28/1200/800",
+    "imageUrl": null,
     "authorId": "user-28",
-    "createdAt": "2026-04-05T09:00:00Z"
+    "createdAt": "2025-01-28T00:00:00Z"
   },
   {
     "id": "skill-029",
-    "title": "Коучинг через правильные вопросы",
-    "description": "Покажу, как помогать человеку самостоятельно находить решения через вопросы, внимание и структурированный разговор.",
-    "type": "teach",
+    "title": "Коучинг",
+    "description": "Познакомлю с основами коучингового подхода и постановки целей.",
     "categoryId": "education-development",
     "subcategoryId": "coaching",
-    "tags": [
-      "Коучинг",
-      "Образование и развитие"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-29/1200/800",
+    "imageUrl": null,
     "authorId": "user-29",
-    "createdAt": "2026-04-22T12:00:00Z"
+    "createdAt": "2025-01-29T00:00:00Z"
   },
   {
     "id": "skill-030",
-    "title": "Порядок дома без вечных завалов",
-    "description": "Помогу разобрать вещи и домашние задачи так, чтобы порядок не исчезал на следующий день.",
-    "type": "teach",
+    "title": "Уборка и организация",
+    "description": "Помогу систематизировать хранение и организацию домашнего пространства.",
     "categoryId": "home-comfort",
     "subcategoryId": "cleaning-organization",
-    "tags": [
-      "Уборка и организация",
-      "Дом и уют"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-30/1200/800",
+    "imageUrl": null,
     "authorId": "user-30",
-    "createdAt": "2026-05-09T15:00:00Z"
+    "createdAt": "2025-01-30T00:00:00Z"
   },
   {
     "id": "skill-031",
-    "title": "Домашние финансы без хаоса",
-    "description": "Покажу простой способ учитывать расходы, планировать бюджет и понимать, куда исчезают деньги.",
-    "type": "teach",
+    "title": "Домашние финансы",
+    "description": "Расскажу о ведении домашнего бюджета и планировании расходов.",
     "categoryId": "home-comfort",
     "subcategoryId": "home-finances",
-    "tags": [
-      "Домашние финансы",
-      "Дом и уют"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-31/1200/800",
+    "imageUrl": null,
     "authorId": "user-31",
-    "createdAt": "2026-05-26T18:00:00Z"
+    "createdAt": "2025-01-31T00:00:00Z"
   },
   {
     "id": "skill-032",
-    "title": "Готовлю простые блюда дома",
-    "description": "Поделюсь понятными рецептами и приёмами, которые помогают готовить вкусно без превращения кухни в лабораторию.",
-    "type": "teach",
+    "title": "Приготовление еды",
+    "description": "Научу готовить простые домашние блюда и планировать меню.",
     "categoryId": "home-comfort",
     "subcategoryId": "cooking",
-    "tags": [
-      "Приготовление еды",
-      "Дом и уют"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-32/1200/800",
+    "imageUrl": null,
     "authorId": "user-32",
-    "createdAt": "2026-06-12T21:00:00Z"
+    "createdAt": "2025-02-01T00:00:00Z"
   },
   {
     "id": "skill-033",
-    "title": "Комнатные растения для новичков",
-    "description": "Расскажу про свет, полив, пересадку и базовый уход, чтобы растения не стали жертвами человеческой забывчивости.",
-    "type": "teach",
+    "title": "Домашние растения",
+    "description": "Поделюсь основами ухода за комнатными растениями.",
     "categoryId": "home-comfort",
-    "subcategoryId": "houseplants",
-    "tags": [
-      "Домашние растения",
-      "Дом и уют"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-33/1200/800",
+    "subcategoryId": "home-plants",
+    "imageUrl": null,
     "authorId": "user-33",
-    "createdAt": "2026-06-29T00:00:00Z"
+    "createdAt": "2025-02-02T00:00:00Z"
   },
   {
     "id": "skill-034",
-    "title": "Мелкий ремонт своими руками",
-    "description": "Покажу, как справляться с простыми домашними ремонтными задачами и какие инструменты действительно нужны.",
-    "type": "teach",
+    "title": "Ремонт",
+    "description": "Помогу освоить базовые домашние ремонтные работы.",
     "categoryId": "home-comfort",
-    "subcategoryId": "renovation",
-    "tags": [
-      "Ремонт",
-      "Дом и уют"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-34/1200/800",
+    "subcategoryId": "repair",
+    "imageUrl": null,
     "authorId": "user-34",
-    "createdAt": "2025-01-02T03:00:00Z"
+    "createdAt": "2025-02-03T00:00:00Z"
   },
   {
     "id": "skill-035",
-    "title": "Хранение вещей без вечного поиска",
-    "description": "Разберём систему хранения, которая помогает использовать пространство дома и быстро находить нужные вещи.",
-    "type": "teach",
+    "title": "Хранение вещей",
+    "description": "Расскажу о практичной организации хранения дома.",
     "categoryId": "home-comfort",
     "subcategoryId": "storage",
-    "tags": [
-      "Хранение вещей",
-      "Дом и уют"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-35/1200/800",
+    "imageUrl": null,
     "authorId": "user-35",
-    "createdAt": "2025-01-19T06:00:00Z"
+    "createdAt": "2025-02-04T00:00:00Z"
   },
   {
     "id": "skill-036",
-    "title": "Йога и медитация для начинающих",
-    "description": "Спокойная практика с простыми упражнениями, дыханием и вниманием к телу без требований к спортивной форме.",
-    "type": "teach",
+    "title": "Йога и медитация",
+    "description": "Познакомлю с базовыми практиками йоги и медитации.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "yoga-meditation",
-    "tags": [
-      "Йога и медитация",
-      "Здоровье и лайфстайл"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-36/1200/800",
+    "imageUrl": null,
     "authorId": "user-36",
-    "createdAt": "2025-02-05T09:00:00Z"
+    "createdAt": "2025-02-05T00:00:00Z"
   },
   {
     "id": "skill-037",
-    "title": "Питание без крайностей",
-    "description": "Поговорим о базовых принципах сбалансированного питания и о том, как сделать рацион понятнее без жёстких ограничений.",
-    "type": "teach",
+    "title": "Питание и ЗОЖ",
+    "description": "Поделюсь базовыми принципами сбалансированного образа жизни.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "nutrition-healthy-lifestyle",
-    "tags": [
-      "Питание и ЗОЖ",
-      "Здоровье и лайфстайл"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-37/1200/800",
+    "imageUrl": null,
     "authorId": "user-37",
-    "createdAt": "2025-02-22T12:00:00Z"
+    "createdAt": "2025-02-06T00:00:00Z"
   },
   {
     "id": "skill-038",
-    "title": "Забота о психологическом состоянии",
-    "description": "Разберём повседневные способы замечать своё состояние, поддерживать себя и вовремя обращаться за профессиональной помощью.",
-    "type": "teach",
+    "title": "Ментальное здоровье",
+    "description": "Расскажу о повседневных практиках заботы о психологическом благополучии.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "mental-health",
-    "tags": [
-      "Ментальное здоровье",
-      "Здоровье и лайфстайл"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-38/1200/800",
+    "imageUrl": null,
     "authorId": "user-38",
-    "createdAt": "2025-03-11T15:00:00Z"
+    "createdAt": "2025-02-07T00:00:00Z"
   },
   {
     "id": "skill-039",
-    "title": "Осознанность в обычной жизни",
-    "description": "Покажу простые практики, которые помогают замечать своё состояние и возвращать внимание к текущему моменту.",
-    "type": "teach",
+    "title": "Осознанность",
+    "description": "Помогу познакомиться с практиками внимательного отношения к текущему моменту.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "mindfulness",
-    "tags": [
-      "Осознанность",
-      "Здоровье и лайфстайл"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-39/1200/800",
+    "imageUrl": null,
     "authorId": "user-39",
-    "createdAt": "2025-03-28T18:00:00Z"
+    "createdAt": "2025-02-08T00:00:00Z"
   },
   {
     "id": "skill-040",
-    "title": "Физические тренировки дома",
-    "description": "Покажу базовый подход к домашним тренировкам и упражнениям, которые не требуют полноценного спортзала.",
-    "type": "teach",
+    "title": "Физические тренировки",
+    "description": "Поделюсь базовыми принципами домашних тренировок.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "physical-training",
-    "tags": [
-      "Физические тренировки",
-      "Здоровье и лайфстайл"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-40/1200/800",
+    "imageUrl": null,
     "authorId": "user-40",
-    "createdAt": "2025-04-14T21:00:00Z"
+    "createdAt": "2025-02-09T00:00:00Z"
   },
   {
     "id": "skill-041",
     "title": "Сон и восстановление",
-    "description": "Разберём повседневные привычки, которые помогают выстроить более стабильный режим сна и восстановления.",
-    "type": "teach",
+    "description": "Расскажу о привычках, которые помогают выстроить режим сна и отдыха.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "sleep-recovery",
-    "tags": [
-      "Сон и восстановление",
-      "Здоровье и лайфстайл"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-41/1200/800",
+    "imageUrl": null,
     "authorId": "user-41",
-    "createdAt": "2025-05-01T00:00:00Z"
+    "createdAt": "2025-02-10T00:00:00Z"
   },
   {
     "id": "skill-042",
-    "title": "Работа и жизнь без перегруза",
-    "description": "Поговорим о границах, нагрузке, отдыхе и том, как оставлять силы не только на рабочие задачи.",
-    "type": "teach",
+    "title": "Баланс жизни и работы",
+    "description": "Поделюсь подходами к организации времени между работой и личной жизнью.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "work-life-balance",
-    "tags": [
-      "Баланс жизни и работы",
-      "Здоровье и лайфстайл"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-42/1200/800",
+    "imageUrl": null,
     "authorId": "user-42",
-    "createdAt": "2025-05-18T03:00:00Z"
+    "createdAt": "2025-02-11T00:00:00Z"
   },
   {
     "id": "skill-043",
-    "title": "Продажи через пользу",
-    "description": "Разберём, как выявлять потребности, объяснять ценность предложения и вести разговор без давления на клиента.",
-    "type": "teach",
+    "title": "Продажи и переговоры",
+    "description": "Научу увереннее вести деловые переговоры и работать с возражениями.",
     "categoryId": "business-career",
     "subcategoryId": "sales-negotiations",
-    "tags": [
-      "Продажи и переговоры",
-      "Бизнес и карьера"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-43/1200/800",
+    "imageUrl": null,
     "authorId": "user-43",
-    "createdAt": "2025-06-04T06:00:00Z"
+    "createdAt": "2025-02-12T00:00:00Z"
   },
   {
     "id": "skill-044",
-    "title": "Тайм-менеджмент без перегруза",
-    "description": "Покажу, как планировать день и неделю, выбирать главное и не пытаться одновременно сделать вообще всё.",
-    "type": "teach",
+    "title": "Тайм-менеджмент",
+    "description": "Помогу выстроить систему планирования задач и приоритетов.",
     "categoryId": "business-career",
     "subcategoryId": "time-management",
-    "tags": [
-      "Тайм-менеджмент",
-      "Бизнес и карьера"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-44/1200/800",
+    "imageUrl": null,
     "authorId": "user-44",
-    "createdAt": "2025-06-21T09:00:00Z"
+    "createdAt": "2025-02-13T00:00:00Z"
   },
   {
     "id": "skill-045",
-    "title": "Иллюстрации от идеи до результата",
-    "description": "Покажу свой процесс создания иллюстрации: от первого наброска и композиции до финальной обработки.",
-    "type": "teach",
+    "title": "Рисование и иллюстрация",
+    "description": "Поделюсь основами рисования и работы с визуальными образами.",
     "categoryId": "creativity-art",
     "subcategoryId": "drawing-illustration",
-    "tags": [
-      "Рисование и иллюстрация",
-      "Творчество и искусство"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-45/1200/800",
+    "imageUrl": null,
     "authorId": "user-45",
-    "createdAt": "2025-07-08T12:00:00Z"
+    "createdAt": "2025-02-14T00:00:00Z"
   },
   {
     "id": "skill-046",
-    "title": "Фотография: свет и композиция",
-    "description": "Разберём, как использовать свет и композицию, чтобы фотографии выглядели выразительнее даже без сложной техники.",
-    "type": "teach",
+    "title": "Фотография",
+    "description": "Помогу лучше понимать свет, композицию и настройки камеры.",
     "categoryId": "creativity-art",
     "subcategoryId": "photography",
-    "tags": [
-      "Фотография",
-      "Творчество и искусство"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-46/1200/800",
+    "imageUrl": null,
     "authorId": "user-46",
-    "createdAt": "2025-07-25T15:00:00Z"
+    "createdAt": "2025-02-15T00:00:00Z"
   },
   {
     "id": "skill-047",
-    "title": "Английский через разговор",
-    "description": "Будем практиковать живые диалоги, разбирать ошибки и постепенно делать речь более уверенной.",
-    "type": "teach",
+    "title": "Английский",
+    "description": "Помогу развить разговорную практику и уверенность в английском.",
     "categoryId": "foreign-languages",
     "subcategoryId": "english",
-    "tags": [
-      "Английский",
-      "Иностранные языки"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-47/1200/800",
+    "imageUrl": null,
     "authorId": "user-47",
-    "createdAt": "2025-08-11T18:00:00Z"
+    "createdAt": "2025-02-16T00:00:00Z"
   },
   {
     "id": "skill-048",
-    "title": "Развитие без гонки за идеалом",
-    "description": "Поговорим о целях, привычках и небольших изменениях, которые реально поддерживать месяцами.",
-    "type": "teach",
+    "title": "Личностное развитие",
+    "description": "Поделюсь практиками самоорганизации и постановки личных целей.",
     "categoryId": "education-development",
     "subcategoryId": "personal-development",
-    "tags": [
-      "Личностное развитие",
-      "Образование и развитие"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-48/1200/800",
+    "imageUrl": null,
     "authorId": "user-48",
-    "createdAt": "2025-08-28T21:00:00Z"
+    "createdAt": "2025-02-17T00:00:00Z"
   },
   {
     "id": "skill-049",
-    "title": "Готовим дома без лишних сложностей",
-    "description": "Покажу несколько универсальных приёмов приготовления еды и способы упростить домашнюю кухню.",
-    "type": "teach",
+    "title": "Приготовление еды",
+    "description": "Научу готовить простые блюда и эффективнее организовывать кухню.",
     "categoryId": "home-comfort",
     "subcategoryId": "cooking",
-    "tags": [
-      "Приготовление еды",
-      "Дом и уют"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-49/1200/800",
+    "imageUrl": null,
     "authorId": "user-49",
-    "createdAt": "2025-09-14T00:00:00Z"
+    "createdAt": "2025-02-18T00:00:00Z"
   },
   {
     "id": "skill-050",
-    "title": "Йога и медитация для спокойного дня",
-    "description": "Спокойная практика с растяжкой, дыханием и медитацией, которую можно встроить в обычный день.",
-    "type": "teach",
+    "title": "Йога и медитация",
+    "description": "Познакомлю с базовыми практиками расслабления и осознанности.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "yoga-meditation",
-    "tags": [
-      "Йога и медитация",
-      "Здоровье и лайфстайл"
-    ],
-    "imageUrl": "https://picsum.photos/seed/skillswap-skill-50/1200/800",
+    "imageUrl": null,
     "authorId": "user-50",
-    "createdAt": "2025-10-01T03:00:00Z"
+    "createdAt": "2025-02-19T00:00:00Z"
   }
 ]

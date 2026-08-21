@@ -126,7 +126,7 @@
         "categoryId": "foreign-languages"
       },
       {
-        "id": "ielts-toefl",
+        "id": "language-exams",
         "name": "Подготовка к экзаменам (IELTS, TOEFL)",
         "categoryId": "foreign-languages"
       }
@@ -188,12 +188,12 @@
         "categoryId": "home-comfort"
       },
       {
-        "id": "houseplants",
+        "id": "home-plants",
         "name": "Домашние растения",
         "categoryId": "home-comfort"
       },
       {
-        "id": "renovation",
+        "id": "repair",
         "name": "Ремонт",
         "categoryId": "home-comfort"
       },
