@@ -5,7 +5,7 @@
     "description": "Научу выстраивать работу команды и распределять задачи.",
     "categoryId": "business-career",
     "subcategoryId": "team-management",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-001/01.webp", "assets/images/skills/skill-001/02.webp", "assets/images/skills/skill-001/03.webp", "assets/images/skills/skill-001/04.webp", "assets/images/skills/skill-001/05.webp", "assets/images/skills/skill-001/06.webp", "assets/images/skills/skill-001/07.webp", "assets/images/skills/skill-001/08.webp"],
     "authorId": "user-01",
     "createdAt": "2025-01-01T00:00:00Z"
   },
@@ -15,7 +15,7 @@
     "description": "Помогу разобраться в продвижении проектов и рекламных инструментах.",
     "categoryId": "business-career",
     "subcategoryId": "marketing-advertising",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-002/01.webp", "assets/images/skills/skill-002/02.webp", "assets/images/skills/skill-002/03.webp", "assets/images/skills/skill-002/04.webp", "assets/images/skills/skill-002/05.webp", "assets/images/skills/skill-002/06.webp"],
     "authorId": "user-02",
     "createdAt": "2025-01-02T00:00:00Z"
   },
@@ -25,7 +25,7 @@
     "description": "Расскажу об основных приёмах продаж и ведения переговоров.",
     "categoryId": "business-career",
     "subcategoryId": "sales-negotiations",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-003/01.webp", "assets/images/skills/skill-003/02.webp", "assets/images/skills/skill-003/03.webp", "assets/images/skills/skill-003/04.webp", "assets/images/skills/skill-003/05.webp", "assets/images/skills/skill-003/06.webp"],
     "authorId": "user-03",
     "createdAt": "2025-01-03T00:00:00Z"
   },
@@ -35,7 +35,7 @@
     "description": "Поделюсь опытом развития личного бренда в профессиональной среде.",
     "categoryId": "business-career",
     "subcategoryId": "personal-brand",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-004/01.webp", "assets/images/skills/skill-004/02.webp", "assets/images/skills/skill-004/03.webp", "assets/images/skills/skill-004/04.webp", "assets/images/skills/skill-004/05.webp", "assets/images/skills/skill-004/06.webp", "assets/images/skills/skill-004/07.webp", "assets/images/skills/skill-004/08.webp", "assets/images/skills/skill-004/09.webp", "assets/images/skills/skill-004/10.webp"],
     "authorId": "user-04",
     "createdAt": "2025-01-04T00:00:00Z"
   },
@@ -45,7 +45,7 @@
     "description": "Помогу подготовить резюме и пройти собеседование увереннее.",
     "categoryId": "business-career",
     "subcategoryId": "resume-interview",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-005/01.webp", "assets/images/skills/skill-005/02.webp", "assets/images/skills/skill-005/03.webp", "assets/images/skills/skill-005/04.webp", "assets/images/skills/skill-005/05.webp", "assets/images/skills/skill-005/06.webp", "assets/images/skills/skill-005/07.webp", "assets/images/skills/skill-005/08.webp", "assets/images/skills/skill-005/09.webp", "assets/images/skills/skill-005/10.webp"],
     "authorId": "user-05",
     "createdAt": "2025-01-05T00:00:00Z"
   },
@@ -55,7 +55,7 @@
     "description": "Покажу практические подходы к планированию времени.",
     "categoryId": "business-career",
     "subcategoryId": "time-management",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-006/01.webp", "assets/images/skills/skill-006/02.webp", "assets/images/skills/skill-006/03.webp", "assets/images/skills/skill-006/04.webp", "assets/images/skills/skill-006/05.webp", "assets/images/skills/skill-006/06.webp", "assets/images/skills/skill-006/07.webp", "assets/images/skills/skill-006/08.webp", "assets/images/skills/skill-006/09.webp", "assets/images/skills/skill-006/10.webp"],
     "authorId": "user-06",
     "createdAt": "2025-01-06T00:00:00Z"
   },
@@ -65,7 +65,7 @@
     "description": "Научу основам планирования и ведения проектов.",
     "categoryId": "business-career",
     "subcategoryId": "project-management",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-007/01.webp", "assets/images/skills/skill-007/02.webp", "assets/images/skills/skill-007/03.webp", "assets/images/skills/skill-007/04.webp", "assets/images/skills/skill-007/05.webp", "assets/images/skills/skill-007/06.webp", "assets/images/skills/skill-007/07.webp", "assets/images/skills/skill-007/08.webp", "assets/images/skills/skill-007/09.webp", "assets/images/skills/skill-007/10.webp"],
     "authorId": "user-07",
     "createdAt": "2025-01-07T00:00:00Z"
   },
@@ -75,7 +75,7 @@
     "description": "Поделюсь практическими основами запуска собственного проекта.",
     "categoryId": "business-career",
     "subcategoryId": "entrepreneurship",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-008/01.webp", "assets/images/skills/skill-008/02.webp", "assets/images/skills/skill-008/03.webp", "assets/images/skills/skill-008/04.webp", "assets/images/skills/skill-008/05.webp", "assets/images/skills/skill-008/06.webp", "assets/images/skills/skill-008/07.webp", "assets/images/skills/skill-008/08.webp", "assets/images/skills/skill-008/09.webp", "assets/images/skills/skill-008/10.webp"],
     "authorId": "user-08",
     "createdAt": "2025-01-08T00:00:00Z"
   },
@@ -85,7 +85,7 @@
     "description": "Научу базовым приёмам рисования и создания иллюстраций.",
     "categoryId": "creativity-art",
     "subcategoryId": "drawing-illustration",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-009/01.webp", "assets/images/skills/skill-009/02.webp", "assets/images/skills/skill-009/03.webp", "assets/images/skills/skill-009/04.webp", "assets/images/skills/skill-009/05.webp", "assets/images/skills/skill-009/06.webp", "assets/images/skills/skill-009/07.webp", "assets/images/skills/skill-009/08.webp", "assets/images/skills/skill-009/09.webp", "assets/images/skills/skill-009/10.webp"],
     "authorId": "user-09",
     "createdAt": "2025-01-09T00:00:00Z"
   },
@@ -95,7 +95,7 @@
     "description": "Помогу освоить основы композиции, света и съёмки.",
     "categoryId": "creativity-art",
     "subcategoryId": "photography",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-010/01.webp", "assets/images/skills/skill-010/02.webp", "assets/images/skills/skill-010/03.webp", "assets/images/skills/skill-010/04.webp", "assets/images/skills/skill-010/05.webp", "assets/images/skills/skill-010/06.webp", "assets/images/skills/skill-010/07.webp", "assets/images/skills/skill-010/08.webp", "assets/images/skills/skill-010/09.webp", "assets/images/skills/skill-010/10.webp"],
     "authorId": "user-10",
     "createdAt": "2025-01-10T00:00:00Z"
   },
@@ -105,7 +105,7 @@
     "description": "Научу базовому монтажу видео и работе с материалом.",
     "categoryId": "creativity-art",
     "subcategoryId": "video-editing",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-011/01.webp", "assets/images/skills/skill-011/02.webp", "assets/images/skills/skill-011/03.webp", "assets/images/skills/skill-011/04.webp", "assets/images/skills/skill-011/05.webp", "assets/images/skills/skill-011/06.webp", "assets/images/skills/skill-011/07.webp", "assets/images/skills/skill-011/08.webp", "assets/images/skills/skill-011/09.webp", "assets/images/skills/skill-011/10.webp"],
     "authorId": "user-11",
     "createdAt": "2025-01-11T00:00:00Z"
   },
@@ -115,7 +115,7 @@
     "description": "Расскажу об основах работы со звуком и музыкой.",
     "categoryId": "creativity-art",
     "subcategoryId": "music-sound",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-012/01.webp", "assets/images/skills/skill-012/02.webp", "assets/images/skills/skill-012/03.webp", "assets/images/skills/skill-012/04.webp", "assets/images/skills/skill-012/05.webp", "assets/images/skills/skill-012/06.webp", "assets/images/skills/skill-012/07.webp", "assets/images/skills/skill-012/08.webp", "assets/images/skills/skill-012/09.webp", "assets/images/skills/skill-012/10.webp"],
     "authorId": "user-12",
     "createdAt": "2025-01-12T00:00:00Z"
   },
@@ -125,7 +125,7 @@
     "description": "Помогу развить сценическую выразительность и уверенность.",
     "categoryId": "creativity-art",
     "subcategoryId": "acting",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-013/01.webp", "assets/images/skills/skill-013/02.webp", "assets/images/skills/skill-013/03.webp", "assets/images/skills/skill-013/04.webp", "assets/images/skills/skill-013/05.webp", "assets/images/skills/skill-013/06.webp", "assets/images/skills/skill-013/07.webp", "assets/images/skills/skill-013/08.webp", "assets/images/skills/skill-013/09.webp"],
     "authorId": "user-13",
     "createdAt": "2025-01-13T00:00:00Z"
   },
@@ -135,7 +135,7 @@
     "description": "Научу находить идеи и превращать их в связные тексты.",
     "categoryId": "creativity-art",
     "subcategoryId": "creative-writing",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-014/01.webp", "assets/images/skills/skill-014/02.webp", "assets/images/skills/skill-014/03.webp", "assets/images/skills/skill-014/04.webp", "assets/images/skills/skill-014/05.webp", "assets/images/skills/skill-014/06.webp", "assets/images/skills/skill-014/07.webp", "assets/images/skills/skill-014/08.webp", "assets/images/skills/skill-014/09.webp", "assets/images/skills/skill-014/10.webp"],
     "authorId": "user-14",
     "createdAt": "2025-01-14T00:00:00Z"
   },
@@ -145,7 +145,7 @@
     "description": "Познакомлю с творческими практиками для самовыражения.",
     "categoryId": "creativity-art",
     "subcategoryId": "art-therapy",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-015/01.webp", "assets/images/skills/skill-015/02.webp", "assets/images/skills/skill-015/03.webp", "assets/images/skills/skill-015/04.webp", "assets/images/skills/skill-015/05.webp", "assets/images/skills/skill-015/06.webp", "assets/images/skills/skill-015/07.webp", "assets/images/skills/skill-015/08.webp", "assets/images/skills/skill-015/09.webp", "assets/images/skills/skill-015/10.webp"],
     "authorId": "user-15",
     "createdAt": "2025-01-15T00:00:00Z"
   },
@@ -155,7 +155,7 @@
     "description": "Поделюсь идеями и приёмами создания вещей своими руками.",
     "categoryId": "creativity-art",
     "subcategoryId": "decor-diy",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-016/01.webp", "assets/images/skills/skill-016/02.webp", "assets/images/skills/skill-016/03.webp", "assets/images/skills/skill-016/04.webp", "assets/images/skills/skill-016/05.webp", "assets/images/skills/skill-016/06.webp", "assets/images/skills/skill-016/07.webp", "assets/images/skills/skill-016/08.webp", "assets/images/skills/skill-016/09.webp", "assets/images/skills/skill-016/10.webp"],
     "authorId": "user-16",
     "createdAt": "2025-01-16T00:00:00Z"
   },
@@ -165,7 +165,7 @@
     "description": "Помогу улучшить разговорный английский и расширить словарный запас.",
     "categoryId": "foreign-languages",
     "subcategoryId": "english",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-017/01.webp", "assets/images/skills/skill-017/02.webp", "assets/images/skills/skill-017/03.webp", "assets/images/skills/skill-017/04.webp", "assets/images/skills/skill-017/05.webp", "assets/images/skills/skill-017/06.webp", "assets/images/skills/skill-017/07.webp", "assets/images/skills/skill-017/08.webp"],
     "authorId": "user-17",
     "createdAt": "2025-01-17T00:00:00Z"
   },
@@ -175,7 +175,7 @@
     "description": "Научу основам французского языка для повседневного общения.",
     "categoryId": "foreign-languages",
     "subcategoryId": "french",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-018/01.webp", "assets/images/skills/skill-018/02.webp", "assets/images/skills/skill-018/03.webp", "assets/images/skills/skill-018/04.webp", "assets/images/skills/skill-018/05.webp", "assets/images/skills/skill-018/06.webp", "assets/images/skills/skill-018/07.webp"],
     "authorId": "user-18",
     "createdAt": "2025-01-18T00:00:00Z"
   },
@@ -185,7 +185,7 @@
     "description": "Помогу освоить базовый испанский и разговорные конструкции.",
     "categoryId": "foreign-languages",
     "subcategoryId": "spanish",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-019/01.webp", "assets/images/skills/skill-019/02.webp", "assets/images/skills/skill-019/03.webp", "assets/images/skills/skill-019/04.webp", "assets/images/skills/skill-019/05.webp"],
     "authorId": "user-19",
     "createdAt": "2025-01-19T00:00:00Z"
   },
@@ -195,7 +195,7 @@
     "description": "Научу основам немецкого языка и повседневной лексике.",
     "categoryId": "foreign-languages",
     "subcategoryId": "german",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-020/01.webp", "assets/images/skills/skill-020/02.webp", "assets/images/skills/skill-020/03.webp", "assets/images/skills/skill-020/04.webp", "assets/images/skills/skill-020/05.webp", "assets/images/skills/skill-020/06.webp"],
     "authorId": "user-20",
     "createdAt": "2025-01-20T00:00:00Z"
   },
@@ -205,7 +205,7 @@
     "description": "Познакомлю с основами китайского языка и произношения.",
     "categoryId": "foreign-languages",
     "subcategoryId": "chinese",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-021/01.webp", "assets/images/skills/skill-021/02.webp", "assets/images/skills/skill-021/03.webp", "assets/images/skills/skill-021/04.webp", "assets/images/skills/skill-021/05.webp", "assets/images/skills/skill-021/06.webp", "assets/images/skills/skill-021/07.webp"],
     "authorId": "user-21",
     "createdAt": "2025-01-21T00:00:00Z"
   },
@@ -215,7 +215,7 @@
     "description": "Помогу начать изучать японский язык и письменность.",
     "categoryId": "foreign-languages",
     "subcategoryId": "japanese",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-022/01.webp", "assets/images/skills/skill-022/02.webp", "assets/images/skills/skill-022/03.webp", "assets/images/skills/skill-022/04.webp", "assets/images/skills/skill-022/05.webp"],
     "authorId": "user-22",
     "createdAt": "2025-01-22T00:00:00Z"
   },
@@ -225,7 +225,7 @@
     "description": "Поделюсь подходами к подготовке к языковым экзаменам.",
     "categoryId": "foreign-languages",
     "subcategoryId": "language-exams",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-023/01.webp", "assets/images/skills/skill-023/02.webp", "assets/images/skills/skill-023/03.webp", "assets/images/skills/skill-023/04.webp", "assets/images/skills/skill-023/05.webp", "assets/images/skills/skill-023/06.webp", "assets/images/skills/skill-023/07.webp"],
     "authorId": "user-23",
     "createdAt": "2025-01-23T00:00:00Z"
   },
@@ -235,7 +235,7 @@
     "description": "Помогу выстроить полезные привычки и план личного развития.",
     "categoryId": "education-development",
     "subcategoryId": "personal-development",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-024/01.webp", "assets/images/skills/skill-024/02.webp", "assets/images/skills/skill-024/03.webp", "assets/images/skills/skill-024/04.webp", "assets/images/skills/skill-024/05.webp", "assets/images/skills/skill-024/06.webp", "assets/images/skills/skill-024/07.webp"],
     "authorId": "user-24",
     "createdAt": "2025-01-24T00:00:00Z"
   },
@@ -245,7 +245,7 @@
     "description": "Расскажу о методах, которые помогают учиться эффективнее.",
     "categoryId": "education-development",
     "subcategoryId": "learning-skills",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-025/01.webp", "assets/images/skills/skill-025/02.webp", "assets/images/skills/skill-025/03.webp", "assets/images/skills/skill-025/04.webp", "assets/images/skills/skill-025/05.webp", "assets/images/skills/skill-025/06.webp", "assets/images/skills/skill-025/07.webp", "assets/images/skills/skill-025/08.webp"],
     "authorId": "user-25",
     "createdAt": "2025-01-25T00:00:00Z"
   },
@@ -255,7 +255,7 @@
     "description": "Познакомлю с практическими техниками работы с вниманием и мышлением.",
     "categoryId": "education-development",
     "subcategoryId": "cognitive-techniques",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-026/01.webp", "assets/images/skills/skill-026/02.webp", "assets/images/skills/skill-026/03.webp", "assets/images/skills/skill-026/04.webp", "assets/images/skills/skill-026/05.webp", "assets/images/skills/skill-026/06.webp"],
     "authorId": "user-26",
     "createdAt": "2025-01-26T00:00:00Z"
   },
@@ -265,7 +265,7 @@
     "description": "Научу приёмам быстрого чтения и работы с текстом.",
     "categoryId": "education-development",
     "subcategoryId": "speed-reading",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-027/01.webp", "assets/images/skills/skill-027/02.webp", "assets/images/skills/skill-027/03.webp", "assets/images/skills/skill-027/04.webp", "assets/images/skills/skill-027/05.webp", "assets/images/skills/skill-027/06.webp", "assets/images/skills/skill-027/07.webp", "assets/images/skills/skill-027/08.webp"],
     "authorId": "user-27",
     "createdAt": "2025-01-27T00:00:00Z"
   },
@@ -275,7 +275,7 @@
     "description": "Поделюсь методами объяснения материала и построения занятий.",
     "categoryId": "education-development",
     "subcategoryId": "teaching-skills",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-028/01.webp", "assets/images/skills/skill-028/02.webp", "assets/images/skills/skill-028/03.webp", "assets/images/skills/skill-028/04.webp", "assets/images/skills/skill-028/05.webp", "assets/images/skills/skill-028/06.webp", "assets/images/skills/skill-028/07.webp", "assets/images/skills/skill-028/08.webp", "assets/images/skills/skill-028/09.webp"],
     "authorId": "user-28",
     "createdAt": "2025-01-28T00:00:00Z"
   },
@@ -285,7 +285,7 @@
     "description": "Познакомлю с основами коучингового подхода и постановки целей.",
     "categoryId": "education-development",
     "subcategoryId": "coaching",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-029/01.webp", "assets/images/skills/skill-029/02.webp", "assets/images/skills/skill-029/03.webp", "assets/images/skills/skill-029/04.webp", "assets/images/skills/skill-029/05.webp", "assets/images/skills/skill-029/06.webp", "assets/images/skills/skill-029/07.webp"],
     "authorId": "user-29",
     "createdAt": "2025-01-29T00:00:00Z"
   },
@@ -295,7 +295,7 @@
     "description": "Помогу систематизировать хранение и организацию домашнего пространства.",
     "categoryId": "home-comfort",
     "subcategoryId": "cleaning-organization",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-030/01.webp", "assets/images/skills/skill-030/02.webp", "assets/images/skills/skill-030/03.webp", "assets/images/skills/skill-030/04.webp", "assets/images/skills/skill-030/05.webp", "assets/images/skills/skill-030/06.webp", "assets/images/skills/skill-030/07.webp", "assets/images/skills/skill-030/08.webp", "assets/images/skills/skill-030/09.webp"],
     "authorId": "user-30",
     "createdAt": "2025-01-30T00:00:00Z"
   },
@@ -305,7 +305,7 @@
     "description": "Расскажу о ведении домашнего бюджета и планировании расходов.",
     "categoryId": "home-comfort",
     "subcategoryId": "home-finances",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-031/01.webp", "assets/images/skills/skill-031/02.webp", "assets/images/skills/skill-031/03.webp", "assets/images/skills/skill-031/04.webp", "assets/images/skills/skill-031/05.webp", "assets/images/skills/skill-031/06.webp", "assets/images/skills/skill-031/07.webp", "assets/images/skills/skill-031/08.webp", "assets/images/skills/skill-031/09.webp", "assets/images/skills/skill-031/10.webp"],
     "authorId": "user-31",
     "createdAt": "2025-01-31T00:00:00Z"
   },
@@ -315,7 +315,7 @@
     "description": "Научу готовить простые домашние блюда и планировать меню.",
     "categoryId": "home-comfort",
     "subcategoryId": "cooking",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-032/01.webp", "assets/images/skills/skill-032/02.webp", "assets/images/skills/skill-032/03.webp", "assets/images/skills/skill-032/04.webp", "assets/images/skills/skill-032/05.webp", "assets/images/skills/skill-032/06.webp", "assets/images/skills/skill-032/07.webp", "assets/images/skills/skill-032/08.webp", "assets/images/skills/skill-032/09.webp", "assets/images/skills/skill-032/10.webp"],
     "authorId": "user-32",
     "createdAt": "2025-02-01T00:00:00Z"
   },
@@ -325,7 +325,7 @@
     "description": "Поделюсь основами ухода за комнатными растениями.",
     "categoryId": "home-comfort",
     "subcategoryId": "home-plants",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-033/01.webp", "assets/images/skills/skill-033/02.webp", "assets/images/skills/skill-033/03.webp", "assets/images/skills/skill-033/04.webp", "assets/images/skills/skill-033/05.webp", "assets/images/skills/skill-033/06.webp", "assets/images/skills/skill-033/07.webp", "assets/images/skills/skill-033/08.webp", "assets/images/skills/skill-033/09.webp", "assets/images/skills/skill-033/10.webp"],
     "authorId": "user-33",
     "createdAt": "2025-02-02T00:00:00Z"
   },
@@ -335,7 +335,7 @@
     "description": "Помогу освоить базовые домашние ремонтные работы.",
     "categoryId": "home-comfort",
     "subcategoryId": "repair",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-034/01.webp", "assets/images/skills/skill-034/02.webp", "assets/images/skills/skill-034/03.webp", "assets/images/skills/skill-034/04.webp", "assets/images/skills/skill-034/05.webp", "assets/images/skills/skill-034/06.webp", "assets/images/skills/skill-034/07.webp", "assets/images/skills/skill-034/08.webp", "assets/images/skills/skill-034/09.webp"],
     "authorId": "user-34",
     "createdAt": "2025-02-03T00:00:00Z"
   },
@@ -345,7 +345,7 @@
     "description": "Расскажу о практичной организации хранения дома.",
     "categoryId": "home-comfort",
     "subcategoryId": "storage",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-035/01.webp", "assets/images/skills/skill-035/02.webp", "assets/images/skills/skill-035/03.webp", "assets/images/skills/skill-035/04.webp", "assets/images/skills/skill-035/05.webp", "assets/images/skills/skill-035/06.webp", "assets/images/skills/skill-035/07.webp", "assets/images/skills/skill-035/08.webp", "assets/images/skills/skill-035/09.webp", "assets/images/skills/skill-035/10.webp"],
     "authorId": "user-35",
     "createdAt": "2025-02-04T00:00:00Z"
   },
@@ -355,7 +355,7 @@
     "description": "Познакомлю с базовыми практиками йоги и медитации.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "yoga-meditation",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-036/01.webp", "assets/images/skills/skill-036/02.webp", "assets/images/skills/skill-036/03.webp", "assets/images/skills/skill-036/04.webp", "assets/images/skills/skill-036/05.webp", "assets/images/skills/skill-036/06.webp", "assets/images/skills/skill-036/07.webp", "assets/images/skills/skill-036/08.webp", "assets/images/skills/skill-036/09.webp", "assets/images/skills/skill-036/10.webp"],
     "authorId": "user-36",
     "createdAt": "2025-02-05T00:00:00Z"
   },
@@ -365,7 +365,7 @@
     "description": "Поделюсь базовыми принципами сбалансированного образа жизни.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "nutrition-healthy-lifestyle",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-037/01.webp", "assets/images/skills/skill-037/02.webp", "assets/images/skills/skill-037/03.webp", "assets/images/skills/skill-037/04.webp", "assets/images/skills/skill-037/05.webp", "assets/images/skills/skill-037/06.webp", "assets/images/skills/skill-037/07.webp", "assets/images/skills/skill-037/08.webp", "assets/images/skills/skill-037/09.webp"],
     "authorId": "user-37",
     "createdAt": "2025-02-06T00:00:00Z"
   },
@@ -375,7 +375,7 @@
     "description": "Расскажу о повседневных практиках заботы о психологическом благополучии.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "mental-health",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-038/01.webp", "assets/images/skills/skill-038/02.webp", "assets/images/skills/skill-038/03.webp", "assets/images/skills/skill-038/04.webp", "assets/images/skills/skill-038/05.webp", "assets/images/skills/skill-038/06.webp", "assets/images/skills/skill-038/07.webp", "assets/images/skills/skill-038/08.webp", "assets/images/skills/skill-038/09.webp"],
     "authorId": "user-38",
     "createdAt": "2025-02-07T00:00:00Z"
   },
@@ -385,7 +385,7 @@
     "description": "Помогу познакомиться с практиками внимательного отношения к текущему моменту.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "mindfulness",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-039/01.webp", "assets/images/skills/skill-039/02.webp", "assets/images/skills/skill-039/03.webp", "assets/images/skills/skill-039/04.webp", "assets/images/skills/skill-039/05.webp", "assets/images/skills/skill-039/06.webp", "assets/images/skills/skill-039/07.webp", "assets/images/skills/skill-039/08.webp", "assets/images/skills/skill-039/09.webp", "assets/images/skills/skill-039/10.webp"],
     "authorId": "user-39",
     "createdAt": "2025-02-08T00:00:00Z"
   },
@@ -395,7 +395,7 @@
     "description": "Поделюсь базовыми принципами домашних тренировок.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "physical-training",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-040/01.webp", "assets/images/skills/skill-040/02.webp", "assets/images/skills/skill-040/03.webp", "assets/images/skills/skill-040/04.webp", "assets/images/skills/skill-040/05.webp", "assets/images/skills/skill-040/06.webp", "assets/images/skills/skill-040/07.webp", "assets/images/skills/skill-040/08.webp", "assets/images/skills/skill-040/09.webp", "assets/images/skills/skill-040/10.webp"],
     "authorId": "user-40",
     "createdAt": "2025-02-09T00:00:00Z"
   },
@@ -405,7 +405,7 @@
     "description": "Расскажу о привычках, которые помогают выстроить режим сна и отдыха.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "sleep-recovery",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-041/01.webp", "assets/images/skills/skill-041/02.webp", "assets/images/skills/skill-041/03.webp", "assets/images/skills/skill-041/04.webp", "assets/images/skills/skill-041/05.webp", "assets/images/skills/skill-041/06.webp", "assets/images/skills/skill-041/07.webp", "assets/images/skills/skill-041/08.webp", "assets/images/skills/skill-041/09.webp", "assets/images/skills/skill-041/10.webp"],
     "authorId": "user-41",
     "createdAt": "2025-02-10T00:00:00Z"
   },
@@ -415,7 +415,7 @@
     "description": "Поделюсь подходами к организации времени между работой и личной жизнью.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "work-life-balance",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-042/01.webp", "assets/images/skills/skill-042/02.webp", "assets/images/skills/skill-042/03.webp", "assets/images/skills/skill-042/04.webp", "assets/images/skills/skill-042/05.webp", "assets/images/skills/skill-042/06.webp", "assets/images/skills/skill-042/07.webp", "assets/images/skills/skill-042/08.webp", "assets/images/skills/skill-042/09.webp", "assets/images/skills/skill-042/10.webp"],
     "authorId": "user-42",
     "createdAt": "2025-02-11T00:00:00Z"
   },
@@ -425,7 +425,7 @@
     "description": "Научу увереннее вести деловые переговоры и работать с возражениями.",
     "categoryId": "business-career",
     "subcategoryId": "sales-negotiations",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-043/01.webp", "assets/images/skills/skill-043/02.webp", "assets/images/skills/skill-043/03.webp", "assets/images/skills/skill-043/04.webp", "assets/images/skills/skill-043/05.webp", "assets/images/skills/skill-043/06.webp", "assets/images/skills/skill-043/07.webp", "assets/images/skills/skill-043/08.webp", "assets/images/skills/skill-043/09.webp"],
     "authorId": "user-43",
     "createdAt": "2025-02-12T00:00:00Z"
   },
@@ -435,7 +435,7 @@
     "description": "Помогу выстроить систему планирования задач и приоритетов.",
     "categoryId": "business-career",
     "subcategoryId": "time-management",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-044/01.webp", "assets/images/skills/skill-044/02.webp", "assets/images/skills/skill-044/03.webp", "assets/images/skills/skill-044/04.webp", "assets/images/skills/skill-044/05.webp", "assets/images/skills/skill-044/06.webp"],
     "authorId": "user-44",
     "createdAt": "2025-02-13T00:00:00Z"
   },
@@ -445,7 +445,7 @@
     "description": "Поделюсь основами рисования и работы с визуальными образами.",
     "categoryId": "creativity-art",
     "subcategoryId": "drawing-illustration",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-045/01.webp", "assets/images/skills/skill-045/02.webp", "assets/images/skills/skill-045/03.webp", "assets/images/skills/skill-045/04.webp", "assets/images/skills/skill-045/05.webp", "assets/images/skills/skill-045/06.webp", "assets/images/skills/skill-045/07.webp", "assets/images/skills/skill-045/08.webp"],
     "authorId": "user-45",
     "createdAt": "2025-02-14T00:00:00Z"
   },
@@ -455,7 +455,7 @@
     "description": "Помогу лучше понимать свет, композицию и настройки камеры.",
     "categoryId": "creativity-art",
     "subcategoryId": "photography",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-046/01.webp", "assets/images/skills/skill-046/02.webp", "assets/images/skills/skill-046/03.webp", "assets/images/skills/skill-046/04.webp", "assets/images/skills/skill-046/05.webp", "assets/images/skills/skill-046/06.webp", "assets/images/skills/skill-046/07.webp", "assets/images/skills/skill-046/08.webp", "assets/images/skills/skill-046/09.webp", "assets/images/skills/skill-046/10.webp"],
     "authorId": "user-46",
     "createdAt": "2025-02-15T00:00:00Z"
   },
@@ -465,7 +465,7 @@
     "description": "Помогу развить разговорную практику и уверенность в английском.",
     "categoryId": "foreign-languages",
     "subcategoryId": "english",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-047/01.webp", "assets/images/skills/skill-047/02.webp", "assets/images/skills/skill-047/03.webp", "assets/images/skills/skill-047/04.webp", "assets/images/skills/skill-047/05.webp", "assets/images/skills/skill-047/06.webp", "assets/images/skills/skill-047/07.webp"],
     "authorId": "user-47",
     "createdAt": "2025-02-16T00:00:00Z"
   },
@@ -475,7 +475,7 @@
     "description": "Поделюсь практиками самоорганизации и постановки личных целей.",
     "categoryId": "education-development",
     "subcategoryId": "personal-development",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-048/01.webp", "assets/images/skills/skill-048/02.webp", "assets/images/skills/skill-048/03.webp", "assets/images/skills/skill-048/04.webp", "assets/images/skills/skill-048/05.webp", "assets/images/skills/skill-048/06.webp", "assets/images/skills/skill-048/07.webp"],
     "authorId": "user-48",
     "createdAt": "2025-02-17T00:00:00Z"
   },
@@ -485,7 +485,7 @@
     "description": "Научу готовить простые блюда и эффективнее организовывать кухню.",
     "categoryId": "home-comfort",
     "subcategoryId": "cooking",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-049/01.webp", "assets/images/skills/skill-049/02.webp", "assets/images/skills/skill-049/03.webp", "assets/images/skills/skill-049/04.webp", "assets/images/skills/skill-049/05.webp", "assets/images/skills/skill-049/06.webp", "assets/images/skills/skill-049/07.webp", "assets/images/skills/skill-049/08.webp", "assets/images/skills/skill-049/09.webp", "assets/images/skills/skill-049/10.webp"],
     "authorId": "user-49",
     "createdAt": "2025-02-18T00:00:00Z"
   },
@@ -495,7 +495,7 @@
     "description": "Познакомлю с базовыми практиками расслабления и осознанности.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "yoga-meditation",
-    "imageUrl": null,
+    "imageUrls": ["assets/images/skills/skill-050/01.webp", "assets/images/skills/skill-050/02.webp", "assets/images/skills/skill-050/03.webp", "assets/images/skills/skill-050/04.webp", "assets/images/skills/skill-050/05.webp", "assets/images/skills/skill-050/06.webp", "assets/images/skills/skill-050/07.webp", "assets/images/skills/skill-050/08.webp", "assets/images/skills/skill-050/09.webp", "assets/images/skills/skill-050/10.webp"],
     "authorId": "user-50",
     "createdAt": "2025-02-19T00:00:00Z"
   }
