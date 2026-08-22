@@ -13,6 +13,7 @@
   --color-text-primary: #253017;
   --color-text-secondary: #69735d;
   --color-accent: #abd27a;
+  --color-accent-strong: #508826;
 
   /* tag-colors */
   --color-tag-business: var(--color-lilac);
