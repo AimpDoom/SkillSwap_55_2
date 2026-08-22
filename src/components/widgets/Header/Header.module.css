@@ -8,10 +8,11 @@
 }
 
 .content {
-  min-height: 80px;
+  position: relative;
   display: flex;
-  align-items: center;
   gap: 20px;
+  align-items: center;
+  min-height: 80px;
   padding: 0;
 }
 

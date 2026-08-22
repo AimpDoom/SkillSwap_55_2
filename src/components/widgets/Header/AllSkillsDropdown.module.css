@@ -1,0 +1,107 @@
+.dropdown {
+  position: absolute;
+  z-index: 100;
+  top: 100%;
+  left: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  gap: 40px;
+  box-sizing: border-box;
+  width: min(1136px, 100%);
+  max-height: calc(100dvh - 92px);
+  padding: 60px;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-text-secondary);
+  border-radius: var(--border-radius-s);
+}
+
+.column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 40px;
+  min-width: 0;
+}
+
+.category {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.iconWrapper {
+  display: flex;
+  flex: 0 0 40px;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.business {
+  background-color: var(--color-lilac);
+}
+
+.creativity {
+  background-color: var(--color-pink);
+}
+
+.languages {
+  background-color: var(--color-sand);
+}
+
+.education {
+  background-color: var(--color-sky);
+}
+
+.home {
+  background-color: var(--color-peach);
+}
+
+.health {
+  background-color: var(--color-mint);
+}
+
+.categoryContent {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.categoryTitle {
+  margin: 0;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-m);
+  letter-spacing: -0.264px;
+}
+
+.subcategories {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.subcategory {
+  margin: 0;
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-s);
+  letter-spacing: 0.32px;
+}
