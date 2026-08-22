@@ -5,9 +5,15 @@
     "description": "Научу выстраивать работу команды и распределять задачи.",
     "categoryId": "business-career",
     "subcategoryId": "team-management",
-    "imageUrl": null,
     "authorId": "user-01",
-    "createdAt": "2025-01-01T00:00:00Z"
+    "createdAt": "2025-01-01T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-001-1/1200/800",
+      "https://picsum.photos/seed/skill-001-2/1200/800",
+      "https://picsum.photos/seed/skill-001-3/1200/800",
+      "https://picsum.photos/seed/skill-001-4/1200/800",
+      "https://picsum.photos/seed/skill-001-5/1200/800"
+    ]
   },
   {
     "id": "skill-002",
@@ -15,9 +21,15 @@
     "description": "Помогу разобраться в продвижении проектов и рекламных инструментах.",
     "categoryId": "business-career",
     "subcategoryId": "marketing-advertising",
-    "imageUrl": null,
     "authorId": "user-02",
-    "createdAt": "2025-01-02T00:00:00Z"
+    "createdAt": "2025-01-02T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-002-1/1200/800",
+      "https://picsum.photos/seed/skill-002-2/1200/800",
+      "https://picsum.photos/seed/skill-002-3/1200/800",
+      "https://picsum.photos/seed/skill-002-4/1200/800",
+      "https://picsum.photos/seed/skill-002-5/1200/800"
+    ]
   },
   {
     "id": "skill-003",
@@ -25,9 +37,15 @@
     "description": "Расскажу об основных приёмах продаж и ведения переговоров.",
     "categoryId": "business-career",
     "subcategoryId": "sales-negotiations",
-    "imageUrl": null,
     "authorId": "user-03",
-    "createdAt": "2025-01-03T00:00:00Z"
+    "createdAt": "2025-01-03T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-003-1/1200/800",
+      "https://picsum.photos/seed/skill-003-2/1200/800",
+      "https://picsum.photos/seed/skill-003-3/1200/800",
+      "https://picsum.photos/seed/skill-003-4/1200/800",
+      "https://picsum.photos/seed/skill-003-5/1200/800"
+    ]
   },
   {
     "id": "skill-004",
@@ -35,9 +53,15 @@
     "description": "Поделюсь опытом развития личного бренда в профессиональной среде.",
     "categoryId": "business-career",
     "subcategoryId": "personal-brand",
-    "imageUrl": null,
     "authorId": "user-04",
-    "createdAt": "2025-01-04T00:00:00Z"
+    "createdAt": "2025-01-04T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-004-1/1200/800",
+      "https://picsum.photos/seed/skill-004-2/1200/800",
+      "https://picsum.photos/seed/skill-004-3/1200/800",
+      "https://picsum.photos/seed/skill-004-4/1200/800",
+      "https://picsum.photos/seed/skill-004-5/1200/800"
+    ]
   },
   {
     "id": "skill-005",
@@ -45,9 +69,15 @@
     "description": "Помогу подготовить резюме и пройти собеседование увереннее.",
     "categoryId": "business-career",
     "subcategoryId": "resume-interview",
-    "imageUrl": null,
     "authorId": "user-05",
-    "createdAt": "2025-01-05T00:00:00Z"
+    "createdAt": "2025-01-05T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-005-1/1200/800",
+      "https://picsum.photos/seed/skill-005-2/1200/800",
+      "https://picsum.photos/seed/skill-005-3/1200/800",
+      "https://picsum.photos/seed/skill-005-4/1200/800",
+      "https://picsum.photos/seed/skill-005-5/1200/800"
+    ]
   },
   {
     "id": "skill-006",
@@ -55,9 +85,15 @@
     "description": "Покажу практические подходы к планированию времени.",
     "categoryId": "business-career",
     "subcategoryId": "time-management",
-    "imageUrl": null,
     "authorId": "user-06",
-    "createdAt": "2025-01-06T00:00:00Z"
+    "createdAt": "2025-01-06T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-006-1/1200/800",
+      "https://picsum.photos/seed/skill-006-2/1200/800",
+      "https://picsum.photos/seed/skill-006-3/1200/800",
+      "https://picsum.photos/seed/skill-006-4/1200/800",
+      "https://picsum.photos/seed/skill-006-5/1200/800"
+    ]
   },
   {
     "id": "skill-007",
@@ -65,9 +101,15 @@
     "description": "Научу основам планирования и ведения проектов.",
     "categoryId": "business-career",
     "subcategoryId": "project-management",
-    "imageUrl": null,
     "authorId": "user-07",
-    "createdAt": "2025-01-07T00:00:00Z"
+    "createdAt": "2025-01-07T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-007-1/1200/800",
+      "https://picsum.photos/seed/skill-007-2/1200/800",
+      "https://picsum.photos/seed/skill-007-3/1200/800",
+      "https://picsum.photos/seed/skill-007-4/1200/800",
+      "https://picsum.photos/seed/skill-007-5/1200/800"
+    ]
   },
   {
     "id": "skill-008",
@@ -75,9 +117,15 @@
     "description": "Поделюсь практическими основами запуска собственного проекта.",
     "categoryId": "business-career",
     "subcategoryId": "entrepreneurship",
-    "imageUrl": null,
     "authorId": "user-08",
-    "createdAt": "2025-01-08T00:00:00Z"
+    "createdAt": "2025-01-08T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-008-1/1200/800",
+      "https://picsum.photos/seed/skill-008-2/1200/800",
+      "https://picsum.photos/seed/skill-008-3/1200/800",
+      "https://picsum.photos/seed/skill-008-4/1200/800",
+      "https://picsum.photos/seed/skill-008-5/1200/800"
+    ]
   },
   {
     "id": "skill-009",
@@ -85,9 +133,15 @@
     "description": "Научу базовым приёмам рисования и создания иллюстраций.",
     "categoryId": "creativity-art",
     "subcategoryId": "drawing-illustration",
-    "imageUrl": null,
     "authorId": "user-09",
-    "createdAt": "2025-01-09T00:00:00Z"
+    "createdAt": "2025-01-09T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-009-1/1200/800",
+      "https://picsum.photos/seed/skill-009-2/1200/800",
+      "https://picsum.photos/seed/skill-009-3/1200/800",
+      "https://picsum.photos/seed/skill-009-4/1200/800",
+      "https://picsum.photos/seed/skill-009-5/1200/800"
+    ]
   },
   {
     "id": "skill-010",
@@ -95,9 +149,15 @@
     "description": "Помогу освоить основы композиции, света и съёмки.",
     "categoryId": "creativity-art",
     "subcategoryId": "photography",
-    "imageUrl": null,
     "authorId": "user-10",
-    "createdAt": "2025-01-10T00:00:00Z"
+    "createdAt": "2025-01-10T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-010-1/1200/800",
+      "https://picsum.photos/seed/skill-010-2/1200/800",
+      "https://picsum.photos/seed/skill-010-3/1200/800",
+      "https://picsum.photos/seed/skill-010-4/1200/800",
+      "https://picsum.photos/seed/skill-010-5/1200/800"
+    ]
   },
   {
     "id": "skill-011",
@@ -105,9 +165,15 @@
     "description": "Научу базовому монтажу видео и работе с материалом.",
     "categoryId": "creativity-art",
     "subcategoryId": "video-editing",
-    "imageUrl": null,
     "authorId": "user-11",
-    "createdAt": "2025-01-11T00:00:00Z"
+    "createdAt": "2025-01-11T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-011-1/1200/800",
+      "https://picsum.photos/seed/skill-011-2/1200/800",
+      "https://picsum.photos/seed/skill-011-3/1200/800",
+      "https://picsum.photos/seed/skill-011-4/1200/800",
+      "https://picsum.photos/seed/skill-011-5/1200/800"
+    ]
   },
   {
     "id": "skill-012",
@@ -115,9 +181,15 @@
     "description": "Расскажу об основах работы со звуком и музыкой.",
     "categoryId": "creativity-art",
     "subcategoryId": "music-sound",
-    "imageUrl": null,
     "authorId": "user-12",
-    "createdAt": "2025-01-12T00:00:00Z"
+    "createdAt": "2025-01-12T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-012-1/1200/800",
+      "https://picsum.photos/seed/skill-012-2/1200/800",
+      "https://picsum.photos/seed/skill-012-3/1200/800",
+      "https://picsum.photos/seed/skill-012-4/1200/800",
+      "https://picsum.photos/seed/skill-012-5/1200/800"
+    ]
   },
   {
     "id": "skill-013",
@@ -125,9 +197,15 @@
     "description": "Помогу развить сценическую выразительность и уверенность.",
     "categoryId": "creativity-art",
     "subcategoryId": "acting",
-    "imageUrl": null,
     "authorId": "user-13",
-    "createdAt": "2025-01-13T00:00:00Z"
+    "createdAt": "2025-01-13T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-013-1/1200/800",
+      "https://picsum.photos/seed/skill-013-2/1200/800",
+      "https://picsum.photos/seed/skill-013-3/1200/800",
+      "https://picsum.photos/seed/skill-013-4/1200/800",
+      "https://picsum.photos/seed/skill-013-5/1200/800"
+    ]
   },
   {
     "id": "skill-014",
@@ -135,9 +213,15 @@
     "description": "Научу находить идеи и превращать их в связные тексты.",
     "categoryId": "creativity-art",
     "subcategoryId": "creative-writing",
-    "imageUrl": null,
     "authorId": "user-14",
-    "createdAt": "2025-01-14T00:00:00Z"
+    "createdAt": "2025-01-14T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-014-1/1200/800",
+      "https://picsum.photos/seed/skill-014-2/1200/800",
+      "https://picsum.photos/seed/skill-014-3/1200/800",
+      "https://picsum.photos/seed/skill-014-4/1200/800",
+      "https://picsum.photos/seed/skill-014-5/1200/800"
+    ]
   },
   {
     "id": "skill-015",
@@ -145,9 +229,15 @@
     "description": "Познакомлю с творческими практиками для самовыражения.",
     "categoryId": "creativity-art",
     "subcategoryId": "art-therapy",
-    "imageUrl": null,
     "authorId": "user-15",
-    "createdAt": "2025-01-15T00:00:00Z"
+    "createdAt": "2025-01-15T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-015-1/1200/800",
+      "https://picsum.photos/seed/skill-015-2/1200/800",
+      "https://picsum.photos/seed/skill-015-3/1200/800",
+      "https://picsum.photos/seed/skill-015-4/1200/800",
+      "https://picsum.photos/seed/skill-015-5/1200/800"
+    ]
   },
   {
     "id": "skill-016",
@@ -155,9 +245,15 @@
     "description": "Поделюсь идеями и приёмами создания вещей своими руками.",
     "categoryId": "creativity-art",
     "subcategoryId": "decor-diy",
-    "imageUrl": null,
     "authorId": "user-16",
-    "createdAt": "2025-01-16T00:00:00Z"
+    "createdAt": "2025-01-16T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-016-1/1200/800",
+      "https://picsum.photos/seed/skill-016-2/1200/800",
+      "https://picsum.photos/seed/skill-016-3/1200/800",
+      "https://picsum.photos/seed/skill-016-4/1200/800",
+      "https://picsum.photos/seed/skill-016-5/1200/800"
+    ]
   },
   {
     "id": "skill-017",
@@ -165,9 +261,15 @@
     "description": "Помогу улучшить разговорный английский и расширить словарный запас.",
     "categoryId": "foreign-languages",
     "subcategoryId": "english",
-    "imageUrl": null,
     "authorId": "user-17",
-    "createdAt": "2025-01-17T00:00:00Z"
+    "createdAt": "2025-01-17T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-017-1/1200/800",
+      "https://picsum.photos/seed/skill-017-2/1200/800",
+      "https://picsum.photos/seed/skill-017-3/1200/800",
+      "https://picsum.photos/seed/skill-017-4/1200/800",
+      "https://picsum.photos/seed/skill-017-5/1200/800"
+    ]
   },
   {
     "id": "skill-018",
@@ -175,9 +277,15 @@
     "description": "Научу основам французского языка для повседневного общения.",
     "categoryId": "foreign-languages",
     "subcategoryId": "french",
-    "imageUrl": null,
     "authorId": "user-18",
-    "createdAt": "2025-01-18T00:00:00Z"
+    "createdAt": "2025-01-18T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-018-1/1200/800",
+      "https://picsum.photos/seed/skill-018-2/1200/800",
+      "https://picsum.photos/seed/skill-018-3/1200/800",
+      "https://picsum.photos/seed/skill-018-4/1200/800",
+      "https://picsum.photos/seed/skill-018-5/1200/800"
+    ]
   },
   {
     "id": "skill-019",
@@ -185,9 +293,15 @@
     "description": "Помогу освоить базовый испанский и разговорные конструкции.",
     "categoryId": "foreign-languages",
     "subcategoryId": "spanish",
-    "imageUrl": null,
     "authorId": "user-19",
-    "createdAt": "2025-01-19T00:00:00Z"
+    "createdAt": "2025-01-19T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-019-1/1200/800",
+      "https://picsum.photos/seed/skill-019-2/1200/800",
+      "https://picsum.photos/seed/skill-019-3/1200/800",
+      "https://picsum.photos/seed/skill-019-4/1200/800",
+      "https://picsum.photos/seed/skill-019-5/1200/800"
+    ]
   },
   {
     "id": "skill-020",
@@ -195,9 +309,15 @@
     "description": "Научу основам немецкого языка и повседневной лексике.",
     "categoryId": "foreign-languages",
     "subcategoryId": "german",
-    "imageUrl": null,
     "authorId": "user-20",
-    "createdAt": "2025-01-20T00:00:00Z"
+    "createdAt": "2025-01-20T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-020-1/1200/800",
+      "https://picsum.photos/seed/skill-020-2/1200/800",
+      "https://picsum.photos/seed/skill-020-3/1200/800",
+      "https://picsum.photos/seed/skill-020-4/1200/800",
+      "https://picsum.photos/seed/skill-020-5/1200/800"
+    ]
   },
   {
     "id": "skill-021",
@@ -205,9 +325,15 @@
     "description": "Познакомлю с основами китайского языка и произношения.",
     "categoryId": "foreign-languages",
     "subcategoryId": "chinese",
-    "imageUrl": null,
     "authorId": "user-21",
-    "createdAt": "2025-01-21T00:00:00Z"
+    "createdAt": "2025-01-21T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-021-1/1200/800",
+      "https://picsum.photos/seed/skill-021-2/1200/800",
+      "https://picsum.photos/seed/skill-021-3/1200/800",
+      "https://picsum.photos/seed/skill-021-4/1200/800",
+      "https://picsum.photos/seed/skill-021-5/1200/800"
+    ]
   },
   {
     "id": "skill-022",
@@ -215,9 +341,15 @@
     "description": "Помогу начать изучать японский язык и письменность.",
     "categoryId": "foreign-languages",
     "subcategoryId": "japanese",
-    "imageUrl": null,
     "authorId": "user-22",
-    "createdAt": "2025-01-22T00:00:00Z"
+    "createdAt": "2025-01-22T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-022-1/1200/800",
+      "https://picsum.photos/seed/skill-022-2/1200/800",
+      "https://picsum.photos/seed/skill-022-3/1200/800",
+      "https://picsum.photos/seed/skill-022-4/1200/800",
+      "https://picsum.photos/seed/skill-022-5/1200/800"
+    ]
   },
   {
     "id": "skill-023",
@@ -225,9 +357,15 @@
     "description": "Поделюсь подходами к подготовке к языковым экзаменам.",
     "categoryId": "foreign-languages",
     "subcategoryId": "language-exams",
-    "imageUrl": null,
     "authorId": "user-23",
-    "createdAt": "2025-01-23T00:00:00Z"
+    "createdAt": "2025-01-23T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-023-1/1200/800",
+      "https://picsum.photos/seed/skill-023-2/1200/800",
+      "https://picsum.photos/seed/skill-023-3/1200/800",
+      "https://picsum.photos/seed/skill-023-4/1200/800",
+      "https://picsum.photos/seed/skill-023-5/1200/800"
+    ]
   },
   {
     "id": "skill-024",
@@ -235,9 +373,15 @@
     "description": "Помогу выстроить полезные привычки и план личного развития.",
     "categoryId": "education-development",
     "subcategoryId": "personal-development",
-    "imageUrl": null,
     "authorId": "user-24",
-    "createdAt": "2025-01-24T00:00:00Z"
+    "createdAt": "2025-01-24T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-024-1/1200/800",
+      "https://picsum.photos/seed/skill-024-2/1200/800",
+      "https://picsum.photos/seed/skill-024-3/1200/800",
+      "https://picsum.photos/seed/skill-024-4/1200/800",
+      "https://picsum.photos/seed/skill-024-5/1200/800"
+    ]
   },
   {
     "id": "skill-025",
@@ -245,9 +389,15 @@
     "description": "Расскажу о методах, которые помогают учиться эффективнее.",
     "categoryId": "education-development",
     "subcategoryId": "learning-skills",
-    "imageUrl": null,
     "authorId": "user-25",
-    "createdAt": "2025-01-25T00:00:00Z"
+    "createdAt": "2025-01-25T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-025-1/1200/800",
+      "https://picsum.photos/seed/skill-025-2/1200/800",
+      "https://picsum.photos/seed/skill-025-3/1200/800",
+      "https://picsum.photos/seed/skill-025-4/1200/800",
+      "https://picsum.photos/seed/skill-025-5/1200/800"
+    ]
   },
   {
     "id": "skill-026",
@@ -255,9 +405,15 @@
     "description": "Познакомлю с практическими техниками работы с вниманием и мышлением.",
     "categoryId": "education-development",
     "subcategoryId": "cognitive-techniques",
-    "imageUrl": null,
     "authorId": "user-26",
-    "createdAt": "2025-01-26T00:00:00Z"
+    "createdAt": "2025-01-26T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-026-1/1200/800",
+      "https://picsum.photos/seed/skill-026-2/1200/800",
+      "https://picsum.photos/seed/skill-026-3/1200/800",
+      "https://picsum.photos/seed/skill-026-4/1200/800",
+      "https://picsum.photos/seed/skill-026-5/1200/800"
+    ]
   },
   {
     "id": "skill-027",
@@ -265,9 +421,15 @@
     "description": "Научу приёмам быстрого чтения и работы с текстом.",
     "categoryId": "education-development",
     "subcategoryId": "speed-reading",
-    "imageUrl": null,
     "authorId": "user-27",
-    "createdAt": "2025-01-27T00:00:00Z"
+    "createdAt": "2025-01-27T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-027-1/1200/800",
+      "https://picsum.photos/seed/skill-027-2/1200/800",
+      "https://picsum.photos/seed/skill-027-3/1200/800",
+      "https://picsum.photos/seed/skill-027-4/1200/800",
+      "https://picsum.photos/seed/skill-027-5/1200/800"
+    ]
   },
   {
     "id": "skill-028",
@@ -275,9 +437,15 @@
     "description": "Поделюсь методами объяснения материала и построения занятий.",
     "categoryId": "education-development",
     "subcategoryId": "teaching-skills",
-    "imageUrl": null,
     "authorId": "user-28",
-    "createdAt": "2025-01-28T00:00:00Z"
+    "createdAt": "2025-01-28T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-028-1/1200/800",
+      "https://picsum.photos/seed/skill-028-2/1200/800",
+      "https://picsum.photos/seed/skill-028-3/1200/800",
+      "https://picsum.photos/seed/skill-028-4/1200/800",
+      "https://picsum.photos/seed/skill-028-5/1200/800"
+    ]
   },
   {
     "id": "skill-029",
@@ -285,9 +453,15 @@
     "description": "Познакомлю с основами коучингового подхода и постановки целей.",
     "categoryId": "education-development",
     "subcategoryId": "coaching",
-    "imageUrl": null,
     "authorId": "user-29",
-    "createdAt": "2025-01-29T00:00:00Z"
+    "createdAt": "2025-01-29T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-029-1/1200/800",
+      "https://picsum.photos/seed/skill-029-2/1200/800",
+      "https://picsum.photos/seed/skill-029-3/1200/800",
+      "https://picsum.photos/seed/skill-029-4/1200/800",
+      "https://picsum.photos/seed/skill-029-5/1200/800"
+    ]
   },
   {
     "id": "skill-030",
@@ -295,9 +469,15 @@
     "description": "Помогу систематизировать хранение и организацию домашнего пространства.",
     "categoryId": "home-comfort",
     "subcategoryId": "cleaning-organization",
-    "imageUrl": null,
     "authorId": "user-30",
-    "createdAt": "2025-01-30T00:00:00Z"
+    "createdAt": "2025-01-30T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-030-1/1200/800",
+      "https://picsum.photos/seed/skill-030-2/1200/800",
+      "https://picsum.photos/seed/skill-030-3/1200/800",
+      "https://picsum.photos/seed/skill-030-4/1200/800",
+      "https://picsum.photos/seed/skill-030-5/1200/800"
+    ]
   },
   {
     "id": "skill-031",
@@ -305,9 +485,15 @@
     "description": "Расскажу о ведении домашнего бюджета и планировании расходов.",
     "categoryId": "home-comfort",
     "subcategoryId": "home-finances",
-    "imageUrl": null,
     "authorId": "user-31",
-    "createdAt": "2025-01-31T00:00:00Z"
+    "createdAt": "2025-01-31T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-031-1/1200/800",
+      "https://picsum.photos/seed/skill-031-2/1200/800",
+      "https://picsum.photos/seed/skill-031-3/1200/800",
+      "https://picsum.photos/seed/skill-031-4/1200/800",
+      "https://picsum.photos/seed/skill-031-5/1200/800"
+    ]
   },
   {
     "id": "skill-032",
@@ -315,9 +501,15 @@
     "description": "Научу готовить простые домашние блюда и планировать меню.",
     "categoryId": "home-comfort",
     "subcategoryId": "cooking",
-    "imageUrl": null,
     "authorId": "user-32",
-    "createdAt": "2025-02-01T00:00:00Z"
+    "createdAt": "2025-02-01T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-032-1/1200/800",
+      "https://picsum.photos/seed/skill-032-2/1200/800",
+      "https://picsum.photos/seed/skill-032-3/1200/800",
+      "https://picsum.photos/seed/skill-032-4/1200/800",
+      "https://picsum.photos/seed/skill-032-5/1200/800"
+    ]
   },
   {
     "id": "skill-033",
@@ -325,9 +517,15 @@
     "description": "Поделюсь основами ухода за комнатными растениями.",
     "categoryId": "home-comfort",
     "subcategoryId": "home-plants",
-    "imageUrl": null,
     "authorId": "user-33",
-    "createdAt": "2025-02-02T00:00:00Z"
+    "createdAt": "2025-02-02T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-033-1/1200/800",
+      "https://picsum.photos/seed/skill-033-2/1200/800",
+      "https://picsum.photos/seed/skill-033-3/1200/800",
+      "https://picsum.photos/seed/skill-033-4/1200/800",
+      "https://picsum.photos/seed/skill-033-5/1200/800"
+    ]
   },
   {
     "id": "skill-034",
@@ -335,9 +533,15 @@
     "description": "Помогу освоить базовые домашние ремонтные работы.",
     "categoryId": "home-comfort",
     "subcategoryId": "repair",
-    "imageUrl": null,
     "authorId": "user-34",
-    "createdAt": "2025-02-03T00:00:00Z"
+    "createdAt": "2025-02-03T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-034-1/1200/800",
+      "https://picsum.photos/seed/skill-034-2/1200/800",
+      "https://picsum.photos/seed/skill-034-3/1200/800",
+      "https://picsum.photos/seed/skill-034-4/1200/800",
+      "https://picsum.photos/seed/skill-034-5/1200/800"
+    ]
   },
   {
     "id": "skill-035",
@@ -345,9 +549,15 @@
     "description": "Расскажу о практичной организации хранения дома.",
     "categoryId": "home-comfort",
     "subcategoryId": "storage",
-    "imageUrl": null,
     "authorId": "user-35",
-    "createdAt": "2025-02-04T00:00:00Z"
+    "createdAt": "2025-02-04T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-035-1/1200/800",
+      "https://picsum.photos/seed/skill-035-2/1200/800",
+      "https://picsum.photos/seed/skill-035-3/1200/800",
+      "https://picsum.photos/seed/skill-035-4/1200/800",
+      "https://picsum.photos/seed/skill-035-5/1200/800"
+    ]
   },
   {
     "id": "skill-036",
@@ -355,9 +565,15 @@
     "description": "Познакомлю с базовыми практиками йоги и медитации.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "yoga-meditation",
-    "imageUrl": null,
     "authorId": "user-36",
-    "createdAt": "2025-02-05T00:00:00Z"
+    "createdAt": "2025-02-05T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-036-1/1200/800",
+      "https://picsum.photos/seed/skill-036-2/1200/800",
+      "https://picsum.photos/seed/skill-036-3/1200/800",
+      "https://picsum.photos/seed/skill-036-4/1200/800",
+      "https://picsum.photos/seed/skill-036-5/1200/800"
+    ]
   },
   {
     "id": "skill-037",
@@ -365,9 +581,15 @@
     "description": "Поделюсь базовыми принципами сбалансированного образа жизни.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "nutrition-healthy-lifestyle",
-    "imageUrl": null,
     "authorId": "user-37",
-    "createdAt": "2025-02-06T00:00:00Z"
+    "createdAt": "2025-02-06T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-037-1/1200/800",
+      "https://picsum.photos/seed/skill-037-2/1200/800",
+      "https://picsum.photos/seed/skill-037-3/1200/800",
+      "https://picsum.photos/seed/skill-037-4/1200/800",
+      "https://picsum.photos/seed/skill-037-5/1200/800"
+    ]
   },
   {
     "id": "skill-038",
@@ -375,9 +597,15 @@
     "description": "Расскажу о повседневных практиках заботы о психологическом благополучии.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "mental-health",
-    "imageUrl": null,
     "authorId": "user-38",
-    "createdAt": "2025-02-07T00:00:00Z"
+    "createdAt": "2025-02-07T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-038-1/1200/800",
+      "https://picsum.photos/seed/skill-038-2/1200/800",
+      "https://picsum.photos/seed/skill-038-3/1200/800",
+      "https://picsum.photos/seed/skill-038-4/1200/800",
+      "https://picsum.photos/seed/skill-038-5/1200/800"
+    ]
   },
   {
     "id": "skill-039",
@@ -385,9 +613,15 @@
     "description": "Помогу познакомиться с практиками внимательного отношения к текущему моменту.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "mindfulness",
-    "imageUrl": null,
     "authorId": "user-39",
-    "createdAt": "2025-02-08T00:00:00Z"
+    "createdAt": "2025-02-08T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-039-1/1200/800",
+      "https://picsum.photos/seed/skill-039-2/1200/800",
+      "https://picsum.photos/seed/skill-039-3/1200/800",
+      "https://picsum.photos/seed/skill-039-4/1200/800",
+      "https://picsum.photos/seed/skill-039-5/1200/800"
+    ]
   },
   {
     "id": "skill-040",
@@ -395,9 +629,15 @@
     "description": "Поделюсь базовыми принципами домашних тренировок.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "physical-training",
-    "imageUrl": null,
     "authorId": "user-40",
-    "createdAt": "2025-02-09T00:00:00Z"
+    "createdAt": "2025-02-09T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-040-1/1200/800",
+      "https://picsum.photos/seed/skill-040-2/1200/800",
+      "https://picsum.photos/seed/skill-040-3/1200/800",
+      "https://picsum.photos/seed/skill-040-4/1200/800",
+      "https://picsum.photos/seed/skill-040-5/1200/800"
+    ]
   },
   {
     "id": "skill-041",
@@ -405,9 +645,15 @@
     "description": "Расскажу о привычках, которые помогают выстроить режим сна и отдыха.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "sleep-recovery",
-    "imageUrl": null,
     "authorId": "user-41",
-    "createdAt": "2025-02-10T00:00:00Z"
+    "createdAt": "2025-02-10T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-041-1/1200/800",
+      "https://picsum.photos/seed/skill-041-2/1200/800",
+      "https://picsum.photos/seed/skill-041-3/1200/800",
+      "https://picsum.photos/seed/skill-041-4/1200/800",
+      "https://picsum.photos/seed/skill-041-5/1200/800"
+    ]
   },
   {
     "id": "skill-042",
@@ -415,9 +661,15 @@
     "description": "Поделюсь подходами к организации времени между работой и личной жизнью.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "work-life-balance",
-    "imageUrl": null,
     "authorId": "user-42",
-    "createdAt": "2025-02-11T00:00:00Z"
+    "createdAt": "2025-02-11T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-042-1/1200/800",
+      "https://picsum.photos/seed/skill-042-2/1200/800",
+      "https://picsum.photos/seed/skill-042-3/1200/800",
+      "https://picsum.photos/seed/skill-042-4/1200/800",
+      "https://picsum.photos/seed/skill-042-5/1200/800"
+    ]
   },
   {
     "id": "skill-043",
@@ -425,9 +677,15 @@
     "description": "Научу увереннее вести деловые переговоры и работать с возражениями.",
     "categoryId": "business-career",
     "subcategoryId": "sales-negotiations",
-    "imageUrl": null,
     "authorId": "user-43",
-    "createdAt": "2025-02-12T00:00:00Z"
+    "createdAt": "2025-02-12T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-043-1/1200/800",
+      "https://picsum.photos/seed/skill-043-2/1200/800",
+      "https://picsum.photos/seed/skill-043-3/1200/800",
+      "https://picsum.photos/seed/skill-043-4/1200/800",
+      "https://picsum.photos/seed/skill-043-5/1200/800"
+    ]
   },
   {
     "id": "skill-044",
@@ -435,9 +693,15 @@
     "description": "Помогу выстроить систему планирования задач и приоритетов.",
     "categoryId": "business-career",
     "subcategoryId": "time-management",
-    "imageUrl": null,
     "authorId": "user-44",
-    "createdAt": "2025-02-13T00:00:00Z"
+    "createdAt": "2025-02-13T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-044-1/1200/800",
+      "https://picsum.photos/seed/skill-044-2/1200/800",
+      "https://picsum.photos/seed/skill-044-3/1200/800",
+      "https://picsum.photos/seed/skill-044-4/1200/800",
+      "https://picsum.photos/seed/skill-044-5/1200/800"
+    ]
   },
   {
     "id": "skill-045",
@@ -445,9 +709,15 @@
     "description": "Поделюсь основами рисования и работы с визуальными образами.",
     "categoryId": "creativity-art",
     "subcategoryId": "drawing-illustration",
-    "imageUrl": null,
     "authorId": "user-45",
-    "createdAt": "2025-02-14T00:00:00Z"
+    "createdAt": "2025-02-14T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-045-1/1200/800",
+      "https://picsum.photos/seed/skill-045-2/1200/800",
+      "https://picsum.photos/seed/skill-045-3/1200/800",
+      "https://picsum.photos/seed/skill-045-4/1200/800",
+      "https://picsum.photos/seed/skill-045-5/1200/800"
+    ]
   },
   {
     "id": "skill-046",
@@ -455,9 +725,15 @@
     "description": "Помогу лучше понимать свет, композицию и настройки камеры.",
     "categoryId": "creativity-art",
     "subcategoryId": "photography",
-    "imageUrl": null,
     "authorId": "user-46",
-    "createdAt": "2025-02-15T00:00:00Z"
+    "createdAt": "2025-02-15T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-046-1/1200/800",
+      "https://picsum.photos/seed/skill-046-2/1200/800",
+      "https://picsum.photos/seed/skill-046-3/1200/800",
+      "https://picsum.photos/seed/skill-046-4/1200/800",
+      "https://picsum.photos/seed/skill-046-5/1200/800"
+    ]
   },
   {
     "id": "skill-047",
@@ -465,9 +741,15 @@
     "description": "Помогу развить разговорную практику и уверенность в английском.",
     "categoryId": "foreign-languages",
     "subcategoryId": "english",
-    "imageUrl": null,
     "authorId": "user-47",
-    "createdAt": "2025-02-16T00:00:00Z"
+    "createdAt": "2025-02-16T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-047-1/1200/800",
+      "https://picsum.photos/seed/skill-047-2/1200/800",
+      "https://picsum.photos/seed/skill-047-3/1200/800",
+      "https://picsum.photos/seed/skill-047-4/1200/800",
+      "https://picsum.photos/seed/skill-047-5/1200/800"
+    ]
   },
   {
     "id": "skill-048",
@@ -475,9 +757,15 @@
     "description": "Поделюсь практиками самоорганизации и постановки личных целей.",
     "categoryId": "education-development",
     "subcategoryId": "personal-development",
-    "imageUrl": null,
     "authorId": "user-48",
-    "createdAt": "2025-02-17T00:00:00Z"
+    "createdAt": "2025-02-17T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-048-1/1200/800",
+      "https://picsum.photos/seed/skill-048-2/1200/800",
+      "https://picsum.photos/seed/skill-048-3/1200/800",
+      "https://picsum.photos/seed/skill-048-4/1200/800",
+      "https://picsum.photos/seed/skill-048-5/1200/800"
+    ]
   },
   {
     "id": "skill-049",
@@ -485,9 +773,15 @@
     "description": "Научу готовить простые блюда и эффективнее организовывать кухню.",
     "categoryId": "home-comfort",
     "subcategoryId": "cooking",
-    "imageUrl": null,
     "authorId": "user-49",
-    "createdAt": "2025-02-18T00:00:00Z"
+    "createdAt": "2025-02-18T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-049-1/1200/800",
+      "https://picsum.photos/seed/skill-049-2/1200/800",
+      "https://picsum.photos/seed/skill-049-3/1200/800",
+      "https://picsum.photos/seed/skill-049-4/1200/800",
+      "https://picsum.photos/seed/skill-049-5/1200/800"
+    ]
   },
   {
     "id": "skill-050",
@@ -495,8 +789,14 @@
     "description": "Познакомлю с базовыми практиками расслабления и осознанности.",
     "categoryId": "health-lifestyle",
     "subcategoryId": "yoga-meditation",
-    "imageUrl": null,
     "authorId": "user-50",
-    "createdAt": "2025-02-19T00:00:00Z"
+    "createdAt": "2025-02-19T00:00:00Z",
+    "imageUrls": [
+      "https://picsum.photos/seed/skill-050-1/1200/800",
+      "https://picsum.photos/seed/skill-050-2/1200/800",
+      "https://picsum.photos/seed/skill-050-3/1200/800",
+      "https://picsum.photos/seed/skill-050-4/1200/800",
+      "https://picsum.photos/seed/skill-050-5/1200/800"
+    ]
   }
 ]
