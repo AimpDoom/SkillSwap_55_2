@@ -1,0 +1,218 @@
+.form {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 0 556px;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+  width: 556px;
+  min-height: 692px;
+  padding: 60px;
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-s);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  border-radius: var(--border-radius-s);
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.socialButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.socialButton {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 20px;
+  font: inherit;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-text-secondary);
+  border-radius: var(--border-radius-s);
+  cursor: pointer;
+}
+
+.socialButton:hover {
+  background-color: var(--color-button-hover);
+}
+
+.socialButton:focus-visible,
+.submitButton:focus-visible,
+.modeButton:focus-visible,
+.eyeButton:focus-visible {
+  outline: 2px solid var(--color-accent-strong);
+  outline-offset: 2px;
+}
+
+.socialIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.divider {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  width: 100%;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-disabled);
+}
+
+.dividerText {
+  padding: 0 4px;
+  color: var(--color-text-primary);
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  color: var(--color-text-primary);
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 20px;
+  font: inherit;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-text-secondary);
+  border-radius: var(--border-radius-s);
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.input:hover {
+  border-color: var(--color-text-primary);
+}
+
+.input:focus {
+  border-color: var(--color-accent-strong);
+}
+
+.inputError {
+  border-color: var(--color-error);
+}
+
+.inputError:hover,
+.inputError:focus {
+  border-color: var(--color-error);
+}
+
+.passwordControl {
+  position: relative;
+}
+
+.passwordInput {
+  padding-right: 56px;
+}
+
+.eyeButton {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.eyeIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.helperText,
+.errorMessage {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+}
+
+.helperText {
+  color: var(--color-text-secondary);
+}
+
+.errorMessage {
+  color: var(--color-error);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+}
+
+.submitButton {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 24px;
+  font: inherit;
+  color: var(--color-text-primary);
+  background-color: var(--color-accent);
+  border: 0;
+  border-radius: var(--border-radius-s);
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: var(--color-button-hover);
+}
+
+.submitButton:active {
+  color: var(--color-bg-primary);
+  background-color: var(--color-accent-strong);
+}
+
+.modeButton {
+  padding: 0;
+  font: inherit;
+  color: var(--color-accent-strong);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.modeButton:hover {
+  text-decoration: underline;
+}

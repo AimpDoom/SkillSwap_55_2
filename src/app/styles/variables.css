@@ -14,6 +14,9 @@
   --color-text-secondary: #69735d;
   --color-accent: #abd27a;
   --color-accent-strong: #508826;
+  --color-disabled: #e4e8df;
+  --color-button-hover: #deebc5;
+  --color-error: #ff5e5e;
 
   /* tag-colors */
   --color-tag-business: var(--color-lilac);
