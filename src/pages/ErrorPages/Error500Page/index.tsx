@@ -35,9 +35,9 @@ export default function ServerErrorPage({ statusCode = 500 }: ServerErrorPagePro
             />
           </picture>
         </div>
-        <h2 className={styles.title}>На сервере произошла ошибка</h2>
+        <h2 className={styles.title}>На сервере произошла ошибка</h2>
         <p className={styles.description}>
-          Попробуйте позже или вернитесь на главную страницу
+          Попробуйте позже или вернитесь на главную страницу
         </p>
         <div className={styles.buttonGroup}>
           <button className={styles.secondaryButton} onClick={handleReportError}>
