@@ -5,6 +5,7 @@
   width: 100%;
   min-height: 180px;
   padding: 24px var(--page-padding-inline) 24px;
+  background-color: var(--color-bg-primary);
 }
 
 .footer > :first-child {
