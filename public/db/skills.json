@@ -8,11 +8,14 @@
     "authorId": "user-01",
     "createdAt": "2025-01-01T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-001-1/1200/800",
-      "https://picsum.photos/seed/skill-001-2/1200/800",
-      "https://picsum.photos/seed/skill-001-3/1200/800",
-      "https://picsum.photos/seed/skill-001-4/1200/800",
-      "https://picsum.photos/seed/skill-001-5/1200/800"
+      "/assets/images/skills/skill-001/01.webp",
+      "/assets/images/skills/skill-001/02.webp",
+      "/assets/images/skills/skill-001/03.webp",
+      "/assets/images/skills/skill-001/04.webp",
+      "/assets/images/skills/skill-001/05.webp",
+      "/assets/images/skills/skill-001/06.webp",
+      "/assets/images/skills/skill-001/07.webp",
+      "/assets/images/skills/skill-001/08.webp"
     ]
   },
   {
@@ -24,11 +27,12 @@
     "authorId": "user-02",
     "createdAt": "2025-01-02T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-002-1/1200/800",
-      "https://picsum.photos/seed/skill-002-2/1200/800",
-      "https://picsum.photos/seed/skill-002-3/1200/800",
-      "https://picsum.photos/seed/skill-002-4/1200/800",
-      "https://picsum.photos/seed/skill-002-5/1200/800"
+      "/assets/images/skills/skill-002/01.webp",
+      "/assets/images/skills/skill-002/02.webp",
+      "/assets/images/skills/skill-002/03.webp",
+      "/assets/images/skills/skill-002/04.webp",
+      "/assets/images/skills/skill-002/05.webp",
+      "/assets/images/skills/skill-002/06.webp"
     ]
   },
   {
@@ -40,11 +44,12 @@
     "authorId": "user-03",
     "createdAt": "2025-01-03T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-003-1/1200/800",
-      "https://picsum.photos/seed/skill-003-2/1200/800",
-      "https://picsum.photos/seed/skill-003-3/1200/800",
-      "https://picsum.photos/seed/skill-003-4/1200/800",
-      "https://picsum.photos/seed/skill-003-5/1200/800"
+      "/assets/images/skills/skill-003/01.webp",
+      "/assets/images/skills/skill-003/02.webp",
+      "/assets/images/skills/skill-003/03.webp",
+      "/assets/images/skills/skill-003/04.webp",
+      "/assets/images/skills/skill-003/05.webp",
+      "/assets/images/skills/skill-003/06.webp"
     ]
   },
   {
@@ -56,11 +61,16 @@
     "authorId": "user-04",
     "createdAt": "2025-01-04T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-004-1/1200/800",
-      "https://picsum.photos/seed/skill-004-2/1200/800",
-      "https://picsum.photos/seed/skill-004-3/1200/800",
-      "https://picsum.photos/seed/skill-004-4/1200/800",
-      "https://picsum.photos/seed/skill-004-5/1200/800"
+      "/assets/images/skills/skill-004/01.webp",
+      "/assets/images/skills/skill-004/02.webp",
+      "/assets/images/skills/skill-004/03.webp",
+      "/assets/images/skills/skill-004/04.webp",
+      "/assets/images/skills/skill-004/05.webp",
+      "/assets/images/skills/skill-004/06.webp",
+      "/assets/images/skills/skill-004/07.webp",
+      "/assets/images/skills/skill-004/08.webp",
+      "/assets/images/skills/skill-004/09.webp",
+      "/assets/images/skills/skill-004/10.webp"
     ]
   },
   {
@@ -72,11 +82,16 @@
     "authorId": "user-05",
     "createdAt": "2025-01-05T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-005-1/1200/800",
-      "https://picsum.photos/seed/skill-005-2/1200/800",
-      "https://picsum.photos/seed/skill-005-3/1200/800",
-      "https://picsum.photos/seed/skill-005-4/1200/800",
-      "https://picsum.photos/seed/skill-005-5/1200/800"
+      "/assets/images/skills/skill-005/01.webp",
+      "/assets/images/skills/skill-005/02.webp",
+      "/assets/images/skills/skill-005/03.webp",
+      "/assets/images/skills/skill-005/04.webp",
+      "/assets/images/skills/skill-005/05.webp",
+      "/assets/images/skills/skill-005/06.webp",
+      "/assets/images/skills/skill-005/07.webp",
+      "/assets/images/skills/skill-005/08.webp",
+      "/assets/images/skills/skill-005/09.webp",
+      "/assets/images/skills/skill-005/10.webp"
     ]
   },
   {
@@ -88,11 +103,16 @@
     "authorId": "user-06",
     "createdAt": "2025-01-06T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-006-1/1200/800",
-      "https://picsum.photos/seed/skill-006-2/1200/800",
-      "https://picsum.photos/seed/skill-006-3/1200/800",
-      "https://picsum.photos/seed/skill-006-4/1200/800",
-      "https://picsum.photos/seed/skill-006-5/1200/800"
+      "/assets/images/skills/skill-006/01.webp",
+      "/assets/images/skills/skill-006/02.webp",
+      "/assets/images/skills/skill-006/03.webp",
+      "/assets/images/skills/skill-006/04.webp",
+      "/assets/images/skills/skill-006/05.webp",
+      "/assets/images/skills/skill-006/06.webp",
+      "/assets/images/skills/skill-006/07.webp",
+      "/assets/images/skills/skill-006/08.webp",
+      "/assets/images/skills/skill-006/09.webp",
+      "/assets/images/skills/skill-006/10.webp"
     ]
   },
   {
@@ -104,11 +124,16 @@
     "authorId": "user-07",
     "createdAt": "2025-01-07T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-007-1/1200/800",
-      "https://picsum.photos/seed/skill-007-2/1200/800",
-      "https://picsum.photos/seed/skill-007-3/1200/800",
-      "https://picsum.photos/seed/skill-007-4/1200/800",
-      "https://picsum.photos/seed/skill-007-5/1200/800"
+      "/assets/images/skills/skill-007/01.webp",
+      "/assets/images/skills/skill-007/02.webp",
+      "/assets/images/skills/skill-007/03.webp",
+      "/assets/images/skills/skill-007/04.webp",
+      "/assets/images/skills/skill-007/05.webp",
+      "/assets/images/skills/skill-007/06.webp",
+      "/assets/images/skills/skill-007/07.webp",
+      "/assets/images/skills/skill-007/08.webp",
+      "/assets/images/skills/skill-007/09.webp",
+      "/assets/images/skills/skill-007/10.webp"
     ]
   },
   {
@@ -120,12 +145,16 @@
     "authorId": "user-08",
     "createdAt": "2025-01-08T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-008-1/1200/800",
-      "https://picsum.photos/seed/skill-008-2/1200/800",
-      "https://picsum.photos/seed/skill-008-3/1200/800",
-      "https://picsum.photos/seed/skill-008-4/1200/800",
-      "https://picsum.photos/seed/skill-008-5/1200/800"
-    ]
+      "/assets/images/skills/skill-008/01.webp",
+      "/assets/images/skills/skill-008/02.webp",
+      "/assets/images/skills/skill-008/03.webp",
+      "/assets/images/skills/skill-008/04.webp",
+      "/assets/images/skills/skill-008/05.webp",
+      "/assets/images/skills/skill-008/06.webp",
+      "/assets/images/skills/skill-008/07.webp",
+      "/assets/images/skills/skill-008/08.webp",
+      "/assets/images/skills/skill-008/09.webp",
+      "/assets/images/skills/skill-008/10.webp"]
   },
   {
     "id": "skill-009",
@@ -136,12 +165,17 @@
     "authorId": "user-09",
     "createdAt": "2025-01-09T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-009-1/1200/800",
-      "https://picsum.photos/seed/skill-009-2/1200/800",
-      "https://picsum.photos/seed/skill-009-3/1200/800",
-      "https://picsum.photos/seed/skill-009-4/1200/800",
-      "https://picsum.photos/seed/skill-009-5/1200/800"
-    ]
+      "/assets/images/skills/skill-009/01.webp",
+      "/assets/images/skills/skill-009/02.webp",
+      "/assets/images/skills/skill-009/03.webp",
+      "/assets/images/skills/skill-009/04.webp",
+      "/assets/images/skills/skill-009/05.webp",
+      "/assets/images/skills/skill-009/06.webp",
+      "/assets/images/skills/skill-009/07.webp",
+      "/assets/images/skills/skill-009/08.webp",
+      "/assets/images/skills/skill-009/09.webp",
+      "/assets/images/skills/skill-009/10.webp"]
+
   },
   {
     "id": "skill-010",
@@ -152,12 +186,16 @@
     "authorId": "user-10",
     "createdAt": "2025-01-10T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-010-1/1200/800",
-      "https://picsum.photos/seed/skill-010-2/1200/800",
-      "https://picsum.photos/seed/skill-010-3/1200/800",
-      "https://picsum.photos/seed/skill-010-4/1200/800",
-      "https://picsum.photos/seed/skill-010-5/1200/800"
-    ]
+      "/assets/images/skills/skill-010/01.webp",
+      "/assets/images/skills/skill-010/02.webp",
+      "/assets/images/skills/skill-010/03.webp",
+      "/assets/images/skills/skill-010/04.webp",
+      "/assets/images/skills/skill-010/05.webp",
+      "/assets/images/skills/skill-010/06.webp",
+      "/assets/images/skills/skill-010/07.webp",
+      "/assets/images/skills/skill-010/08.webp",
+      "/assets/images/skills/skill-010/09.webp",
+      "/assets/images/skills/skill-010/10.webp"]
   },
   {
     "id": "skill-011",
@@ -168,12 +206,16 @@
     "authorId": "user-11",
     "createdAt": "2025-01-11T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-011-1/1200/800",
-      "https://picsum.photos/seed/skill-011-2/1200/800",
-      "https://picsum.photos/seed/skill-011-3/1200/800",
-      "https://picsum.photos/seed/skill-011-4/1200/800",
-      "https://picsum.photos/seed/skill-011-5/1200/800"
-    ]
+      "/assets/images/skills/skill-011/01.webp",
+      "/assets/images/skills/skill-011/02.webp",
+      "/assets/images/skills/skill-011/03.webp",
+      "/assets/images/skills/skill-011/04.webp",
+      "/assets/images/skills/skill-011/05.webp",
+      "/assets/images/skills/skill-011/06.webp",
+      "/assets/images/skills/skill-011/07.webp",
+      "/assets/images/skills/skill-011/08.webp",
+      "/assets/images/skills/skill-011/09.webp",
+      "/assets/images/skills/skill-011/10.webp"]
   },
   {
     "id": "skill-012",
@@ -184,12 +226,16 @@
     "authorId": "user-12",
     "createdAt": "2025-01-12T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-012-1/1200/800",
-      "https://picsum.photos/seed/skill-012-2/1200/800",
-      "https://picsum.photos/seed/skill-012-3/1200/800",
-      "https://picsum.photos/seed/skill-012-4/1200/800",
-      "https://picsum.photos/seed/skill-012-5/1200/800"
-    ]
+      "/assets/images/skills/skill-012/01.webp",
+      "/assets/images/skills/skill-012/02.webp",
+      "/assets/images/skills/skill-012/03.webp",
+      "/assets/images/skills/skill-012/04.webp",
+      "/assets/images/skills/skill-012/05.webp",
+      "/assets/images/skills/skill-012/06.webp",
+      "/assets/images/skills/skill-012/07.webp",
+      "/assets/images/skills/skill-012/08.webp",
+      "/assets/images/skills/skill-012/09.webp",
+      "/assets/images/skills/skill-012/10.webp"]
   },
   {
     "id": "skill-013",
@@ -200,12 +246,15 @@
     "authorId": "user-13",
     "createdAt": "2025-01-13T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-013-1/1200/800",
-      "https://picsum.photos/seed/skill-013-2/1200/800",
-      "https://picsum.photos/seed/skill-013-3/1200/800",
-      "https://picsum.photos/seed/skill-013-4/1200/800",
-      "https://picsum.photos/seed/skill-013-5/1200/800"
-    ]
+      "/assets/images/skills/skill-013/01.webp",
+      "/assets/images/skills/skill-013/02.webp",
+      "/assets/images/skills/skill-013/03.webp",
+      "/assets/images/skills/skill-013/04.webp",
+      "/assets/images/skills/skill-013/05.webp",
+      "/assets/images/skills/skill-013/06.webp",
+      "/assets/images/skills/skill-013/07.webp",
+      "/assets/images/skills/skill-013/08.webp",
+      "/assets/images/skills/skill-013/09.webp"]
   },
   {
     "id": "skill-014",
@@ -216,12 +265,16 @@
     "authorId": "user-14",
     "createdAt": "2025-01-14T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-014-1/1200/800",
-      "https://picsum.photos/seed/skill-014-2/1200/800",
-      "https://picsum.photos/seed/skill-014-3/1200/800",
-      "https://picsum.photos/seed/skill-014-4/1200/800",
-      "https://picsum.photos/seed/skill-014-5/1200/800"
-    ]
+      "/assets/images/skills/skill-014/01.webp",
+      "/assets/images/skills/skill-014/02.webp",
+      "/assets/images/skills/skill-014/03.webp",
+      "/assets/images/skills/skill-014/04.webp",
+      "/assets/images/skills/skill-014/05.webp",
+      "/assets/images/skills/skill-014/06.webp",
+      "/assets/images/skills/skill-014/07.webp",
+      "/assets/images/skills/skill-014/08.webp",
+      "/assets/images/skills/skill-014/09.webp",
+      "/assets/images/skills/skill-014/10.webp"]
   },
   {
     "id": "skill-015",
@@ -232,12 +285,16 @@
     "authorId": "user-15",
     "createdAt": "2025-01-15T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-015-1/1200/800",
-      "https://picsum.photos/seed/skill-015-2/1200/800",
-      "https://picsum.photos/seed/skill-015-3/1200/800",
-      "https://picsum.photos/seed/skill-015-4/1200/800",
-      "https://picsum.photos/seed/skill-015-5/1200/800"
-    ]
+      "/assets/images/skills/skill-015/01.webp",
+      "/assets/images/skills/skill-015/02.webp",
+      "/assets/images/skills/skill-015/03.webp",
+      "/assets/images/skills/skill-015/04.webp",
+      "/assets/images/skills/skill-015/05.webp",
+      "/assets/images/skills/skill-015/06.webp",
+      "/assets/images/skills/skill-015/07.webp",
+      "/assets/images/skills/skill-015/08.webp",
+      "/assets/images/skills/skill-015/09.webp",
+      "/assets/images/skills/skill-015/10.webp"]
   },
   {
     "id": "skill-016",
@@ -248,12 +305,16 @@
     "authorId": "user-16",
     "createdAt": "2025-01-16T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-016-1/1200/800",
-      "https://picsum.photos/seed/skill-016-2/1200/800",
-      "https://picsum.photos/seed/skill-016-3/1200/800",
-      "https://picsum.photos/seed/skill-016-4/1200/800",
-      "https://picsum.photos/seed/skill-016-5/1200/800"
-    ]
+      "/assets/images/skills/skill-016/01.webp",
+      "/assets/images/skills/skill-016/02.webp",
+      "/assets/images/skills/skill-016/03.webp",
+      "/assets/images/skills/skill-016/04.webp",
+      "/assets/images/skills/skill-016/05.webp",
+      "/assets/images/skills/skill-016/06.webp",
+      "/assets/images/skills/skill-016/07.webp",
+      "/assets/images/skills/skill-016/08.webp",
+      "/assets/images/skills/skill-016/09.webp",
+      "/assets/images/skills/skill-016/10.webp"]
   },
   {
     "id": "skill-017",
@@ -264,12 +325,14 @@
     "authorId": "user-17",
     "createdAt": "2025-01-17T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-017-1/1200/800",
-      "https://picsum.photos/seed/skill-017-2/1200/800",
-      "https://picsum.photos/seed/skill-017-3/1200/800",
-      "https://picsum.photos/seed/skill-017-4/1200/800",
-      "https://picsum.photos/seed/skill-017-5/1200/800"
-    ]
+      "/assets/images/skills/skill-017/01.webp",
+      "/assets/images/skills/skill-017/02.webp",
+      "/assets/images/skills/skill-017/03.webp",
+      "/assets/images/skills/skill-017/04.webp",
+      "/assets/images/skills/skill-017/05.webp",
+      "/assets/images/skills/skill-017/06.webp",
+      "/assets/images/skills/skill-017/07.webp",
+      "/assets/images/skills/skill-017/08.webp"]
   },
   {
     "id": "skill-018",
@@ -280,12 +343,13 @@
     "authorId": "user-18",
     "createdAt": "2025-01-18T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-018-1/1200/800",
-      "https://picsum.photos/seed/skill-018-2/1200/800",
-      "https://picsum.photos/seed/skill-018-3/1200/800",
-      "https://picsum.photos/seed/skill-018-4/1200/800",
-      "https://picsum.photos/seed/skill-018-5/1200/800"
-    ]
+      "/assets/images/skills/skill-018/01.webp",
+      "/assets/images/skills/skill-018/02.webp",
+      "/assets/images/skills/skill-018/03.webp",
+      "/assets/images/skills/skill-018/04.webp",
+      "/assets/images/skills/skill-018/05.webp",
+      "/assets/images/skills/skill-018/06.webp",
+      "/assets/images/skills/skill-018/07.webp"]
   },
   {
     "id": "skill-019",
@@ -296,11 +360,11 @@
     "authorId": "user-19",
     "createdAt": "2025-01-19T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-019-1/1200/800",
-      "https://picsum.photos/seed/skill-019-2/1200/800",
-      "https://picsum.photos/seed/skill-019-3/1200/800",
-      "https://picsum.photos/seed/skill-019-4/1200/800",
-      "https://picsum.photos/seed/skill-019-5/1200/800"
+      "/assets/images/skills/skill-019/01.webp",
+      "/assets/images/skills/skill-019/02.webp",
+      "/assets/images/skills/skill-019/03.webp",
+      "/assets/images/skills/skill-019/04.webp",
+      "/assets/images/skills/skill-019/05.webp"
     ]
   },
   {
@@ -312,11 +376,12 @@
     "authorId": "user-20",
     "createdAt": "2025-01-20T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-020-1/1200/800",
-      "https://picsum.photos/seed/skill-020-2/1200/800",
-      "https://picsum.photos/seed/skill-020-3/1200/800",
-      "https://picsum.photos/seed/skill-020-4/1200/800",
-      "https://picsum.photos/seed/skill-020-5/1200/800"
+      "/assets/images/skills/skill-020/01.webp",
+      "/assets/images/skills/skill-020/02.webp",
+      "/assets/images/skills/skill-020/03.webp",
+      "/assets/images/skills/skill-020/04.webp",
+      "/assets/images/skills/skill-020/05.webp",
+      "/assets/images/skills/skill-020/06.webp"
     ]
   },
   {
@@ -328,11 +393,13 @@
     "authorId": "user-21",
     "createdAt": "2025-01-21T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-021-1/1200/800",
-      "https://picsum.photos/seed/skill-021-2/1200/800",
-      "https://picsum.photos/seed/skill-021-3/1200/800",
-      "https://picsum.photos/seed/skill-021-4/1200/800",
-      "https://picsum.photos/seed/skill-021-5/1200/800"
+      "/assets/images/skills/skill-021/01.webp",
+      "/assets/images/skills/skill-021/02.webp",
+      "/assets/images/skills/skill-021/03.webp",
+      "/assets/images/skills/skill-021/04.webp",
+      "/assets/images/skills/skill-021/05.webp",
+      "/assets/images/skills/skill-021/06.webp",
+      "/assets/images/skills/skill-021/07.webp"
     ]
   },
   {
@@ -344,11 +411,11 @@
     "authorId": "user-22",
     "createdAt": "2025-01-22T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-022-1/1200/800",
-      "https://picsum.photos/seed/skill-022-2/1200/800",
-      "https://picsum.photos/seed/skill-022-3/1200/800",
-      "https://picsum.photos/seed/skill-022-4/1200/800",
-      "https://picsum.photos/seed/skill-022-5/1200/800"
+      "/assets/images/skills/skill-022/01.webp",
+      "/assets/images/skills/skill-022/02.webp",
+      "/assets/images/skills/skill-022/03.webp",
+      "/assets/images/skills/skill-022/04.webp",
+      "/assets/images/skills/skill-022/05.webp"
     ]
   },
   {
@@ -360,11 +427,13 @@
     "authorId": "user-23",
     "createdAt": "2025-01-23T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-023-1/1200/800",
-      "https://picsum.photos/seed/skill-023-2/1200/800",
-      "https://picsum.photos/seed/skill-023-3/1200/800",
-      "https://picsum.photos/seed/skill-023-4/1200/800",
-      "https://picsum.photos/seed/skill-023-5/1200/800"
+      "/assets/images/skills/skill-023/01.webp",
+      "/assets/images/skills/skill-023/02.webp",
+      "/assets/images/skills/skill-023/03.webp",
+      "/assets/images/skills/skill-023/04.webp",
+      "/assets/images/skills/skill-023/05.webp",
+      "/assets/images/skills/skill-023/06.webp",
+      "/assets/images/skills/skill-023/07.webp"
     ]
   },
   {
@@ -376,11 +445,13 @@
     "authorId": "user-24",
     "createdAt": "2025-01-24T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-024-1/1200/800",
-      "https://picsum.photos/seed/skill-024-2/1200/800",
-      "https://picsum.photos/seed/skill-024-3/1200/800",
-      "https://picsum.photos/seed/skill-024-4/1200/800",
-      "https://picsum.photos/seed/skill-024-5/1200/800"
+      "/assets/images/skills/skill-024/01.webp",
+      "/assets/images/skills/skill-024/02.webp",
+      "/assets/images/skills/skill-024/03.webp",
+      "/assets/images/skills/skill-024/04.webp",
+      "/assets/images/skills/skill-024/05.webp",
+      "/assets/images/skills/skill-024/06.webp",
+      "/assets/images/skills/skill-024/07.webp"
     ]
   },
   {
@@ -392,11 +463,14 @@
     "authorId": "user-25",
     "createdAt": "2025-01-25T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-025-1/1200/800",
-      "https://picsum.photos/seed/skill-025-2/1200/800",
-      "https://picsum.photos/seed/skill-025-3/1200/800",
-      "https://picsum.photos/seed/skill-025-4/1200/800",
-      "https://picsum.photos/seed/skill-025-5/1200/800"
+      "/assets/images/skills/skill-025/01.webp",
+      "/assets/images/skills/skill-025/02.webp",
+      "/assets/images/skills/skill-025/03.webp",
+      "/assets/images/skills/skill-025/04.webp",
+      "/assets/images/skills/skill-025/05.webp",
+      "/assets/images/skills/skill-025/06.webp",
+      "/assets/images/skills/skill-025/07.webp",
+      "/assets/images/skills/skill-025/08.webp"
     ]
   },
   {
@@ -408,11 +482,12 @@
     "authorId": "user-26",
     "createdAt": "2025-01-26T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-026-1/1200/800",
-      "https://picsum.photos/seed/skill-026-2/1200/800",
-      "https://picsum.photos/seed/skill-026-3/1200/800",
-      "https://picsum.photos/seed/skill-026-4/1200/800",
-      "https://picsum.photos/seed/skill-026-5/1200/800"
+      "/assets/images/skills/skill-026/01.webp",
+      "/assets/images/skills/skill-026/02.webp",
+      "/assets/images/skills/skill-026/03.webp",
+      "/assets/images/skills/skill-026/04.webp",
+      "/assets/images/skills/skill-026/05.webp",
+      "/assets/images/skills/skill-026/06.webp"
     ]
   },
   {
@@ -424,11 +499,14 @@
     "authorId": "user-27",
     "createdAt": "2025-01-27T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-027-1/1200/800",
-      "https://picsum.photos/seed/skill-027-2/1200/800",
-      "https://picsum.photos/seed/skill-027-3/1200/800",
-      "https://picsum.photos/seed/skill-027-4/1200/800",
-      "https://picsum.photos/seed/skill-027-5/1200/800"
+      "/assets/images/skills/skill-027/01.webp",
+      "/assets/images/skills/skill-027/02.webp",
+      "/assets/images/skills/skill-027/03.webp",
+      "/assets/images/skills/skill-027/04.webp",
+      "/assets/images/skills/skill-027/05.webp",
+      "/assets/images/skills/skill-027/06.webp",
+      "/assets/images/skills/skill-027/07.webp",
+      "/assets/images/skills/skill-027/08.webp"
     ]
   },
   {
@@ -440,11 +518,15 @@
     "authorId": "user-28",
     "createdAt": "2025-01-28T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-028-1/1200/800",
-      "https://picsum.photos/seed/skill-028-2/1200/800",
-      "https://picsum.photos/seed/skill-028-3/1200/800",
-      "https://picsum.photos/seed/skill-028-4/1200/800",
-      "https://picsum.photos/seed/skill-028-5/1200/800"
+      "/assets/images/skills/skill-028/01.webp",
+      "/assets/images/skills/skill-028/02.webp",
+      "/assets/images/skills/skill-028/03.webp",
+      "/assets/images/skills/skill-028/04.webp",
+      "/assets/images/skills/skill-028/05.webp",
+      "/assets/images/skills/skill-028/06.webp",
+      "/assets/images/skills/skill-028/07.webp",
+      "/assets/images/skills/skill-028/08.webp",
+      "/assets/images/skills/skill-028/09.webp"
     ]
   },
   {
@@ -456,11 +538,13 @@
     "authorId": "user-29",
     "createdAt": "2025-01-29T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-029-1/1200/800",
-      "https://picsum.photos/seed/skill-029-2/1200/800",
-      "https://picsum.photos/seed/skill-029-3/1200/800",
-      "https://picsum.photos/seed/skill-029-4/1200/800",
-      "https://picsum.photos/seed/skill-029-5/1200/800"
+      "/assets/images/skills/skill-029/01.webp",
+      "/assets/images/skills/skill-029/02.webp",
+      "/assets/images/skills/skill-029/03.webp",
+      "/assets/images/skills/skill-029/04.webp",
+      "/assets/images/skills/skill-029/05.webp",
+      "/assets/images/skills/skill-029/06.webp",
+      "/assets/images/skills/skill-029/07.webp"
     ]
   },
   {
@@ -472,11 +556,15 @@
     "authorId": "user-30",
     "createdAt": "2025-01-30T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-030-1/1200/800",
-      "https://picsum.photos/seed/skill-030-2/1200/800",
-      "https://picsum.photos/seed/skill-030-3/1200/800",
-      "https://picsum.photos/seed/skill-030-4/1200/800",
-      "https://picsum.photos/seed/skill-030-5/1200/800"
+      "/assets/images/skills/skill-030/01.webp",
+      "/assets/images/skills/skill-030/02.webp",
+      "/assets/images/skills/skill-030/03.webp",
+      "/assets/images/skills/skill-030/04.webp",
+      "/assets/images/skills/skill-030/05.webp",
+      "/assets/images/skills/skill-030/06.webp",
+      "/assets/images/skills/skill-030/07.webp",
+      "/assets/images/skills/skill-030/08.webp",
+      "/assets/images/skills/skill-030/09.webp"
     ]
   },
   {
@@ -488,11 +576,16 @@
     "authorId": "user-31",
     "createdAt": "2025-01-31T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-031-1/1200/800",
-      "https://picsum.photos/seed/skill-031-2/1200/800",
-      "https://picsum.photos/seed/skill-031-3/1200/800",
-      "https://picsum.photos/seed/skill-031-4/1200/800",
-      "https://picsum.photos/seed/skill-031-5/1200/800"
+      "/assets/images/skills/skill-031/01.webp",
+      "/assets/images/skills/skill-031/02.webp",
+      "/assets/images/skills/skill-031/03.webp",
+      "/assets/images/skills/skill-031/04.webp",
+      "/assets/images/skills/skill-031/05.webp",
+      "/assets/images/skills/skill-031/06.webp",
+      "/assets/images/skills/skill-031/07.webp",
+      "/assets/images/skills/skill-031/08.webp",
+      "/assets/images/skills/skill-031/09.webp",
+      "/assets/images/skills/skill-031/10.webp"
     ]
   },
   {
@@ -504,11 +597,16 @@
     "authorId": "user-32",
     "createdAt": "2025-02-01T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-032-1/1200/800",
-      "https://picsum.photos/seed/skill-032-2/1200/800",
-      "https://picsum.photos/seed/skill-032-3/1200/800",
-      "https://picsum.photos/seed/skill-032-4/1200/800",
-      "https://picsum.photos/seed/skill-032-5/1200/800"
+      "/assets/images/skills/skill-032/01.webp",
+      "/assets/images/skills/skill-032/02.webp",
+      "/assets/images/skills/skill-032/03.webp",
+      "/assets/images/skills/skill-032/04.webp",
+      "/assets/images/skills/skill-032/05.webp",
+      "/assets/images/skills/skill-032/06.webp",
+      "/assets/images/skills/skill-032/07.webp",
+      "/assets/images/skills/skill-032/08.webp",
+      "/assets/images/skills/skill-032/09.webp",
+      "/assets/images/skills/skill-032/10.webp"
     ]
   },
   {
@@ -520,11 +618,16 @@
     "authorId": "user-33",
     "createdAt": "2025-02-02T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-033-1/1200/800",
-      "https://picsum.photos/seed/skill-033-2/1200/800",
-      "https://picsum.photos/seed/skill-033-3/1200/800",
-      "https://picsum.photos/seed/skill-033-4/1200/800",
-      "https://picsum.photos/seed/skill-033-5/1200/800"
+      "/assets/images/skills/skill-033/01.webp",
+      "/assets/images/skills/skill-033/02.webp",
+      "/assets/images/skills/skill-033/03.webp",
+      "/assets/images/skills/skill-033/04.webp",
+      "/assets/images/skills/skill-033/05.webp",
+      "/assets/images/skills/skill-033/06.webp",
+      "/assets/images/skills/skill-033/07.webp",
+      "/assets/images/skills/skill-033/08.webp",
+      "/assets/images/skills/skill-033/09.webp",
+      "/assets/images/skills/skill-033/10.webp"
     ]
   },
   {
@@ -536,11 +639,15 @@
     "authorId": "user-34",
     "createdAt": "2025-02-03T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-034-1/1200/800",
-      "https://picsum.photos/seed/skill-034-2/1200/800",
-      "https://picsum.photos/seed/skill-034-3/1200/800",
-      "https://picsum.photos/seed/skill-034-4/1200/800",
-      "https://picsum.photos/seed/skill-034-5/1200/800"
+      "/assets/images/skills/skill-034/01.webp",
+      "/assets/images/skills/skill-034/02.webp",
+      "/assets/images/skills/skill-034/03.webp",
+      "/assets/images/skills/skill-034/04.webp",
+      "/assets/images/skills/skill-034/05.webp",
+      "/assets/images/skills/skill-034/06.webp",
+      "/assets/images/skills/skill-034/07.webp",
+      "/assets/images/skills/skill-034/08.webp",
+      "/assets/images/skills/skill-034/09.webp"
     ]
   },
   {
@@ -552,11 +659,16 @@
     "authorId": "user-35",
     "createdAt": "2025-02-04T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-035-1/1200/800",
-      "https://picsum.photos/seed/skill-035-2/1200/800",
-      "https://picsum.photos/seed/skill-035-3/1200/800",
-      "https://picsum.photos/seed/skill-035-4/1200/800",
-      "https://picsum.photos/seed/skill-035-5/1200/800"
+      "/assets/images/skills/skill-035/01.webp",
+      "/assets/images/skills/skill-035/02.webp",
+      "/assets/images/skills/skill-035/03.webp",
+      "/assets/images/skills/skill-035/04.webp",
+      "/assets/images/skills/skill-035/05.webp",
+      "/assets/images/skills/skill-035/06.webp",
+      "/assets/images/skills/skill-035/07.webp",
+      "/assets/images/skills/skill-035/08.webp",
+      "/assets/images/skills/skill-035/09.webp",
+      "/assets/images/skills/skill-035/10.webp"
     ]
   },
   {
@@ -568,11 +680,16 @@
     "authorId": "user-36",
     "createdAt": "2025-02-05T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-036-1/1200/800",
-      "https://picsum.photos/seed/skill-036-2/1200/800",
-      "https://picsum.photos/seed/skill-036-3/1200/800",
-      "https://picsum.photos/seed/skill-036-4/1200/800",
-      "https://picsum.photos/seed/skill-036-5/1200/800"
+      "/assets/images/skills/skill-036/01.webp",
+      "/assets/images/skills/skill-036/02.webp",
+      "/assets/images/skills/skill-036/03.webp",
+      "/assets/images/skills/skill-036/04.webp",
+      "/assets/images/skills/skill-036/05.webp",
+      "/assets/images/skills/skill-036/06.webp",
+      "/assets/images/skills/skill-036/07.webp",
+      "/assets/images/skills/skill-036/08.webp",
+      "/assets/images/skills/skill-036/09.webp",
+      "/assets/images/skills/skill-036/10.webp"
     ]
   },
   {
@@ -584,11 +701,15 @@
     "authorId": "user-37",
     "createdAt": "2025-02-06T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-037-1/1200/800",
-      "https://picsum.photos/seed/skill-037-2/1200/800",
-      "https://picsum.photos/seed/skill-037-3/1200/800",
-      "https://picsum.photos/seed/skill-037-4/1200/800",
-      "https://picsum.photos/seed/skill-037-5/1200/800"
+      "/assets/images/skills/skill-037/01.webp",
+      "/assets/images/skills/skill-037/02.webp",
+      "/assets/images/skills/skill-037/03.webp",
+      "/assets/images/skills/skill-037/04.webp",
+      "/assets/images/skills/skill-037/05.webp",
+      "/assets/images/skills/skill-037/06.webp",
+      "/assets/images/skills/skill-037/07.webp",
+      "/assets/images/skills/skill-037/08.webp",
+      "/assets/images/skills/skill-037/09.webp"
     ]
   },
   {
@@ -600,11 +721,15 @@
     "authorId": "user-38",
     "createdAt": "2025-02-07T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-038-1/1200/800",
-      "https://picsum.photos/seed/skill-038-2/1200/800",
-      "https://picsum.photos/seed/skill-038-3/1200/800",
-      "https://picsum.photos/seed/skill-038-4/1200/800",
-      "https://picsum.photos/seed/skill-038-5/1200/800"
+      "/assets/images/skills/skill-038/01.webp",
+      "/assets/images/skills/skill-038/02.webp",
+      "/assets/images/skills/skill-038/03.webp",
+      "/assets/images/skills/skill-038/04.webp",
+      "/assets/images/skills/skill-038/05.webp",
+      "/assets/images/skills/skill-038/06.webp",
+      "/assets/images/skills/skill-038/07.webp",
+      "/assets/images/skills/skill-038/08.webp",
+      "/assets/images/skills/skill-038/09.webp"
     ]
   },
   {
@@ -616,11 +741,16 @@
     "authorId": "user-39",
     "createdAt": "2025-02-08T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-039-1/1200/800",
-      "https://picsum.photos/seed/skill-039-2/1200/800",
-      "https://picsum.photos/seed/skill-039-3/1200/800",
-      "https://picsum.photos/seed/skill-039-4/1200/800",
-      "https://picsum.photos/seed/skill-039-5/1200/800"
+      "/assets/images/skills/skill-039/01.webp",
+      "/assets/images/skills/skill-039/02.webp",
+      "/assets/images/skills/skill-039/03.webp",
+      "/assets/images/skills/skill-039/04.webp",
+      "/assets/images/skills/skill-039/05.webp",
+      "/assets/images/skills/skill-039/06.webp",
+      "/assets/images/skills/skill-039/07.webp",
+      "/assets/images/skills/skill-039/08.webp",
+      "/assets/images/skills/skill-039/09.webp",
+      "/assets/images/skills/skill-039/10.webp"
     ]
   },
   {
@@ -632,11 +762,16 @@
     "authorId": "user-40",
     "createdAt": "2025-02-09T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-040-1/1200/800",
-      "https://picsum.photos/seed/skill-040-2/1200/800",
-      "https://picsum.photos/seed/skill-040-3/1200/800",
-      "https://picsum.photos/seed/skill-040-4/1200/800",
-      "https://picsum.photos/seed/skill-040-5/1200/800"
+      "/assets/images/skills/skill-040/01.webp",
+      "/assets/images/skills/skill-040/02.webp",
+      "/assets/images/skills/skill-040/03.webp",
+      "/assets/images/skills/skill-040/04.webp",
+      "/assets/images/skills/skill-040/05.webp",
+      "/assets/images/skills/skill-040/06.webp",
+      "/assets/images/skills/skill-040/07.webp",
+      "/assets/images/skills/skill-040/08.webp",
+      "/assets/images/skills/skill-040/09.webp",
+      "/assets/images/skills/skill-040/10.webp"
     ]
   },
   {
@@ -648,11 +783,16 @@
     "authorId": "user-41",
     "createdAt": "2025-02-10T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-041-1/1200/800",
-      "https://picsum.photos/seed/skill-041-2/1200/800",
-      "https://picsum.photos/seed/skill-041-3/1200/800",
-      "https://picsum.photos/seed/skill-041-4/1200/800",
-      "https://picsum.photos/seed/skill-041-5/1200/800"
+      "/assets/images/skills/skill-041/01.webp",
+      "/assets/images/skills/skill-041/02.webp",
+      "/assets/images/skills/skill-041/03.webp",
+      "/assets/images/skills/skill-041/04.webp",
+      "/assets/images/skills/skill-041/05.webp",
+      "/assets/images/skills/skill-041/06.webp",
+      "/assets/images/skills/skill-041/07.webp",
+      "/assets/images/skills/skill-041/08.webp",
+      "/assets/images/skills/skill-041/09.webp",
+      "/assets/images/skills/skill-041/10.webp"
     ]
   },
   {
@@ -664,11 +804,16 @@
     "authorId": "user-42",
     "createdAt": "2025-02-11T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-042-1/1200/800",
-      "https://picsum.photos/seed/skill-042-2/1200/800",
-      "https://picsum.photos/seed/skill-042-3/1200/800",
-      "https://picsum.photos/seed/skill-042-4/1200/800",
-      "https://picsum.photos/seed/skill-042-5/1200/800"
+      "/assets/images/skills/skill-042/01.webp",
+      "/assets/images/skills/skill-042/02.webp",
+      "/assets/images/skills/skill-042/03.webp",
+      "/assets/images/skills/skill-042/04.webp",
+      "/assets/images/skills/skill-042/05.webp",
+      "/assets/images/skills/skill-042/06.webp",
+      "/assets/images/skills/skill-042/07.webp",
+      "/assets/images/skills/skill-042/08.webp",
+      "/assets/images/skills/skill-042/09.webp",
+      "/assets/images/skills/skill-042/10.webp"
     ]
   },
   {
@@ -680,11 +825,15 @@
     "authorId": "user-43",
     "createdAt": "2025-02-12T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-043-1/1200/800",
-      "https://picsum.photos/seed/skill-043-2/1200/800",
-      "https://picsum.photos/seed/skill-043-3/1200/800",
-      "https://picsum.photos/seed/skill-043-4/1200/800",
-      "https://picsum.photos/seed/skill-043-5/1200/800"
+      "/assets/images/skills/skill-043/01.webp",
+      "/assets/images/skills/skill-043/02.webp",
+      "/assets/images/skills/skill-043/03.webp",
+      "/assets/images/skills/skill-043/04.webp",
+      "/assets/images/skills/skill-043/05.webp",
+      "/assets/images/skills/skill-043/06.webp",
+      "/assets/images/skills/skill-043/07.webp",
+      "/assets/images/skills/skill-043/08.webp",
+      "/assets/images/skills/skill-043/09.webp"
     ]
   },
   {
@@ -696,11 +845,12 @@
     "authorId": "user-44",
     "createdAt": "2025-02-13T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-044-1/1200/800",
-      "https://picsum.photos/seed/skill-044-2/1200/800",
-      "https://picsum.photos/seed/skill-044-3/1200/800",
-      "https://picsum.photos/seed/skill-044-4/1200/800",
-      "https://picsum.photos/seed/skill-044-5/1200/800"
+      "/assets/images/skills/skill-044/01.webp",
+      "/assets/images/skills/skill-044/02.webp",
+      "/assets/images/skills/skill-044/03.webp",
+      "/assets/images/skills/skill-044/04.webp",
+      "/assets/images/skills/skill-044/05.webp",
+      "/assets/images/skills/skill-044/06.webp"
     ]
   },
   {
@@ -712,11 +862,14 @@
     "authorId": "user-45",
     "createdAt": "2025-02-14T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-045-1/1200/800",
-      "https://picsum.photos/seed/skill-045-2/1200/800",
-      "https://picsum.photos/seed/skill-045-3/1200/800",
-      "https://picsum.photos/seed/skill-045-4/1200/800",
-      "https://picsum.photos/seed/skill-045-5/1200/800"
+      "/assets/images/skills/skill-045/01.webp",
+      "/assets/images/skills/skill-045/02.webp",
+      "/assets/images/skills/skill-045/03.webp",
+      "/assets/images/skills/skill-045/04.webp",
+      "/assets/images/skills/skill-045/05.webp",
+      "/assets/images/skills/skill-045/06.webp",
+      "/assets/images/skills/skill-045/07.webp",
+      "/assets/images/skills/skill-045/08.webp"
     ]
   },
   {
@@ -728,11 +881,16 @@
     "authorId": "user-46",
     "createdAt": "2025-02-15T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-046-1/1200/800",
-      "https://picsum.photos/seed/skill-046-2/1200/800",
-      "https://picsum.photos/seed/skill-046-3/1200/800",
-      "https://picsum.photos/seed/skill-046-4/1200/800",
-      "https://picsum.photos/seed/skill-046-5/1200/800"
+      "/assets/images/skills/skill-046/01.webp",
+      "/assets/images/skills/skill-046/02.webp",
+      "/assets/images/skills/skill-046/03.webp",
+      "/assets/images/skills/skill-046/04.webp",
+      "/assets/images/skills/skill-046/05.webp",
+      "/assets/images/skills/skill-046/06.webp",
+      "/assets/images/skills/skill-046/07.webp",
+      "/assets/images/skills/skill-046/08.webp",
+      "/assets/images/skills/skill-046/09.webp",
+      "/assets/images/skills/skill-046/10.webp"
     ]
   },
   {
@@ -744,11 +902,13 @@
     "authorId": "user-47",
     "createdAt": "2025-02-16T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-047-1/1200/800",
-      "https://picsum.photos/seed/skill-047-2/1200/800",
-      "https://picsum.photos/seed/skill-047-3/1200/800",
-      "https://picsum.photos/seed/skill-047-4/1200/800",
-      "https://picsum.photos/seed/skill-047-5/1200/800"
+      "/assets/images/skills/skill-047/01.webp",
+      "/assets/images/skills/skill-047/02.webp",
+      "/assets/images/skills/skill-047/03.webp",
+      "/assets/images/skills/skill-047/04.webp",
+      "/assets/images/skills/skill-047/05.webp",
+      "/assets/images/skills/skill-047/06.webp",
+      "/assets/images/skills/skill-047/07.webp"
     ]
   },
   {
@@ -760,11 +920,13 @@
     "authorId": "user-48",
     "createdAt": "2025-02-17T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-048-1/1200/800",
-      "https://picsum.photos/seed/skill-048-2/1200/800",
-      "https://picsum.photos/seed/skill-048-3/1200/800",
-      "https://picsum.photos/seed/skill-048-4/1200/800",
-      "https://picsum.photos/seed/skill-048-5/1200/800"
+      "/assets/images/skills/skill-048/01.webp",
+      "/assets/images/skills/skill-048/02.webp",
+      "/assets/images/skills/skill-048/03.webp",
+      "/assets/images/skills/skill-048/04.webp",
+      "/assets/images/skills/skill-048/05.webp",
+      "/assets/images/skills/skill-048/06.webp",
+      "/assets/images/skills/skill-048/07.webp"
     ]
   },
   {
@@ -776,11 +938,16 @@
     "authorId": "user-49",
     "createdAt": "2025-02-18T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-049-1/1200/800",
-      "https://picsum.photos/seed/skill-049-2/1200/800",
-      "https://picsum.photos/seed/skill-049-3/1200/800",
-      "https://picsum.photos/seed/skill-049-4/1200/800",
-      "https://picsum.photos/seed/skill-049-5/1200/800"
+      "/assets/images/skills/skill-049/01.webp",
+      "/assets/images/skills/skill-049/02.webp",
+      "/assets/images/skills/skill-049/03.webp",
+      "/assets/images/skills/skill-049/04.webp",
+      "/assets/images/skills/skill-049/05.webp",
+      "/assets/images/skills/skill-049/06.webp",
+      "/assets/images/skills/skill-049/07.webp",
+      "/assets/images/skills/skill-049/08.webp",
+      "/assets/images/skills/skill-049/09.webp",
+      "/assets/images/skills/skill-049/10.webp"
     ]
   },
   {
@@ -792,11 +959,16 @@
     "authorId": "user-50",
     "createdAt": "2025-02-19T00:00:00Z",
     "imageUrls": [
-      "https://picsum.photos/seed/skill-050-1/1200/800",
-      "https://picsum.photos/seed/skill-050-2/1200/800",
-      "https://picsum.photos/seed/skill-050-3/1200/800",
-      "https://picsum.photos/seed/skill-050-4/1200/800",
-      "https://picsum.photos/seed/skill-050-5/1200/800"
+      "/assets/images/skills/skill-050/01.webp",
+      "/assets/images/skills/skill-050/02.webp",
+      "/assets/images/skills/skill-050/03.webp",
+      "/assets/images/skills/skill-050/04.webp",
+      "/assets/images/skills/skill-050/05.webp",
+      "/assets/images/skills/skill-050/06.webp",
+      "/assets/images/skills/skill-050/07.webp",
+      "/assets/images/skills/skill-050/08.webp",
+      "/assets/images/skills/skill-050/09.webp",
+      "/assets/images/skills/skill-050/10.webp"
     ]
   }
 ]
