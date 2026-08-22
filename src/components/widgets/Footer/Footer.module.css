@@ -11,6 +11,7 @@
 .footer > :first-child {
   grid-column: 1;
   grid-row: 1;
+  justify-self: start;
 }
 
 .footer > nav {
