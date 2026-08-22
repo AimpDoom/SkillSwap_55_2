@@ -1,3 +1,4 @@
+// src/shared/ui/Button/Button.tsx
 import { ButtonHTMLAttributes, ReactNode } from 'react'
 import styles from './Button.module.css'
 
@@ -19,7 +20,7 @@ export function Button({
   
   return (
     <button
-      className={`${variantClass} ${className}`}
+      className={`${styles.button} ${variantClass} ${className}`}
       {...props}
     >
       {children}

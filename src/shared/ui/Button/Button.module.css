@@ -1,7 +1,12 @@
 /* Component styles */
-button {
-border-radius: var(--border-radius-s);
-transition: all 0.2s ease;
+.button {
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: var(--border-radius-s);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
   cursor: pointer;
   font-size: var(--font-size-s);
   line-height: var(--line-height-s);
@@ -14,7 +19,7 @@ transition: all 0.2s ease;
 }
 
 .primaryButton:hover {
-  background-color:  var(--primary-bg-hover-color);
+  background-color: var(--primary-bg-hover-color);
 }
 
 .primaryButton:active {
@@ -35,23 +40,23 @@ transition: all 0.2s ease;
 }
 
 .secondaryButton:hover {
-  border:  var(--secondary-border-hover);
+  border: var(--secondary-border-hover);
   color: var(--secondary-color-hover);
 }
 
 .secondaryButton:active {
   color: var(--color-text-primary);
-border: var(--secondary-border-active);
+  border: var(--secondary-border-active);
 }
 
 .secondaryButton:disabled {
-  border: var(--secondary-border-disabled);
+  border: var(--secondary-disabled-border);
   color: var(--secondary-disabled-color);
   cursor: not-allowed;
 }
 
 .tertiaryButton {
-    border:none;
-    background-color: var(--tertiary-bg-color);
-    color: var(--color-text-primary);
+  border: none;
+  background-color: var(--tertiary-bg-color);
+  color: var(--color-text-primary);
 }
