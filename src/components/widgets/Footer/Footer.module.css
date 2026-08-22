@@ -1,0 +1,27 @@
+.footer {
+  display: grid;
+  grid-template-columns: 349px 1fr;
+  grid-template-rows: auto 1fr auto;
+  width: 100%;
+  min-height: 180px;
+  padding: 24px var(--page-padding-inline) 24px;
+  background-color: var(--color-bg-primary);
+}
+
+.footer > :first-child {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+}
+
+.footer > nav {
+  grid-column: 2;
+  grid-row: 1 / 4;
+  align-self: center;
+  width: 100%;
+}
+
+.footer > :last-child {
+  grid-column: 1;
+  grid-row: 3;
+}

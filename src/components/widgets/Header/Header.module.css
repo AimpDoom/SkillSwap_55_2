@@ -3,8 +3,8 @@
   top: 0;
   z-index: 100;
   width: 100%;
-  padding: 12px var(--page-padding-inline) 24px;
-  background-color: transparent;
+  padding: 12px var(--page-padding-inline) 12px;
+  background-color: var(--color-bg-secondary);
 }
 
 .content {
