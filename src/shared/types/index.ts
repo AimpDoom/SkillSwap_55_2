@@ -7,7 +7,7 @@ export interface Skill {
   categoryId: string
   subcategoryId: string
   imageUrl: string | null
-  images: string[];
+  // images: string[];
   authorId: string
   createdAt: string
 }
