@@ -1,0 +1,97 @@
+
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
+  background-color: var(--color-bg-secondary, #F9FAF7);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.imageWrapper {
+  margin-bottom: 32px;
+  width: 100%;
+  max-width: 460px;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.title {
+  font-size: var(--font-size-l, 24px);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text-primary, #253017);
+  margin: 0 0 16px;
+  text-align: center;
+  letter-spacing: -0.011em;
+}
+
+.description {
+  font-size: var(--font-size-s, 16px);
+  line-height: 1.6;
+  color: var(--color-text-primary, #253017);
+  text-align: center;
+  margin: 0 0 32px;
+  max-width: 480px;
+  letter-spacing: 0.02em; 
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Общие стили для обеих кнопок */
+.buttonGroup button {
+  padding: 12px 24px;
+  font-size: var(--font-size-s, 16px);
+  line-height: var(--line-height-s, 24px);
+  border-radius: var(--border-radius-s, 12px);
+  min-width: 218px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.primaryButton {
+  color: var(--color-text-primary, #253017);
+  background-color: var(--color-accent, #ABD27A);
+  border: none;
+}
+
+.primaryButton:hover {
+  background-color:  #96be65;
+}
+
+.primaryButton:active {
+  background-color: #88b453;
+}
+
+.secondaryButton {
+  color: var(--color-text-primary, #253017);
+  background-color: var(--color-bg-primary, #FFF);
+  border: 1px solid var(--color-accent, #ABD27A);
+}
+
+.secondaryButton:hover {
+  background-color:  #e6e6e6;
+  border-color:  #b3b3b3;
+}
+
+.secondaryButton:active {
+  background-color:  #d9d9d9;
+}
