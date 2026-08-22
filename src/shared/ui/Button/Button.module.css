@@ -1,1 +1,57 @@
 /* Component styles */
+button {
+border-radius: var(--border-radius-s);
+transition: all 0.2s ease;
+  cursor: pointer;
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+}
+
+.primaryButton {
+  color: var(--color-text-primary);
+  background-color: var(--primary-bg-default-color);
+  border: none;
+}
+
+.primaryButton:hover {
+  background-color:  var(--primary-bg-hover-color);
+}
+
+.primaryButton:active {
+  background-color: var(--primary-bg-active-color);
+  color: var(--primary-text-active-color);
+}
+
+.primaryButton:disabled {
+  background-color: var(--primary-bg-disabled-color);
+  color: var(--color-text-secondary);
+  cursor: not-allowed;
+}
+
+.secondaryButton {
+  color: var(--color-text-primary);
+  background-color: var(--secondary-bg-color);
+  border: var(--secondary-border);
+}
+
+.secondaryButton:hover {
+  border:  var(--secondary-border-hover);
+  color: var(--secondary-color-hover);
+}
+
+.secondaryButton:active {
+  color: var(--color-text-primary);
+border: var(--secondary-border-active);
+}
+
+.secondaryButton:disabled {
+  border: var(--secondary-border-disabled);
+  color: var(--secondary-disabled-color);
+  cursor: not-allowed;
+}
+
+.tertiaryButton {
+    border:none;
+    background-color: var(--tertiary-bg-color);
+    color: var(--color-text-primary);
+}

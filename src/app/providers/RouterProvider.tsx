@@ -31,8 +31,9 @@ export function AppRouter() {
           <Route path={ROUTES.CREATE} element={<CreateSkillPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
-          {/* Временный роут на страницу 500 для проверки рендера*/}
-          <Route path="/500" element={<ServerErrorPage />} />
+      
+          {/* Страница ошибки 500 */}
+          <Route path={ROUTES.SERVER_ERROR} element={<ServerErrorPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

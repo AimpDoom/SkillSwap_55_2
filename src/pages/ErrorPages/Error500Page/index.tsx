@@ -1,11 +1,11 @@
-// ServerErrorPage.tsx
+// src/pages/ServerErrorPage/index.tsx
 import { useNavigate } from 'react-router-dom'
 import { ROUTES } from '@/shared/lib/constants'
+import { Button } from '@/shared/ui/Button'
 import styles from '../ErrorPages.module.css'
 import serverErrorImageWebp from '@/shared/assets/images/ErrorPageImages/Error500PageImages/error500.webp'
 import serverErrorImagePng from '@/shared/assets/images/ErrorPageImages/Error500PageImages/error500.png'
 
-// Упрощенный вариант
 interface ServerErrorPageProps {
   statusCode?: number
 }
@@ -35,18 +35,18 @@ export default function ServerErrorPage({ statusCode = 500 }: ServerErrorPagePro
             />
           </picture>
         </div>
-        <h2 className={styles.title}>На сервере произошла ошибка</h2>
+        <h1 className={styles.title}>На сервере произошла ошибка</h1>
         <p className={styles.description}>
           Попробуйте позже или вернитесь на главную страницу
         </p>
         <div className={styles.buttonGroup}>
-          <button className={styles.secondaryButton} onClick={handleReportError}>
+          <Button variant="secondary" onClick={handleReportError}>
             Сообщить об ошибке
-          </button>
+          </Button>
 
-          <button className={styles.primaryButton} onClick={handleGoHome}>
+          <Button variant="primary" onClick={handleGoHome}>
             На главную
-          </button>
+          </Button>
         </div>
       </div>
     </main>
