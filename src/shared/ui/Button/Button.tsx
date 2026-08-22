@@ -14,15 +14,13 @@ export function Button({
   children,
   variant = 'primary',
   className = '',
+  type = 'button',
   ...props
 }: ButtonProps) {
   const variantClass = styles[`${variant}Button`] || styles.primaryButton
-  
+
   return (
-    <button
-      className={`${styles.button} ${variantClass} ${className}`}
-      {...props}
-    >
+    <button type={type} className={`${styles.button} ${variantClass} ${className}`} {...props}>
       {children}
     </button>
   )
