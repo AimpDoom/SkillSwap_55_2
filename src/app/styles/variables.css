@@ -53,4 +53,19 @@
 
   /* layout */
   --page-padding-inline: 36px;
+
+  /* buttons */
+  --primary-bg-default-color: var(--color-accent);
+  --primary-bg-hover-color: #deebc5;
+  --primary-bg-active-color: var(--color-accent-strong);
+  --primary-text-active-color: var(--color-bg-primary);
+  --primary-bg-disabled-color: #e4e8df;
+  --secondary-bg-color: var(--color-bg-primary);
+  --secondary-border: 1px solid var(--color-accent);
+  --secondary-border-hover: 1px solid var(--primary-bg-hover-color);
+  --secondary-color-hover: var(--color-text-secondary);
+  --secondary-border-active: 1px solid var(--color-accent-strong);
+  --secondary-disabled-color: #9ca197;
+  --secondary-disabled-border: 1px solid var(--primary-bg-disabled-color);
+  --tertiary-bg-color: var(--color-bg-primary);
 }
