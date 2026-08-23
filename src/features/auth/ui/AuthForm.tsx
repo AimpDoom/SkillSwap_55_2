@@ -1,34 +1,35 @@
-import { useId, useState } from 'react';
-import type { FormEvent } from 'react';
+import { useId, useState } from 'react'
+import type { FormEvent } from 'react'
 
-import appleIcon from '@/shared/assets/icons/auth/apple.svg';
-import eyeIcon from '@/shared/assets/icons/auth/eye.svg';
-import googleIcon from '@/shared/assets/icons/auth/google.svg';
+import appleIcon from '@/shared/assets/icons/auth/apple.svg'
+import eyeIcon from '@/shared/assets/icons/auth/eye.svg'
+import googleIcon from '@/shared/assets/icons/auth/google.svg'
+import { Button } from '@/shared/ui/Button'
 
-import styles from './AuthForm.module.css';
+import styles from './AuthForm.module.css'
 
-export type AuthFormMode = 'login' | 'register';
+export type AuthFormMode = 'login' | 'register'
 
 export type AuthFormValues = {
-  email: string;
-  password: string;
-};
+  email: string
+  password: string
+}
 
 type AuthFormProps = {
-  mode?: AuthFormMode;
-  onSubmit?: (values: AuthFormValues) => void;
-  onModeChange?: (mode: AuthFormMode) => void;
-  onGoogleClick?: () => void;
-  onAppleClick?: () => void;
-};
+  mode?: AuthFormMode
+  onSubmit?: (values: AuthFormValues) => void
+  onModeChange?: (mode: AuthFormMode) => void
+  onGoogleClick?: () => void
+  onAppleClick?: () => void
+}
 
 type FormErrors = {
-  email?: string;
-  password?: string;
-};
+  email?: string
+  password?: string
+}
 
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const MIN_PASSWORD_LENGTH = 8;
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const MIN_PASSWORD_LENGTH = 8
 
 export function AuthForm({
   mode = 'login',
@@ -37,106 +38,95 @@ export function AuthForm({
   onGoogleClick,
   onAppleClick,
 }: AuthFormProps) {
-  const emailId = useId();
-  const passwordId = useId();
-  const emailErrorId = `${emailId}-error`;
-  const passwordMessageId = `${passwordId}-message`;
+  const emailId = useId()
+  const passwordId = useId()
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-  const [errors, setErrors] = useState<FormErrors>({});
+  const emailErrorId = `${emailId}-error`
+  const passwordMessageId = `${passwordId}-message`
 
-  const isLogin = mode === 'login';
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false)
+  const [errors, setErrors] = useState<FormErrors>({})
+
+  const isLogin = mode === 'login'
 
   const validate = () => {
-    const nextErrors: FormErrors = {};
+    const nextErrors: FormErrors = {}
 
     if (!EMAIL_PATTERN.test(email.trim())) {
-      nextErrors.email = 'Введите корректный email';
+      nextErrors.email = 'Введите корректный email'
     }
 
     if (password.length < MIN_PASSWORD_LENGTH) {
-      nextErrors.password = 'Пароль должен содержать не менее 8 знаков';
+      nextErrors.password = 'Пароль должен содержать не менее 8 знаков'
     }
 
-    setErrors(nextErrors);
+    setErrors(nextErrors)
 
-    return Object.keys(nextErrors).length === 0;
-  };
+    return Object.keys(nextErrors).length === 0
+  }
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+    event.preventDefault()
 
     if (!validate()) {
-      return;
+      return
     }
 
     onSubmit?.({
       email: email.trim(),
       password,
-    });
-  };
+    })
+  }
 
   const handleEmailChange = (value: string) => {
-    setEmail(value);
+    setEmail(value)
 
     if (errors.email) {
       setErrors((current) => ({
         ...current,
         email: undefined,
-      }));
+      }))
     }
-  };
+  }
 
   const handlePasswordChange = (value: string) => {
-    setPassword(value);
+    setPassword(value)
 
     if (errors.password) {
       setErrors((current) => ({
         ...current,
         password: undefined,
-      }));
+      }))
     }
-  };
+  }
 
   return (
-    <form
-      className={styles.form}
-      onSubmit={handleSubmit}
-      noValidate
-    >
+    <form className={styles.form} onSubmit={handleSubmit} noValidate>
       <div className={styles.formContent}>
         <div className={styles.socialButtons}>
-          <button
+          <Button
             className={styles.socialButton}
             type="button"
+            variant="secondary"
             onClick={onGoogleClick}
           >
-            <img
-              className={styles.socialIcon}
-              src={googleIcon}
-              alt=""
-              aria-hidden="true"
-            />
+            <img className={styles.socialIcon} src={googleIcon} alt="" aria-hidden="true" />
 
             <span>Продолжить с Google</span>
-          </button>
+          </Button>
 
-          <button
+          <Button
             className={styles.socialButton}
             type="button"
+            variant="secondary"
             onClick={onAppleClick}
           >
-            <img
-              className={styles.socialIcon}
-              src={appleIcon}
-              alt=""
-              aria-hidden="true"
-            />
+            <img className={styles.socialIcon} src={appleIcon} alt="" aria-hidden="true" />
 
             <span>Продолжить с Apple</span>
-          </button>
+          </Button>
         </div>
 
         <div className={styles.divider} aria-hidden="true">
@@ -152,9 +142,7 @@ export function AuthForm({
             </label>
 
             <input
-              className={`${styles.input} ${
-                errors.email ? styles.inputError : ''
-              }`}
+              className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
               id={emailId}
               name="email"
               type="email"
@@ -167,11 +155,7 @@ export function AuthForm({
             />
 
             {errors.email && (
-              <span
-                className={styles.errorMessage}
-                id={emailErrorId}
-                role="alert"
-              >
+              <span className={styles.errorMessage} id={emailErrorId} role="alert">
                 {errors.email}
               </span>
             )}
@@ -184,72 +168,46 @@ export function AuthForm({
 
             <div className={styles.passwordControl}>
               <input
-                className={`${styles.input} ${styles.passwordInput} ${
-                  errors.password ? styles.inputError : ''
-                }`}
+                className={`${styles.input} ${
+                  styles.passwordInput
+                } ${errors.password ? styles.inputError : ''}`}
                 id={passwordId}
                 name="password"
                 type={isPasswordVisible ? 'text' : 'password'}
                 value={password}
-                placeholder={
-                  isLogin
-                    ? 'Введите ваш пароль'
-                    : 'Придумайте надёжный пароль'
-                }
-                autoComplete={
-                  isLogin ? 'current-password' : 'new-password'
-                }
+                placeholder={isLogin ? 'Введите ваш пароль' : 'Придумайте надёжный пароль'}
+                autoComplete={isLogin ? 'current-password' : 'new-password'}
                 aria-invalid={Boolean(errors.password)}
                 aria-describedby={passwordMessageId}
-                onChange={(event) =>
-                  handlePasswordChange(event.target.value)
-                }
+                onChange={(event) => handlePasswordChange(event.target.value)}
               />
 
               <button
                 className={styles.eyeButton}
                 type="button"
-                aria-label={
-                  isPasswordVisible
-                    ? 'Скрыть пароль'
-                    : 'Показать пароль'
-                }
+                aria-label={isPasswordVisible ? 'Скрыть пароль' : 'Показать пароль'}
                 aria-pressed={isPasswordVisible}
-                onClick={() =>
-                  setIsPasswordVisible((current) => !current)
-                }
+                onClick={() => setIsPasswordVisible((current) => !current)}
               >
-                <img
-                  className={styles.eyeIcon}
-                  src={eyeIcon}
-                  alt=""
-                  aria-hidden="true"
-                />
+                <img className={styles.eyeIcon} src={eyeIcon} alt="" aria-hidden="true" />
               </button>
             </div>
 
             <span
-              className={
-                errors.password
-                  ? styles.errorMessage
-                  : styles.helperText
-              }
+              className={errors.password ? styles.errorMessage : styles.helperText}
               id={passwordMessageId}
               role={errors.password ? 'alert' : undefined}
             >
-              {errors.password ??
-                (!isLogin
-                  ? 'Пароль должен содержать не менее 8 знаков'
-                  : '')}
+              {errors.password ?? (!isLogin ? 'Пароль должен содержать не менее 8 знаков' : '')}
             </span>
           </div>
         </div>
       </div>
 
       <div className={styles.actions}>
-        <button className={styles.submitButton} type="submit">
+        <Button className={styles.submitButton} type="submit" variant="primary">
           {isLogin ? 'Войти' : 'Далее'}
-        </button>
+        </Button>
 
         {isLogin && (
           <button
@@ -262,5 +220,5 @@ export function AuthForm({
         )}
       </div>
     </form>
-  );
+  )
 }

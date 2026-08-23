@@ -1,5 +1,2 @@
-export { AuthForm } from './AuthForm';
-export type {
-  AuthFormMode,
-  AuthFormValues,
-} from './AuthForm';
+export { AuthForm } from './AuthForm'
+export type { AuthFormMode, AuthFormValues } from './AuthForm'

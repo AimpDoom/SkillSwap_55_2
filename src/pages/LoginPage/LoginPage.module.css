@@ -1,7 +1,7 @@
 .page {
   box-sizing: border-box;
   min-height: 100vh;
-  padding: 36px;
+  padding: 36px var(--page-padding-inline);
   color: var(--color-text-primary);
   background-color: var(--color-bg-secondary);
 }
@@ -141,34 +141,4 @@
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-s);
   letter-spacing: 0.32px;
-}
-
-@media (width <= 1200px) {
-  .page {
-    padding-inline: 36px;
-  }
-
-  .content {
-    align-items: stretch;
-  }
-
-  .onboarding {
-    flex: 1 1 50%;
-    min-width: 0;
-  }
-}
-
-@media (width <= 900px) {
-  .header {
-    grid-template-columns: auto 1fr auto;
-    gap: 24px;
-  }
-
-  .content {
-    flex-direction: column;
-  }
-
-  .onboarding {
-    flex-basis: auto;
-  }
 }
