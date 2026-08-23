@@ -33,15 +33,6 @@
 .socialButton {
   gap: 12px;
   width: 100%;
-  font: inherit;
-}
-
-.socialButton:focus-visible,
-.submitButton:focus-visible,
-.modeButton:focus-visible,
-.eyeButton:focus-visible {
-  outline: 2px solid var(--color-accent-strong);
-  outline-offset: 2px;
 }
 
 .socialIcon {
@@ -74,91 +65,30 @@
   gap: 16px;
 }
 
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.label {
-  color: var(--color-text-primary);
-}
-
-.input {
-  box-sizing: border-box;
-  width: 100%;
-  min-height: 48px;
-  padding: 12px 20px;
-  font: inherit;
-  color: var(--color-text-primary);
-  background-color: var(--color-bg-primary);
-  border: 1px solid var(--color-text-secondary);
-  border-radius: var(--border-radius-s);
-  outline: none;
-}
-
-.input::placeholder {
-  color: var(--color-text-secondary);
-}
-
-.input:hover {
-  border-color: var(--color-text-primary);
-}
-
-.input:focus {
-  border-color: var(--color-accent-strong);
-}
-
-.inputError {
-  border-color: var(--color-error);
-}
-
-.inputError:hover,
-.inputError:focus {
-  border-color: var(--color-error);
-}
-
-.passwordControl {
+.passwordField {
   position: relative;
 }
 
-.passwordInput {
-  padding-right: 56px;
+.passwordField input {
+  padding-right: 64px;
 }
 
 .eyeButton {
   position: absolute;
-  top: 50%;
-  right: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 52px;
+  right: 20px;
   width: 24px;
   height: 24px;
+  min-width: 24px;
+  min-height: 24px;
   padding: 0;
-  background: none;
-  border: 0;
-  cursor: pointer;
   transform: translateY(-50%);
 }
 
 .eyeIcon {
+  display: block;
   width: 24px;
   height: 24px;
-}
-
-.helperText,
-.errorMessage {
-  font-size: var(--font-size-xs);
-  line-height: var(--line-height-xs);
-}
-
-.helperText {
-  color: var(--color-text-secondary);
-}
-
-.errorMessage {
-  color: var(--color-error);
 }
 
 .actions {
@@ -174,14 +104,9 @@
 }
 
 .modeButton {
+  width: auto;
+  min-height: auto;
   padding: 0;
-  font: inherit;
   color: var(--color-accent-strong);
-  background: none;
-  border: 0;
-  cursor: pointer;
-}
-
-.modeButton:hover {
-  text-decoration: underline;
+  background: transparent;
 }

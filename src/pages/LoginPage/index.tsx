@@ -1,10 +1,14 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 
-import lightBulb from '@/shared/assets/images/auth/light-bulb.svg'
+import type { AuthFormValues } from '@/features/auth/model'
+import { useRegistrationFlow } from '@/features/auth/model'
 import { AuthForm } from '@/features/auth/ui'
+import closeIcon from '@/shared/assets/icons/cross.svg'
+import lightBulb from '@/shared/assets/images/auth/light-bulb.svg'
 import { ROUTES } from '@/shared/lib/constants'
 import { Button } from '@/shared/ui/Button'
 import { Logo } from '@/shared/ui/Logo'
+import { Stepper } from '@/shared/ui/Stepper'
 
 import styles from './LoginPage.module.css'
 
@@ -12,15 +16,36 @@ export default function LoginPage() {
   const location = useLocation()
   const navigate = useNavigate()
 
+  const registration = useRegistrationFlow()
+
   const isRegister = location.pathname === ROUTES.REGISTER
-  const mode = isRegister ? 'register' : 'login'
+  const isLogin = location.pathname === ROUTES.LOGIN
 
   const handleModeChange = () => {
+    registration.reset()
     navigate(ROUTES.REGISTER)
   }
 
   const handleClose = () => {
+    registration.reset()
     navigate(ROUTES.HOME)
+  }
+
+  const handleRegisterSubmit = (values: AuthFormValues) => {
+    registration.saveAccount(values)
+    registration.goNext()
+  }
+
+  const getPageTitle = () => {
+    if (!isRegister) {
+      return 'Вход'
+    }
+
+    if (registration.currentStep === 1) {
+      return 'Регистрация'
+    }
+
+    return `Шаг ${registration.currentStep} из 3`
   }
 
   return (
@@ -37,27 +62,79 @@ export default function LoginPage() {
             aria-label="Закрыть"
           >
             <span>Закрыть</span>
-            <span className={styles.closeIcon} aria-hidden="true">
-              ×
-            </span>
+
+            <img className={styles.closeIcon} src={closeIcon} alt="" aria-hidden="true" />
           </Button>
         </div>
 
         <div className={styles.heading}>
-          <h1 className={styles.title}>{isRegister ? 'Регистрация' : 'Вход'}</h1>
+          <h1 className={styles.title}>{getPageTitle()}</h1>
 
-          {isRegister && (
-            <div className={styles.steps} aria-label="Шаг 1 из 3">
-              <span className={`${styles.step} ${styles.stepActive}`} />
-              <span className={styles.step} />
-              <span className={styles.step} />
-            </div>
-          )}
+          {isRegister && <Stepper currentStep={registration.currentStep} />}
         </div>
       </header>
 
       <div className={styles.content}>
-        <AuthForm mode={mode} onModeChange={handleModeChange} />
+        {isLogin && <AuthForm mode="login" onModeChange={handleModeChange} />}
+
+        {isRegister && registration.currentStep === 1 && (
+          <AuthForm mode="register" onSubmit={handleRegisterSubmit} />
+        )}
+
+        {isRegister && registration.currentStep === 2 && (
+          <section className={styles.pendingStep}>
+            <div className={styles.pendingStepContent}>
+              <h2 className={styles.pendingStepTitle}>Второй шаг регистрации</h2>
+
+              <p className={styles.pendingStepDescription}>
+                Форма личной информации будет реализована в отдельной задаче.
+              </p>
+            </div>
+
+            <div className={styles.pendingStepActions}>
+              <Button
+                className={styles.pendingStepButton}
+                type="button"
+                variant="secondary"
+                onClick={registration.goBack}
+              >
+                Назад
+              </Button>
+
+              <Button
+                className={styles.pendingStepButton}
+                type="button"
+                variant="primary"
+                onClick={registration.goNext}
+              >
+                Продолжить
+              </Button>
+            </div>
+          </section>
+        )}
+
+        {isRegister && registration.currentStep === 3 && (
+          <section className={styles.pendingStep}>
+            <div className={styles.pendingStepContent}>
+              <h2 className={styles.pendingStepTitle}>Третий шаг регистрации</h2>
+
+              <p className={styles.pendingStepDescription}>
+                Форма добавления навыка будет реализована в отдельной задаче.
+              </p>
+            </div>
+
+            <div className={styles.pendingStepActions}>
+              <Button
+                className={styles.pendingStepButton}
+                type="button"
+                variant="secondary"
+                onClick={registration.goBack}
+              >
+                Назад
+              </Button>
+            </div>
+          </section>
+        )}
 
         <section
           className={styles.onboarding}

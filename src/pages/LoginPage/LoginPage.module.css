@@ -35,24 +35,6 @@
   letter-spacing: -0.264px;
 }
 
-.steps {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  justify-content: center;
-}
-
-.step {
-  width: 32px;
-  height: 4px;
-  background-color: var(--color-disabled);
-  border-radius: 2px;
-}
-
-.stepActive {
-  background-color: var(--color-accent);
-}
-
 .closeButton {
   display: flex;
   gap: 12px;
@@ -82,8 +64,9 @@
 }
 
 .closeIcon {
-  font-size: var(--font-size-m);
-  line-height: 1;
+  display: block;
+  width: 11px;
+  height: 11px;
 }
 
 .content {
@@ -94,19 +77,23 @@
   margin: 0 auto;
 }
 
-.onboarding {
+.onboarding,
+.pendingStep {
   box-sizing: border-box;
   display: flex;
   flex: 0 0 556px;
   flex-direction: column;
-  gap: 40px;
-  align-items: center;
-  justify-content: center;
   width: 556px;
   min-height: 692px;
   padding: 60px;
   background-color: var(--color-bg-primary);
   border-radius: var(--border-radius-s);
+}
+
+.onboarding {
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
 }
 
 .illustration {
@@ -141,4 +128,47 @@
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-s);
   letter-spacing: 0.32px;
+}
+
+.pendingStep {
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pendingStepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.pendingStepTitle {
+  margin: 0;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-m);
+}
+
+.pendingStepDescription {
+  max-width: 360px;
+  margin: 0;
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-s);
+  color: var(--color-text-secondary);
+}
+
+.pendingStepActions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.pendingStepButton {
+  flex: 1;
 }

@@ -1,19 +1,15 @@
-import { useId, useState } from 'react'
+import { useState } from 'react'
 import type { FormEvent } from 'react'
 
+import type { AuthFormMode, AuthFormValues } from '@/features/auth/model'
 import appleIcon from '@/shared/assets/icons/auth/apple.svg'
 import eyeIcon from '@/shared/assets/icons/auth/eye.svg'
 import googleIcon from '@/shared/assets/icons/auth/google.svg'
 import { Button } from '@/shared/ui/Button'
+import { IconButton } from '@/shared/ui/IconButton'
+import { Input } from '@/shared/ui/Input'
 
 import styles from './AuthForm.module.css'
-
-export type AuthFormMode = 'login' | 'register'
-
-export type AuthFormValues = {
-  email: string
-  password: string
-}
 
 type AuthFormProps = {
   mode?: AuthFormMode
@@ -38,12 +34,6 @@ export function AuthForm({
   onGoogleClick,
   onAppleClick,
 }: AuthFormProps) {
-  const emailId = useId()
-  const passwordId = useId()
-
-  const emailErrorId = `${emailId}-error`
-  const passwordMessageId = `${passwordId}-message`
-
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
@@ -102,6 +92,8 @@ export function AuthForm({
     }
   }
 
+  const passwordIcon = <img className={styles.eyeIcon} src={eyeIcon} alt="" aria-hidden="true" />
+
   return (
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
       <div className={styles.formContent}>
@@ -136,70 +128,37 @@ export function AuthForm({
         </div>
 
         <div className={styles.inputs}>
-          <div className={styles.field}>
-            <label className={styles.label} htmlFor={emailId}>
-              Email
-            </label>
+          <Input
+            label="Email"
+            name="email"
+            type="email"
+            value={email}
+            placeholder="Введите email"
+            autoComplete="email"
+            error={errors.email}
+            onChange={(event) => handleEmailChange(event.target.value)}
+          />
 
-            <input
-              className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
-              id={emailId}
-              name="email"
-              type="email"
-              value={email}
-              placeholder="Введите email"
-              autoComplete="email"
-              aria-invalid={Boolean(errors.email)}
-              aria-describedby={errors.email ? emailErrorId : undefined}
-              onChange={(event) => handleEmailChange(event.target.value)}
+          <div className={styles.passwordField}>
+            <Input
+              label="Пароль"
+              name="password"
+              type={isPasswordVisible ? 'text' : 'password'}
+              value={password}
+              placeholder={isLogin ? 'Введите ваш пароль' : 'Придумайте надёжный пароль'}
+              autoComplete={isLogin ? 'current-password' : 'new-password'}
+              error={errors.password}
+              hint={!isLogin ? 'Пароль должен содержать не менее 8 знаков' : undefined}
+              onChange={(event) => handlePasswordChange(event.target.value)}
             />
 
-            {errors.email && (
-              <span className={styles.errorMessage} id={emailErrorId} role="alert">
-                {errors.email}
-              </span>
-            )}
-          </div>
-
-          <div className={styles.field}>
-            <label className={styles.label} htmlFor={passwordId}>
-              Пароль
-            </label>
-
-            <div className={styles.passwordControl}>
-              <input
-                className={`${styles.input} ${
-                  styles.passwordInput
-                } ${errors.password ? styles.inputError : ''}`}
-                id={passwordId}
-                name="password"
-                type={isPasswordVisible ? 'text' : 'password'}
-                value={password}
-                placeholder={isLogin ? 'Введите ваш пароль' : 'Придумайте надёжный пароль'}
-                autoComplete={isLogin ? 'current-password' : 'new-password'}
-                aria-invalid={Boolean(errors.password)}
-                aria-describedby={passwordMessageId}
-                onChange={(event) => handlePasswordChange(event.target.value)}
-              />
-
-              <button
-                className={styles.eyeButton}
-                type="button"
-                aria-label={isPasswordVisible ? 'Скрыть пароль' : 'Показать пароль'}
-                aria-pressed={isPasswordVisible}
-                onClick={() => setIsPasswordVisible((current) => !current)}
-              >
-                <img className={styles.eyeIcon} src={eyeIcon} alt="" aria-hidden="true" />
-              </button>
-            </div>
-
-            <span
-              className={errors.password ? styles.errorMessage : styles.helperText}
-              id={passwordMessageId}
-              role={errors.password ? 'alert' : undefined}
-            >
-              {errors.password ?? (!isLogin ? 'Пароль должен содержать не менее 8 знаков' : '')}
-            </span>
+            <IconButton
+              className={styles.eyeButton}
+              icon={passwordIcon}
+              ariaLabel={isPasswordVisible ? 'Скрыть пароль' : 'Показать пароль'}
+              aria-pressed={isPasswordVisible}
+              onClick={() => setIsPasswordVisible((current) => !current)}
+            />
           </div>
         </div>
       </div>
@@ -210,13 +169,14 @@ export function AuthForm({
         </Button>
 
         {isLogin && (
-          <button
+          <Button
             className={styles.modeButton}
             type="button"
+            variant="tertiary"
             onClick={() => onModeChange?.('register')}
           >
             Зарегистрироваться
-          </button>
+          </Button>
         )}
       </div>
     </form>
