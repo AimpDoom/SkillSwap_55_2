@@ -1,0 +1,6 @@
+.copyright {
+  margin: 24px 0 0;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+  color: inherit;
+}

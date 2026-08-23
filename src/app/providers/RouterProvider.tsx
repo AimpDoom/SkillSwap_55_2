@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import { ROUTES } from '@/shared/lib/constants'
+import { Header } from '@/components/widgets/Header'
+import { Footer } from '@/components/widgets/Footer'
 
 // Lazy-загрузка страниц — каждая страница грузится только при переходе на неё
 const CatalogPage = lazy(() => import('@/pages/CatalogPage'))
@@ -9,11 +11,14 @@ const ProfilePage = lazy(() => import('@/pages/ProfilePage'))
 const FavoritesPage = lazy(() => import('@/pages/FavoritesPage'))
 const CreateSkillPage = lazy(() => import('@/pages/CreateSkillPage'))
 const LoginPage = lazy(() => import('@/pages/LoginPage'))
-const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'))
+const NotFoundPage = lazy(() => import('@/pages/ErrorPages/NotFoundPage'))
+const ServerErrorPage = lazy(() => import('@/pages/ErrorPages/Error500Page'))
 
 export function AppRouter() {
   return (
     <BrowserRouter>
+      <Header />
+
       <Suspense fallback={<div>Загрузка...</div>}>
         <Routes>
           <Route path={ROUTES.HOME} element={<CatalogPage />} />
@@ -27,8 +32,12 @@ export function AppRouter() {
           <Route path={ROUTES.CREATE} element={<CreateSkillPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
+      
+          {/* Страница ошибки 500 */}
+          <Route path={ROUTES.SERVER_ERROR} element={<ServerErrorPage />} />
         </Routes>
       </Suspense>
+      <Footer />
     </BrowserRouter>
   )
 }

@@ -1,0 +1,248 @@
+[
+  {
+    "id": "business-career",
+    "name": "Бизнес и карьера",
+    "subcategories": [
+      {
+        "id": "team-management",
+        "name": "Управление командой",
+        "categoryId": "business-career"
+      },
+      {
+        "id": "marketing-advertising",
+        "name": "Маркетинг и реклама",
+        "categoryId": "business-career"
+      },
+      {
+        "id": "sales-negotiations",
+        "name": "Продажи и переговоры",
+        "categoryId": "business-career"
+      },
+      {
+        "id": "personal-brand",
+        "name": "Личный бренд",
+        "categoryId": "business-career"
+      },
+      {
+        "id": "resume-interview",
+        "name": "Резюме и собеседование",
+        "categoryId": "business-career"
+      },
+      {
+        "id": "time-management",
+        "name": "Тайм-менеджмент",
+        "categoryId": "business-career"
+      },
+      {
+        "id": "project-management",
+        "name": "Проектное управление",
+        "categoryId": "business-career"
+      },
+      {
+        "id": "entrepreneurship",
+        "name": "Предпринимательство",
+        "categoryId": "business-career"
+      }
+    ]
+  },
+  {
+    "id": "creativity-art",
+    "name": "Творчество и искусство",
+    "subcategories": [
+      {
+        "id": "drawing-illustration",
+        "name": "Рисование и иллюстрация",
+        "categoryId": "creativity-art"
+      },
+      {
+        "id": "photography",
+        "name": "Фотография",
+        "categoryId": "creativity-art"
+      },
+      {
+        "id": "video-editing",
+        "name": "Видеомонтаж",
+        "categoryId": "creativity-art"
+      },
+      {
+        "id": "music-sound",
+        "name": "Музыка и звук",
+        "categoryId": "creativity-art"
+      },
+      {
+        "id": "acting",
+        "name": "Актёрское мастерство",
+        "categoryId": "creativity-art"
+      },
+      {
+        "id": "creative-writing",
+        "name": "Креативное письмо",
+        "categoryId": "creativity-art"
+      },
+      {
+        "id": "art-therapy",
+        "name": "Арт-терапия",
+        "categoryId": "creativity-art"
+      },
+      {
+        "id": "decor-diy",
+        "name": "Декор и DIY",
+        "categoryId": "creativity-art"
+      }
+    ]
+  },
+  {
+    "id": "foreign-languages",
+    "name": "Иностранные языки",
+    "subcategories": [
+      {
+        "id": "english",
+        "name": "Английский",
+        "categoryId": "foreign-languages"
+      },
+      {
+        "id": "french",
+        "name": "Французский",
+        "categoryId": "foreign-languages"
+      },
+      {
+        "id": "spanish",
+        "name": "Испанский",
+        "categoryId": "foreign-languages"
+      },
+      {
+        "id": "german",
+        "name": "Немецкий",
+        "categoryId": "foreign-languages"
+      },
+      {
+        "id": "chinese",
+        "name": "Китайский",
+        "categoryId": "foreign-languages"
+      },
+      {
+        "id": "japanese",
+        "name": "Японский",
+        "categoryId": "foreign-languages"
+      },
+      {
+        "id": "language-exams",
+        "name": "Подготовка к экзаменам (IELTS, TOEFL)",
+        "categoryId": "foreign-languages"
+      }
+    ]
+  },
+  {
+    "id": "education-development",
+    "name": "Образование и развитие",
+    "subcategories": [
+      {
+        "id": "personal-development",
+        "name": "Личностное развитие",
+        "categoryId": "education-development"
+      },
+      {
+        "id": "learning-skills",
+        "name": "Навыки обучения",
+        "categoryId": "education-development"
+      },
+      {
+        "id": "cognitive-techniques",
+        "name": "Когнитивные техники",
+        "categoryId": "education-development"
+      },
+      {
+        "id": "speed-reading",
+        "name": "Скорочтение",
+        "categoryId": "education-development"
+      },
+      {
+        "id": "teaching-skills",
+        "name": "Навыки преподавания",
+        "categoryId": "education-development"
+      },
+      {
+        "id": "coaching",
+        "name": "Коучинг",
+        "categoryId": "education-development"
+      }
+    ]
+  },
+  {
+    "id": "home-comfort",
+    "name": "Дом и уют",
+    "subcategories": [
+      {
+        "id": "cleaning-organization",
+        "name": "Уборка и организация",
+        "categoryId": "home-comfort"
+      },
+      {
+        "id": "home-finances",
+        "name": "Домашние финансы",
+        "categoryId": "home-comfort"
+      },
+      {
+        "id": "cooking",
+        "name": "Приготовление еды",
+        "categoryId": "home-comfort"
+      },
+      {
+        "id": "home-plants",
+        "name": "Домашние растения",
+        "categoryId": "home-comfort"
+      },
+      {
+        "id": "repair",
+        "name": "Ремонт",
+        "categoryId": "home-comfort"
+      },
+      {
+        "id": "storage",
+        "name": "Хранение вещей",
+        "categoryId": "home-comfort"
+      }
+    ]
+  },
+  {
+    "id": "health-lifestyle",
+    "name": "Здоровье и лайфстайл",
+    "subcategories": [
+      {
+        "id": "yoga-meditation",
+        "name": "Йога и медитация",
+        "categoryId": "health-lifestyle"
+      },
+      {
+        "id": "nutrition-healthy-lifestyle",
+        "name": "Питание и ЗОЖ",
+        "categoryId": "health-lifestyle"
+      },
+      {
+        "id": "mental-health",
+        "name": "Ментальное здоровье",
+        "categoryId": "health-lifestyle"
+      },
+      {
+        "id": "mindfulness",
+        "name": "Осознанность",
+        "categoryId": "health-lifestyle"
+      },
+      {
+        "id": "physical-training",
+        "name": "Физические тренировки",
+        "categoryId": "health-lifestyle"
+      },
+      {
+        "id": "sleep-recovery",
+        "name": "Сон и восстановление",
+        "categoryId": "health-lifestyle"
+      },
+      {
+        "id": "work-life-balance",
+        "name": "Баланс жизни и работы",
+        "categoryId": "health-lifestyle"
+      }
+    ]
+  }
+]

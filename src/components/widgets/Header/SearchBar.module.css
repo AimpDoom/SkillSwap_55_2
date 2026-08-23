@@ -1,0 +1,39 @@
+.search {
+  flex: 0 1 480px;
+  width: 480px;
+
+  --input-start-icon-left: 12px;
+  --input-start-padding: 44px;
+}
+
+.search input {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-family: var(--font-family-primary);
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-primary);
+  border: 0;
+}
+
+.search input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 1;
+}
+
+.search input:hover,
+.search input:focus {
+  border: 0;
+}
+
+.search input::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.icon {
+  display: block;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-text-secondary);
+  mask: url('../../../shared/assets/icons/search.svg') center / contain no-repeat;
+}

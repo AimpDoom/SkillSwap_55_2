@@ -1,0 +1,5 @@
+/* Component styles */
+.page {
+  padding-block: 32px;
+  padding-inline: var(--page-padding-inline);
+}

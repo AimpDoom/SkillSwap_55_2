@@ -1,1 +1,1177 @@
-[]
+[
+  {
+    "id": "user-01",
+    "name": "Иван",
+    "email": "user01@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-01.webp",
+    "birthDate": "1985-01-01",
+    "cityId": "city-01",
+    "teachSkillId": "skill-001",
+    "learnSubcategoryIds": [
+      "marketing-advertising",
+      "sales-negotiations",
+      "personal-brand",
+      "resume-interview"
+    ],
+    "likesCount": 7,
+    "createdAt": "2025-01-01T00:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
+    "likedUserIds": [
+      "user-05",
+      "user-13",
+      "user-29"
+    ]
+  },
+  {
+    "id": "user-02",
+    "name": "Мария",
+    "email": "user02@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-02.webp",
+    "birthDate": "1992-04-06",
+    "cityId": "city-02",
+    "teachSkillId": "skill-002",
+    "learnSubcategoryIds": [
+      "sales-negotiations",
+      "personal-brand",
+      "resume-interview",
+      "time-management",
+      "team-management"
+    ],
+    "likesCount": 20,
+    "createdAt": "2025-12-08T03:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
+    "likedUserIds": [
+      "user-06",
+      "user-14",
+      "user-30"
+    ]
+  },
+  {
+    "id": "user-03",
+    "name": "Александр",
+    "email": "user03@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-03.webp",
+    "birthDate": "1999-07-11",
+    "cityId": "city-03",
+    "teachSkillId": "skill-003",
+    "learnSubcategoryIds": [
+      "personal-brand",
+      "resume-interview",
+      "time-management",
+      "project-management"
+    ],
+    "likesCount": 33,
+    "createdAt": "2025-11-15T06:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
+    "likedUserIds": [
+      "user-07",
+      "user-15",
+      "user-31"
+    ]
+  },
+  {
+    "id": "user-04",
+    "name": "Виктория",
+    "email": "user04@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-04.webp",
+    "birthDate": "2006-10-16",
+    "cityId": "city-04",
+    "teachSkillId": "skill-004",
+    "learnSubcategoryIds": [
+      "resume-interview",
+      "time-management",
+      "project-management",
+      "entrepreneurship",
+      "marketing-advertising"
+    ],
+    "likesCount": 46,
+    "createdAt": "2025-10-22T09:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
+    "likedUserIds": [
+      "user-08",
+      "user-16",
+      "user-32"
+    ]
+  },
+  {
+    "id": "user-05",
+    "name": "Григорий",
+    "email": "user05@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-05.webp",
+    "birthDate": "1990-01-21",
+    "cityId": "city-05",
+    "teachSkillId": "skill-005",
+    "learnSubcategoryIds": [
+      "time-management",
+      "project-management",
+      "entrepreneurship",
+      "drawing-illustration"
+    ],
+    "likesCount": 59,
+    "createdAt": "2025-09-02T12:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
+    "likedUserIds": [
+      "user-09",
+      "user-17",
+      "user-33"
+    ]
+  },
+  {
+    "id": "user-06",
+    "name": "Константин",
+    "email": "user06@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-06.webp",
+    "birthDate": "1997-04-01",
+    "cityId": "city-06",
+    "teachSkillId": "skill-006",
+    "learnSubcategoryIds": [
+      "project-management",
+      "entrepreneurship",
+      "drawing-illustration",
+      "photography",
+      "sales-negotiations"
+    ],
+    "likesCount": 72,
+    "createdAt": "2025-08-09T15:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
+    "likedUserIds": [
+      "user-10",
+      "user-18",
+      "user-34"
+    ]
+  },
+  {
+    "id": "user-07",
+    "name": "Дарья",
+    "email": "user07@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-07.webp",
+    "birthDate": "2004-07-06",
+    "cityId": "city-07",
+    "teachSkillId": "skill-007",
+    "learnSubcategoryIds": [
+      "entrepreneurship",
+      "drawing-illustration",
+      "photography",
+      "video-editing"
+    ],
+    "likesCount": 85,
+    "createdAt": "2025-07-16T18:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
+    "likedUserIds": [
+      "user-11",
+      "user-19",
+      "user-35"
+    ]
+  },
+  {
+    "id": "user-08",
+    "name": "Кристина",
+    "email": "user08@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-08.webp",
+    "birthDate": "1988-10-11",
+    "cityId": "city-08",
+    "teachSkillId": "skill-008",
+    "learnSubcategoryIds": [
+      "drawing-illustration",
+      "photography",
+      "video-editing",
+      "music-sound",
+      "personal-brand"
+    ],
+    "likesCount": 98,
+    "createdAt": "2025-06-23T21:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
+    "likedUserIds": [
+      "user-12",
+      "user-20",
+      "user-36"
+    ]
+  },
+  {
+    "id": "user-09",
+    "name": "Алина",
+    "email": "user09@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-09.webp",
+    "birthDate": "1995-01-16",
+    "cityId": "city-09",
+    "teachSkillId": "skill-009",
+    "learnSubcategoryIds": [
+      "photography",
+      "video-editing",
+      "music-sound",
+      "acting"
+    ],
+    "likesCount": 111,
+    "createdAt": "2025-05-03T00:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
+    "likedUserIds": [
+      "user-13",
+      "user-21",
+      "user-37"
+    ]
+  },
+  {
+    "id": "user-10",
+    "name": "Алёна",
+    "email": "user10@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-10.webp",
+    "birthDate": "2002-04-21",
+    "cityId": "city-10",
+    "teachSkillId": "skill-010",
+    "learnSubcategoryIds": [
+      "video-editing",
+      "music-sound",
+      "acting",
+      "creative-writing",
+      "resume-interview"
+    ],
+    "likesCount": 124,
+    "createdAt": "2025-04-10T03:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
+    "likedUserIds": [
+      "user-14",
+      "user-22",
+      "user-38"
+    ]
+  },
+  {
+    "id": "user-11",
+    "name": "Елена",
+    "email": "user11@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-11.webp",
+    "birthDate": "1986-07-01",
+    "cityId": "city-11",
+    "teachSkillId": "skill-011",
+    "learnSubcategoryIds": [
+      "music-sound",
+      "acting",
+      "creative-writing",
+      "art-therapy"
+    ],
+    "likesCount": 137,
+    "createdAt": "2025-03-17T06:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
+    "likedUserIds": [
+      "user-15",
+      "user-23",
+      "user-39"
+    ]
+  },
+  {
+    "id": "user-12",
+    "name": "Артём",
+    "email": "user12@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-12.webp",
+    "birthDate": "1993-10-06",
+    "cityId": "city-12",
+    "teachSkillId": "skill-012",
+    "learnSubcategoryIds": [
+      "acting",
+      "creative-writing",
+      "art-therapy",
+      "decor-diy",
+      "time-management"
+    ],
+    "likesCount": 150,
+    "createdAt": "2025-02-24T09:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
+    "likedUserIds": [
+      "user-16",
+      "user-24",
+      "user-40"
+    ]
+  },
+  {
+    "id": "user-13",
+    "name": "Валерия",
+    "email": "user13@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-13.webp",
+    "birthDate": "2000-01-11",
+    "cityId": "city-13",
+    "teachSkillId": "skill-013",
+    "learnSubcategoryIds": [
+      "creative-writing",
+      "art-therapy",
+      "decor-diy",
+      "english"
+    ],
+    "likesCount": 12,
+    "createdAt": "2025-01-04T12:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
+    "likedUserIds": [
+      "user-17",
+      "user-25",
+      "user-41"
+    ]
+  },
+  {
+    "id": "user-14",
+    "name": "Олег",
+    "email": "user14@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-14.webp",
+    "birthDate": "2007-04-16",
+    "cityId": "city-14",
+    "teachSkillId": "skill-014",
+    "learnSubcategoryIds": [
+      "art-therapy",
+      "decor-diy",
+      "english",
+      "french",
+      "project-management"
+    ],
+    "likesCount": 25,
+    "createdAt": "2025-12-11T15:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
+    "likedUserIds": [
+      "user-18",
+      "user-26",
+      "user-42"
+    ]
+  },
+  {
+    "id": "user-15",
+    "name": "Полина",
+    "email": "user15@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-15.webp",
+    "birthDate": "1991-07-21",
+    "cityId": "city-15",
+    "teachSkillId": "skill-015",
+    "learnSubcategoryIds": [
+      "decor-diy",
+      "english",
+      "french",
+      "spanish"
+    ],
+    "likesCount": 38,
+    "createdAt": "2025-11-18T18:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
+    "likedUserIds": [
+      "user-19",
+      "user-27",
+      "user-43"
+    ]
+  },
+  {
+    "id": "user-16",
+    "name": "Маргарита",
+    "email": "user16@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-16.webp",
+    "birthDate": "1998-10-01",
+    "cityId": "city-01",
+    "teachSkillId": "skill-016",
+    "learnSubcategoryIds": [
+      "english",
+      "french",
+      "spanish",
+      "german",
+      "entrepreneurship"
+    ],
+    "likesCount": 51,
+    "createdAt": "2025-10-25T21:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
+    "likedUserIds": [
+      "user-20",
+      "user-28",
+      "user-44"
+    ]
+  },
+  {
+    "id": "user-17",
+    "name": "Виктор",
+    "email": "user17@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-17.webp",
+    "birthDate": "2005-01-06",
+    "cityId": "city-02",
+    "teachSkillId": "skill-017",
+    "learnSubcategoryIds": [
+      "french",
+      "spanish",
+      "german",
+      "chinese"
+    ],
+    "likesCount": 64,
+    "createdAt": "2025-09-05T00:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
+    "likedUserIds": [
+      "user-21",
+      "user-29",
+      "user-45"
+    ]
+  },
+  {
+    "id": "user-18",
+    "name": "Максим",
+    "email": "user18@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-18.webp",
+    "birthDate": "1989-04-11",
+    "cityId": "city-03",
+    "teachSkillId": "skill-018",
+    "learnSubcategoryIds": [
+      "spanish",
+      "german",
+      "chinese",
+      "japanese",
+      "drawing-illustration"
+    ],
+    "likesCount": 77,
+    "createdAt": "2025-08-12T03:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
+    "likedUserIds": [
+      "user-22",
+      "user-30",
+      "user-46"
+    ]
+  },
+  {
+    "id": "user-19",
+    "name": "Ксения",
+    "email": "user19@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-19.webp",
+    "birthDate": "1996-07-16",
+    "cityId": "city-04",
+    "teachSkillId": "skill-019",
+    "learnSubcategoryIds": [
+      "german",
+      "chinese",
+      "japanese",
+      "language-exams"
+    ],
+    "likesCount": 90,
+    "createdAt": "2025-07-19T06:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
+    "likedUserIds": [
+      "user-23",
+      "user-31",
+      "user-47"
+    ]
+  },
+  {
+    "id": "user-20",
+    "name": "Инна",
+    "email": "user20@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-20.webp",
+    "birthDate": "2003-10-21",
+    "cityId": "city-05",
+    "teachSkillId": "skill-020",
+    "learnSubcategoryIds": [
+      "chinese",
+      "japanese",
+      "language-exams",
+      "personal-development",
+      "photography"
+    ],
+    "likesCount": 103,
+    "createdAt": "2025-06-26T09:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
+    "likedUserIds": [
+      "user-24",
+      "user-32",
+      "user-48"
+    ]
+  },
+  {
+    "id": "user-21",
+    "name": "Игорь",
+    "email": "user21@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-21.webp",
+    "birthDate": "1987-01-01",
+    "cityId": "city-06",
+    "teachSkillId": "skill-021",
+    "learnSubcategoryIds": [
+      "japanese",
+      "language-exams",
+      "personal-development",
+      "learning-skills"
+    ],
+    "likesCount": 116,
+    "createdAt": "2025-05-06T12:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
+    "likedUserIds": [
+      "user-25",
+      "user-33",
+      "user-49"
+    ]
+  },
+  {
+    "id": "user-22",
+    "name": "Оксана",
+    "email": "user22@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-22.webp",
+    "birthDate": "1994-04-06",
+    "cityId": "city-07",
+    "teachSkillId": "skill-022",
+    "learnSubcategoryIds": [
+      "language-exams",
+      "personal-development",
+      "learning-skills",
+      "cognitive-techniques",
+      "video-editing"
+    ],
+    "likesCount": 129,
+    "createdAt": "2025-04-13T15:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
+    "likedUserIds": [
+      "user-26",
+      "user-34",
+      "user-50"
+    ]
+  },
+  {
+    "id": "user-23",
+    "name": "Татьяна",
+    "email": "user23@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-23.webp",
+    "birthDate": "2001-07-11",
+    "cityId": "city-08",
+    "teachSkillId": "skill-023",
+    "learnSubcategoryIds": [
+      "personal-development",
+      "learning-skills",
+      "cognitive-techniques",
+      "speed-reading"
+    ],
+    "likesCount": 142,
+    "createdAt": "2025-03-20T18:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
+    "likedUserIds": [
+      "user-27",
+      "user-35",
+      "user-01"
+    ]
+  },
+  {
+    "id": "user-24",
+    "name": "Сергей",
+    "email": "user24@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-24.webp",
+    "birthDate": "1985-10-16",
+    "cityId": "city-09",
+    "teachSkillId": "skill-024",
+    "learnSubcategoryIds": [
+      "learning-skills",
+      "cognitive-techniques",
+      "speed-reading",
+      "teaching-skills",
+      "music-sound"
+    ],
+    "likesCount": 4,
+    "createdAt": "2025-02-27T21:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
+    "likedUserIds": [
+      "user-28",
+      "user-36",
+      "user-02"
+    ]
+  },
+  {
+    "id": "user-25",
+    "name": "Наталья",
+    "email": "user25@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-25.webp",
+    "birthDate": "1992-01-21",
+    "cityId": "city-10",
+    "teachSkillId": "skill-025",
+    "learnSubcategoryIds": [
+      "cognitive-techniques",
+      "speed-reading",
+      "teaching-skills",
+      "coaching"
+    ],
+    "likesCount": 17,
+    "createdAt": "2025-01-07T00:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
+    "likedUserIds": [
+      "user-29",
+      "user-37",
+      "user-03"
+    ]
+  },
+  {
+    "id": "user-26",
+    "name": "Илья",
+    "email": "user26@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-26.webp",
+    "birthDate": "1999-04-01",
+    "cityId": "city-11",
+    "teachSkillId": "skill-026",
+    "learnSubcategoryIds": [
+      "speed-reading",
+      "teaching-skills",
+      "coaching",
+      "cleaning-organization",
+      "acting"
+    ],
+    "likesCount": 30,
+    "createdAt": "2025-12-14T03:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
+    "likedUserIds": [
+      "user-30",
+      "user-38",
+      "user-04"
+    ]
+  },
+  {
+    "id": "user-27",
+    "name": "Юлия",
+    "email": "user27@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-27.webp",
+    "birthDate": "2006-07-06",
+    "cityId": "city-12",
+    "teachSkillId": "skill-027",
+    "learnSubcategoryIds": [
+      "teaching-skills",
+      "coaching",
+      "cleaning-organization",
+      "home-finances"
+    ],
+    "likesCount": 43,
+    "createdAt": "2025-11-21T06:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
+    "likedUserIds": [
+      "user-31",
+      "user-39",
+      "user-05"
+    ]
+  },
+  {
+    "id": "user-28",
+    "name": "Жанна",
+    "email": "user28@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-28.webp",
+    "birthDate": "1990-10-11",
+    "cityId": "city-13",
+    "teachSkillId": "skill-028",
+    "learnSubcategoryIds": [
+      "coaching",
+      "cleaning-organization",
+      "home-finances",
+      "cooking",
+      "creative-writing"
+    ],
+    "likesCount": 56,
+    "createdAt": "2025-10-01T09:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
+    "likedUserIds": [
+      "user-32",
+      "user-40",
+      "user-06"
+    ]
+  },
+  {
+    "id": "user-29",
+    "name": "Ярослав",
+    "email": "user29@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-29.webp",
+    "birthDate": "1997-01-16",
+    "cityId": "city-14",
+    "teachSkillId": "skill-029",
+    "learnSubcategoryIds": [
+      "cleaning-organization",
+      "home-finances",
+      "cooking",
+      "home-plants"
+    ],
+    "likesCount": 69,
+    "createdAt": "2025-09-08T12:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
+    "likedUserIds": [
+      "user-33",
+      "user-41",
+      "user-07"
+    ]
+  },
+  {
+    "id": "user-30",
+    "name": "Владислав",
+    "email": "user30@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-30.webp",
+    "birthDate": "2004-04-21",
+    "cityId": "city-15",
+    "teachSkillId": "skill-030",
+    "learnSubcategoryIds": [
+      "home-finances",
+      "cooking",
+      "home-plants",
+      "repair",
+      "art-therapy"
+    ],
+    "likesCount": 82,
+    "createdAt": "2025-08-15T15:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
+    "likedUserIds": [
+      "user-34",
+      "user-42",
+      "user-08"
+    ]
+  },
+  {
+    "id": "user-31",
+    "name": "Диана",
+    "email": "user31@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-31.webp",
+    "birthDate": "1988-07-01",
+    "cityId": "city-01",
+    "teachSkillId": "skill-031",
+    "learnSubcategoryIds": [
+      "cooking",
+      "home-plants",
+      "repair",
+      "storage"
+    ],
+    "likesCount": 95,
+    "createdAt": "2025-07-22T18:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
+    "likedUserIds": [
+      "user-35",
+      "user-43",
+      "user-09"
+    ]
+  },
+  {
+    "id": "user-32",
+    "name": "Регина",
+    "email": "user32@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-32.webp",
+    "birthDate": "1995-10-06",
+    "cityId": "city-02",
+    "teachSkillId": "skill-032",
+    "learnSubcategoryIds": [
+      "home-plants",
+      "repair",
+      "storage",
+      "yoga-meditation",
+      "decor-diy"
+    ],
+    "likesCount": 108,
+    "createdAt": "2025-06-02T21:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
+    "likedUserIds": [
+      "user-36",
+      "user-44",
+      "user-10"
+    ]
+  },
+  {
+    "id": "user-33",
+    "name": "Богдан",
+    "email": "user33@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-33.webp",
+    "birthDate": "2002-01-11",
+    "cityId": "city-03",
+    "teachSkillId": "skill-033",
+    "learnSubcategoryIds": [
+      "repair",
+      "storage",
+      "yoga-meditation",
+      "nutrition-healthy-lifestyle"
+    ],
+    "likesCount": 121,
+    "createdAt": "2025-05-09T00:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
+    "likedUserIds": [
+      "user-37",
+      "user-45",
+      "user-11"
+    ]
+  },
+  {
+    "id": "user-34",
+    "name": "Павел",
+    "email": "user34@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-34.webp",
+    "birthDate": "1986-04-16",
+    "cityId": "city-04",
+    "teachSkillId": "skill-034",
+    "learnSubcategoryIds": [
+      "storage",
+      "yoga-meditation",
+      "nutrition-healthy-lifestyle",
+      "mental-health",
+      "english"
+    ],
+    "likesCount": 134,
+    "createdAt": "2025-04-16T03:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
+    "likedUserIds": [
+      "user-38",
+      "user-46",
+      "user-12"
+    ]
+  },
+  {
+    "id": "user-35",
+    "name": "Захар",
+    "email": "user35@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-35.webp",
+    "birthDate": "1993-07-21",
+    "cityId": "city-05",
+    "teachSkillId": "skill-035",
+    "learnSubcategoryIds": [
+      "yoga-meditation",
+      "nutrition-healthy-lifestyle",
+      "mental-health",
+      "mindfulness"
+    ],
+    "likesCount": 147,
+    "createdAt": "2025-03-23T06:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
+    "likedUserIds": [
+      "user-39",
+      "user-47",
+      "user-13"
+    ]
+  },
+  {
+    "id": "user-36",
+    "name": "Лилия",
+    "email": "user36@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-36.webp",
+    "birthDate": "2000-10-01",
+    "cityId": "city-06",
+    "teachSkillId": "skill-036",
+    "learnSubcategoryIds": [
+      "nutrition-healthy-lifestyle",
+      "mental-health",
+      "mindfulness",
+      "physical-training",
+      "french"
+    ],
+    "likesCount": 9,
+    "createdAt": "2025-02-03T09:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
+    "likedUserIds": [
+      "user-40",
+      "user-48",
+      "user-14"
+    ]
+  },
+  {
+    "id": "user-37",
+    "name": "Владимир",
+    "email": "user37@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-37.webp",
+    "birthDate": "2007-01-06",
+    "cityId": "city-07",
+    "teachSkillId": "skill-037",
+    "learnSubcategoryIds": [
+      "mental-health",
+      "mindfulness",
+      "physical-training",
+      "sleep-recovery"
+    ],
+    "likesCount": 22,
+    "createdAt": "2025-01-10T12:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
+    "likedUserIds": [
+      "user-41",
+      "user-49",
+      "user-15"
+    ]
+  },
+  {
+    "id": "user-38",
+    "name": "Яна",
+    "email": "user38@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-38.webp",
+    "birthDate": "1991-04-11",
+    "cityId": "city-08",
+    "teachSkillId": "skill-038",
+    "learnSubcategoryIds": [
+      "mindfulness",
+      "physical-training",
+      "sleep-recovery",
+      "work-life-balance",
+      "spanish"
+    ],
+    "likesCount": 35,
+    "createdAt": "2025-12-17T15:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
+    "likedUserIds": [
+      "user-42",
+      "user-50",
+      "user-16"
+    ]
+  },
+  {
+    "id": "user-39",
+    "name": "Антон",
+    "email": "user39@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-39.webp",
+    "birthDate": "1998-07-16",
+    "cityId": "city-09",
+    "teachSkillId": "skill-039",
+    "learnSubcategoryIds": [
+      "physical-training",
+      "sleep-recovery",
+      "work-life-balance",
+      "team-management"
+    ],
+    "likesCount": 48,
+    "createdAt": "2025-11-24T18:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
+    "likedUserIds": [
+      "user-43",
+      "user-01",
+      "user-17"
+    ]
+  },
+  {
+    "id": "user-40",
+    "name": "Степан",
+    "email": "user40@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-40.webp",
+    "birthDate": "2005-10-21",
+    "cityId": "city-10",
+    "teachSkillId": "skill-040",
+    "learnSubcategoryIds": [
+      "sleep-recovery",
+      "work-life-balance",
+      "team-management",
+      "marketing-advertising",
+      "german"
+    ],
+    "likesCount": 61,
+    "createdAt": "2025-10-04T21:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
+    "likedUserIds": [
+      "user-44",
+      "user-02",
+      "user-18"
+    ]
+  },
+  {
+    "id": "user-41",
+    "name": "Светлана",
+    "email": "user41@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-41.webp",
+    "birthDate": "1989-01-01",
+    "cityId": "city-11",
+    "teachSkillId": "skill-041",
+    "learnSubcategoryIds": [
+      "work-life-balance",
+      "team-management",
+      "marketing-advertising",
+      "sales-negotiations"
+    ],
+    "likesCount": 74,
+    "createdAt": "2025-09-11T00:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
+    "likedUserIds": [
+      "user-45",
+      "user-03",
+      "user-19"
+    ]
+  },
+  {
+    "id": "user-42",
+    "name": "Вадим",
+    "email": "user42@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-42.webp",
+    "birthDate": "1996-04-06",
+    "cityId": "city-12",
+    "teachSkillId": "skill-042",
+    "learnSubcategoryIds": [
+      "team-management",
+      "marketing-advertising",
+      "sales-negotiations",
+      "personal-brand",
+      "chinese"
+    ],
+    "likesCount": 87,
+    "createdAt": "2025-08-18T03:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
+    "likedUserIds": [
+      "user-46",
+      "user-04",
+      "user-20"
+    ]
+  },
+  {
+    "id": "user-43",
+    "name": "Евгения",
+    "email": "user43@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-43.webp",
+    "birthDate": "2003-07-11",
+    "cityId": "city-13",
+    "teachSkillId": "skill-043",
+    "learnSubcategoryIds": [
+      "team-management",
+      "marketing-advertising",
+      "personal-brand",
+      "resume-interview"
+    ],
+    "likesCount": 100,
+    "createdAt": "2025-07-25T06:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
+    "likedUserIds": [
+      "user-47",
+      "user-05",
+      "user-21"
+    ]
+  },
+  {
+    "id": "user-44",
+    "name": "Роман",
+    "email": "user44@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-44.webp",
+    "birthDate": "1987-10-16",
+    "cityId": "city-14",
+    "teachSkillId": "skill-044",
+    "learnSubcategoryIds": [
+      "marketing-advertising",
+      "sales-negotiations",
+      "personal-brand",
+      "resume-interview",
+      "japanese"
+    ],
+    "likesCount": 113,
+    "createdAt": "2025-06-05T09:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
+    "likedUserIds": [
+      "user-48",
+      "user-06",
+      "user-22"
+    ]
+  },
+  {
+    "id": "user-45",
+    "name": "Софья",
+    "email": "user45@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-45.webp",
+    "birthDate": "1994-01-21",
+    "cityId": "city-15",
+    "teachSkillId": "skill-045",
+    "learnSubcategoryIds": [
+      "sales-negotiations",
+      "personal-brand",
+      "resume-interview",
+      "time-management"
+    ],
+    "likesCount": 126,
+    "createdAt": "2025-05-12T12:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
+    "likedUserIds": [
+      "user-49",
+      "user-07",
+      "user-23"
+    ]
+  },
+  {
+    "id": "user-46",
+    "name": "Алла",
+    "email": "user46@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-46.webp",
+    "birthDate": "2001-04-01",
+    "cityId": "city-01",
+    "teachSkillId": "skill-046",
+    "learnSubcategoryIds": [
+      "personal-brand",
+      "resume-interview",
+      "time-management",
+      "project-management",
+      "language-exams"
+    ],
+    "likesCount": 139,
+    "createdAt": "2025-04-19T15:00:00Z",
+    "about": "Работаю, учусь и постоянно пробую новые хобби.",
+    "likedUserIds": [
+      "user-50",
+      "user-08",
+      "user-24"
+    ]
+  },
+  {
+    "id": "user-47",
+    "name": "Ирина",
+    "email": "user47@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-47.webp",
+    "birthDate": "1985-07-06",
+    "cityId": "city-02",
+    "teachSkillId": "skill-047",
+    "learnSubcategoryIds": [
+      "resume-interview",
+      "time-management",
+      "project-management",
+      "entrepreneurship"
+    ],
+    "likesCount": 1,
+    "createdAt": "2025-03-26T18:00:00Z",
+    "about": "Люблю практику и спокойный темп обучения.",
+    "likedUserIds": [
+      "user-01",
+      "user-09",
+      "user-25"
+    ]
+  },
+  {
+    "id": "user-48",
+    "name": "Виолетта",
+    "email": "user48@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-48.webp",
+    "birthDate": "1992-10-11",
+    "cityId": "city-03",
+    "teachSkillId": "skill-048",
+    "learnSubcategoryIds": [
+      "time-management",
+      "project-management",
+      "entrepreneurship",
+      "drawing-illustration",
+      "learning-skills"
+    ],
+    "likesCount": 14,
+    "createdAt": "2025-02-06T21:00:00Z",
+    "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
+    "likedUserIds": [
+      "user-02",
+      "user-10",
+      "user-26"
+    ]
+  },
+  {
+    "id": "user-49",
+    "name": "Людмила",
+    "email": "user49@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-49.webp",
+    "birthDate": "1999-01-16",
+    "cityId": "city-04",
+    "teachSkillId": "skill-049",
+    "learnSubcategoryIds": [
+      "project-management",
+      "entrepreneurship",
+      "drawing-illustration",
+      "photography"
+    ],
+    "likesCount": 27,
+    "createdAt": "2025-01-13T00:00:00Z",
+    "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
+    "likedUserIds": [
+      "user-03",
+      "user-11",
+      "user-27"
+    ]
+  },
+  {
+    "id": "user-50",
+    "name": "Тимур",
+    "email": "user50@skillswap.test",
+    "avatarUrl": "/assets/images/users/user-50.webp",
+    "birthDate": "2006-04-21",
+    "cityId": "city-05",
+    "teachSkillId": "skill-050",
+    "learnSubcategoryIds": [
+      "entrepreneurship",
+      "drawing-illustration",
+      "photography",
+      "video-editing",
+      "cognitive-techniques"
+    ],
+    "likesCount": 40,
+    "createdAt": "2025-12-20T03:00:00Z",
+    "about": "Люблю разбираться в новых темах и применять знания на практике.",
+    "likedUserIds": [
+      "user-04",
+      "user-12",
+      "user-28"
+    ]
+  }
+]
