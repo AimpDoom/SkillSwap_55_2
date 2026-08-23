@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 4px;
   flex: none;
   order: 1;
@@ -13,7 +13,7 @@
 .userName {
   font-style: normal;
   font-weight: 600;
-  font-family: 'OpenSans';
+  font-family: OpenSans, sans-serif;
   font-size: 20px;
   line-height: 24px;
   display: flex;
@@ -27,7 +27,7 @@
 
 .userDetails {
   font-style: normal;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;

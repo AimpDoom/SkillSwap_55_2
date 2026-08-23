@@ -17,7 +17,7 @@ export function CanTeach({ skillId, header }: CanTeachProperties) {
     }
     fetchSkills()
     console.log(skill?.categoryId)
-  }, [skillId])
+  }, [skillId, skill?.categoryId])
 
   return (
     <div className={styles.badgeContainer}>
