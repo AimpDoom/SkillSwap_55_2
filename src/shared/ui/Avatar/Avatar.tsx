@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react'
 
+import userCircleIcon from '@/shared/assets/icons/user-circle-big.svg'
+
 import styles from './Avatar.module.css'
 
 type AvatarProps = {
   src?: string
   alt: string
-  fallback: string
   className?: string
 }
 
-export function Avatar({ src, alt, fallback, className = '' }: AvatarProps) {
+export function Avatar({ src, alt, className = '' }: AvatarProps) {
   const [hasError, setHasError] = useState(false)
 
   useEffect(() => {
@@ -25,11 +26,19 @@ export function Avatar({ src, alt, fallback, className = '' }: AvatarProps) {
       aria-label={showImage ? undefined : alt}
     >
       {showImage ? (
-        <img className={styles.image} src={src} alt={alt} onError={() => setHasError(true)} />
+        <img
+          className={styles.image}
+          src={src}
+          alt={alt}
+          onError={() => setHasError(true)}
+        />
       ) : (
-        <span className={styles.fallback} aria-hidden="true">
-          {fallback}
-        </span>
+        <img
+          className={styles.fallback}
+          src={userCircleIcon}
+          alt=""
+          aria-hidden="true"
+        />
       )}
     </div>
   )

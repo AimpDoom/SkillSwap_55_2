@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { ROUTES } from '@/shared/lib/constants'
 import { Button } from '@/shared/ui/Button'
 import styles from '../ErrorPages.module.css'
-import serverErrorImage from '@/shared/assets/images/ErrorPageImages/Error500PageImages/error500.svg'
+import serverErrorImage from '@/shared/assets/images/error500.svg'
 
 interface ServerErrorPageProps {
   statusCode?: number

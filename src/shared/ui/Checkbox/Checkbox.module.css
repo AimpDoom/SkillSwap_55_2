@@ -25,14 +25,14 @@
   flex: 0 0 24px;
   width: 24px;
   height: 24px;
-  background-image: url('../../assets/icons/filters/checkbox-empty.svg');
+  background-image: url('../../assets/icons/checkbox-empty.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 24px 24px;
 }
 
 .input:checked + .visual {
-  background-image: url('../../assets/icons/filters/checkbox-done.svg');
+  background-image: url('../../assets/icons/checkbox-done.svg');
 }
 
 .input:focus-visible + .visual {

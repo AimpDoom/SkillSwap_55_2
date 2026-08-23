@@ -93,7 +93,7 @@
 }
 
 .inputWithStartIcon {
-  padding-left: 52px;
+  padding-left: var(--input-start-padding, 52px);
 }
 
 .inputWithEndIcon {
@@ -111,9 +111,20 @@
 }
 
 .startIcon {
-  left: 20px;
+  left: var(--input-start-icon-left, 20px);
 }
 
 .endIcon {
   right: 16px;
+}
+
+.endIconButton {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.endIconButton:disabled {
+  cursor: default;
 }

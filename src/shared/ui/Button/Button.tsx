@@ -25,14 +25,19 @@ type LinkButtonProps = CommonProps &
 export type ButtonProps = NativeButtonProps | LinkButtonProps
 
 export function Button(props: ButtonProps) {
-  const { children, variant = 'primary', className = '' } = props
-
-  const variantClass = styles[`${variant}Button`] ?? styles.primaryButton
-
-  const classes = `${styles.button} ${variantClass} ${className}`
-
   if ('to' in props && props.to) {
-    const { to, disabled, onClick, ...linkProps } = props
+    const {
+      children,
+      variant = 'primary',
+      className = '',
+      to,
+      disabled,
+      onClick,
+      ...linkProps
+    } = props
+
+    const variantClass = styles[`${variant}Button`] ?? styles.primaryButton
+    const classes = `${styles.button} ${variantClass} ${className}`
 
     return (
       <Link
@@ -55,7 +60,16 @@ export function Button(props: ButtonProps) {
     )
   }
 
-  const { type = 'button', ...buttonProps } = props as NativeButtonProps
+  const {
+    children,
+    variant = 'primary',
+    className = '',
+    type = 'button',
+    ...buttonProps
+  } = props as NativeButtonProps
+
+  const variantClass = styles[`${variant}Button`] ?? styles.primaryButton
+  const classes = `${styles.button} ${variantClass} ${className}`
 
   return (
     <button {...buttonProps} type={type} className={classes}>

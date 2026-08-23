@@ -25,14 +25,14 @@
   flex: 0 0 24px;
   width: 24px;
   height: 24px;
-  background-image: url('../../assets/icons/filters/radio-empty.svg');
+  background-image: url('../../assets/icons/radio-empty.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 24px 24px;
 }
 
 .input:checked + .visual {
-  background-image: url('../../assets/icons/filters/radio-active.svg');
+  background-image: url('../../assets/icons/radio-active.svg');
 }
 
 .input:focus-visible + .visual {

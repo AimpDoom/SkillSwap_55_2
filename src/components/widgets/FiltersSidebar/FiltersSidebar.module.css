@@ -51,7 +51,7 @@
   width: 11px;
   height: 11px;
   background-color: var(--color-accent-strong);
-  mask-image: url('../../../shared/assets/icons/filters/cross.svg');
+  mask-image: url('../../../shared/assets/icons/cross.svg');
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
@@ -161,7 +161,7 @@
 }
 
 .categoryEmptyVisual {
-  background-image: url('../../../shared/assets/icons/filters/checkbox-empty.svg');
+  background-image: url('../../../shared/assets/icons/checkbox-empty.svg');
 }
 
 .categoryPartialVisual {
