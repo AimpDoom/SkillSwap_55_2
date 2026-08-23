@@ -1,0 +1,21 @@
+.likeContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min-content;
+}
+
+.like {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  padding: 0;
+  background-image: url('/src/shared/assets/icons/unliked.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.2s ease;
+}

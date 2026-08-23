@@ -3,12 +3,12 @@ import type { HTMLAttributes, ReactNode } from 'react'
 import styles from './Tag.module.css'
 
 export type TagVariant =
-  | 'business'
-  | 'languages'
-  | 'home'
-  | 'art'
-  | 'education'
-  | 'health'
+  | 'business-career'
+  | 'foreign-languages'
+  | 'home-comfort'
+  | 'creativity-art'
+  | 'education-development'
+  | 'health-lifestyle'
   | 'neutral'
 
 type TagProps = HTMLAttributes<HTMLSpanElement> & {

@@ -1,13 +1,13 @@
 // TODO: реализовать страницу CatalogPage
 
-import { FiltersSidebar } from '@/components/widgets/FiltersSidebar';
-
-import styles from './CatalogPage.module.css';
+import styles from './CatalogPage.module.css'
+import { UserCard } from '@/entities/user/ui/UserCard'
+import users from '@/../public/db/users.json'
 
 export default function CatalogPage() {
   return (
     <main className={styles.page}>
-      <FiltersSidebar />
+      <UserCard user={users[0]} />
     </main>
-  );
+  )
 }

@@ -1,0 +1,41 @@
+.userInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+  flex: none;
+  order: 1;
+  z-index: 1;
+}
+
+.userName {
+  font-style: normal;
+  font-weight: 600;
+  font-family: 'OpenSans';
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.011em;
+  color: #253017;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.userDetails {
+  font-style: normal;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #253017;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
