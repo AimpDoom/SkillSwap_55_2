@@ -34,6 +34,7 @@ export function WantToLearn({ skillsIds, header }: WantToLearnProperties) {
                 variant={skill?.categoryId as TagVariant}
                 className={styles.skillBadge}
                 key={skill?.id}
+                title={skill?.name}
               >
                 {skill?.name}
               </Tag>

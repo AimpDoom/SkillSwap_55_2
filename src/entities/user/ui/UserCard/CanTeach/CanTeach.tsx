@@ -23,7 +23,11 @@ export function CanTeach({ skillId, header }: CanTeachProperties) {
     <div className={styles.badgeContainer}>
       <h4 className={styles.mainText}>{header}</h4>
       <div className={styles.skillsContainer}>
-        {skill && <Tag variant={skill.categoryId as TagVariant}>{skill?.title}</Tag>}
+        {skill && (
+          <Tag variant={skill.categoryId as TagVariant} title={skill.title}>
+            {skill?.title}
+          </Tag>
+        )}
       </div>
     </div>
   )
