@@ -6,6 +6,7 @@
   --color-pink: #f7e7f2;
   --color-sky: #e7f2f6;
   --color-mint: #e9f7e7;
+  --color-neutral: #e8ecf7;
 
   /* UI-colors */
   --color-bg-primary: #fff;
@@ -14,6 +15,7 @@
   --color-text-secondary: #69735d;
   --color-accent: #abd27a;
   --color-accent-strong: #508826;
+  --color-error: #BF3920;
 
   /* tag-colors */
   --color-tag-business: var(--color-lilac);
@@ -22,6 +24,7 @@
   --color-tag-art: var(--color-pink);
   --color-tag-education: var(--color-sky);
   --color-tag-health: var(--color-mint);
+  --color-tag-neutral: var(--color-neutral);
 
   /* font-families */
   --font-family-primary: 'Jost', sans-serif;

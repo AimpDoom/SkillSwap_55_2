@@ -31,10 +31,15 @@
   color: var(--primary-text-active-color);
 }
 
-.primaryButton:disabled {
+.primaryButton:disabled,
+.primaryButton.disabled {
   background-color: var(--primary-bg-disabled-color);
   color: var(--color-text-secondary);
   cursor: not-allowed;
+}
+
+.primaryButton.disabled:hover {
+  background-color: var(--primary-bg-disabled-color);
 }
 
 .secondaryButton {
@@ -53,14 +58,26 @@
   border: var(--secondary-border-active);
 }
 
-.secondaryButton:disabled {
+.secondaryButton:disabled,
+.secondaryButton.disabled {
   border: var(--secondary-disabled-border);
   color: var(--secondary-disabled-color);
   cursor: not-allowed;
+}
+
+.secondaryButton.disabled:hover {
+  border: var(--secondary-disabled-border);
+  color: var(--secondary-disabled-color);
 }
 
 .tertiaryButton {
   border: none;
   background-color: var(--tertiary-bg-color);
   color: var(--color-text-primary);
+}
+
+.tertiaryButton:disabled,
+.tertiaryButton.disabled {
+  color: var(--secondary-disabled-color);
+  cursor: not-allowed;
 }

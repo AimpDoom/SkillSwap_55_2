@@ -50,6 +50,12 @@
 .resetIcon {
   width: 11px;
   height: 11px;
+  background-color: var(--color-accent-strong);
+  mask-image: url('../../../shared/assets/icons/cross.svg');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  flex-shrink: 0;
 }
 
 .resetButton:hover {
@@ -90,62 +96,22 @@
 }
 
 .option {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 24px;
-  font-family: var(--font-family-secondary);
-  font-size: var(--font-size-s);
-  font-weight: var(--font-weight-regular);
-  line-height: var(--line-height-s);
+  width: 100%;
   letter-spacing: 0.32px;
-  cursor: pointer;
 }
 
 .optionText {
   flex: 1;
 }
 
-.control {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-
-.checkboxVisual,
-.radioVisual {
+.categoryEmptyVisual,
+.categoryPartialVisual {
   flex-shrink: 0;
   width: 24px;
   height: 24px;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-.checkboxVisual {
-  background-image: url('../../../shared/assets/icons/checkbox-empty.svg');
-}
-
-.control:checked + .checkboxVisual {
-  background-image: url('../../../shared/assets/icons/checkbox-done.svg');
-}
-
-.radioVisual {
-  background-image: url('../../../shared/assets/icons/radio-empty.svg');
-}
-
-.control:checked + .radioVisual {
-  background-image: url('../../../shared/assets/icons/radio-active.svg');
-}
-
-.control:focus-visible + .checkboxVisual,
-.control:focus-visible + .radioVisual {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-  border-radius: 4px;
+  background-size: 24px 24px;
 }
 
 .linkButton {
@@ -192,6 +158,10 @@
 
 .categoryRow .option {
   flex: 1;
+}
+
+.categoryEmptyVisual {
+  background-image: url('../../../shared/assets/icons/checkbox-empty.svg');
 }
 
 .categoryPartialVisual {
