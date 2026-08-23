@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { ROUTES } from '@/shared/lib/constants'
 import { Button } from '@/shared/ui/Button'
 import styles from '../ErrorPages.module.css'
-import notFoundImage from '@/shared/assets/images/ErrorPageImages/NotFoundPageImages/error404.svg'
+import notFoundImage from '@/shared/assets/images/error404.svg'
 
 export default function NotFoundPage() {
   const navigate = useNavigate()

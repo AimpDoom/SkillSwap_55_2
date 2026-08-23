@@ -1,7 +1,5 @@
 import { useState } from 'react'
 
-import crossIcon from '@/shared/assets/icons/cross.svg'
-
 import { CityFilter } from './CityFilter'
 import { GenderFilter } from './GenderFilter'
 import { RoleFilter } from './RoleFilter'
@@ -59,7 +57,7 @@ export const FiltersSidebar = () => {
             <span>Сбросить</span>
 
             <span className={styles.resetIconBox} aria-hidden="true">
-              <img className={styles.resetIcon} src={crossIcon} alt="" />
+              <span className={styles.resetIcon} aria-hidden="true" />
             </span>
           </button>
         )}

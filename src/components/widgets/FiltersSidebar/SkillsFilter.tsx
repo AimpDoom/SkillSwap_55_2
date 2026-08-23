@@ -1,14 +1,15 @@
-import chevronDown from '@/shared/assets/icons/chevron-down.svg';
-import chevronUp from '@/shared/assets/icons/chevron-up.svg';
+import chevronDown from '@/shared/assets/icons/chevron-down.svg'
+import chevronUp from '@/shared/assets/icons/chevron-up.svg'
+import { Checkbox } from '@/shared/ui/Checkbox'
 
-import styles from './FiltersSidebar.module.css';
+import styles from './FiltersSidebar.module.css'
 
 type SkillsFilterProps = {
-  selectedSkills: string[];
-  openCategory: string | null;
-  onToggleSkill: (skill: string) => void;
-  onToggleOpen: (category: string | null) => void;
-};
+  selectedSkills: string[]
+  openCategory: string | null
+  onToggleSkill: (skill: string) => void
+  onToggleOpen: (category: string | null) => void
+}
 
 const categories = [
   {
@@ -83,7 +84,7 @@ const categories = [
       'Хранение вещей',
     ],
   },
-];
+]
 
 export const SkillsFilter = ({
   selectedSkills,
@@ -97,41 +98,32 @@ export const SkillsFilter = ({
 
       <div className={styles.options}>
         {categories.map((category) => {
-          const isOpen = openCategory === category.name;
+          const isOpen = openCategory === category.name
 
-          const hasSelected = category.subcategories.some((skill) =>
-            selectedSkills.includes(skill),
-          );
+          const hasSelected = category.subcategories.some((skill) => selectedSkills.includes(skill))
 
           return (
             <div className={styles.category} key={category.name}>
               <button
                 className={styles.categoryToggle}
                 type="button"
-                onClick={() =>
-                  onToggleOpen(isOpen ? null : category.name)
-                }
+                onClick={() => onToggleOpen(isOpen ? null : category.name)}
                 aria-expanded={isOpen}
               >
                 <span
                   className={
-                    hasSelected
-                      ? styles.categoryPartialVisual
-                      : styles.checkboxVisual
+                    hasSelected ? styles.categoryPartialVisual : styles.categoryEmptyVisual
                   }
                   aria-hidden="true"
                 />
 
-                <span className={styles.optionText}>
-                  {category.name}
-                </span>
+                <span className={styles.optionText}>{category.name}</span>
 
-                <span className={styles.chevron}>
+                <span className={styles.chevron} aria-hidden="true">
                   <img
                     className={styles.chevronIcon}
                     src={isOpen ? chevronUp : chevronDown}
                     alt=""
-                    aria-hidden="true"
                   />
                 </span>
               </button>
@@ -139,46 +131,28 @@ export const SkillsFilter = ({
               {isOpen && (
                 <div className={styles.subcategories}>
                   {category.subcategories.map((subcategory) => (
-                    <label
-                      className={styles.option}
+                    <Checkbox
                       key={subcategory}
-                    >
-                      <input
-                        className={styles.control}
-                        type="checkbox"
-                        checked={selectedSkills.includes(subcategory)}
-                        onChange={() =>
-                          onToggleSkill(subcategory)
-                        }
-                      />
-
-                      <span
-                        className={styles.checkboxVisual}
-                        aria-hidden="true"
-                      />
-
-                      <span>{subcategory}</span>
-                    </label>
+                      className={styles.option}
+                      checked={selectedSkills.includes(subcategory)}
+                      label={subcategory}
+                      onChange={() => onToggleSkill(subcategory)}
+                    />
                   ))}
                 </div>
               )}
             </div>
-          );
+          )
         })}
 
         <button className={styles.linkButton} type="button">
           <span>Все категории</span>
 
-          <span className={styles.chevron}>
-            <img
-              className={styles.chevronIcon}
-              src={chevronDown}
-              alt=""
-              aria-hidden="true"
-            />
+          <span className={styles.chevron} aria-hidden="true">
+            <img className={styles.chevronIcon} src={chevronDown} alt="" />
           </span>
         </button>
       </div>
     </section>
-  );
-};
+  )
+}
