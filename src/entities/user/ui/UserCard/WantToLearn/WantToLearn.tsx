@@ -17,18 +17,11 @@ export function WantToLearn({ skillsIds, header }: WantToLearnProperties) {
   useEffect(() => {
     const fetchSkills = async () => {
       const categories = await fetchCategories()
-      const subcategories = categories.flatMap(
-        (category) => category.subcategories,
-      )
+      const subcategories = categories.flatMap((category) => category.subcategories)
 
       const skillData = skillsIds
-        .map((skillId) =>
-          subcategories.find((subcategory) => subcategory.id === skillId),
-        )
-        .filter(
-          (subcategory): subcategory is SkillSubcategory =>
-            subcategory !== undefined,
-        )
+        .map((skillId) => subcategories.find((subcategory) => subcategory.id === skillId))
+        .filter((subcategory): subcategory is SkillSubcategory => subcategory !== undefined)
 
       setSkillList(skillData)
     }

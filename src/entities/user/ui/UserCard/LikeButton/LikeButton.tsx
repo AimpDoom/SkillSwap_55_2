@@ -12,17 +12,12 @@ type LikeButtonProps = {
 }
 
 export function LikeButton({ userId, likeCount }: LikeButtonProps) {
-  const [favorites, setFavorites] = useLocalStorage<string[]>(
-    LOCAL_STORAGE_KEYS.FAVORITES,
-    [],
-  )
+  const [favorites, setFavorites] = useLocalStorage<string[]>(LOCAL_STORAGE_KEYS.FAVORITES, [])
 
   const liked = favorites.includes(userId)
 
   const handleLikeClick = () => {
-    setFavorites((prev) =>
-      liked ? prev.filter((id) => id !== userId) : [...prev, userId],
-    )
+    setFavorites((prev) => (liked ? prev.filter((id) => id !== userId) : [...prev, userId]))
   }
 
   const displayedLikeCount = likeCount + Number(liked)

@@ -25,12 +25,12 @@ export const UserCard = ({ user }: { user: User }) => {
         <WantToLearn skillsIds={user.learnSubcategoryIds} header="Хочет научиться:" />
       </div>
       <Button
-  to={ROUTES.SKILL.replace(':id', user.teachSkillId)}
-  className={styles.button}
-  variant="primary"
->
-  Подробнее
-</Button>
+        to={ROUTES.SKILL.replace(':id', user.teachSkillId)}
+        className={styles.button}
+        variant="primary"
+      >
+        Подробнее
+      </Button>
     </div>
   )
 }

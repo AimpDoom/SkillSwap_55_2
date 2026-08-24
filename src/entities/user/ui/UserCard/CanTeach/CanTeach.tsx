@@ -16,8 +16,8 @@ export function CanTeach({ skillId, header }: CanTeachProperties) {
       setSkill(skillData)
     }
 
-  fetchSkills()
-}, [skillId])
+    fetchSkills()
+  }, [skillId])
 
   return (
     <div className={styles.badgeContainer}>
