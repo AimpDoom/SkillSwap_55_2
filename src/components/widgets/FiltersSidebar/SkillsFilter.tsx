@@ -27,7 +27,7 @@ const categories = [
   {
     name: 'Творчество и искусство',
     subcategories: [
-      'Рисование иイラストレーション',
+      'Рисование и иллюстрация',
       'Фотография',
       'Видеомонтаж',
       'Музыка и звук',
@@ -97,9 +97,7 @@ export const SkillsFilter = ({
       <div className={styles.options}>
         {categories.map((category) => {
           const isOpen = openCategory === category.name
-          const hasSelected = category.subcategories.some((skill) =>
-            selectedSkills.includes(skill)
-          )
+          const hasSelected = category.subcategories.some((skill) => selectedSkills.includes(skill))
 
           const handleResetCategory = (e: React.MouseEvent) => {
             e.stopPropagation()
