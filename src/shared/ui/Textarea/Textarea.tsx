@@ -1,22 +1,44 @@
-import { TextareaHTMLAttributes, forwardRef, useId } from 'react';
+import {
+  TextareaHTMLAttributes,
+  forwardRef,
+  useId,
+  ReactNode,
+} from 'react';
+
 import styles from './Textarea.module.css';
 
-interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+interface TextareaProps
+  extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
   error?: string;
   hint?: string;
   className?: string;
+  endIcon?: ReactNode;
 }
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ label, error, hint, className = '', id, ...props }, ref) => {
-    const internalId = useId();
-    const textareaId = id || internalId;
+  (
+    {
+      label,
+      error,
+      hint,
+      endIcon,
+      className = '',
+      id,
+      ...props
+    },
+    ref
+  ) => {
+    const generatedId = useId();
+    const textareaId = id ?? generatedId;
 
     return (
       <div className={`${styles.wrapper} ${className}`}>
         {label && (
-          <label htmlFor={textareaId} className={styles.label}>
+          <label
+            className={styles.label}
+            htmlFor={textareaId}
+          >
             {label}
           </label>
         )}
@@ -25,9 +47,17 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           <textarea
             ref={ref}
             id={textareaId}
-            className={`${styles.textarea} ${error ? styles.textareaError : ''}`}
+            className={`${styles.textarea} ${
+              error ? styles.textareaError : ''
+            }`}
             {...props}
           />
+
+          {endIcon && (
+            <span className={styles.endIcon}>
+              {endIcon}
+            </span>
+          )}
         </div>
 
         {error ? (

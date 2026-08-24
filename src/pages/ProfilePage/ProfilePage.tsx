@@ -1,39 +1,40 @@
-import { useState, useEffect } from 'react';
-import { useForm, Controller } from 'react-hook-form';
-import axios from 'axios';
+import { useState, useEffect } from 'react'
+import { useForm, Controller } from 'react-hook-form'
+import axios from 'axios'
 
-import { Input } from '../../shared/ui/Input';
-import { Select } from '../../shared/ui/Select';
-import { Button } from '../../shared/ui/Button';
-import { Avatar } from '../../shared/ui/Avatar';
-import { Textarea } from '../../shared/ui/Textarea';
-import styles from './ProfilePage.module.css';
+import { Input } from '../../shared/ui/Input'
+import { Select } from '../../shared/ui/Select'
+import { Button } from '../../shared/ui/Button'
+import { Avatar } from '../../shared/ui/Avatar'
+import { Textarea } from '../../shared/ui/Textarea'
 
-import editIcon from '../../shared/assets/icons/edit.svg';
-import galleryEditIcon from '../../shared/assets/icons/gallery-edit.svg';
+import styles from './ProfilePage.module.css'
 
-// Иконки для боковой панели по макету
-import requestIcon from '../../shared/assets/icons/request.svg';
-import likeIcon from '../../shared/assets/icons/like.svg';
-import userIcon from '../../shared/assets/icons/user.svg';
-import clockIcon from '../../shared/assets/icons/clock.svg'; // или любая другая для обменов
-import ideaIcon from '../../shared/assets/icons/idea.svg';   // или другая для навыков
-
+import editIcon from '../../shared/assets/icons/edit.svg'
+import galleryEditIcon from '../../shared/assets/icons/gallery-edit.svg'
+import calendarIcon from '../../shared/assets/icons/calendar.svg'
+import requestIcon from '../../shared/assets/icons/request.svg'
+import likeIcon from '../../shared/assets/icons/like.svg'
+import userIcon from '../../shared/assets/icons/user.svg'
+import clockIcon from '../../shared/assets/icons/clock.svg'
+import ideaIcon from '../../shared/assets/icons/idea.svg'
 
 interface CityOption {
-  value: string;
-  label: string;
+  value: string
+  label: string
 }
 
 interface ProfileFormData {
-  email: string;
-  name: string;
-  birthday: string;
-  gender: string;
-  city: string;
-  about: string;
-  avatarUrl: string;
+  email: string
+  name: string
+  birthday: string
+  gender: string
+  city: string
+  about: string
+  avatarUrl: string
 }
+
+type User = ProfileFormData
 
 const MENU_ITEMS = [
   { id: 'Заявки', label: 'Заявки', icon: requestIcon },
@@ -41,11 +42,11 @@ const MENU_ITEMS = [
   { id: 'Избранное', label: 'Избранное', icon: likeIcon },
   { id: 'Мои навыки', label: 'Мои навыки', icon: ideaIcon },
   { id: 'Личные данные', label: 'Личные данные', icon: userIcon },
-];
+]
 
 export default function ProfilePage() {
-  const [activeTab, setActiveTab] = useState<string>('Личные данные');
-  const [cities, setCities] = useState<CityOption[]>([]);
+  const [activeTab, setActiveTab] = useState('Личные данные')
+  const [cities, setCities] = useState<CityOption[]>([])
 
   const {
     register,
@@ -55,62 +56,86 @@ export default function ProfilePage() {
     watch,
   } = useForm<ProfileFormData>({
     defaultValues: {
-      email: 'Maria@gmail.com', // дефолтные значения как на макете
+      email: 'Maria@gmail.com',
       name: 'Мария',
       birthday: '1995-10-28',
       gender: 'female',
       city: 'Москва',
-      about: 'Люблю учиться новому, особенно если это можно делать за чаем и в пижаме. Всегда готова пообщаться и обменяться чем-то интересным!',
+      about:
+        'Люблю учиться новому, особенно если это можно делать за чаем и в пижаме. Всегда готова пообщаться и обменяться чем-то интересным!',
       avatarUrl: '',
-    }
-  });
-
-  const onSubmit = (data: ProfileFormData) => {
-    console.log('Сформированный объект User:', data);
-    alert('Профиль успешно сохранен!');
-  };
-
-  const currentAvatarUrl = watch('avatarUrl') || '';
-  const currentName = watch('name') || 'Мария';
+    },
+  })
 
   useEffect(() => {
-    axios.get('/db/cities.json')
-      .then(res => { if (Array.isArray(res.data)) setCities(res.data); })
-      .catch(err => console.error('Ошибка загрузки городов:', err));
-  }, []);
+    axios
+      .get('/db/cities.json')
+      .then(({ data }) => {
+        if (!Array.isArray(data)) return
+
+        const result = data.map(
+          (item: string | { name?: string; value?: string; label?: string }) => {
+            if (typeof item === 'string') {
+              return {
+                value: item,
+                label: item,
+              }
+            }
+
+            return {
+              value: item.value ?? item.name ?? '',
+              label: item.label ?? item.name ?? '',
+            }
+          },
+        )
+
+        setCities(result)
+      })
+      .catch(console.error)
+  }, [])
+
+  const avatar = watch('avatarUrl')
+  const name = watch('name')
+
+  const onSubmit = (data: ProfileFormData) => {
+    const user: User = {
+      ...data,
+    }
+
+    console.log(user)
+    alert('Профиль успешно сохранён!')
+  }
 
   return (
     <main className={styles.container}>
-      {/* Боковая панель с иконками по макету */}
       <aside className={styles.sidebar}>
-  {MENU_ITEMS.map((item) => (
-    <button
-      key={item.id}
-      type="button"
-      className={`${styles.menuButton} ${activeTab === item.id ? styles.activeButton : ''}`}
-      onClick={() => setActiveTab(item.id)}
-    >
-      <img src={item.icon} className={styles.menuIcon} alt="" aria-hidden="true" />
-      {item.label}
-    </button>
-  ))}
-</aside>
+        {MENU_ITEMS.map((item) => (
+          <button
+            key={item.id}
+            type="button"
+            className={`${styles.menuButton} ${activeTab === item.id ? styles.activeButton : ''}`}
+            onClick={() => setActiveTab(item.id)}
+          >
+            <img src={item.icon} className={styles.menuIcon} alt="" aria-hidden="true" />
+            {item.label}
+          </button>
+        ))}
+      </aside>
 
-
-      {/* Основной контент */}
       <section className={styles.content}>
         {activeTab === 'Личные данные' ? (
-          <form onSubmit={handleSubmit(onSubmit)} className={styles.profileGrid}>
-
-            {/* Левая колонка формы */}
+          <form className={styles.profileGrid} onSubmit={handleSubmit(onSubmit)}>
             <div className={styles.formFields}>
-
               <Input
                 label="Почта"
                 placeholder="example@mail.com"
                 error={errors.email?.message}
-                endIcon={<img src={editIcon} className={styles.editIcon} alt="Редактировать" />}
-                {...register('email', { required: 'Email обязателен' })}
+                endIcon={
+                  <img src={editIcon} className={styles.editIcon} alt="" aria-hidden="true" />
+                }
+                {...register('email', {
+                  required: 'Email обязателен',
+                })}
               />
 
               <button type="button" className={styles.passwordButton}>
@@ -121,87 +146,98 @@ export default function ProfilePage() {
                 label="Имя"
                 placeholder="Ваше имя"
                 error={errors.name?.message}
-                endIcon={<img src={editIcon} className={styles.editIcon} alt="Редактировать" />}
-                {...register('name', { required: 'Имя обязательно' })}
+                endIcon={
+                  <img src={editIcon} className={styles.editIcon} alt="" aria-hidden="true" />
+                }
+                {...register('name', {
+                  required: 'Имя обязательно',
+                })}
               />
 
-              {/* Дата рождения и Пол в один ряд */}
               <div className={styles.rowFields}>
                 <Input
                   label="Дата рождения"
                   type="date"
                   error={errors.birthday?.message}
-                  {...register('birthday', { required: 'Укажите дату рождения' })}
+                  endIcon={
+                    <div className={styles.visualCalendarContainer}>
+                      <img
+                        src={calendarIcon}
+                        className={styles.editIcon}
+                        alt=""
+                        aria-hidden="true"
+                      />
+                    </div>
+                  }
+                  {...register('birthday', {
+                    required: 'Укажите дату рождения',
+                  })}
                 />
 
-                <div className={styles.selectWrapper}>
-                  <Controller
-                    name="gender"
-                    control={control}
-                    render={({ field }) => (
-                      <Select
-                        {...field}
-                        label="Пол"
-                        placeholder="Выберите"
-                        options={[
-                          { value: 'male', label: 'Мужской' },
-                          { value: 'female', label: 'Женский' }
-                        ]}
-                      />
-                    )}
-                  />
-                </div>
-              </div>
-
-              <div className={styles.selectWrapper}>
                 <Controller
-                  name="city"
+                  name="gender"
                   control={control}
-                  rules={{ required: 'Выберите город' }}
                   render={({ field }) => (
                     <Select
                       {...field}
-                      label="Город"
-                      options={cities}
-                      placeholder="Выберите город"
+                      label="Пол"
+                      placeholder="Выберите"
+                      options={[
+                        {
+                          value: 'male',
+                          label: 'Мужской',
+                        },
+                        {
+                          value: 'female',
+                          label: 'Женский',
+                        },
+                      ]}
                     />
                   )}
                 />
-                {errors.city?.message && <span className={styles.errorText}>{errors.city.message}</span>}
               </div>
 
-              <Textarea
-                label="О себе"
-                placeholder="Расскажите о себе..."
-                error={errors.about?.message}
-                {...register('about')}
+              <Controller
+                name="city"
+                control={control}
+                rules={{
+                  required: 'Выберите город',
+                }}
+                render={({ field }) => (
+                  <Select {...field} label="Город" placeholder="Выберите город" options={cities} />
+                )}
               />
 
-              <Button type="submit" className={styles.submitBtn}>Сохранить</Button>
+              {errors.city && <span className={styles.errorText}>{errors.city.message}</span>}
+
+              <div className={styles.textareaContainer}>
+                <Textarea
+                  label="О себе"
+                  placeholder="Расскажите о себе..."
+                  endIcon={<img src={editIcon} alt="" aria-hidden="true" />}
+                  {...register('about')}
+                />
+              </div>
+              <Button type="submit">Сохранить</Button>
             </div>
 
-            {/* Правая колонка: Аватар с кнопкой изменения */}
             <div className={styles.avatarContainer}>
               <div className={styles.avatarWrapper}>
-                <Avatar
-                  src={currentAvatarUrl}
-                  alt={currentName}
-                />
-                <button type="button" className={styles.avatarEditBtn} aria-label="Изменить фото">
-  <img src={galleryEditIcon} alt="" aria-hidden="true" />
-</button>
+                <Avatar src={avatar} alt={name} />
 
+                <button type="button" className={styles.avatarEditBtn}>
+                  <img src={galleryEditIcon} alt="" aria-hidden="true" />
+                </button>
               </div>
             </div>
-
           </form>
         ) : (
-          <div>
+          <div className={styles.placeholder}>
             <h2>{activeTab}</h2>
-            <p>Раздел работает в режиме визуального переключателя.</p>
+            <p>Раздел работает как визуальный переключатель.</p>
           </div>
         )}
       </section>
     </main>
-  );
+  )
 }

@@ -1,19 +1,35 @@
-/* Стили самого текстового поля СТРОГО ПО ВАШИМ ПАРАМЕТРАМ ИЗ FIGMA */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.control {
+  position: relative;
+}
+
 .textarea {
   box-sizing: border-box;
   width: 460px; /* width: 460 */
   height: 120px; /* height: 120 */
-  padding: 12px 20px; /* padding-top/bottom: 12, padding-left/right: 20 */
+  padding: 12px 52px 12px 16px;
   font-family: var(--font-family-secondary);
   font-size: var(--font-size-s);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-s);
   color: var(--color-text-primary);
   background-color: var(--color-bg-primary);
-  border: 1px solid #69735d; /* border-width: 1px + цвет рамок */
-  border-radius: var(--border-radius-s, 12px); /* border-radius: 12px */
+  border: 1px solid #69735d;
+  border-radius: var(--border-radius-s, 12px);
   outline: none;
-  resize: none; /* Запрещаем ручное изменение размера, так как в Figma размеры фиксированы */
+  resize: none;
 }
 
 .textarea::placeholder {
@@ -43,4 +59,28 @@
 .textareaError:hover,
 .textareaError:focus {
   border-color: var(--color-error);
+}
+
+.endIcon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.error {
+  margin-top: 4px;
+  font-size: var(--font-size-xs);
+  color: var(--color-error);
+}
+
+.hint {
+  margin-top: 4px;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
 }
