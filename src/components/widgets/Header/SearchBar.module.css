@@ -1,7 +1,6 @@
 .search {
-  flex: 0 1 480px;
-  width: 480px;
-
+  flex-grow: 1; /* Растягиваем на всю доступную ширину */
+  width: 100%;
   --input-start-icon-left: 12px;
   --input-start-padding: 44px;
 }

@@ -1,7 +1,6 @@
 import chevronDown from '@/shared/assets/icons/chevron-down.svg'
 import chevronUp from '@/shared/assets/icons/chevron-up.svg'
 import { Checkbox } from '@/shared/ui/Checkbox'
-
 import styles from './FiltersSidebar.module.css'
 
 type SkillsFilterProps = {
@@ -28,7 +27,7 @@ const categories = [
   {
     name: 'Творчество и искусство',
     subcategories: [
-      'Рисование и иллюстрация',
+      'Рисование иイラストレーション',
       'Фотография',
       'Видеомонтаж',
       'Музыка и звук',
@@ -95,38 +94,55 @@ export const SkillsFilter = ({
   return (
     <section className={styles.group}>
       <h3 className={styles.sectionTitle}>Навыки</h3>
-
       <div className={styles.options}>
         {categories.map((category) => {
           const isOpen = openCategory === category.name
+          const hasSelected = category.subcategories.some((skill) =>
+            selectedSkills.includes(skill)
+          )
 
-          const hasSelected = category.subcategories.some((skill) => selectedSkills.includes(skill))
+          const handleResetCategory = (e: React.MouseEvent) => {
+            e.stopPropagation()
+            category.subcategories.forEach((skill) => {
+              if (selectedSkills.includes(skill)) {
+                onToggleSkill(skill)
+              }
+            })
+          }
 
           return (
             <div className={styles.category} key={category.name}>
-              <button
-                className={styles.categoryToggle}
-                type="button"
-                onClick={() => onToggleOpen(isOpen ? null : category.name)}
-                aria-expanded={isOpen}
-              >
-                <span
-                  className={
-                    hasSelected ? styles.categoryPartialVisual : styles.categoryEmptyVisual
-                  }
-                  aria-hidden="true"
-                />
+              <div className={styles.categoryRow}>
+                {/* Если подкатегории выбраны, показываем кнопку с минусом */}
+                {hasSelected ? (
+                  <button
+                    className={styles.chevronButton}
+                    type="button"
+                    onClick={handleResetCategory}
+                    aria-label="Сбросить подкатегории"
+                  >
+                    <span className={styles.categoryPartialVisual} aria-hidden="true" />
+                  </button>
+                ) : (
+                  <span className={styles.categoryEmptyVisual} aria-hidden="true" />
+                )}
 
-                <span className={styles.optionText}>{category.name}</span>
-
-                <span className={styles.chevron} aria-hidden="true">
-                  <img
-                    className={styles.chevronIcon}
-                    src={isOpen ? chevronUp : chevronDown}
-                    alt=""
-                  />
-                </span>
-              </button>
+                <button
+                  className={styles.categoryToggle}
+                  type="button"
+                  onClick={() => onToggleOpen(isOpen ? null : category.name)}
+                  aria-expanded={isOpen}
+                >
+                  <span className={styles.optionText}>{category.name}</span>
+                  <span className={styles.chevron} aria-hidden="true">
+                    <img
+                      className={styles.chevronIcon}
+                      src={isOpen ? chevronUp : chevronDown}
+                      alt=""
+                    />
+                  </span>
+                </button>
+              </div>
 
               {isOpen && (
                 <div className={styles.subcategories}>
@@ -144,10 +160,8 @@ export const SkillsFilter = ({
             </div>
           )
         })}
-
         <button className={styles.linkButton} type="button">
           <span>Все категории</span>
-
           <span className={styles.chevron} aria-hidden="true">
             <img className={styles.chevronIcon} src={chevronDown} alt="" />
           </span>
