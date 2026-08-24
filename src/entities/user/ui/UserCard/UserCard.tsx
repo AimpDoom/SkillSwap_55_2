@@ -18,15 +18,19 @@ export const UserCard = ({ user }: { user: User }) => {
           className={styles.userImage}
         />
         <UserInfo name={user.name} cityId={user.cityId} birthDate={user.birthDate} />
-        <LikeButton isLiked={false} likeCount={user.likesCount} />
+        <LikeButton userId={user.id} likeCount={user.likesCount} />
       </div>
       <div className={styles.cardMiddleBlock}>
         <CanTeach skillId={user.teachSkillId} header="Может научить:" />
         <WantToLearn skillsIds={user.learnSubcategoryIds} header="Хочет научиться:" />
       </div>
-      <Button to={ROUTES.SKILL.replace(':id', user.id)} className={styles.button} variant="primary">
-        Подробнее
-      </Button>
+      <Button
+  to={ROUTES.SKILL.replace(':id', user.teachSkillId)}
+  className={styles.button}
+  variant="primary"
+>
+  Подробнее
+</Button>
     </div>
   )
 }

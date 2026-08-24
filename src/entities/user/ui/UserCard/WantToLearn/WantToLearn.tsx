@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
+
 import styles from './want-to-learn.module.css'
-import { fetchSubcategory } from '@/api/skills'
+
+import { fetchCategories } from '@/api/skills'
+import type { SkillSubcategory } from '@/shared/types'
 import { Tag, TagVariant } from '@/shared/ui/Tag/Tag'
 
 interface WantToLearnProperties {
@@ -9,17 +12,27 @@ interface WantToLearnProperties {
 }
 
 export function WantToLearn({ skillsIds, header }: WantToLearnProperties) {
-  const [skillList, setSkillList] = useState<Awaited<ReturnType<typeof fetchSubcategory>>[]>([])
+  const [skillList, setSkillList] = useState<SkillSubcategory[]>([])
+
   useEffect(() => {
     const fetchSkills = async () => {
-      const skillData = await Promise.all(
-        skillsIds.map(async (skillId) => {
-          const skill = await fetchSubcategory(skillId)
-          return skill
-        }),
+      const categories = await fetchCategories()
+      const subcategories = categories.flatMap(
+        (category) => category.subcategories,
       )
+
+      const skillData = skillsIds
+        .map((skillId) =>
+          subcategories.find((subcategory) => subcategory.id === skillId),
+        )
+        .filter(
+          (subcategory): subcategory is SkillSubcategory =>
+            subcategory !== undefined,
+        )
+
       setSkillList(skillData)
     }
+
     fetchSkills()
   }, [skillsIds])
 
@@ -31,18 +44,19 @@ export function WantToLearn({ skillsIds, header }: WantToLearnProperties) {
           if (index < 2) {
             return (
               <Tag
-                variant={skill?.categoryId as TagVariant}
+                variant={skill.categoryId as TagVariant}
                 className={styles.skillBadge}
-                key={skill?.id}
-                title={skill?.name}
+                key={skill.id}
+                title={skill.name}
               >
-                {skill?.name}
+                {skill.name}
               </Tag>
             )
-          } else {
-            return null
           }
+
+          return null
         })}
+
         {skillsIds.length - 2 > 0 && (
           <Tag className={styles.skillBadge}>+{skillsIds.length - 2}</Tag>
         )}
