@@ -4,11 +4,12 @@ import type { AuthFormValues } from '@/features/auth/model'
 import { useRegistrationFlow } from '@/features/auth/model'
 import { AuthForm } from '@/features/auth/ui'
 import closeIcon from '@/shared/assets/icons/cross.svg'
-import lightBulb from '@/shared/assets/images/auth/light-bulb.svg'
 import { ROUTES } from '@/shared/lib/constants'
 import { Button } from '@/shared/ui/Button'
 import { Logo } from '@/shared/ui/Logo'
 import { Stepper } from '@/shared/ui/Stepper'
+import { PromoPanel } from '@/shared/ui/PromoPanel'
+import LightBulbImage from '@/shared/assets/images/light-bulb.svg?react'
 
 import styles from './LoginPage.module.css'
 
@@ -136,24 +137,11 @@ export default function LoginPage() {
           </section>
         )}
 
-        <section
-          className={styles.onboarding}
-          aria-label={isRegister ? 'Добро пожаловать в SkillSwap' : 'С возвращением в SkillSwap'}
-        >
-          <img className={styles.illustration} src={lightBulb} alt="" aria-hidden="true" />
-
-          <div className={styles.onboardingText}>
-            <h2 className={styles.onboardingTitle}>
-              {isRegister ? 'Добро пожаловать в SkillSwap!' : 'С возвращением в SkillSwap!'}
-            </h2>
-
-            <p className={styles.onboardingDescription}>
-              {isRegister
-                ? 'Присоединяйтесь к SkillSwap и обменивайтесь знаниями и навыками с другими людьми'
-                : 'Обменивайтесь знаниями и навыками с другими людьми'}
-            </p>
-          </div>
-        </section>
+        <PromoPanel
+          image={<LightBulbImage />}
+          title="С возвращением в SkillSwap!"
+          description="Обменивайтесь знаниями и навыками с другими людьми"
+        />
       </div>
     </main>
   )
