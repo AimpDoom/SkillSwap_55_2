@@ -3,36 +3,36 @@
   align-items: center;
   justify-content: center;
   min-height: 28px;
-  padding: 2px 12px;
+  padding: 8px 12px;
   font-family: var(--font-family-secondary);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-regular);
-  line-height: var(--line-height-s);
+  line-height: var(--line-height-xs);
   color: var(--color-text-primary);
-  border-radius: var(--border-radius-s);
+  border-radius: var(--border-radius-m);
 }
 
-.business {
+.business-career {
   background-color: var(--color-tag-business);
 }
 
-.languages {
+.foreign-languages {
   background-color: var(--color-tag-languages);
 }
 
-.home {
+.home-comfort {
   background-color: var(--color-tag-home);
 }
 
-.art {
+.creativity-art {
   background-color: var(--color-tag-art);
 }
 
-.education {
+.education-development {
   background-color: var(--color-tag-education);
 }
 
-.health {
+.health-lifestyle {
   background-color: var(--color-tag-health);
 }
 
