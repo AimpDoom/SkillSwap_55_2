@@ -55,6 +55,7 @@
   --line-height-xl: 40px;
 
   /* layout */
+  --container-max-width: 1440px;
   --page-padding-inline: 36px;
 
   /* buttons */
