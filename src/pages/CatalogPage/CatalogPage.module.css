@@ -1,5 +1,64 @@
-/* Component styles */
 .page {
-  padding-block: 32px;
-  padding-inline: var(--page-padding-inline);
+  padding-block: 32px 64px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 324px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-family: var(--font-family-primary);
+  font-size: 24px;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+.showAllButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 20px;
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  border: 0;
+  border-radius: var(--border-radius-s);
+  cursor: pointer;
+}
+
+.arrow {
+  width: 24px;
+  height: 24px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 324px);
+  gap: 24px;
 }
