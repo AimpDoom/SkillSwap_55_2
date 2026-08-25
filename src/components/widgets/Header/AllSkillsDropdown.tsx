@@ -106,47 +106,49 @@ export function AllSkillsDropdown() {
       role="region"
       aria-label="Все категории навыков"
     >
-      {columns.map((column) => (
-        <div className={styles.column} key={column.id}>
-          {column.categories.map((category) => {
-            const visual = categoryVisuals[category.id];
+      <div className={styles.content}>
+        {columns.map((column) => (
+          <div className={styles.column} key={column.id}>
+            {column.categories.map((category) => {
+              const visual = categoryVisuals[category.id];
 
-            return (
-              <section className={styles.category} key={category.id}>
-                {visual && (
-                  <div
-                    className={`${styles.iconWrapper} ${visual.className}`}
-                    aria-hidden="true"
-                  >
-                    <img
-                      className={styles.icon}
-                      src={visual.icon}
-                      alt=""
-                    />
+              return (
+                <section className={styles.category} key={category.id}>
+                  {visual && (
+                    <div
+                      className={`${styles.iconWrapper} ${visual.className}`}
+                      aria-hidden="true"
+                    >
+                      <img
+                        className={styles.icon}
+                        src={visual.icon}
+                        alt=""
+                      />
+                    </div>
+                  )}
+
+                  <div className={styles.categoryContent}>
+                    <h2 className={styles.categoryTitle}>
+                      {category.name}
+                    </h2>
+
+                    <ul className={styles.subcategories}>
+                      {category.subcategories.map((subcategory) => (
+                        <li
+                          className={styles.subcategory}
+                          key={subcategory.id}
+                        >
+                          {subcategory.name}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                )}
-
-                <div className={styles.categoryContent}>
-                  <h2 className={styles.categoryTitle}>
-                    {category.name}
-                  </h2>
-
-                  <ul className={styles.subcategories}>
-                    {category.subcategories.map((subcategory) => (
-                      <li
-                        className={styles.subcategory}
-                        key={subcategory.id}
-                      >
-                        {subcategory.name}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </section>
-            );
-          })}
-        </div>
-      ))}
+                </section>
+              );
+            })}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
