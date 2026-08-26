@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useForm, Controller } from 'react-hook-form'
+
 import axios from 'axios'
 
 import { Input } from '@/shared/ui/Input'
@@ -19,7 +20,7 @@ import userIcon from '@/shared/assets/icons/user.svg'
 import clockIcon from '@/shared/assets/icons/message-text.svg'
 import ideaIcon from '@/shared/assets/icons/idea.svg'
 import { Container } from '@/shared/ui/Container'
-
+import type { User } from '@/shared/types'
 interface CityOption {
   value: string
   label: string
@@ -34,8 +35,6 @@ interface ProfileFormData {
   about: string
   avatarUrl: string
 }
-
-type User = ProfileFormData
 
 const MENU_ITEMS = [
   { id: 'Заявки', label: 'Заявки', icon: requestIcon },
@@ -98,14 +97,25 @@ export default function ProfilePage() {
   const avatar = watch('avatarUrl')
   const name = watch('name')
 
-  const onSubmit = (data: ProfileFormData) => {
-    const user: User = {
-      ...data,
-    }
-
-    console.log(user)
-    alert('Профиль успешно сохранён!')
+const onSubmit = (data: ProfileFormData) => {
+  const user: User = {
+    id: '',
+    name: data.name,
+    email: data.email,
+    avatarUrl: data.avatarUrl,
+    birthDate: data.birthday,
+    cityId: data.city,
+    teachSkillId: '',
+    learnSubcategoryIds: [],
+    likesCount: 0,
+    createdAt: new Date().toISOString(),
+    about: data.about,
+    likedUserIds: [],
   }
+
+  console.log(user)
+  alert('Профиль успешно сохранён!')
+}
 
   return (
     <main>
@@ -126,7 +136,6 @@ export default function ProfilePage() {
       </aside>
 
       <section className={styles.content}>
-        {activeTab === 'Личные данные' ? (
           <form className={styles.profileGrid} onSubmit={handleSubmit(onSubmit)}>
             <div className={styles.formFields}>
               <Controller
@@ -246,12 +255,6 @@ export default function ProfilePage() {
               </div>
             </div>
           </form>
-        ) : (
-          <div className={styles.placeholder}>
-            <h2>{activeTab}</h2>
-            <p>Раздел работает как визуальный переключатель.</p>
-          </div>
-        )}
       </section>
       </div>
       </Container>

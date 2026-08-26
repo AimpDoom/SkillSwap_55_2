@@ -1,7 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: 324px 1fr;
-  gap: 40px;
+  gap: 24px;
   margin: 40px 0;
   align-items: stretch;
 }
@@ -40,7 +40,6 @@
 
 .activeButton {
   background: var(--primary-bg-hover-color);
-  font-weight: var(--font-weight-medium);
 }
 
 .menuIcon {
@@ -54,6 +53,7 @@
   background: var(--color-bg-primary);
   border-radius: var(--border-radius-m);
   box-sizing: border-box;
+  min-height: 752px;
 }
 
 .profileGrid {
@@ -114,7 +114,6 @@
   justify-self: end;
   align-items: flex-start;
   padding-top: 24px;
-  margin-left: 60px;
 }
 
 .avatarWrapper {
@@ -145,12 +144,6 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgb(0 0 0 / 12%);
-  transition: transform 0.15s ease;
-}
-
-.avatarEditBtn:hover {
-  transform: scale(1.05);
 }
 
 .avatarEditBtn img {
