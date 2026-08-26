@@ -2,9 +2,7 @@
   display: grid;
   grid-template-columns: 324px 1fr;
   gap: 40px;
-  max-width: 1120px;
-  margin: 40px auto;
-  padding: 0 var(--page-padding-inline);
+  margin: 40px 0;
   align-items: stretch;
 }
 

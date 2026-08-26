@@ -7,7 +7,6 @@
 .label {
   font-family: var(--font-family-secondary);
   font-size: var(--font-size-s);
-  font-weight: var(--font-weight-medium);
   color: var(--color-text-primary);
 }
 

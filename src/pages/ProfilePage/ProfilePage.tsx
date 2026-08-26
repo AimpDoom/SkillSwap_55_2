@@ -1,23 +1,24 @@
-import { useState, useEffect } from 'react';
-import { useForm, Controller } from 'react-hook-form';
-import axios from 'axios';
+import { useState, useEffect } from 'react'
+import { useForm, Controller } from 'react-hook-form'
+import axios from 'axios'
 
-import { Input } from '@/shared/ui/Input';
-import { Select } from '@/shared/ui/Select';
-import { Button } from '@/shared/ui/Button';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Textarea } from '@/shared/ui/Textarea';
+import { Input } from '@/shared/ui/Input'
+import { Select } from '@/shared/ui/Select'
+import { Button } from '@/shared/ui/Button'
+import { Avatar } from '@/shared/ui/Avatar'
+import { Textarea } from '@/shared/ui/Textarea'
 
-import styles from './ProfilePage.module.css';
+import styles from './ProfilePage.module.css'
 
-import editIcon from '@/shared/assets/icons/edit.svg';
-import galleryEditIcon from '@/shared/assets/icons/gallery-edit.svg';
-import calendarIcon from '@/shared/assets/icons/calendar.svg';
-import requestIcon from '@/shared/assets/icons/request.svg';
-import likeIcon from '@/shared/assets/icons/like.svg';
-import userIcon from '@/shared/assets/icons/user.svg';
-import clockIcon from '@/shared/assets/icons/message-text.svg';
-import ideaIcon from '@/shared/assets/icons/idea.svg';
+import editIcon from '@/shared/assets/icons/edit.svg'
+import galleryEditIcon from '@/shared/assets/icons/gallery-edit.svg'
+import calendarIcon from '@/shared/assets/icons/calendar.svg'
+import requestIcon from '@/shared/assets/icons/request.svg'
+import likeIcon from '@/shared/assets/icons/like.svg'
+import userIcon from '@/shared/assets/icons/user.svg'
+import clockIcon from '@/shared/assets/icons/message-text.svg'
+import ideaIcon from '@/shared/assets/icons/idea.svg'
+import { Container } from '@/shared/ui/Container'
 
 interface CityOption {
   value: string
@@ -107,7 +108,9 @@ export default function ProfilePage() {
   }
 
   return (
-    <main className={styles.container}>
+    <main>
+    <Container>
+      <div className={styles.container}>
       <aside className={styles.sidebar}>
         {MENU_ITEMS.map((item) => (
           <button
@@ -126,32 +129,44 @@ export default function ProfilePage() {
         {activeTab === 'Личные данные' ? (
           <form className={styles.profileGrid} onSubmit={handleSubmit(onSubmit)}>
             <div className={styles.formFields}>
-              <Input
-                label="Почта"
-                placeholder="example@mail.com"
-                error={errors.email?.message}
-                endIcon={
-                  <img src={editIcon} className={styles.editIcon} alt="" aria-hidden="true" />
-                }
-                {...register('email', {
+              <Controller
+                name="email"
+                control={control}
+                rules={{
                   required: 'Email обязателен',
-                })}
+                }}
+                render={({ field }) => (
+                  <Input
+                    label="Почта"
+                    placeholder="example@mail.com"
+                    error={errors.email?.message}
+                    endIcon={
+                      <img src={editIcon} className={styles.editIcon} alt="" aria-hidden="true" />
+                    }
+                    {...field}
+                  />
+                )}
               />
 
               <button type="button" className={styles.passwordButton}>
                 Изменить пароль
               </button>
 
-              <Input
-                label="Имя"
-                placeholder="Ваше имя"
-                error={errors.name?.message}
-                endIcon={
-                  <img src={editIcon} className={styles.editIcon} alt="" aria-hidden="true" />
-                }
-                {...register('name', {
-                  required: 'Имя обязательно',
-                })}
+              <Controller
+                name="name"
+                control={control}
+                rules={{ required: 'Имя обязательно' }}
+                render={({ field }) => (
+                  <Input
+                    label="Имя"
+                    placeholder="Ваше имя"
+                    error={errors.name?.message}
+                    endIcon={
+                      <img src={editIcon} className={styles.editIcon} alt="" aria-hidden="true" />
+                    }
+                    {...field}
+                  />
+                )}
               />
 
               <div className={styles.rowFields}>
@@ -238,6 +253,8 @@ export default function ProfilePage() {
           </div>
         )}
       </section>
+      </div>
+      </Container>
     </main>
   )
 }
