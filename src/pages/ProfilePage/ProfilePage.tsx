@@ -21,6 +21,8 @@ import clockIcon from '@/shared/assets/icons/message-text.svg'
 import ideaIcon from '@/shared/assets/icons/idea.svg'
 import { Container } from '@/shared/ui/Container'
 import type { User } from '@/entities/user/model/types'
+import type { City } from '@/entities/city/model/types'
+
 interface CityOption {
   value: string
   label: string
@@ -60,7 +62,7 @@ export default function ProfilePage() {
       name: 'Мария',
       birthday: '1995-10-28',
       gender: 'female',
-      city: 'Москва',
+      city: 'city-01',
       about:
         'Люблю учиться новому, особенно если это можно делать за чаем и в пижаме. Всегда готова пообщаться и обменяться чем-то интересным!',
       avatarUrl: '',
@@ -69,27 +71,14 @@ export default function ProfilePage() {
 
   useEffect(() => {
     axios
-      .get('/db/cities.json')
+      .get<City[]>('/db/cities.json')
       .then(({ data }) => {
-        if (!Array.isArray(data)) return
-
-        const result = data.map(
-          (item: string | { name?: string; value?: string; label?: string }) => {
-            if (typeof item === 'string') {
-              return {
-                value: item,
-                label: item,
-              }
-            }
-
-            return {
-              value: item.value ?? item.name ?? '',
-              label: item.label ?? item.name ?? '',
-            }
-          },
+        setCities(
+          data.map((city) => ({
+            value: city.id,
+            label: city.name,
+          })),
         )
-
-        setCities(result)
       })
       .catch(console.error)
   }, [])
@@ -97,166 +86,177 @@ export default function ProfilePage() {
   const avatar = watch('avatarUrl')
   const name = watch('name')
 
-const onSubmit = (data: ProfileFormData) => {
-  const user: User = {
-    id: '',
-    name: data.name,
-    email: data.email,
-    avatarUrl: data.avatarUrl,
-    birthDate: data.birthday,
-    cityId: data.city,
-    teachSkillId: '',
-    learnSubcategoryIds: [],
-    likesCount: 0,
-    createdAt: new Date().toISOString(),
-    about: data.about,
-    likedUserIds: [],
-  }
+  const onSubmit = (data: ProfileFormData) => {
+    const user: User = {
+      id: '',
+      name: data.name,
+      email: data.email,
+      avatarUrl: data.avatarUrl || null,
+      birthDate: data.birthday,
+      cityId: data.city,
+      teachSkillId: '',
+      learnSubcategoryIds: [],
+      likesCount: 0,
+      createdAt: new Date().toISOString(),
+      about: data.about,
+      likedUserIds: [],
+    }
 
-  console.log(user)
-  alert('Профиль успешно сохранён!')
-}
+    return user
+  }
 
   return (
     <main>
-    <Container>
-      <div className={styles.container}>
-      <aside className={styles.sidebar}>
-        {MENU_ITEMS.map((item) => (
-          <button
-            key={item.id}
-            type="button"
-            className={`${styles.menuButton} ${activeTab === item.id ? styles.activeButton : ''}`}
-            onClick={() => setActiveTab(item.id)}
-          >
-            <img src={item.icon} className={styles.menuIcon} alt="" aria-hidden="true" />
-            {item.label}
-          </button>
-        ))}
-      </aside>
-
-      <section className={styles.content}>
-          <form className={styles.profileGrid} onSubmit={handleSubmit(onSubmit)}>
-            <div className={styles.formFields}>
-              <Controller
-                name="email"
-                control={control}
-                rules={{
-                  required: 'Email обязателен',
-                }}
-                render={({ field }) => (
-                  <Input
-                    label="Почта"
-                    placeholder="example@mail.com"
-                    error={errors.email?.message}
-                    endIcon={
-                      <img src={editIcon} className={styles.editIcon} alt="" aria-hidden="true" />
-                    }
-                    {...field}
-                  />
-                )}
-              />
-
-              <button type="button" className={styles.passwordButton}>
-                Изменить пароль
+      <Container>
+        <div className={styles.container}>
+          <aside className={styles.sidebar}>
+            {MENU_ITEMS.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                className={`${styles.menuButton} ${activeTab === item.id ? styles.activeButton : ''}`}
+                onClick={() => setActiveTab(item.id)}
+              >
+                <img src={item.icon} className={styles.menuIcon} alt="" aria-hidden="true" />
+                {item.label}
               </button>
+            ))}
+          </aside>
 
-              <Controller
-                name="name"
-                control={control}
-                rules={{ required: 'Имя обязательно' }}
-                render={({ field }) => (
-                  <Input
-                    label="Имя"
-                    placeholder="Ваше имя"
-                    error={errors.name?.message}
-                    endIcon={
-                      <img src={editIcon} className={styles.editIcon} alt="" aria-hidden="true" />
-                    }
-                    {...field}
-                  />
-                )}
-              />
-
-              <div className={styles.rowFields}>
-                <Input
-                  label="Дата рождения"
-                  type="date"
-                  error={errors.birthday?.message}
-                  endIcon={
-                    <div className={styles.visualCalendarContainer}>
-                      <img
-                        src={calendarIcon}
-                        className={styles.editIcon}
-                        alt=""
-                        aria-hidden="true"
-                      />
-                    </div>
-                  }
-                  {...register('birthday', {
-                    required: 'Укажите дату рождения',
-                  })}
-                />
-
+          <section className={styles.content}>
+            <form className={styles.profileGrid} onSubmit={handleSubmit(onSubmit)}>
+              <div className={styles.formFields}>
                 <Controller
-                  name="gender"
+                  name="email"
                   control={control}
-                  render={({ field }) => (
-                    <Select
+                  rules={{
+                    required: 'Email обязателен',
+                  }}
+                  render={({ field: { ref: _ref, ...field } }) => (
+                    <Input
                       {...field}
-                      label="Пол"
-                      placeholder="Выберите"
-                      options={[
-                        {
-                          value: 'male',
-                          label: 'Мужской',
-                        },
-                        {
-                          value: 'female',
-                          label: 'Женский',
-                        },
-                      ]}
+                      label="Почта"
+                      placeholder="example@mail.com"
+                      error={errors.email?.message}
+                      endIcon={
+                        <img src={editIcon} className={styles.editIcon} alt="" aria-hidden="true" />
+                      }
                     />
                   )}
                 />
-              </div>
 
-              <Controller
-                name="city"
-                control={control}
-                rules={{
-                  required: 'Выберите город',
-                }}
-                render={({ field }) => (
-                  <Select {...field} label="Город" placeholder="Выберите город" options={cities} />
-                )}
-              />
-
-              {errors.city && <span className={styles.errorText}>{errors.city.message}</span>}
-
-              <div className={styles.textareaContainer}>
-                <Textarea
-                  label="О себе"
-                  placeholder="Расскажите о себе..."
-                  endIcon={<img src={editIcon} alt="" aria-hidden="true" />}
-                  {...register('about')}
-                />
-              </div>
-              <Button type="submit">Сохранить</Button>
-            </div>
-
-            <div className={styles.avatarContainer}>
-              <div className={styles.avatarWrapper}>
-                <Avatar src={avatar} alt={name} />
-
-                <button type="button" className={styles.avatarEditBtn}>
-                  <img src={galleryEditIcon} alt="" aria-hidden="true" />
+                <button type="button" className={styles.passwordButton}>
+                  Изменить пароль
                 </button>
+
+                <Controller
+                  name="name"
+                  control={control}
+                  rules={{ required: 'Имя обязательно' }}
+                  render={({ field: { ref: _ref, ...field } }) => (
+                    <Input
+                      {...field}
+                      label="Имя"
+                      placeholder="Ваше имя"
+                      error={errors.name?.message}
+                      endIcon={
+                        <img src={editIcon} className={styles.editIcon} alt="" aria-hidden="true" />
+                      }
+                    />
+                  )}
+                />
+
+                <div className={styles.rowFields}>
+                  <Controller
+                    name="birthday"
+                    control={control}
+                    rules={{
+                      required: 'Укажите дату рождения',
+                    }}
+                    render={({ field: { ref: _ref, ...field } }) => (
+                      <Input
+                        {...field}
+                        label="Дата рождения"
+                        type="date"
+                        error={errors.birthday?.message}
+                        endIcon={
+                          <img
+                            src={calendarIcon}
+                            className={styles.editIcon}
+                            alt=""
+                            aria-hidden="true"
+                          />
+                        }
+                      />
+                    )}
+                  />
+
+                  <Controller
+                    name="gender"
+                    control={control}
+                    render={({ field: { ref: _ref, ...field } }) => (
+                      <Select
+                        {...field}
+                        label="Пол"
+                        placeholder="Выберите"
+                        options={[
+                          {
+                            value: 'male',
+                            label: 'Мужской',
+                          },
+                          {
+                            value: 'female',
+                            label: 'Женский',
+                          },
+                        ]}
+                      />
+                    )}
+                  />
+                </div>
+
+                <Controller
+                  name="city"
+                  control={control}
+                  rules={{
+                    required: 'Выберите город',
+                  }}
+                  render={({ field: { ref: _ref, ...field } }) => (
+                    <Select
+                      {...field}
+                      label="Город"
+                      placeholder="Выберите город"
+                      options={cities}
+                    />
+                  )}
+                />
+
+                {errors.city && <span className={styles.errorText}>{errors.city.message}</span>}
+
+                <div className={styles.textareaContainer}>
+                  <Textarea
+                    label="О себе"
+                    placeholder="Расскажите о себе..."
+                    withIcon
+                    endIcon={<img src={editIcon} alt="" aria-hidden="true" />}
+                    {...register('about')}
+                  />
+                </div>
+                <Button className={styles.submitButton} type="submit">
+                  Сохранить
+                </Button>
               </div>
-            </div>
-          </form>
-      </section>
-      </div>
+
+              <div className={styles.avatarContainer}>
+                <div className={styles.avatarWrapper}>
+                  <Avatar className={styles.profileAvatar} src={avatar} alt={name} />
+                  <button type="button" className={styles.avatarEditBtn}>
+                    <img src={galleryEditIcon} alt="" aria-hidden="true" />
+                  </button>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
       </Container>
     </main>
   )
