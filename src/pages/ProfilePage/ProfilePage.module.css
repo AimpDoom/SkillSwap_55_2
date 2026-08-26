@@ -1,0 +1,152 @@
+.container {
+  display: grid;
+  grid-template-columns: 324px 1fr;
+  gap: 24px;
+  margin: 40px 0;
+  align-items: stretch;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 40px;
+  border-radius: 24px;
+  background: var(--color-bg-primary);
+  box-sizing: border-box;
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: var(--border-radius-s);
+  background: transparent;
+  cursor: pointer;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-s);
+  transition: background-color 0.2s ease;
+}
+
+.menuButton:hover {
+  background: var(--color-bg-secondary);
+}
+
+.activeButton {
+  background: var(--primary-bg-hover-color);
+}
+
+.menuIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.content {
+  padding: 40px;
+  background: var(--color-bg-primary);
+  border-radius: var(--border-radius-m);
+  box-sizing: border-box;
+}
+
+.profileGrid {
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  gap: 48px;
+  width: 100%;
+  align-items: start;
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 460px;
+}
+
+.passwordButton {
+  align-self: flex-start;
+  margin-top: -18px;
+  margin-bottom: -2px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-accent-strong);
+  cursor: pointer;
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
+}
+
+.passwordButton:hover {
+  color: var(--color-text-primary);
+}
+
+.rowFields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.editIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  opacity: 0.7;
+}
+
+.avatarContainer {
+  display: flex;
+  justify-self: end;
+  align-items: flex-start;
+  padding-top: 24px;
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.profileAvatar {
+  width: 160px;
+  height: 160px;
+}
+
+.avatarEditBtn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 56px;
+  height: 56px;
+  padding: 16px;
+  border: none;
+  border-radius: 50%;
+  background: var(--primary-bg-hover-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.avatarEditBtn img {
+  width: 100%;
+  height: 100%;
+}
+
+.errorText {
+  margin-top: 2px;
+  color: var(--color-error);
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-xs);
+}
+
+.submitButton {
+  width: 100%;
+}

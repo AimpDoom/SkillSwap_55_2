@@ -9,7 +9,6 @@
 .search input {
   padding-top: 8px;
   padding-bottom: 8px;
-  font-family: var(--font-family-primary);
   color: var(--color-text-secondary);
   background-color: var(--color-bg-primary);
   border: 0;
