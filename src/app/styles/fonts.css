@@ -1,7 +1,7 @@
 @font-face {
   font-family: Jost;
-  src: url('../../shared/assets/fonts/Jost-Regular.woff2') format('woff2');
-  font-weight: 400;
+  src: url('../../shared/assets/fonts/Jost-Medium.woff2') format('woff2');
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -18,14 +18,6 @@
   font-family: Roboto;
   src: url('../../shared/assets/fonts/Roboto-Medium.woff2') format('woff2');
   font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: OpenSans;
-  src: url('../../shared/assets/fonts/OpenSans-SemiBold.woff2') format('woff2');
-  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }

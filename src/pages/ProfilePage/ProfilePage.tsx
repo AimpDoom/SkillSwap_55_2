@@ -20,7 +20,7 @@ import userIcon from '@/shared/assets/icons/user.svg'
 import clockIcon from '@/shared/assets/icons/message-text.svg'
 import ideaIcon from '@/shared/assets/icons/idea.svg'
 import { Container } from '@/shared/ui/Container'
-import type { User } from '@/shared/types'
+import type { User } from '@/entities/user/model/types'
 interface CityOption {
   value: string
   label: string

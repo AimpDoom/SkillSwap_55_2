@@ -15,7 +15,7 @@
   --color-text-secondary: #69735d;
   --color-accent: #abd27a;
   --color-accent-strong: #508826;
-  --color-error: #BF3920;
+  --color-error: #bf3920;
 
   /* tag-colors */
   --color-tag-business: var(--color-lilac);
@@ -29,7 +29,6 @@
   /* font-families */
   --font-family-primary: 'Jost', sans-serif;
   --font-family-secondary: 'Roboto', sans-serif;
-  --font-family-accent: 'OpenSans', sans-serif;
 
   /* font-sizes */
   --font-size-xs: 12px;
@@ -45,7 +44,6 @@
   /* font-weights */
   --font-weight-regular: 400;
   --font-weight-medium: 500;
-  --font-weight-semibold: 600;
 
   /* line-heights */
   --line-height-xs: 16px;

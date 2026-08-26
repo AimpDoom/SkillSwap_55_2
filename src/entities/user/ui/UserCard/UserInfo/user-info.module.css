@@ -12,14 +12,14 @@
 
 .userName {
   font-style: normal;
-  font-weight: 600;
-  font-family: OpenSans, sans-serif;
-  font-size: 20px;
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-m);
   line-height: 24px;
   display: flex;
   align-items: center;
   letter-spacing: -0.011em;
-  color: #253017;
+  color: var(--color-text-primary);
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -27,14 +27,14 @@
 
 .userDetails {
   font-style: normal;
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 12px;
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-xs);
   line-height: 16px;
   display: flex;
   align-items: center;
   letter-spacing: 0.02em;
-  color: #253017;
+  color: var(--color-text-primary);
   flex: none;
   order: 1;
   flex-grow: 0;

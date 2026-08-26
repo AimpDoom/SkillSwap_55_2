@@ -1,3 +1,4 @@
+import { clsx } from 'clsx'
 import { useEffect, useState } from 'react'
 
 import userCircleIcon from '@/shared/assets/icons/user-circle-big.svg'
@@ -21,24 +22,14 @@ export function Avatar({ src, alt, className = '' }: AvatarProps) {
 
   return (
     <div
-      className={`${styles.avatar} ${className}`}
+      className={clsx(styles.avatar, className)}
       role={showImage ? undefined : 'img'}
       aria-label={showImage ? undefined : alt}
     >
       {showImage ? (
-        <img
-          className={styles.image}
-          src={src}
-          alt={alt}
-          onError={() => setHasError(true)}
-        />
+        <img className={styles.image} src={src} alt={alt} onError={() => setHasError(true)} />
       ) : (
-        <img
-          className={styles.fallback}
-          src={userCircleIcon}
-          alt=""
-          aria-hidden="true"
-        />
+        <img className={styles.fallback} src={userCircleIcon} alt="" aria-hidden="true" />
       )}
     </div>
   )

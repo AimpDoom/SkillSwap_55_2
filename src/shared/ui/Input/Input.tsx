@@ -2,6 +2,7 @@ import type { InputHTMLAttributes, ReactNode } from 'react'
 import { useId, useRef } from 'react'
 
 import styles from './Input.module.css'
+import { clsx } from 'clsx'
 
 type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
   label?: string
@@ -40,7 +41,7 @@ export function Input({
   }
 
   return (
-    <div className={`${styles.wrapper} ${className}`}>
+    <div className={clsx(styles.wrapper, className)}>
       {label && (
         <label className={styles.label} htmlFor={inputId}>
           {label}
@@ -61,9 +62,12 @@ export function Input({
           type={type}
           disabled={disabled}
           readOnly={readOnly}
-          className={`${styles.input} ${startIcon ? styles.inputWithStartIcon : ''} ${
-            endIcon ? styles.inputWithEndIcon : ''
-          } ${error ? styles.inputError : ''}`}
+          className={clsx(
+            styles.input,
+            startIcon && styles.inputWithStartIcon,
+            endIcon && styles.inputWithEndIcon,
+            error && styles.inputError,
+          )}
           aria-invalid={Boolean(error)}
           aria-describedby={messageId}
           onClick={(event) => {
@@ -79,7 +83,7 @@ export function Input({
           (type === 'date' ? (
             <button
               type="button"
-              className={`${styles.endIcon} ${styles.endIconButton}`}
+              className={clsx(styles.endIcon, styles.endIconButton)}
               aria-label="Открыть календарь"
               disabled={disabled}
               onClick={openDatePicker}

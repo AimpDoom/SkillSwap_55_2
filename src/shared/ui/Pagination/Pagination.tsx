@@ -1,3 +1,4 @@
+import { clsx } from 'clsx'
 import { Button } from '@/shared/ui/Button'
 
 import styles from './Pagination.module.css'
@@ -38,7 +39,7 @@ export function Pagination({
   }
 
   return (
-    <nav className={`${styles.pagination} ${className}`} aria-label="Пагинация">
+    <nav className={clsx(styles.pagination, className)} aria-label="Пагинация">
       <Button
         type="button"
         variant="tertiary"
@@ -55,7 +56,7 @@ export function Pagination({
           return (
             <button
               key={page}
-              className={`${styles.pageButton} ${isActive ? styles.active : ''}`}
+              className={clsx(styles.pageButton, isActive && styles.active)}
               type="button"
               aria-current={isActive ? 'page' : undefined}
               aria-label={`Страница ${page}`}

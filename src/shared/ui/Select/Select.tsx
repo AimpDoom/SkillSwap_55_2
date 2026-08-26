@@ -2,6 +2,7 @@ import type { SelectHTMLAttributes } from 'react'
 import { useId } from 'react'
 
 import styles from './Select.module.css'
+import { clsx } from 'clsx'
 
 export type SelectOption = {
   value: string
@@ -20,7 +21,7 @@ export function Select({ label, placeholder, options, id, className = '', ...pro
   const selectId = id ?? generatedId
 
   return (
-    <div className={`${styles.wrapper} ${className}`}>
+    <div className={clsx(styles.wrapper, className)}>
       {label && (
         <label className={styles.label} htmlFor={selectId}>
           {label}

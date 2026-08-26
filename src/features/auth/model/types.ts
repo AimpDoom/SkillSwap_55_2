@@ -1,3 +1,10 @@
+export interface AuthUser {
+  id: string
+  name: string
+  email: string
+  token: string
+}
+
 export type AuthFormMode = 'login' | 'register'
 
 export type AuthFormValues = {
