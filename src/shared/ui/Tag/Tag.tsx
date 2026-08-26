@@ -1,6 +1,7 @@
 import type { HTMLAttributes, ReactNode } from 'react'
 
 import styles from './Tag.module.css'
+import { clsx } from 'clsx'
 
 export type TagVariant =
   | 'business-career'
@@ -18,7 +19,7 @@ type TagProps = HTMLAttributes<HTMLSpanElement> & {
 
 export function Tag({ children, variant = 'neutral', className = '', ...props }: TagProps) {
   return (
-    <span {...props} className={`${styles.tag} ${styles[variant]} ${className}`}>
+    <span {...props} className={clsx(styles.tag, styles[variant], className)}>
       {children}
     </span>
   )

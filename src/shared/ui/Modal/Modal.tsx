@@ -1,4 +1,5 @@
 import type { MouseEvent, ReactNode } from 'react'
+import { clsx } from 'clsx'
 import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 
@@ -54,7 +55,7 @@ export function Modal({
   return createPortal(
     <div className={styles.overlay} onMouseDown={handleOverlayClick}>
       <div
-        className={`${styles.modal} ${className}`}
+        className={clsx(styles.modal, className)}
         role="dialog"
         aria-modal="true"
         aria-label={ariaLabel}

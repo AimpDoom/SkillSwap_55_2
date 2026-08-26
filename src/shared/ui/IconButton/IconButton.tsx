@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import clsx from 'clsx'
 
 import styles from './IconButton.module.css'
 
@@ -10,7 +11,7 @@ type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 export function IconButton({
   icon,
   ariaLabel,
-  className = '',
+  className,
   type = 'button',
   ...props
 }: IconButtonProps) {
@@ -18,7 +19,7 @@ export function IconButton({
     <button
       {...props}
       type={type}
-      className={`${styles.button} ${className}`}
+      className={clsx(styles.button, className)}
       aria-label={ariaLabel}
     >
       {icon}

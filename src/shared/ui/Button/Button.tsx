@@ -1,5 +1,6 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react'
 import { Link } from 'react-router-dom'
+import clsx from 'clsx'
 
 import styles from './Button.module.css'
 
@@ -26,24 +27,16 @@ export type ButtonProps = NativeButtonProps | LinkButtonProps
 
 export function Button(props: ButtonProps) {
   if ('to' in props && props.to) {
-    const {
-      children,
-      variant = 'primary',
-      className = '',
-      to,
-      disabled,
-      onClick,
-      ...linkProps
-    } = props
+    const { children, variant = 'primary', className, to, disabled, onClick, ...linkProps } = props
 
     const variantClass = styles[`${variant}Button`] ?? styles.primaryButton
-    const classes = `${styles.button} ${variantClass} ${className}`
+    const classes = clsx(styles.button, variantClass, disabled && styles.disabled, className)
 
     return (
       <Link
         {...linkProps}
         to={to}
-        className={`${classes} ${disabled ? styles.disabled : ''}`}
+        className={classes}
         aria-disabled={disabled || undefined}
         tabIndex={disabled ? -1 : linkProps.tabIndex}
         onClick={(event) => {
@@ -63,16 +56,17 @@ export function Button(props: ButtonProps) {
   const {
     children,
     variant = 'primary',
-    className = '',
+    className,
     type = 'button',
+    disabled,
     ...buttonProps
   } = props as NativeButtonProps
 
   const variantClass = styles[`${variant}Button`] ?? styles.primaryButton
-  const classes = `${styles.button} ${variantClass} ${className}`
+  const classes = clsx(styles.button, variantClass, disabled && styles.disabled, className)
 
   return (
-    <button {...buttonProps} type={type} className={classes}>
+    <button {...buttonProps} type={type} disabled={disabled} className={classes}>
       {children}
     </button>
   )

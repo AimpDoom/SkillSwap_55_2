@@ -27,7 +27,7 @@
 
 .title {
   font-size: var(--font-size-l);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
   color: var(--color-text-primary);
   margin: 0 0 16px;
   text-align: center;

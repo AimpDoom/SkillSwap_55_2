@@ -1,9 +1,13 @@
 .page {
   box-sizing: border-box;
   min-height: 100vh;
-  padding: 36px var(--page-padding-inline);
+  padding-block: 36px;
   color: var(--color-text-primary);
   background-color: var(--color-bg-secondary);
+}
+
+.pageContainer {
+  width: 100%;
 }
 
 .header {
@@ -23,7 +27,7 @@
   flex-direction: column;
   gap: 12px;
   align-items: center;
-  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
 .title {

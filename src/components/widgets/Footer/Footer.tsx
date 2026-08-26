@@ -1,18 +1,21 @@
+import { Container } from '@/shared/ui/Container'
 import { Logo } from '@/shared/ui/Logo'
 
-import { FooterNavigation } from './FooterNavigation'
 import { Copyright } from './Copyright'
+import { FooterNavigation } from './FooterNavigation'
 
 import styles from './Footer.module.css'
 
 export function Footer() {
   return (
     <footer className={styles.footer}>
-      <Logo />
+      <Container className={styles.content}>
+        <Logo />
 
-      <FooterNavigation />
+        <FooterNavigation />
 
-      <Copyright />
+        <Copyright />
+      </Container>
     </footer>
   )
 }

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import styles from './want-to-learn.module.css'
 
 import { fetchCategories } from '@/api/skills'
-import type { SkillSubcategory } from '@/shared/types'
+import type { SkillSubcategory } from '@/entities/category/model/types'
 import { Tag, TagVariant } from '@/shared/ui/Tag/Tag'
 
 interface WantToLearnProperties {

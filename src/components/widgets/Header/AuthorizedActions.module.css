@@ -1,0 +1,22 @@
+.actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.userName {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-s);
+}
+
+.avatar {
+  flex-shrink: 0;
+}

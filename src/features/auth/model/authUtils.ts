@@ -1,4 +1,4 @@
-import type { AuthUser } from '@/shared/types'
+import type { AuthUser } from '@/features/auth/model/types'
 import { LOCAL_STORAGE_KEYS } from '@/shared/lib/constants'
 
 /** Читает текущего авторизованного пользователя из localStorage */

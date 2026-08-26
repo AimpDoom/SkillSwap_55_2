@@ -2,7 +2,7 @@ import styles from './user-info.module.css'
 import { calculateAge } from '@/shared/lib/helpers'
 import { fetchCityById } from '@/api/cities'
 import { useEffect, useState } from 'react'
-import type { City } from '@/shared/types'
+import type { City } from '@/entities/city/model/types'
 import { yearSpell } from '@/shared/lib/helpers'
 
 export const UserInfo = ({

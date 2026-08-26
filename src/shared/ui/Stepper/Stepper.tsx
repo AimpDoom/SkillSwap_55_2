@@ -1,3 +1,4 @@
+import { clsx } from 'clsx'
 import styles from './Stepper.module.css'
 
 export type StepperStep = 1 | 2 | 3
@@ -12,7 +13,7 @@ const STEPS: StepperStep[] = [1, 2, 3]
 export function Stepper({ currentStep, className = '' }: StepperProps) {
   return (
     <div
-      className={`${styles.stepper} ${className}`}
+      className={clsx(styles.stepper, className)}
       aria-label={`Шаг ${currentStep} из 3`}
       role="progressbar"
       aria-valuemin={1}
@@ -22,7 +23,7 @@ export function Stepper({ currentStep, className = '' }: StepperProps) {
       {STEPS.map((step) => (
         <span
           key={step}
-          className={`${styles.segment} ${step <= currentStep ? styles.active : ''}`}
+          className={clsx(styles.segment, step <= currentStep && styles.active)}
           aria-hidden="true"
         />
       ))}
