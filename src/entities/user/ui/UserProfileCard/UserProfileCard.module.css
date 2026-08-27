@@ -3,27 +3,23 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 24px;
+  width: 324px;
+  padding: 32px;
+  color: var(--color-text-primary);
   background-color: var(--color-bg-primary);
   border-radius: var(--border-radius-m);
-  color: var(--color-text-primary);
-  font-family: var(--font-family-primary);
-  width: 100%;
-  max-width: 440px;
 }
 
 .header {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .avatar {
   flex-shrink: 0;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  overflow: hidden;
+  min-width: 100px;
+  min-height: 100px;
 }
 
 .userInfo {
@@ -34,60 +30,34 @@
 
 .name {
   margin: 0;
-  font-size: var(--font-size-m);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-s);
+  color: var(--color-text-primary);
 }
 
 .meta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-family-secondary);
-  font-size: var(--font-size-xs);
-  color: var(--color-text-secondary);
-}
-
-.metaItem:not(:last-child)::after {
-  content: "•";
-  margin-left: 8px;
-  color: var(--color-text-secondary);
-}
-
-.aboutSection {
-  border-top: 1px solid var(--primary-bg-disabled-color);
-  padding-top: 16px;
+  margin: 0;
+  color: var(--color-text-primary);
 }
 
 .aboutText {
   margin: 0;
-  font-family: var(--font-family-secondary);
-  font-size: var(--font-size-s);
-  line-height: var(--line-height-s);
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
 }
 
 .skillsSection {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  border-top: 1px solid var(--primary-bg-disabled-color);
-  padding-top: 16px;
+  gap: 24px;
 }
 
 .skillsBlock {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 14px;
 }
 
 .skillsTitle {
   margin: 0;
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: var(--color-text-primary);
 }
 
 .tagsContainer {
