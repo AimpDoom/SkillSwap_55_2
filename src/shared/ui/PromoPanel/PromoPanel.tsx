@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { Text } from '@/shared/ui/Text'
 import styles from './PromoPanel.module.css'
 
 export interface PromoPanelProps {
@@ -11,12 +12,12 @@ export const PromoPanel = ({ image, title, description }: PromoPanelProps) => {
   return (
     <div className={styles.panel}>
       {image}
-      <h2 className={styles.title}>
+      <Text variant="h2" className={styles.title}>
         {title}
-      </h2>
-      <p className={styles.description}>
+      </Text>
+      <Text variant="body" className={styles.description}>
         {description}
-      </p>
+      </Text>
     </div>
   )
 }

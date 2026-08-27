@@ -15,16 +15,8 @@
 
 .title {
   margin-top: 40px;
-  font-family: var(--font-family-primary);
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-l);
-  line-height: var(--line-height-l);
 }
 
 .description {
   max-width: 436px;
-  font-family: var(--font-family-secondary);
-  font-weight: var(--font-weight-regular);
-  font-size: var(--font-size-s);
-  line-height: var(--line-height-s);
 }

@@ -1,0 +1,41 @@
+.h1 {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-xl);
+  font-weight: var(--font-weight-medium);
+}
+
+.h2 {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-l);
+  line-height: var(--line-height-l);
+  font-weight: var(--font-weight-medium);
+}
+
+.h3 {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  font-weight: var(--font-weight-medium);
+}
+
+.h4 {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+  font-weight: var(--font-weight-medium);
+}
+
+.body {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+  font-weight: var(--font-weight-regular);
+}
+
+.caption {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+  font-weight: var(--font-weight-regular);
+}
