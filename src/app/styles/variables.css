@@ -16,6 +16,7 @@
   --color-accent: #abd27a;
   --color-accent-strong: #508826;
   --color-error: #bf3920;
+  --color-disabled: #e4e8df;
 
   /* tag-colors */
   --color-tag-business: var(--color-lilac);
@@ -61,7 +62,7 @@
   --primary-bg-hover-color: #deebc5;
   --primary-bg-active-color: var(--color-accent-strong);
   --primary-text-active-color: var(--color-bg-primary);
-  --primary-bg-disabled-color: #e4e8df;
+  --primary-bg-disabled-color: var(--color-disabled);
   --secondary-bg-color: var(--color-bg-primary);
   --secondary-border: 1px solid var(--color-accent);
   --secondary-border-hover: 1px solid var(--primary-bg-hover-color);
