@@ -1,0 +1,97 @@
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  background-color: var(--color-bg-primary);
+  border-radius: var(--border-radius-m);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-primary);
+  width: 100%;
+  max-width: 440px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.name {
+  margin: 0;
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-s);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.metaItem:not(:last-child)::after {
+  content: "•";
+  margin-left: 8px;
+  color: var(--color-text-secondary);
+}
+
+.aboutSection {
+  border-top: 1px solid var(--primary-bg-disabled-color);
+  padding-top: 16px;
+}
+
+.aboutText {
+  margin: 0;
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+  color: var(--color-text-secondary);
+}
+
+.skillsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-top: 1px solid var(--primary-bg-disabled-color);
+  padding-top: 16px;
+}
+
+.skillsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skillsTitle {
+  margin: 0;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
