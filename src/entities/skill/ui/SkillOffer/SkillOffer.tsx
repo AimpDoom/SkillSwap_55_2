@@ -1,11 +1,9 @@
 import { useState } from 'react'
 import type { Skill } from '../../model/types'
-// ИСПРАВЛЕНО: Используем принятые в проекте барельные алиасы (barrel imports)
 import { Button } from '@/shared/ui/Button'
 import { IconButton } from '@/shared/ui/IconButton'
 import { Text } from '@/shared/ui/Text'
 
-// Импорты ассетов через правильные пути
 import arrowLeftIcon from '@/shared/assets/icons/arrow-square-left.svg'
 import arrowRightIcon from '@/shared/assets/icons/arrow-square-right.svg'
 import shareIcon from '@/shared/assets/icons/share.svg'
@@ -21,7 +19,6 @@ interface SkillOfferProps {
   variant: 'confirmation' | 'default' | 'requested'
   categoryName: string
   subcategoryName: string
-  // ИСПРАВЛЕНО: Все интерактивные действия строго переиспользуемы через пропсы
   onEdit?: () => void
   onDone?: () => void
   onOfferExchange?: () => void
@@ -63,6 +60,7 @@ export function SkillOffer({
   return (
     <article className={styles.card} aria-label="Предложение навыка">
       
+      {/* Вариант confirmation: заголовок и подзаголовок вынесены наверх всей карточки */}
       {variant === 'confirmation' && (
         <header className={styles.confirmationHeaderBlock}>
           <Text variant="h2" className={styles.confirmationTitle}>
@@ -78,6 +76,7 @@ export function SkillOffer({
         {/* Левая секция — Текстовая информация */}
         <section className={styles.infoBlock}>
           
+          {/* Категория и подкатегория выведены одной строкой через слеш */}
           <div className={styles.metaRow}>
             <Text variant="caption" className={styles.categoryPath}>
               {categoryName} / {subcategoryName}
@@ -107,6 +106,7 @@ export function SkillOffer({
 
             {variant === 'default' && (
               <div className={styles.defaultFooter}>
+                {/* Кнопка растянута по всей доступной ширине текстового блока */}
                 <Button variant="primary" onClick={onOfferExchange} className={styles.fullWidthBtn}>
                   Предложить обмен
                 </Button>
@@ -115,6 +115,7 @@ export function SkillOffer({
 
             {variant === 'requested' && (
               <div className={styles.requestedFooter}>
+                {/* Статус растянут по ширине макета, включает clock.svg и Text компонент */}
                 <div className={styles.statusBadge}>
                   <img src={clockIcon} alt="" className={styles.btnIcon} />
                   <Text variant="body">Обмен предложен</Text>
@@ -128,6 +129,7 @@ export function SkillOffer({
         <section className={styles.gallery}>
           <div className={styles.mainImageWrapper}>
             
+            {/* Иконки действий в default и requested вынесены строго в верхний правый угол */}
             {variant !== 'confirmation' && (
               <div className={styles.topIconActions}>
                 <IconButton icon={<img src={likeIcon} alt="" />} ariaLabel="Добавить в избранное" onClick={onFavorite} />
