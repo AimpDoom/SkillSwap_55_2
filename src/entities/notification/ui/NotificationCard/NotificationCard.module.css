@@ -1,0 +1,135 @@
+.notificationCard {
+  width: 556px;
+  max-height: 616px;
+  background: var(--color-bg-primary);
+  border-radius: var(--border-radius-s);
+  overflow: hidden;
+  border: 1px solid var(--color-text-secondary);
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+  gap: 40px;
+}
+
+/* Секции */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionAction {
+  font-size: var(--font-size-s);
+  color: var(--color-accent-strong);
+  padding: 0;
+  min-height: auto;
+  cursor: pointer;
+  font-family: var(--font-family-primary);
+}
+
+.sectionAction:hover {
+  color: var(--color-accent);
+}
+
+/* Список уведомлений */
+.notificationsList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.notificationsList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.notificationsList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.notificationsList::-webkit-scrollbar-thumb {
+  background: var(--color-neutral);
+  border-radius: 2px;
+}
+
+.notificationsList::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+/* Отдельное уведомление */
+.notificationItem {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Первый контейнер: иконка + текст */
+.notificationContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* Иконка 40x40 */
+.notificationIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notificationIcon svg {
+  width: 40px;
+  height: 40px;
+}
+
+/* Текст */
+.notificationTextWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.notificationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* Дата справа от текста */
+.dateText {
+  font-size: var(--font-size-s);
+  color: var(--color-text-secondary);
+}
+
+/* Второй контейнер: кнопка */
+.notificationButtonWrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Пустое состояние */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.emptyIcon {
+  width: 48px;
+  height: 48px;
+}
+
+.emptyText {
+  color: var(--color-text-secondary);
+}
