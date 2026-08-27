@@ -1,0 +1,173 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  display: block;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid var(--color-text-secondary);
+  border-radius: var(--border-radius-s);
+  background-color: var(--color-bg-primary);
+  cursor: pointer;
+  caret-color: var(--color-accent-strong);
+}
+
+.triggerError {
+  border-color: var(--color-error);
+}
+
+.value {
+  color: var(--color-text-primary);
+}
+
+.placeholder {
+  color: var(--color-text-secondary);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: var(--secondary-disabled-color);
+  flex-shrink: 0;
+}
+
+.popover {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 20;
+  width: 280px;
+  padding: 24px 16px 16px;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-text-secondary);
+  border-radius: var(--border-radius-s);
+}
+
+.dropdowns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.dropdownRoot {
+  position: relative;
+  display: inline-flex;
+}
+
+.dropdown {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.captionLabel {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text-primary);
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.monthCaption {
+  margin-bottom: 12px;
+}
+
+.chevron {
+  fill: var(--color-text-primary);
+}
+
+.monthGrid {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.weekdays {
+  display: flex;
+  justify-content: center;
+}
+
+.weekday {
+  width: 32px;
+  padding-bottom: 8px;
+  color: var(--color-accent-strong);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  text-transform: capitalize;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+}
+
+.week {
+  display: flex;
+  justify-content: center;
+}
+
+.day {
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  padding: 0;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+}
+
+.dayButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.dayButton:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.dayOutside .dayButton {
+  color: var(--secondary-disabled-color);
+}
+
+.dayToday .dayButton {
+  color: var(--color-accent-strong);
+  font-weight: var(--font-weight-medium);
+}
+
+.daySelected .dayButton {
+  background-color: var(--color-accent);
+  color: var(--color-text-primary);
+}
+
+.dayDisabled .dayButton {
+  color: var(--secondary-disabled-color);
+  cursor: default;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.actions > * {
+  flex: 1;
+}
+
+.error {
+  color: var(--color-error);
+}

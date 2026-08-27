@@ -5,15 +5,16 @@ import axios from 'axios'
 
 import { Input } from '@/shared/ui/Input'
 import { Select } from '@/shared/ui/Select'
+import type { SelectOption } from '@/shared/ui/Select'
 import { Button } from '@/shared/ui/Button'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Textarea } from '@/shared/ui/Textarea'
+import { Calendar } from '@/shared/ui/Calendar'
 
 import styles from './ProfilePage.module.css'
 
 import editIcon from '@/shared/assets/icons/edit.svg'
 import galleryEditIcon from '@/shared/assets/icons/gallery-edit.svg'
-import calendarIcon from '@/shared/assets/icons/calendar.svg'
 import requestIcon from '@/shared/assets/icons/request.svg'
 import likeIcon from '@/shared/assets/icons/like.svg'
 import userIcon from '@/shared/assets/icons/user.svg'
@@ -26,6 +27,25 @@ import type { City } from '@/entities/city/model/types'
 interface CityOption {
   value: string
   label: string
+}
+
+const GENDER_OPTIONS: SelectOption[] = [
+  { value: '', label: 'Не указан' },
+  { value: 'male', label: 'Мужской' },
+  { value: 'female', label: 'Женский' },
+]
+const parseDateValue = (value: string): Date | null => {
+  if (!value) return null
+  const [year, month, day] = value.split('-').map(Number)
+  return new Date(year, month - 1, day)
+}
+
+const formatDateValue = (date: Date | null): string => {
+  if (!date) return ''
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const day = String(date.getDate()).padStart(2, '0')
+  return `${year}-${month}-${day}`
 }
 
 interface ProfileFormData {
@@ -173,20 +193,12 @@ export default function ProfilePage() {
                     rules={{
                       required: 'Укажите дату рождения',
                     }}
-                    render={({ field: { ref: _ref, ...field } }) => (
-                      <Input
-                        {...field}
+                    render={({ field: { value, onChange } }) => (
+                      <Calendar
                         label="Дата рождения"
-                        type="date"
+                        value={parseDateValue(value)}
+                        onChange={(date) => onChange(formatDateValue(date))}
                         error={errors.birthday?.message}
-                        endIcon={
-                          <img
-                            src={calendarIcon}
-                            className={styles.editIcon}
-                            alt=""
-                            aria-hidden="true"
-                          />
-                        }
                       />
                     )}
                   />
@@ -194,21 +206,13 @@ export default function ProfilePage() {
                   <Controller
                     name="gender"
                     control={control}
-                    render={({ field: { ref: _ref, ...field } }) => (
+                    render={({ field: { value, onChange } }) => (
                       <Select
-                        {...field}
                         label="Пол"
                         placeholder="Выберите"
-                        options={[
-                          {
-                            value: 'male',
-                            label: 'Мужской',
-                          },
-                          {
-                            value: 'female',
-                            label: 'Женский',
-                          },
-                        ]}
+                        options={GENDER_OPTIONS}
+                        value={GENDER_OPTIONS.find((option) => option.value === value) ?? null}
+                        onChange={(option) => onChange(option?.value ?? '')}
                       />
                     )}
                   />
@@ -220,17 +224,18 @@ export default function ProfilePage() {
                   rules={{
                     required: 'Выберите город',
                   }}
-                  render={({ field: { ref: _ref, ...field } }) => (
+                  render={({ field: { value, onChange } }) => (
                     <Select
-                      {...field}
                       label="Город"
                       placeholder="Выберите город"
                       options={cities}
+                      value={cities.find((option) => option.value === value) ?? null}
+                      onChange={(option) => onChange(option?.value ?? '')}
+                      error={errors.city?.message}
+                      isSearchable
                     />
                   )}
                 />
-
-                {errors.city && <span className={styles.errorText}>{errors.city.message}</span>}
 
                 <div className={styles.textareaContainer}>
                   <Textarea

@@ -20,3 +20,61 @@
 .avatar {
   flex-shrink: 0;
 }
+
+/* Обертка для колокольчика */
+.notificationWrapper {
+  position: relative;
+}
+
+.notificationButtonWrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+/* Индикатор новых уведомлений - кружок 12x12 на иконке */
+.notificationBadge {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 12px;
+  height: 12px;
+  background: #E0796E;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+  animation: badge-appear 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Попап с уведомлениями */
+.notificationPopup {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 1000;
+  animation: slide-down 0.2s ease;
+}
+
+/* Анимации для уведомлений */
+@keyframes badge-appear {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
