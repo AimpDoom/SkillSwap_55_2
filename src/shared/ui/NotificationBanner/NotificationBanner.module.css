@@ -1,0 +1,76 @@
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--border-radius-s);
+  width: 340px;
+  height: 72px;
+  transition: all 0.3s ease;
+  animation: slide-in-right 0.3s ease;
+  background-color: var(--primary-bg-hover-color);
+}
+
+/* Иконка лампочки */
+.iconWrapper {
+  width: 24px;
+  height: 24px;
+}
+
+/* Кнопка закрытия */
+.closeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* Кнопка "Перейти" - появляется при наведении в правом нижнем углу */
+.navigateButtonWrapper {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  animation: fade-in-up 0.2s ease;
+}
+
+.navigateButton {
+  cursor: pointer;
+  transition: color 0.2s ease;
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: var(--font-size-xs);
+  height: 32px;
+}
+
+/* Анимация появления кнопки */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Анимация появления банера */
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
