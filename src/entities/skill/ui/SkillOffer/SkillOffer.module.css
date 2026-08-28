@@ -1,192 +1,89 @@
 .card {
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 24px;
+  gap: 40px;
+  width: 100%;
+  max-width: 1020px;
+  margin-inline: auto;
+  padding: 48px;
+  color: var(--color-text-primary);
   background-color: var(--color-bg-primary);
   border-radius: var(--border-radius-m);
-  color: var(--color-text-primary);
-  width: 100%;
 }
+
+/* --- Confirmation header --- */
 
 .confirmationHeaderBlock {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  gap: 8px;
   width: 100%;
-  border-bottom: 1px solid var(--primary-bg-disabled-color);
-  padding-bottom: 16px;
+  text-align: center;
 }
 
 .confirmationTitle {
-  color: var(--color-accent-strong);
+  color: var(--color-text-primary);
 }
 
 .confirmationSubtitle {
   color: var(--color-text-secondary);
 }
 
+/* --- Основной layout --- */
+
 .cardContent {
-  display: flex;
-  gap: 32px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 456px;
+  gap: 48px;
   width: 100%;
 }
 
 .infoBlock {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  min-width: 0;
 }
 
-/* --- Галерея --- */
-.gallery {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-  width: 420px;
-  flex-shrink: 0;
-}
-
-.mainImageWrapper {
-  position: relative;
-  flex-grow: 1;
-  height: 260px;
-  border-radius: var(--border-radius-s);
-  overflow: hidden;
-  background-color: var(--color-bg-secondary);
-}
-
-.mainImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.noImageFallback {
-  width: 100%;
-  height: 100%;
-  background-color: var(--primary-bg-disabled-color);
-}
-
-.topIconActions {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  display: flex;
-  gap: 8px;
-  z-index: 10;
-}
-
-.galleryControls {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  padding: 0 8px;
-  pointer-events: none;
-}
-
-.arrowButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  background: none;
-  border: 0;
-  cursor: pointer;
-  pointer-events: auto;
-  transition: transform 0.1s ease;
-}
-
-.arrowButton:hover {
-  transform: scale(1.1);
-}
-
-.thumbnailsTrack {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  flex-shrink: 0;
-}
-
-.thumbnailButton {
-  position: relative;
-  width: 72px;
-  height: 72px;
-  padding: 0;
-  border: 2px solid transparent;
-  border-radius: var(--border-radius-s);
-  overflow: hidden;
-  background: none;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-.thumbnailActive {
-  border-color: var(--color-accent-strong);
-}
-
-.thumbnailImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.remainingOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(37 48 23 / 70%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.remainingText {
-  color: var(--color-bg-primary);
+.infoBlockWithActions {
+  padding-top: 56px;
 }
 
 /* --- Текстовая область --- */
-.metaRow {
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
+
+.title {
+  color: var(--color-text-primary);
 }
 
 .categoryPath {
+  margin-top: 4px;
   color: var(--color-text-secondary);
-}
-
-.title {
-  margin: 0 0 8px;
 }
 
 .description {
-  margin: 0 0 24px;
-  color: var(--color-text-secondary);
   flex-grow: 1;
+  margin-top: 20px;
+  color: var(--color-text-primary);
 }
 
-/* Убрана разделительная линия border-top перед кнопками по макету */
+/* --- Нижние действия --- */
+
 .actionsArea {
-  margin-top: auto;
   width: 100%;
+  margin-top: auto;
+  padding-top: 20px;
 }
 
 .btnGroup {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   width: 100%;
 }
 
-.editBtn, .doneBtn {
-  flex: 1;
+.editBtn,
+.doneBtn {
+  width: 100%;
 }
 
 .editBtn {
@@ -201,19 +98,9 @@
 }
 
 .btnIcon {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
-}
-
-.defaultFooter {
-  display: flex;
-  width: 100%;
-}
-
-.requestedFooter {
-  display: flex;
-  width: 100%;
 }
 
 .statusBadge {
@@ -222,9 +109,146 @@
   justify-content: center;
   gap: 8px;
   width: 100%;
-  padding: 10px 16px;
-  background-color: var(--color-bg-secondary);
+  min-height: 48px;
   border: 1px solid var(--color-accent);
-  color: var(--color-accent-strong);
   border-radius: var(--border-radius-s);
+  color: var(--color-text-primary);
+}
+
+.statusIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* --- Правая колонка --- */
+
+.mediaColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.topIconActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  max-height: 24px;
+}
+
+/* --- Галерея --- */
+
+.gallery {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+}
+
+.mainImageWrapper {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius-s);
+}
+
+.mainImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.noImageFallback {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-secondary);
+}
+
+/* --- Стрелки --- */
+
+.arrowButton {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--color-bg-secondary);
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.arrowButton img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.arrowButtonLeft {
+  left: 16px;
+}
+
+.arrowButtonLeft img {
+  transform: rotate(180deg);
+}
+
+.arrowButtonRight {
+  right: 16px;
+}
+
+/* --- Миниатюры --- */
+
+.thumbnailsTrack {
+  display: flex;
+  flex: 0 0 80px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.thumbnailButton {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  flex-shrink: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-s);
+  background: transparent;
+  cursor: pointer;
+}
+
+.thumbnailActive {
+  border-color: var(--color-accent-strong);
+}
+
+.thumbnailImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.remainingOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(247 235 229 / 75%);
+}
+
+.remainingText {
+  color: var(--color-text-primary);
 }
