@@ -2,6 +2,9 @@ import chevronDown from '@/shared/assets/icons/chevron-down.svg'
 import chevronUp from '@/shared/assets/icons/chevron-up.svg'
 import { Checkbox } from '@/shared/ui/Checkbox'
 import styles from './FiltersSidebar.module.css'
+import checkboxEmpty from '@/shared/assets/icons/checkbox-empty.svg'
+import checkboxDone from '@/shared/assets/icons/checkbox-done.svg'
+import checkboxRemove from '@/shared/assets/icons/checkbox-remove.svg'
 
 type SkillsFilterProps = {
   selectedSkills: string[]
@@ -97,33 +100,47 @@ export const SkillsFilter = ({
       <div className={styles.options}>
         {categories.map((category) => {
           const isOpen = openCategory === category.name
-          const hasSelected = category.subcategories.some((skill) => selectedSkills.includes(skill))
+          const selectedCount = category.subcategories.filter((skill) =>
+            selectedSkills.includes(skill),
+          ).length
 
-          const handleResetCategory = (e: React.MouseEvent) => {
+          const isChecked = selectedCount === category.subcategories.length
+          const isPartial = selectedCount > 0 && !isChecked
+
+          const handleCategoryClick = (e: React.MouseEvent) => {
             e.stopPropagation()
-            category.subcategories.forEach((skill) => {
-              if (selectedSkills.includes(skill)) {
-                onToggleSkill(skill)
-              }
-            })
+
+            if (isChecked || isPartial) {
+              category.subcategories.forEach((skill) => {
+                if (selectedSkills.includes(skill)) {
+                  onToggleSkill(skill)
+                }
+              })
+            } else {
+              category.subcategories.forEach((skill) => {
+                if (!selectedSkills.includes(skill)) {
+                  onToggleSkill(skill)
+                }
+              })
+            }
           }
 
           return (
             <div className={styles.category} key={category.name}>
               <div className={styles.categoryRow}>
-                {/* Если подкатегории выбраны, показываем кнопку с минусом */}
-                {hasSelected ? (
-                  <button
-                    className={styles.chevronButton}
-                    type="button"
-                    onClick={handleResetCategory}
-                    aria-label="Сбросить подкатегории"
-                  >
-                    <span className={styles.categoryPartialVisual} aria-hidden="true" />
-                  </button>
-                ) : (
-                  <span className={styles.categoryEmptyVisual} aria-hidden="true" />
-                )}
+                {}
+                <button
+                  className={styles.categoryCheckbox}
+                  type="button"
+                  onClick={handleCategoryClick}
+                  aria-label={`Выбрать категорию ${category.name}`}
+                >
+                  <img
+                    src={isChecked ? checkboxDone : isPartial ? checkboxRemove : checkboxEmpty}
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
 
                 <button
                   className={styles.categoryToggle}
