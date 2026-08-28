@@ -1,20 +1,33 @@
 import { useState } from 'react'
+
 import type { Skill } from '../../model/types'
-import { Button } from '../../../../shared/ui/Button/Button'
+
+import chevronRightIcon from '@/shared/assets/icons/chevron-right.svg'
+import clockIcon from '@/shared/assets/icons/clock.svg'
+import editIcon from '@/shared/assets/icons/edit.svg'
+import likeIcon from '@/shared/assets/icons/like.svg'
+import moreIcon from '@/shared/assets/icons/more-square.svg'
+import shareIcon from '@/shared/assets/icons/share.svg'
+import { Button } from '@/shared/ui/Button'
 import { IconButton } from '@/shared/ui/IconButton'
+import { Text } from '@/shared/ui/Text'
+
 import styles from './SkillOffer.module.css'
 
 interface SkillOfferProps {
   skill: Skill
   variant: 'confirmation' | 'default' | 'requested'
-  categoryName: string // Передаем название текстом, так как в модели только id
+  categoryName: string
   subcategoryName: string
-  onEdit?: () => void;
-  onDone?: () => void;
-  onOfferExchange?: () => void;
-  onShare?: () => void;
-  onFavorite?: () => void;
+  onEdit?: () => void
+  onDone?: () => void
+  onOfferExchange?: () => void
+  onShare?: () => void
+  onFavorite?: () => void
+  onMore?: () => void
 }
+
+const MAX_THUMBNAILS = 3
 
 export function SkillOffer({
   skill,
@@ -26,122 +39,270 @@ export function SkillOffer({
   onOfferExchange,
   onShare,
   onFavorite,
+  onMore,
 }: SkillOfferProps) {
   const { title, description, imageUrls = [] } = skill
+
   const [activeImageIndex, setActiveImageIndex] = useState(0)
 
-  const MAX_THUMBNAILS = 3
   const hasImages = imageUrls.length > 0
-  const mainImage = hasImages ? imageUrls[activeImageIndex] : 'https://placehold.co'
-  
-  const thumbnailsToShow = imageUrls.slice(0, MAX_THUMBNAILS)
-  const remainingImagesCount = imageUrls.length - MAX_THUMBNAILS
+  const hasSeveralImages = imageUrls.length > 1
 
-  const getCategoryClass = (cat: string) => {
-    const lower = cat.toLowerCase()
-    if (lower.includes('бизнес') || lower.includes('карьер')) return styles.tagBusiness
-    if (lower.includes('язык')) return styles.tagLanguages
-    if (lower.includes('дом') || lower.includes('уют')) return styles.tagHome
-    if (lower.includes('творчеств') || lower.includes('искусств')) return styles.tagArt
-    if (lower.includes('образован') || lower.includes('развити')) return styles.tagEducation
-    if (lower.includes('здоров') || lower.includes('лайфстайл')) return styles.tagMint
-    return styles.tagNeutral
+  const mainImage = hasImages ? imageUrls[activeImageIndex] : ''
+
+  const thumbnails = imageUrls
+    .map((image, index) => ({ image, index }))
+    .filter(({ index }) => index !== activeImageIndex)
+
+  const thumbnailsToShow = thumbnails.slice(0, MAX_THUMBNAILS)
+
+  const remainingImagesCount = Math.max(
+    thumbnails.length - MAX_THUMBNAILS,
+    0,
+  )
+
+  const handlePrevImage = () => {
+    if (!hasSeveralImages) return
+
+    setActiveImageIndex((currentIndex) =>
+      currentIndex === 0
+        ? imageUrls.length - 1
+        : currentIndex - 1,
+    )
   }
 
-  const shareIcon = (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13"/>
-    </svg>
-  )
+  const handleNextImage = () => {
+    if (!hasSeveralImages) return
 
-  const favoriteIcon = (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-    </svg>
-  )
+    setActiveImageIndex((currentIndex) =>
+      currentIndex === imageUrls.length - 1
+        ? 0
+        : currentIndex + 1,
+    )
+  }
 
   return (
-    <article className={styles.card} aria-label="Предложение навыка">
-      {/* Левая секция — Галерея изображений */}
-      <section className={styles.gallery}>
-        <div className={styles.mainImageWrapper}>
-          <img src={mainImage} alt={title} className={styles.mainImage} />
-        </div>
-        
-        {imageUrls.length > 1 && (
-          <div className={styles.thumbnailsTrack}>
-            {thumbnailsToShow.map((img, idx) => (
-              <button
-                key={idx}
-                type="button"
-                className={`${styles.thumbnailButton} ${idx === activeImageIndex ? styles.thumbnailActive : ''}`}
-                onClick={() => setActiveImageIndex(idx)}
+    <article
+      className={styles.card}
+      aria-label="Предложение навыка"
+    >
+      {variant === 'confirmation' && (
+        <header className={styles.confirmationHeaderBlock}>
+          <Text variant="h2" className={styles.confirmationTitle}>
+            Ваше предложение
+          </Text>
+
+          <Text
+            variant="body"
+            className={styles.confirmationSubtitle}
+          >
+            Пожалуйста, проверьте и подтвердите правильность данных
+          </Text>
+        </header>
+      )}
+
+      <div className={styles.cardContent}>
+        <section
+          className={`${styles.infoBlock} ${
+            variant !== 'confirmation'
+              ? styles.infoBlockWithActions
+              : ''
+          }`}
+        >
+          <Text
+            variant="h1"
+            as="h2"
+            className={styles.title}
+          >
+            {title}
+          </Text>
+
+          <Text
+            variant="caption"
+            as="p"
+            className={styles.categoryPath}
+          >
+            {categoryName} / {subcategoryName}
+          </Text>
+
+          <Text
+            variant="body"
+            className={styles.description}
+          >
+            {description}
+          </Text>
+
+          <div className={styles.actionsArea}>
+            {variant === 'confirmation' && (
+              <div className={styles.btnGroup}>
+                <Button
+                  variant="secondary"
+                  onClick={onEdit}
+                  className={styles.editBtn}
+                >
+                  Редактировать
+                  <img
+                    src={editIcon}
+                    alt=""
+                    className={styles.btnIcon}
+                  />
+                </Button>
+
+                <Button
+                  variant="primary"
+                  onClick={onDone}
+                  className={styles.doneBtn}
+                >
+                  Готово
+                </Button>
+              </div>
+            )}
+
+            {variant === 'default' && (
+              <Button
+                variant="primary"
+                onClick={onOfferExchange}
+                className={styles.fullWidthBtn}
               >
-                <img src={img} alt={`Миниатюра ${idx + 1}`} className={styles.thumbnailImg} />
-                
-                {idx === MAX_THUMBNAILS - 1 && remainingImagesCount > 0 && (
-                  <div className={styles.remainingOverlay}>
-                    <span className={styles.remainingText}>+{remainingImagesCount}</span>
-                  </div>
-                )}
-              </button>
-            ))}
-          </div>
-        )}
-      </section>
-
-      {/* Правая секция — Контентная часть */}
-      <section className={styles.infoBlock}>
-        {variant === 'confirmation' && (
-          <h2 className={styles.confirmationHeader}>Ваше предложение</h2>
-        )}
-
-        <div className={styles.metaRow}>
-          <span className={`${styles.tag} ${getCategoryClass(categoryName)}`}>
-            {categoryName}
-          </span>
-          <span className={styles.subcategory}>{subcategoryName}</span>
-        </div>
-
-        <h1 className={styles.title}>{title}</h1>
-        <p className={styles.description}>{description}</p>
-
-        {/* Интерактивный подвал карточки */}
-        <div className={styles.actionsArea}>
-          {variant === 'confirmation' && (
-            <div className={styles.btnGroup}>
-              <Button variant="secondary" onClick={onEdit}>
-                Редактировать
-              </Button>
-              <Button variant="primary" onClick={onDone}>
-                Готово
-              </Button>
-            </div>
-          )}
-
-          {variant === 'default' && (
-            <div className={styles.defaultFooter}>
-              <Button variant="primary" onClick={onOfferExchange}>
                 Предложить обмен
               </Button>
-              <div className={styles.iconActions}>
-                <IconButton icon={shareIcon} ariaLabel="Поделиться навыком" onClick={onShare} />
-                <IconButton icon={favoriteIcon} ariaLabel="Добавить в избранное" onClick={onFavorite} />
+            )}
+
+            {variant === 'requested' && (
+              <div className={styles.statusBadge}>
+                <img
+                  src={clockIcon}
+                  alt=""
+                  className={styles.statusIcon}
+                />
+
+                <Text variant="body" as="span">
+                  Обмен предложен
+                </Text>
               </div>
+            )}
+          </div>
+        </section>
+
+        <section className={styles.mediaColumn}>
+          {variant !== 'confirmation' && (
+            <div className={styles.topIconActions}>
+              <IconButton
+                icon={<img src={likeIcon} alt="" />}
+                ariaLabel="Добавить в избранное"
+                onClick={onFavorite}
+              />
+
+              <IconButton
+                icon={<img src={shareIcon} alt="" />}
+                ariaLabel="Поделиться навыком"
+                onClick={onShare}
+              />
+
+              <IconButton
+                icon={<img src={moreIcon} alt="" />}
+                ariaLabel="Дополнительное меню"
+                onClick={onMore}
+              />
             </div>
           )}
 
-          {variant === 'requested' && (
-            <div className={styles.requestedFooter}>
-              <span className={styles.statusBadge}>Обмен предложен</span>
-              <div className={styles.iconActions}>
-                <IconButton icon={shareIcon} ariaLabel="Поделиться навыком" onClick={onShare} />
-                <IconButton icon={favoriteIcon} ariaLabel="Добавить в избранное" onClick={onFavorite} />
-              </div>
+          <div className={styles.gallery}>
+            <div className={styles.mainImageWrapper}>
+              {mainImage ? (
+                <img
+                  src={mainImage}
+                  alt={title}
+                  className={styles.mainImage}
+                />
+              ) : (
+                <div
+                  className={styles.noImageFallback}
+                  aria-label="Изображение навыка отсутствует"
+                />
+              )}
+
+              {hasSeveralImages && (
+                <>
+                  <button
+                    type="button"
+                    className={`${styles.arrowButton} ${styles.arrowButtonLeft}`}
+                    onClick={handlePrevImage}
+                    aria-label="Предыдущее изображение"
+                  >
+                    <img
+                      src={chevronRightIcon}
+                      alt=""
+                    />
+                  </button>
+
+                  <button
+                    type="button"
+                    className={`${styles.arrowButton} ${styles.arrowButtonRight}`}
+                    onClick={handleNextImage}
+                    aria-label="Следующее изображение"
+                  >
+                    <img
+                      src={chevronRightIcon}
+                      alt=""
+                    />
+                  </button>
+                </>
+              )}
             </div>
-          )}
-        </div>
-      </section>
+
+            {hasSeveralImages && (
+              <div className={styles.thumbnailsTrack}>
+                {thumbnailsToShow.map(
+                  ({ image, index }, thumbnailIndex) => (
+                    <button
+                      key={`${image}-${index}`}
+                      type="button"
+                      className={`${styles.thumbnailButton} ${
+                        index === activeImageIndex
+                          ? styles.thumbnailActive
+                          : ''
+                      }`}
+                      onClick={() =>
+                        setActiveImageIndex(index)
+                      }
+                      aria-label={`Открыть изображение ${
+                        index + 1
+                      }`}
+                    >
+                      <img
+                        src={image}
+                        alt=""
+                        className={styles.thumbnailImg}
+                      />
+
+                      {thumbnailIndex ===
+                        MAX_THUMBNAILS - 1 &&
+                        remainingImagesCount > 0 && (
+                          <div
+                            className={
+                              styles.remainingOverlay
+                            }
+                          >
+                            <Text
+                              variant="body"
+                              as="span"
+                              className={
+                                styles.remainingText
+                              }
+                            >
+                              +{remainingImagesCount}
+                            </Text>
+                          </div>
+                        )}
+                    </button>
+                  ),
+                )}
+              </div>
+            )}
+          </div>
+        </section>
+      </div>
     </article>
   )
 }
