@@ -1,0 +1,1 @@
+export { AvatarUploadButton } from './AvatarUploadButton'
