@@ -5,6 +5,7 @@
 }
 
 .user {
+  position: relative;
   display: flex;
   gap: 8px;
   align-items: center;
@@ -60,7 +61,7 @@
     transform: scale(0) rotate(-180deg);
     opacity: 0;
   }
-  
+
   100% {
     transform: scale(1) rotate(0deg);
     opacity: 1;
