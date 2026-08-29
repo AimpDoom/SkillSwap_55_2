@@ -1,0 +1,128 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  display: block;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 0;
+  padding: 12px 20px;
+  border: 1px solid var(--color-text-secondary);
+  border-radius: var(--border-radius-s);
+  background-color: var(--color-bg-primary);
+  cursor: pointer;
+  caret-color: var(--color-accent-strong);
+}
+
+.control:hover {
+  border-color: var(--color-text-primary);
+}
+
+.controlFocused {
+  border-color: var(--color-accent-strong);
+}
+
+.controlError {
+  border-color: var(--color-error);
+}
+
+.controlOpen {
+  border-color: var(--color-text-secondary);
+  border-bottom-color: var(--color-text-secondary);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.valueContainer {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.input {
+  margin: 0;
+  padding: 0;
+  height: 0;
+}
+
+.summary {
+  color: var(--color-text-primary);
+}
+
+.placeholder {
+  color: var(--color-text-secondary);
+}
+
+.menu {
+  margin-top: 0;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-text-secondary);
+  border-top: none;
+  border-radius: 0 0 var(--border-radius-s) var(--border-radius-s);
+  overflow: hidden;
+  z-index: 10;
+}
+
+.menuList {
+  padding: 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-text-secondary) transparent;
+}
+
+.menuList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.menuList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.menuList::-webkit-scrollbar-thumb {
+  background-color: var(--color-text-secondary);
+  border-radius: 999px;
+}
+
+.menuList::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.option {
+  padding: 6px 20px 0;
+  cursor: pointer;
+}
+
+.optionFocused {
+  background-color: var(--color-bg-secondary);
+}
+
+.noOptions {
+  padding: 12px 16px;
+  color: var(--color-text-secondary);
+}
+
+.chevron {
+  width: 16px;
+  height: 8px;
+  color: var(--color-text-primary);
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.error {
+  color: var(--color-error);
+}
