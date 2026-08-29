@@ -4,7 +4,7 @@ import clsx from 'clsx'
 
 import styles from './Button.module.css'
 
-export type ButtonVariant = 'primary' | 'secondary' | 'tertiary'
+export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'social'
 
 type CommonProps = {
   children: ReactNode

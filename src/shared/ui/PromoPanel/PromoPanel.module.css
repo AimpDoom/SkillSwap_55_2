@@ -6,17 +6,8 @@
   text-align: center;
   gap: 12px;
   height: 100%;
-  padding: 40px;
-  width: 556px;
-  min-height: 692px;
-  background-color: var(--color-bg-primary);
-  border-radius: var(--border-radius-s);
 }
 
 .title {
   margin-top: 40px;
-}
-
-.description {
-  max-width: 436px;
 }

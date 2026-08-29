@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-disabled);
+}
+
+.dividerText {
+  color: var(--color-text-primary);
+}
