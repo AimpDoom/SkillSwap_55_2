@@ -71,4 +71,9 @@
   --secondary-disabled-color: #9ca197;
   --secondary-disabled-border: 1px solid var(--primary-bg-disabled-color);
   --tertiary-bg-color: var(--color-bg-primary);
+  --focus-ring-color: rgb(171 210 122 / 45%);
+  --tertiary-bg-hover-color: var(--primary-bg-hover-color);
+  --tertiary-bg-active-color: var(--primary-bg-default-color);
+  --tertiary-bg-disabled-color: var(--primary-bg-disabled-color);
+  --tertiary-text-disabled-color: var(--secondary-disabled-color);
 }

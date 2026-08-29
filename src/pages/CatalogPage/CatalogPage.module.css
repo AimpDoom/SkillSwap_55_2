@@ -37,19 +37,8 @@
 }
 
 .showAllButton {
-  display: flex;
-  align-items: center;
   gap: 12px;
-  min-height: 48px;
-  padding: 12px 20px;
-  font-family: var(--font-family-secondary);
-  font-size: var(--font-size-s);
-  font-weight: var(--font-weight-regular);
-  color: var(--color-text-primary);
-  background-color: var(--color-bg-primary);
-  border: 0;
-  border-radius: var(--border-radius-s);
-  cursor: pointer;
+  padding-inline: 12px;
 }
 
 .arrow {
@@ -59,6 +48,27 @@
 
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 324px);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 24px;
+}
+
+.cardsGrid > * {
+  grid-column: span 2;
+  width: 100%;
+}
+
+.cardsGrid > *:nth-last-child(2):nth-child(3n + 1),
+.cardsGrid > *:last-child:nth-child(3n + 2) {
+  grid-column: span 3;
+}
+
+.observer {
+  min-height: 1px;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 64px;
 }

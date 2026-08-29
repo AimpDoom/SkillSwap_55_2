@@ -1,7 +1,7 @@
-/* Component styles */
 .button {
   min-height: 48px;
   padding: 12px 24px;
+  border: 1px solid transparent;
   border-radius: var(--border-radius-s);
   transition:
     background-color 0.2s ease,
@@ -19,7 +19,6 @@
 .primaryButton {
   color: var(--color-text-primary);
   background-color: var(--primary-bg-default-color);
-  border: none;
 }
 
 .primaryButton:hover {
@@ -71,31 +70,49 @@
 }
 
 .tertiaryButton {
-  border: none;
   background-color: var(--tertiary-bg-color);
   color: var(--color-text-primary);
 }
 
+.tertiaryButton:hover {
+  background-color: var(--tertiary-bg-hover-color);
+}
+
+.tertiaryButton:active {
+  background-color: var(--tertiary-bg-active-color);
+}
+
+.tertiaryButton:focus-visible {
+  outline: 2px solid var(--focus-ring-color);
+  outline-offset: 2px;
+}
+
 .tertiaryButton:disabled,
 .tertiaryButton.disabled {
-  color: var(--secondary-disabled-color);
+  background-color: var(--tertiary-bg-disabled-color);
+  color: var(--tertiary-text-disabled-color);
   cursor: not-allowed;
 }
 
+.tertiaryButton.disabled:hover {
+  background-color: var(--tertiary-bg-disabled-color);
+}
+
 .socialButton {
-  background-color: red;
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-text-secondary);
   gap: 12px;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-text-secondary);
 }
 
 .socialButton:hover {
-  border: 1px solid var(--color-text-secondary);
+  border-color: var(--color-text-secondary);
 }
 
-.socialButton:disabled {
-  background-color: transparent;
+.socialButton:disabled,
+.socialButton.disabled {
   color: var(--color-text-primary);
-  border: 1px solid var(--color-text-secondary);
+  background-color: transparent;
+  border-color: var(--color-text-secondary);
   cursor: default;
 }

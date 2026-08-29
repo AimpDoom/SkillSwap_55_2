@@ -1,7 +1,5 @@
 .userCard {
-  /* Убрать фиксированный размер карточки при создании контейнера для всех */
-  width: 324px;
-  background-color: #fff;
+  background-color: var(--color-bg-primary);
   padding: 20px;
   border-radius: 12px;
   display: flex;
