@@ -1,16 +1,26 @@
-.stepper {
+.wrapper {
   display: flex;
-  gap: 8px;
+  flex-direction: column;
   align-items: center;
+  gap: 12px;
+}
+
+.label {
+  color: var(--color-text-primary);
+}
+
+.track {
+  display: flex;
+  gap: 16px;
 }
 
 .segment {
-  width: 32px;
+  width: 60px;
   height: 4px;
-  background-color: var(--primary-bg-disabled-color);
-  border-radius: 2px;
+  border-radius: var(--border-radius-s);
+  background-color: var(--color-disabled);
 }
 
-.active {
+.filled {
   background-color: var(--color-accent);
 }

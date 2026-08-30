@@ -20,8 +20,8 @@
   justify-content: center;
   align-items: center;
   width: 556px;
-  min-height: 692px;
+  min-height: 720px;
   background-color: var(--color-bg-primary);
-  padding: 60px;
+  padding: 40px 60px;
   border-radius: var(--border-radius-s);
 }

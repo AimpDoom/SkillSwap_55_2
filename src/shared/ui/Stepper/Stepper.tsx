@@ -1,32 +1,23 @@
 import { clsx } from 'clsx'
+import { Text } from '@/shared/ui/Text'
 import styles from './Stepper.module.css'
 
-export type StepperStep = 1 | 2 | 3
-
 type StepperProps = {
-  currentStep: StepperStep
-  className?: string
+  current: number
+  total: number
 }
 
-const STEPS: StepperStep[] = [1, 2, 3]
-
-export function Stepper({ currentStep, className = '' }: StepperProps) {
+export function Stepper({ current, total }: StepperProps) {
   return (
-    <div
-      className={clsx(styles.stepper, className)}
-      aria-label={`Шаг ${currentStep} из 3`}
-      role="progressbar"
-      aria-valuemin={1}
-      aria-valuemax={3}
-      aria-valuenow={currentStep}
-    >
-      {STEPS.map((step) => (
-        <span
-          key={step}
-          className={clsx(styles.segment, step <= currentStep && styles.active)}
-          aria-hidden="true"
-        />
-      ))}
+    <div className={styles.wrapper}>
+      <Text variant="h2" className={styles.label}>
+        Шаг {current} из {total}
+      </Text>
+      <div className={styles.track}>
+        {Array.from({ length: total }, (_, index) => (
+          <span key={index} className={clsx(styles.segment, index < current && styles.filled)} />
+        ))}
+      </div>
     </div>
   )
 }

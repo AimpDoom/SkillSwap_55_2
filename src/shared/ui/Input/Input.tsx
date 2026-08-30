@@ -1,5 +1,5 @@
-import type { InputHTMLAttributes, ReactNode } from 'react'
-import { useId, useRef } from 'react'
+import type { ForwardedRef, InputHTMLAttributes, ReactNode } from 'react'
+import { forwardRef, useId, useRef } from 'react'
 
 import styles from './Input.module.css'
 import { clsx } from 'clsx'
@@ -12,23 +12,26 @@ type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
   endIcon?: ReactNode
 }
 
-export function Input({
-  label,
-  error,
-  hint,
-  startIcon,
-  endIcon,
-  id,
-  className = '',
-  type = 'text',
-  onClick,
-  disabled,
-  readOnly,
-  ...props
-}: InputProps) {
+function InputImpl(
+  {
+    label,
+    error,
+    hint,
+    startIcon,
+    endIcon,
+    id,
+    className = '',
+    type = 'text',
+    onClick,
+    disabled,
+    readOnly,
+    ...props
+  }: InputProps,
+  forwardedRef: ForwardedRef<HTMLInputElement>,
+) {
   const generatedId = useId()
   const inputId = id ?? generatedId
-  const inputRef = useRef<HTMLInputElement>(null)
+  const inputRef = useRef<HTMLInputElement | null>(null)
 
   const messageId = error || hint ? `${inputId}-message` : undefined
 
@@ -57,7 +60,15 @@ export function Input({
 
         <input
           {...props}
-          ref={inputRef}
+          ref={(node) => {
+            inputRef.current = node
+
+            if (typeof forwardedRef === 'function') {
+              forwardedRef(node)
+            } else if (forwardedRef) {
+              forwardedRef.current = node
+            }
+          }}
           id={inputId}
           type={type}
           disabled={disabled}
@@ -109,3 +120,5 @@ export function Input({
     </div>
   )
 }
+
+export const Input = forwardRef(InputImpl)
