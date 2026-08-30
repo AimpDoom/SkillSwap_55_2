@@ -128,7 +128,6 @@ export const SkillsFilter = ({
           return (
             <div className={styles.category} key={category.name}>
               <div className={styles.categoryRow}>
-                {}
                 <button
                   className={styles.categoryCheckbox}
                   type="button"

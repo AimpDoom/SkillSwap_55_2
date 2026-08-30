@@ -208,7 +208,7 @@
   padding-left: 44px;
 }
 
-.chevronButton {
+.categoryCheckbox {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,7 +221,7 @@
   cursor: pointer;
 }
 
-.chevronButton:focus-visible {
+.categoryCheckbox:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
