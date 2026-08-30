@@ -37,13 +37,17 @@
 }
 
 .showAllButton {
-  gap: 12px;
-  padding-inline: 12px;
+  gap: 8px;
 }
 
 .arrow {
   width: 24px;
   height: 24px;
+}
+
+.crossIcon {
+  width: 12px;
+  height: 12px;
 }
 
 .cardsGrid {

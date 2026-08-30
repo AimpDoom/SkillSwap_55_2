@@ -7,29 +7,37 @@ import { Button } from '@/shared/ui/Button'
 import type { User } from '@/entities/user/model/types'
 import { useCallback, useState } from 'react'
 import { useInfiniteScroll } from './useInfiniteScroll'
+import { getNewUsers, getPopularUsers, shuffleUsers } from './catalogSectionSelection'
 import { FiltersSidebar } from '@/components/widgets/FiltersSidebar'
 import { UserCard } from '@/entities/user/ui/UserCard'
 import { Container } from '@/shared/ui/Container'
 import chevronRightIcon from '@/shared/assets/icons/chevron-right.svg'
+import crossIcon from '@/shared/assets/icons/cross.svg'
 
 const LOAD_BATCH_SIZE = 6
+const INITIAL_RECOMMENDED_USERS_COUNT = 9
 
-const popularUsers = users.slice(0, 9)
-const newUsers = users.slice(9, 18)
-const recommendedUsers = users.slice(18, 27)
-
-const remainingUsers = users.slice(27)
+const popularUsers = getPopularUsers(users)
+const newUsers = getNewUsers(users)
 
 export default function CatalogPage() {
   const [showAllPopular, setShowAllPopular] = useState(false)
   const [showAllNew, setShowAllNew] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
-  const [loadedUsers, setLoadedUsers] = useState<User[]>([])
+
+  const [recommendedUsers] = useState<User[]>(() => shuffleUsers(users))
+
+  const [visibleRecommendedCount, setVisibleRecommendedCount] = useState(
+    INITIAL_RECOMMENDED_USERS_COUNT,
+  )
 
   const visiblePopularUsers = showAllPopular ? popularUsers : popularUsers.slice(0, 3)
+
   const visibleNewUsers = showAllNew ? newUsers : newUsers.slice(0, 3)
 
-  const hasMore = loadedUsers.length < remainingUsers.length
+  const visibleRecommendedUsers = recommendedUsers.slice(0, visibleRecommendedCount)
+
+  const hasMore = visibleRecommendedCount < recommendedUsers.length
 
   const loadMore = useCallback(() => {
     if (isLoading || !hasMore) {
@@ -39,15 +47,13 @@ export default function CatalogPage() {
     setIsLoading(true)
 
     setTimeout(() => {
-      const startIndex = loadedUsers.length
-
-      const nextUsers = remainingUsers.slice(startIndex, startIndex + LOAD_BATCH_SIZE)
-
-      setLoadedUsers((currentUsers) => [...currentUsers, ...nextUsers])
+      setVisibleRecommendedCount((currentCount) =>
+        Math.min(currentCount + LOAD_BATCH_SIZE, recommendedUsers.length),
+      )
 
       setIsLoading(false)
     }, 1000)
-  }, [isLoading, hasMore, loadedUsers.length])
+  }, [isLoading, hasMore, recommendedUsers.length])
 
   const observerRef = useInfiniteScroll({
     onLoadMore: loadMore,
@@ -65,14 +71,20 @@ export default function CatalogPage() {
             <section className={styles.section}>
               <div className={styles.sectionHeader}>
                 <h2 className={styles.sectionTitle}>Популярное</h2>
-
                 <Button
                   variant="tertiary"
                   className={styles.showAllButton}
                   onClick={() => setShowAllPopular(!showAllPopular)}
+                  aria-expanded={showAllPopular}
                 >
-                  Смотреть все
-                  <img className={styles.arrow} src={chevronRightIcon} alt="" aria-hidden="true" />
+                  {showAllPopular ? 'Скрыть' : 'Смотреть все'}
+
+                  <img
+                    className={showAllPopular ? styles.crossIcon : styles.arrow}
+                    src={showAllPopular ? crossIcon : chevronRightIcon}
+                    alt=""
+                    aria-hidden="true"
+                  />
                 </Button>
               </div>
 
@@ -86,14 +98,20 @@ export default function CatalogPage() {
             <section className={styles.section}>
               <div className={styles.sectionHeader}>
                 <h2 className={styles.sectionTitle}>Новое</h2>
-
                 <Button
                   variant="tertiary"
                   className={styles.showAllButton}
                   onClick={() => setShowAllNew(!showAllNew)}
+                  aria-expanded={showAllNew}
                 >
-                  Смотреть все
-                  <img className={styles.arrow} src={chevronRightIcon} alt="" aria-hidden="true" />
+                  {showAllNew ? 'Скрыть' : 'Смотреть все'}
+
+                  <img
+                    className={showAllNew ? styles.crossIcon : styles.arrow}
+                    src={showAllNew ? crossIcon : chevronRightIcon}
+                    alt=""
+                    aria-hidden="true"
+                  />
                 </Button>
               </div>
 
@@ -110,7 +128,7 @@ export default function CatalogPage() {
               </div>
 
               <div className={styles.cardsGrid}>
-                {[...recommendedUsers, ...loadedUsers].map((user) => (
+                {visibleRecommendedUsers.map((user) => (
                   <UserCard key={user.id} user={user} />
                 ))}
               </div>
@@ -125,6 +143,7 @@ export default function CatalogPage() {
                   />
                 </div>
               )}
+
               {hasMore && <div ref={observerRef} className={styles.observer} />}
             </section>
           </div>
