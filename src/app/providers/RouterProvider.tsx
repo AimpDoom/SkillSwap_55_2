@@ -6,6 +6,7 @@ import { Header } from '@/components/widgets/Header'
 import { ROUTES } from '@/shared/lib/constants'
 
 const CatalogPage = lazy(() => import('@/pages/CatalogPage'))
+const AllSkillsPage = lazy(() => import('@/pages/AllSkillsPage'))
 const SkillPage = lazy(() => import('@/pages/SkillPage'))
 const ProfilePage = lazy(() => import('@/pages/ProfilePage'))
 const FavoritesPage = lazy(() => import('@/pages/FavoritesPage'))
@@ -26,6 +27,7 @@ function AppContent() {
       <Suspense fallback={<div>Загрузка...</div>}>
         <Routes>
           <Route path={ROUTES.HOME} element={<CatalogPage />} />
+          <Route path={ROUTES.SKILLS} element={<AllSkillsPage />} />
           <Route path={ROUTES.SKILL} element={<SkillPage />} />
           <Route path={ROUTES.FAVORITES} element={<FavoritesPage />} />
 

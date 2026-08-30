@@ -1,0 +1,13 @@
+.page {
+  padding-block: 32px 64px;
+}
+
+.categoriesCard {
+  overflow: hidden;
+  box-sizing: border-box;
+  width: min(1136px, 100%);
+  margin: 0 auto;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  border-radius: var(--border-radius-s);
+}

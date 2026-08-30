@@ -12,7 +12,7 @@ export function FooterNavigation() {
           О проекте
         </a>
 
-        <Link className={styles.link} to={ROUTES.HOME}>
+        <Link className={styles.link} to={ROUTES.SKILLS}>
           Все навыки
         </Link>
       </div>
