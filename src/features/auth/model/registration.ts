@@ -38,7 +38,7 @@ export function buildRegisteredUser(draft: RegistrationDraft): RegisteredUser | 
     description: skill.description,
     categoryId,
     subcategoryId,
-    imageUrls: [],
+    imageUrls: skill.imageUrls,
     authorId: userId,
     createdAt: now,
   }
@@ -47,7 +47,7 @@ export function buildRegisteredUser(draft: RegistrationDraft): RegisteredUser | 
     id: userId,
     name: profile.name,
     email: account.email,
-    avatarUrl: null,
+    avatarUrl: profile.avatarUrl,
     birthDate,
     cityId,
     gender,

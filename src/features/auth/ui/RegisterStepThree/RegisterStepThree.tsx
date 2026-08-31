@@ -30,8 +30,7 @@ export const RegisterStepThree = ({ initialValues, onBack, onNext }: RegisterSte
     initialValues?.subcategoryId ?? null,
   )
   const [description, setDescription] = useState(initialValues?.description ?? '')
-  // TODO: ниже состояние для загрузки изображений навыка
-  // const [images, setImages] = useState<string[]>([])
+  const [imageUrls, setImageUrls] = useState<string[]>(initialValues?.imageUrls ?? [])
   const [errors, setErrors] = useState<StepThreeErrors>({})
 
   const categoryOptions: SelectOption[] = useMemo(
@@ -90,6 +89,7 @@ export const RegisterStepThree = ({ initialValues, onBack, onNext }: RegisterSte
     categoryId,
     subcategoryId,
     description,
+    imageUrls,
   })
 
   const handleSubmit = (event: React.FormEvent) => {
@@ -143,7 +143,7 @@ export const RegisterStepThree = ({ initialValues, onBack, onNext }: RegisterSte
             setErrors((prev) => ({ ...prev, description: undefined }))
           }}
         />
-        <ImageUpload />
+        <ImageUpload value={imageUrls} onChange={setImageUrls} />
       </div>
       <div className={styles.actions}>
         <Button type="button" variant="secondary" onClick={() => onBack(collectValues())}>

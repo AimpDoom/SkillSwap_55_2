@@ -43,8 +43,7 @@ export const RegisterStepTwo = ({ initialValues, onBack, onNext }: RegisterStepT
   const { categories: categoryList } = useCategories()
   const { cities } = useCities()
 
-  // TODO: ниже состояние для загрузки аватарки
-  // const [avatarUrl, setAvatarUrl] = useState<string | null>(null)
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(initialValues?.avatarUrl ?? null)
   const [name, setName] = useState(initialValues?.name ?? '')
   const [birthDate, setBirthDate] = useState<Date | null>(isoToDate(initialValues?.birthDate ?? null))
   const [gender, setGender] = useState<Gender | 'unspecified' | null>(
@@ -141,6 +140,7 @@ export const RegisterStepTwo = ({ initialValues, onBack, onNext }: RegisterStepT
     cityId,
     learnCategoryIds,
     learnSubcategoryIds,
+    avatarUrl,
   })
 
   const handleSubmit = (event: React.FormEvent) => {
@@ -154,7 +154,12 @@ export const RegisterStepTwo = ({ initialValues, onBack, onNext }: RegisterStepT
 
   return (
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
-      <AvatarUploadButton alt="Фото пользователя" className={styles.avatar} />
+      <AvatarUploadButton
+        value={avatarUrl}
+        onChange={setAvatarUrl}
+        alt="Фото пользователя"
+        className={styles.avatar}
+      />
       <div className={styles.inputs}>
         <Input
           name="name"

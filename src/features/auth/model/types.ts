@@ -30,6 +30,7 @@ export type RegistrationProfileDraft = {
   cityId: string | null
   learnCategoryIds: string[]
   learnSubcategoryIds: string[]
+  avatarUrl: string | null
 }
 
 export type RegistrationSkillDraft = {
@@ -37,6 +38,7 @@ export type RegistrationSkillDraft = {
   categoryId: string | null
   subcategoryId: string | null
   description: string
+  imageUrls: string[]
 }
 
 export type RegistrationDraft = {
