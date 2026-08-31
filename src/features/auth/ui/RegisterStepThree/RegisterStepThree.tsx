@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useCategories } from '@/entities/category/model/useCategories'
+import type { RegistrationSkillDraft } from '@/features/auth/model'
 import { Button } from '@/shared/ui/Button'
 import { ImageUpload } from '@/shared/ui/ImageUpload'
 import { Input } from '@/shared/ui/Input'
@@ -8,8 +9,9 @@ import { Textarea } from '@/shared/ui/Textarea'
 import styles from './RegisterStepThree.module.css'
 
 export interface RegisterStepThreeProps {
-  onBack: () => void
-  onNext: () => void
+  initialValues: RegistrationSkillDraft | null
+  onBack: (values: RegistrationSkillDraft) => void
+  onNext: (values: RegistrationSkillDraft) => void
 }
 
 interface StepThreeErrors {
@@ -19,13 +21,15 @@ interface StepThreeErrors {
   description?: string
 }
 
-export const RegisterStepThree = ({ onBack, onNext }: RegisterStepThreeProps) => {
+export const RegisterStepThree = ({ initialValues, onBack, onNext }: RegisterStepThreeProps) => {
   const { categories: categoryList } = useCategories()
 
-  const [title, setTitle] = useState('')
-  const [category, setCategory] = useState<SelectOption | null>(null)
-  const [subcategory, setSubcategory] = useState<SelectOption | null>(null)
-  const [description, setDescription] = useState('')
+  const [title, setTitle] = useState(initialValues?.title ?? '')
+  const [categoryId, setCategoryId] = useState<string | null>(initialValues?.categoryId ?? null)
+  const [subcategoryId, setSubcategoryId] = useState<string | null>(
+    initialValues?.subcategoryId ?? null,
+  )
+  const [description, setDescription] = useState(initialValues?.description ?? '')
   // TODO: ниже состояние для загрузки изображений навыка
   // const [images, setImages] = useState<string[]>([])
   const [errors, setErrors] = useState<StepThreeErrors>({})
@@ -46,27 +50,28 @@ export const RegisterStepThree = ({ onBack, onNext }: RegisterStepThreeProps) =>
   }, [categoryList])
 
   const subcategoryOptions: SelectOption[] = useMemo(() => {
-    if (!category) {
-      return categoryList.flatMap((item) => item.subcategories.map((sub) => ({ value: sub.id, label: sub.name })))
+    if (!categoryId) {
+      return categoryList.flatMap((item) =>
+        item.subcategories.map((sub) => ({ value: sub.id, label: sub.name })),
+      )
     }
-    const found = categoryList.find((item) => item.id === category.value)
+    const found = categoryList.find((item) => item.id === categoryId)
     return found ? found.subcategories.map((sub) => ({ value: sub.id, label: sub.name })) : []
-  }, [category, categoryList])
+  }, [categoryId, categoryList])
 
   const handleCategoryChange = (option: SelectOption | null) => {
-    setCategory(option)
-    setSubcategory(null)
+    setCategoryId(option?.value ?? null)
+    setSubcategoryId(null)
     setErrors((prev) => ({ ...prev, category: undefined }))
   }
 
   const handleSubcategoryChange = (option: SelectOption | null) => {
-    setSubcategory(option)
+    setSubcategoryId(option?.value ?? null)
     setErrors((prev) => ({ ...prev, subcategory: undefined }))
     if (option) {
-      const requiredCategoryValue = categoryBySubcategory[option.value]
-      if (requiredCategoryValue && requiredCategoryValue !== category?.value) {
-        const found = categoryOptions.find((item) => item.value === requiredCategoryValue)
-        if (found) setCategory(found)
+      const requiredCategoryId = categoryBySubcategory[option.value]
+      if (requiredCategoryId && requiredCategoryId !== categoryId) {
+        setCategoryId(requiredCategoryId)
       }
     }
   }
@@ -74,18 +79,25 @@ export const RegisterStepThree = ({ onBack, onNext }: RegisterStepThreeProps) =>
   const validate = (): StepThreeErrors => {
     const nextErrors: StepThreeErrors = {}
     if (!title.trim()) nextErrors.title = 'Введите название навыка'
-    if (!category) nextErrors.category = 'Выберите категорию'
-    if (!subcategory) nextErrors.subcategory = 'Выберите подкатегорию'
+    if (!categoryId) nextErrors.category = 'Выберите категорию'
+    if (!subcategoryId) nextErrors.subcategory = 'Выберите подкатегорию'
     if (!description.trim()) nextErrors.description = 'Введите описание'
     return nextErrors
   }
+
+  const collectValues = (): RegistrationSkillDraft => ({
+    title,
+    categoryId,
+    subcategoryId,
+    description,
+  })
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
     const nextErrors = validate()
     setErrors(nextErrors)
     if (Object.keys(nextErrors).length === 0) {
-      onNext()
+      onNext(collectValues())
     }
   }
 
@@ -107,7 +119,7 @@ export const RegisterStepThree = ({ onBack, onNext }: RegisterStepThreeProps) =>
           label="Категория навыка"
           placeholder="Выберите категорию"
           options={categoryOptions}
-          value={category}
+          value={categoryOptions.find((option) => option.value === categoryId) ?? null}
           error={errors.category}
           onChange={handleCategoryChange}
         />
@@ -115,7 +127,7 @@ export const RegisterStepThree = ({ onBack, onNext }: RegisterStepThreeProps) =>
           label="Подкатегория навыка"
           placeholder="Выберите подкатегорию"
           options={subcategoryOptions}
-          value={subcategory}
+          value={subcategoryOptions.find((option) => option.value === subcategoryId) ?? null}
           error={errors.subcategory}
           onChange={handleSubcategoryChange}
         />
@@ -134,7 +146,7 @@ export const RegisterStepThree = ({ onBack, onNext }: RegisterStepThreeProps) =>
         <ImageUpload />
       </div>
       <div className={styles.actions}>
-        <Button type="button" variant="secondary" onClick={onBack}>
+        <Button type="button" variant="secondary" onClick={() => onBack(collectValues())}>
           Назад
         </Button>
         <Button type="submit" variant="primary">

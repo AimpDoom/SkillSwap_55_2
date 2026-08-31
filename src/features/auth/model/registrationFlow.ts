@@ -1,9 +1,17 @@
 import { useState } from 'react'
 
-import type { AuthFormValues, RegistrationDraft, RegistrationStep } from './types'
+import type {
+  AuthFormValues,
+  RegistrationDraft,
+  RegistrationProfileDraft,
+  RegistrationSkillDraft,
+  RegistrationStep,
+} from './types'
 
 const INITIAL_REGISTRATION_DRAFT: RegistrationDraft = {
   account: null,
+  profile: null,
+  skill: null,
 }
 
 export function useRegistrationFlow() {
@@ -15,6 +23,20 @@ export function useRegistrationFlow() {
     setDraft((current) => ({
       ...current,
       account: values,
+    }))
+  }
+
+  const saveProfile = (values: RegistrationProfileDraft) => {
+    setDraft((current) => ({
+      ...current,
+      profile: values,
+    }))
+  }
+
+  const saveSkill = (values: RegistrationSkillDraft) => {
+    setDraft((current) => ({
+      ...current,
+      skill: values,
     }))
   }
 
@@ -39,6 +61,8 @@ export function useRegistrationFlow() {
     currentStep,
     draft,
     saveAccount,
+    saveProfile,
+    saveSkill,
     goToStep,
     goNext,
     goBack,

@@ -1,8 +1,8 @@
-import { useState } from 'react'
 import { AuthLayout } from '@/features/auth/ui/AuthLayout'
 import { RegisterStepOne } from '@/features/auth/ui/RegisterStepOne'
 import { RegisterStepTwo } from '@/features/auth/ui/RegisterStepTwo'
 import { RegisterStepThree } from '@/features/auth/ui/RegisterStepThree'
+import { useRegistrationFlow } from '@/features/auth/model'
 import { Stepper } from '@/shared/ui/Stepper'
 import { PromoPanel } from '@/shared/ui/PromoPanel'
 import LightBulbImage from '@/shared/assets/images/light-bulb.svg?react'
@@ -28,19 +28,46 @@ const STEP_PROMO = {
 } as const
 
 export default function RegisterPage() {
-  const [step, setStep] = useState<1 | 2 | 3>(1)
+  const { currentStep, draft, saveAccount, saveProfile, saveSkill, goNext, goBack } =
+    useRegistrationFlow()
 
   return (
     <AuthLayout
-      heading={<Stepper current={step} total={3} />}
-      promo={<PromoPanel {...STEP_PROMO[step]} />}
+      heading={<Stepper current={currentStep} total={3} />}
+      promo={<PromoPanel {...STEP_PROMO[currentStep]} />}
       form={
-        step === 1 ? (
-          <RegisterStepOne onNext={() => setStep(2)} />
-        ) : step === 2 ? (
-          <RegisterStepTwo onBack={() => setStep(1)} onNext={() => setStep(3)} />
+        currentStep === 1 ? (
+          <RegisterStepOne
+            initialValues={draft.account}
+            onNext={(values) => {
+              saveAccount(values)
+              goNext()
+            }}
+          />
+        ) : currentStep === 2 ? (
+          <RegisterStepTwo
+            initialValues={draft.profile}
+            onBack={(values) => {
+              saveProfile(values)
+              goBack()
+            }}
+            onNext={(values) => {
+              saveProfile(values)
+              goNext()
+            }}
+          />
         ) : (
-          <RegisterStepThree onBack={() => setStep(2)} onNext={() => {}} />
+          <RegisterStepThree
+            initialValues={draft.skill}
+            onBack={(values) => {
+              saveSkill(values)
+              goBack()
+            }}
+            onNext={(values) => {
+              saveSkill(values)
+              // TODO: создание и сохранение пользователя/навыка внутри onNext
+            }}
+          />
         )
       }
     />

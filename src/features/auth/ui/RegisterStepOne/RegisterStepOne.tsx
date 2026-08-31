@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
+import type { AuthFormValues } from '@/features/auth/model'
 import EyeSlashIcon from '@/shared/assets/icons/eye-slash.svg?react'
 import EyeIcon from '@/shared/assets/icons/eye.svg?react'
 import { Button } from '@/shared/ui/Button'
@@ -12,13 +13,9 @@ import { Link } from 'react-router-dom'
 import { Text } from '@/shared/ui/Text'
 import styles from './RegisterStepOne.module.css'
 
-interface RegisterStepOneValues {
-  email: string
-  password: string
-}
-
 export interface RegisterStepOneProps {
-  onNext: () => void
+  initialValues: AuthFormValues | null
+  onNext: (values: AuthFormValues) => void
 }
 
 const schema = yup.object({
@@ -29,14 +26,18 @@ const schema = yup.object({
     .min(8, 'Пароль должен содержать не менее 8 знаков'),
 })
 
-// TODO: данные между шагами пока не копим — только вёрстка + проверка формата на этом шаге
-export const RegisterStepOne = ({ onNext }: RegisterStepOneProps) => {
+// Копим email и пароль в общем черновике: initialValues приходят из черновика
+// RegisterPage, onNext — сохранить их и перейти на следующий шаг
+export const RegisterStepOne = ({ initialValues, onNext }: RegisterStepOneProps) => {
   const [showPassword, setShowPassword] = useState(false)
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<RegisterStepOneValues>({ resolver: yupResolver(schema) })
+  } = useForm<AuthFormValues>({
+    resolver: yupResolver(schema),
+    defaultValues: initialValues ?? { email: '', password: '' },
+  })
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onNext)} noValidate>
