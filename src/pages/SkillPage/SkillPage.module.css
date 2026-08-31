@@ -1,0 +1,82 @@
+.page {
+  padding-block: 32px 60px;
+}
+
+.mainContent {
+  display: grid;
+  grid-template-columns: 324px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.author,
+.skill {
+  min-width: 0;
+}
+
+.similar {
+  position: relative;
+  margin-top: 48px;
+}
+
+.similarTitle {
+  margin: 0 0 24px;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-l);
+  color: var(--color-text-primary);
+}
+
+.similarCards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  animation: cards-change 950ms ease;
+}
+
+@keyframes cards-change {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.pagination {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  left: -20px;
+  display: flex;
+  pointer-events: none;
+  transform: translateY(10%);
+}
+
+.pagination button {
+  pointer-events: auto;
+}
+
+@media (width <= 1100px)  {
+  .mainContent {
+    grid-template-columns: 280px minmax(0, 1fr);
+  }
+
+  .similarCards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width <= 768px)  {
+  .mainContent {
+    grid-template-columns: 1fr;
+  }
+
+  .similarCards {
+    grid-template-columns: 1fr;
+  }
+}

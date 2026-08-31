@@ -44,3 +44,50 @@
 .active:hover {
   background-color: var(--color-accent);
 }
+
+.compactPagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.compactButtonPrevious {
+  margin-right: auto;
+}
+
+.compactButtonPrevious img {
+  transform: rotate(180deg);
+}
+
+.compactButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: var(--color-bg-primary);
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+  cursor: pointer;
+}
+
+.compactButton img {
+  width: 24px;
+  height: 24px;
+}
+
+.compactButton:hover:not(:disabled) {
+  background-color: var(--color-bg-secondary);
+}
+
+.compactButton:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
+.compactButton:focus-visible {
+  outline: 2px solid var(--color-accent-strong);
+  outline-offset: 2px;
+}
