@@ -67,7 +67,10 @@ export const FiltersSidebar = ({ filters, onChange }: FiltersSidebarProps) => {
   }
 
   return (
-    <aside className={styles.sidebar} aria-label="Фильтры каталога">
+    <aside
+      className={`${styles.sidebar} ${activeFiltersCount > 0 ? styles.sidebarActive : ''}`}
+      aria-label="Фильтры каталога"
+    >
       <div className={styles.header}>
         <h2 className={styles.title}>
           Фильтры

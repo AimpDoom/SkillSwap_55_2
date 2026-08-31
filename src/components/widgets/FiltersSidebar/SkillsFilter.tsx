@@ -104,14 +104,6 @@ export const SkillsFilter = ({
             </div>
           )
         })}
-
-        <button className={styles.linkButton} type="button">
-          <span>Все категории</span>
-
-          <span className={styles.chevron} aria-hidden="true">
-            <img className={styles.chevronIcon} src={chevronDown} alt="" />
-          </span>
-        </button>
       </div>
     </section>
   )
