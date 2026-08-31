@@ -21,17 +21,28 @@ const GENDER_OPTIONS: Array<SelectOption & { value: Gender | 'unspecified' }> = 
   { value: 'female', label: 'Женский' },
 ]
 
+interface StepTwoErrors {
+  name?: string
+  birthDate?: string
+  gender?: string
+  city?: string
+  categories?: string
+  subcategories?: string
+}
+
 export const RegisterStepTwo = ({ onBack, onNext }: RegisterStepTwoProps) => {
   const { categories: categoryList } = useCategories()
   const { cities } = useCities()
 
   // TODO: ниже состояние для загрузки аватарки
   // const [avatarUrl, setAvatarUrl] = useState<string | null>(null)
+  const [name, setName] = useState('')
   const [birthDate, setBirthDate] = useState<Date | null>(null)
   const [gender, setGender] = useState<SelectOption | null>(null)
   const [city, setCity] = useState<SelectOption | null>(null)
   const [categories, setCategories] = useState<MultiSelectOption[]>([])
   const [subcategories, setSubcategories] = useState<MultiSelectOption[]>([])
+  const [errors, setErrors] = useState<StepTwoErrors>({})
 
   const cityOptions: SelectOption[] = useMemo(
     () => cities.map((item) => ({ value: item.id, label: item.name })),
@@ -70,6 +81,7 @@ export const RegisterStepTwo = ({ onBack, onNext }: RegisterStepTwoProps) => {
     setCategories(next)
     const nextValues = next.flatMap((category) => subcategoriesByCategory[category.value] ?? []).map((o) => o.value)
     setSubcategories((prev) => prev.filter((sub) => nextValues.includes(sub.value)))
+    setErrors((prev) => ({ ...prev, categories: undefined }))
   }
 
   const handleSubcategoriesChange = (next: MultiSelectOption[]) => {
@@ -85,26 +97,64 @@ export const RegisterStepTwo = ({ onBack, onNext }: RegisterStepTwoProps) => {
         .filter((category): category is MultiSelectOption => Boolean(category))
       return [...prev, ...added]
     })
+    setErrors((prev) => ({ ...prev, subcategories: undefined }))
+  }
+
+  const validate = (): StepTwoErrors => {
+    const nextErrors: StepTwoErrors = {}
+    if (!name.trim()) nextErrors.name = 'Введите имя'
+    if (!birthDate) nextErrors.birthDate = 'Укажите дату рождения'
+    if (!gender) nextErrors.gender = 'Выберите пол'
+    if (!city) nextErrors.city = 'Выберите город'
+    if (categories.length === 0) nextErrors.categories = 'Выберите хотя бы одну категорию'
+    if (subcategories.length === 0) nextErrors.subcategories = 'Выберите хотя бы одну подкатегорию'
+    return nextErrors
   }
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
-    onNext()
+    const nextErrors = validate()
+    setErrors(nextErrors)
+    if (Object.keys(nextErrors).length === 0) {
+      onNext()
+    }
   }
 
   return (
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
       <AvatarUploadButton alt="Фото пользователя" className={styles.avatar} />
       <div className={styles.inputs}>
-        <Input name="name" label="Имя" placeholder="Введите ваше имя" />
+        <Input
+          name="name"
+          label="Имя"
+          placeholder="Введите ваше имя"
+          value={name}
+          error={errors.name}
+          onChange={(event) => {
+            setName(event.target.value)
+            setErrors((prev) => ({ ...prev, name: undefined }))
+          }}
+        />
         <div className={styles.row}>
-          <Calendar label="Дата рождения" value={birthDate} onChange={setBirthDate} />
+          <Calendar
+            label="Дата рождения"
+            value={birthDate}
+            error={errors.birthDate}
+            onChange={(value) => {
+              setBirthDate(value)
+              setErrors((prev) => ({ ...prev, birthDate: undefined }))
+            }}
+          />
           <Select
             label="Пол"
             placeholder="Не указан"
             options={GENDER_OPTIONS}
             value={gender}
-            onChange={setGender}
+            error={errors.gender}
+            onChange={(value) => {
+              setGender(value)
+              setErrors((prev) => ({ ...prev, gender: undefined }))
+            }}
           />
         </div>
         <Select
@@ -112,7 +162,11 @@ export const RegisterStepTwo = ({ onBack, onNext }: RegisterStepTwoProps) => {
           placeholder="Не указан"
           options={cityOptions}
           value={city}
-          onChange={setCity}
+          error={errors.city}
+          onChange={(value) => {
+            setCity(value)
+            setErrors((prev) => ({ ...prev, city: undefined }))
+          }}
           isSearchable
         />
         <MultiSelect
@@ -120,6 +174,7 @@ export const RegisterStepTwo = ({ onBack, onNext }: RegisterStepTwoProps) => {
           placeholder="Выберите категорию"
           options={categoryOptions}
           value={categories}
+          error={errors.categories}
           onChange={handleCategoriesChange}
         />
         <MultiSelect
@@ -127,6 +182,7 @@ export const RegisterStepTwo = ({ onBack, onNext }: RegisterStepTwoProps) => {
           placeholder="Выберите подкатегорию"
           options={subcategoryOptions}
           value={subcategories}
+          error={errors.subcategories}
           onChange={handleSubcategoriesChange}
         />
       </div>

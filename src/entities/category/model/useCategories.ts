@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { fetchCategories } from '@/api/categories'
+import { fetchCategories } from '@/api/skills'
 import type { SkillCategory } from './types'
 
 export function useCategories() {

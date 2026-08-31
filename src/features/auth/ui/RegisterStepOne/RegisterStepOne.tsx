@@ -7,6 +7,9 @@ import EyeIcon from '@/shared/assets/icons/eye.svg?react'
 import { Button } from '@/shared/ui/Button'
 import { Input } from '@/shared/ui/Input'
 import { SocialAuthButtons } from '../SocialAuthButtons'
+import { ROUTES } from '@/shared/lib/constants'
+import { Link } from 'react-router-dom'
+import { Text } from '@/shared/ui/Text'
 import styles from './RegisterStepOne.module.css'
 
 interface RegisterStepOneValues {
@@ -68,6 +71,12 @@ export const RegisterStepOne = ({ onNext }: RegisterStepOneProps) => {
       <Button type="submit" variant="primary">
         Далее
       </Button>
+
+      <Link to={ROUTES.LOGIN} className={styles.loginLink}>
+        <Text as="span" variant="body">
+          Уже есть аккаунт? Войти
+        </Text>
+      </Link>
     </form>
   )
 }

@@ -15,7 +15,7 @@ import chevronRightIcon from '@/shared/assets/icons/chevron-right.svg'
 import crossIcon from '@/shared/assets/icons/cross.svg'
 
 const LOAD_BATCH_SIZE = 6
-const INITIAL_RECOMMENDED_USERS_COUNT = 9
+const INITIAL_RECOMMENDED_USERS_COUNT = 6
 
 const popularUsers = getPopularUsers(users)
 const newUsers = getNewUsers(users)

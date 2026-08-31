@@ -12,13 +12,23 @@ export interface RegisterStepThreeProps {
   onNext: () => void
 }
 
+interface StepThreeErrors {
+  title?: string
+  category?: string
+  subcategory?: string
+  description?: string
+}
+
 export const RegisterStepThree = ({ onBack, onNext }: RegisterStepThreeProps) => {
   const { categories: categoryList } = useCategories()
 
+  const [title, setTitle] = useState('')
   const [category, setCategory] = useState<SelectOption | null>(null)
   const [subcategory, setSubcategory] = useState<SelectOption | null>(null)
+  const [description, setDescription] = useState('')
   // TODO: ниже состояние для загрузки изображений навыка
   // const [images, setImages] = useState<string[]>([])
+  const [errors, setErrors] = useState<StepThreeErrors>({})
 
   const categoryOptions: SelectOption[] = useMemo(
     () => categoryList.map((item) => ({ value: item.id, label: item.name })),
@@ -46,10 +56,12 @@ export const RegisterStepThree = ({ onBack, onNext }: RegisterStepThreeProps) =>
   const handleCategoryChange = (option: SelectOption | null) => {
     setCategory(option)
     setSubcategory(null)
+    setErrors((prev) => ({ ...prev, category: undefined }))
   }
 
   const handleSubcategoryChange = (option: SelectOption | null) => {
     setSubcategory(option)
+    setErrors((prev) => ({ ...prev, subcategory: undefined }))
     if (option) {
       const requiredCategoryValue = categoryBySubcategory[option.value]
       if (requiredCategoryValue && requiredCategoryValue !== category?.value) {
@@ -59,20 +71,44 @@ export const RegisterStepThree = ({ onBack, onNext }: RegisterStepThreeProps) =>
     }
   }
 
+  const validate = (): StepThreeErrors => {
+    const nextErrors: StepThreeErrors = {}
+    if (!title.trim()) nextErrors.title = 'Введите название навыка'
+    if (!category) nextErrors.category = 'Выберите категорию'
+    if (!subcategory) nextErrors.subcategory = 'Выберите подкатегорию'
+    if (!description.trim()) nextErrors.description = 'Введите описание'
+    return nextErrors
+  }
+
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
-    onNext()
+    const nextErrors = validate()
+    setErrors(nextErrors)
+    if (Object.keys(nextErrors).length === 0) {
+      onNext()
+    }
   }
 
   return (
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
       <div className={styles.inputs}>
-        <Input name="title" label="Название навыка" placeholder="Введите название вашего навыка" />
+        <Input
+          name="title"
+          label="Название навыка"
+          placeholder="Введите название вашего навыка"
+          value={title}
+          error={errors.title}
+          onChange={(event) => {
+            setTitle(event.target.value)
+            setErrors((prev) => ({ ...prev, title: undefined }))
+          }}
+        />
         <Select
           label="Категория навыка"
           placeholder="Выберите категорию"
           options={categoryOptions}
           value={category}
+          error={errors.category}
           onChange={handleCategoryChange}
         />
         <Select
@@ -80,6 +116,7 @@ export const RegisterStepThree = ({ onBack, onNext }: RegisterStepThreeProps) =>
           placeholder="Выберите подкатегорию"
           options={subcategoryOptions}
           value={subcategory}
+          error={errors.subcategory}
           onChange={handleSubcategoryChange}
         />
         <Textarea
@@ -87,6 +124,12 @@ export const RegisterStepThree = ({ onBack, onNext }: RegisterStepThreeProps) =>
           label="Описание"
           placeholder="Коротко опишите, чему можете научить"
           rows={4}
+          value={description}
+          error={errors.description}
+          onChange={(event) => {
+            setDescription(event.target.value)
+            setErrors((prev) => ({ ...prev, description: undefined }))
+          }}
         />
         <ImageUpload />
       </div>
