@@ -1,22 +1,24 @@
 .mainText {
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
   letter-spacing: 0.02em;
-  font-family: Roboto, sans-serif;
-  margin-block-end: 8px;
-  color: #253017;
+  font-family: var(--font-family-secondary);
+  color: var(--color-text-primary);
 }
 
 .skillBadge {
   display: inline-block !important;
   gap: 4px;
-  width: min-content;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
   text-align: center;
 }
+
 
 .skillsContainer {
   display: flex;
@@ -24,14 +26,29 @@
   max-width: 100%;
 }
 
-.skillBadge:nth-child(2) {
-  min-width: 0;
-  flex: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.skillsProfileContainer {
+  flex-wrap: wrap;
+}
+
+.skillsCatalogContainer .skillBadge:nth-child(1) {
+  flex: 0 1 auto;
+}
+
+.skillsCatalogContainer .skillBadge:nth-child(2) {
+  flex: 1 1 auto;
+}
+
+.skillsCatalogContainer .skillBadge:nth-child(3) {
+  flex: 0 0 auto ;
 }
 
 .badgeContainer {
+  display: flex;
+  flex-direction: column;
   max-width: 100%;
+  gap: 8px;
+}
+
+.badgeProfileContainer {
+  gap: 14px;
 }

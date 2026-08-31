@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react'
-
 import styles from './want-to-learn.module.css'
-
 import { fetchCategories } from '@/api/skills'
 import type { SkillSubcategory } from '@/entities/category/model/types'
 import { Tag, TagVariant } from '@/shared/ui/Tag/Tag'
+import { Text } from '@/shared/ui/Text'
+import { CardVariant } from '../UserCard'
+import clsx from 'clsx'
 
 interface WantToLearnProperties {
   skillsIds: string[]
-  header: string
+  header: string,
+  variant: CardVariant
 }
 
-export function WantToLearn({ skillsIds, header }: WantToLearnProperties) {
+export function WantToLearn({ skillsIds, header, variant }: WantToLearnProperties) {
   const [skillList, setSkillList] = useState<SkillSubcategory[]>([])
 
   useEffect(() => {
@@ -30,11 +32,13 @@ export function WantToLearn({ skillsIds, header }: WantToLearnProperties) {
   }, [skillsIds])
 
   return (
-    <div className={styles.badgeContainer}>
-      <h4 className={styles.mainText}>{header}</h4>
-      <div className={styles.skillsContainer}>
+    <div className={clsx(styles.badgeContainer, variant === "profile" && styles.badgeProfileContainer)}>
+      <Text variant='h4' className={styles.mainText}>{header}</Text>
+      <div className={clsx( styles.skillsContainer, 
+        variant === 'catalog' && styles.skillsCatalogContainer,
+        variant === 'profile' && styles.skillsProfileContainer)}>
         {skillList.map((skill, index) => {
-          if (index < 2) {
+          if (index < 2 || variant === 'profile') {
             return (
               <Tag
                 variant={skill.categoryId as TagVariant}
@@ -50,7 +54,7 @@ export function WantToLearn({ skillsIds, header }: WantToLearnProperties) {
           return null
         })}
 
-        {skillsIds.length - 2 > 0 && (
+        {(skillsIds.length - 2 > 0 && variant === 'catalog') && (
           <Tag className={styles.skillBadge}>+{skillsIds.length - 2}</Tag>
         )}
       </div>

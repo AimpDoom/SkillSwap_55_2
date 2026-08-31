@@ -1,16 +1,26 @@
 .mainText {
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
   letter-spacing: 0.02em;
-  font-family: Roboto, sans-serif;
-  margin-block-end: 8px;
-  color: #253017;
+  font-family: var(--font-family-secondary);
+  color: var(--color-text-primary);
 }
 
 .skillsContainer {
   display: flex;
   gap: 4px;
   max-width: 100%;
+
+}
+
+.badgeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px
+}
+
+.profileBadgeContainer {
+  gap: 14px
 }

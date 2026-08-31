@@ -15,7 +15,7 @@
   font-weight: var(--font-weight-medium);
   font-family: var(--font-family-secondary);
   font-size: var(--font-size-m);
-  line-height: 24px;
+  line-height: var(--line-height-s);
   display: flex;
   align-items: center;
   letter-spacing: -0.011em;
@@ -30,7 +30,7 @@
   font-family: var(--font-family-secondary);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-xs);
-  line-height: 16px;
+  line-height: var(--line-height-xs);
   display: flex;
   align-items: center;
   letter-spacing: 0.02em;

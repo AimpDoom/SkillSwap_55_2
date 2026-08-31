@@ -4,6 +4,7 @@ import { fetchCityById } from '@/api/cities'
 import { useEffect, useState } from 'react'
 import type { City } from '@/entities/city/model/types'
 import { yearSpell } from '@/shared/lib/helpers'
+import { Text } from '@/shared/ui/Text'
 
 export const UserInfo = ({
   name,
@@ -26,10 +27,10 @@ export const UserInfo = ({
   const age = calculateAge(birthDate)
   return (
     <div className={styles.userInfoContainer}>
-      <h2 className={styles.userName}>{name}</h2>
-      <p className={styles.userDetails}>
+      <Text variant="h2" className={styles.userName}>{name}</Text>
+      <Text variant="body" className={styles.userDetails}>
         {city?.name}, {age} {yearSpell(age)}
-      </p>
+      </Text>
     </div>
   )
 }

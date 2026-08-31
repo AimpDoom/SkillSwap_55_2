@@ -5,6 +5,7 @@ import LikedIcon from '@/shared/assets/icons/like-filled.svg'
 import UnlikedIcon from '@/shared/assets/icons/like.svg'
 import { useLocalStorage } from '@/shared/hooks/useLocalStorage'
 import { LOCAL_STORAGE_KEYS } from '@/shared/lib/constants'
+import { Text } from '@/shared/ui/Text'
 
 type LikeButtonProps = {
   userId: string
@@ -31,7 +32,7 @@ export function LikeButton({ userId, likeCount }: LikeButtonProps) {
         aria-pressed={liked}
         className={styles.like}
       />
-      <span>{displayedLikeCount}</span>
+      <Text variant="caption">{displayedLikeCount}</Text>
     </div>
   )
 }
