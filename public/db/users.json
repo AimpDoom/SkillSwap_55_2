@@ -6,6 +6,7 @@
     "avatarUrl": "/assets/images/users/user-01.webp",
     "birthDate": "1985-01-01",
     "cityId": "city-01",
+    "gender": "male",
     "teachSkillId": "skill-001",
     "learnSubcategoryIds": [
       "marketing-advertising",
@@ -29,6 +30,7 @@
     "avatarUrl": "/assets/images/users/user-02.webp",
     "birthDate": "1992-04-06",
     "cityId": "city-02",
+    "gender": "female",
     "teachSkillId": "skill-002",
     "learnSubcategoryIds": [
       "sales-negotiations",
@@ -53,6 +55,7 @@
     "avatarUrl": "/assets/images/users/user-03.webp",
     "birthDate": "1999-07-11",
     "cityId": "city-03",
+    "gender": "male",
     "teachSkillId": "skill-003",
     "learnSubcategoryIds": [
       "personal-brand",
@@ -76,6 +79,7 @@
     "avatarUrl": "/assets/images/users/user-04.webp",
     "birthDate": "2006-10-16",
     "cityId": "city-04",
+    "gender": "female",
     "teachSkillId": "skill-004",
     "learnSubcategoryIds": [
       "resume-interview",
@@ -100,6 +104,7 @@
     "avatarUrl": "/assets/images/users/user-05.webp",
     "birthDate": "1990-01-21",
     "cityId": "city-05",
+    "gender": "male",
     "teachSkillId": "skill-005",
     "learnSubcategoryIds": [
       "time-management",
@@ -123,6 +128,7 @@
     "avatarUrl": "/assets/images/users/user-06.webp",
     "birthDate": "1997-04-01",
     "cityId": "city-06",
+    "gender": "male",
     "teachSkillId": "skill-006",
     "learnSubcategoryIds": [
       "project-management",
@@ -147,6 +153,7 @@
     "avatarUrl": "/assets/images/users/user-07.webp",
     "birthDate": "2004-07-06",
     "cityId": "city-07",
+    "gender": "female",
     "teachSkillId": "skill-007",
     "learnSubcategoryIds": [
       "entrepreneurship",
@@ -170,6 +177,7 @@
     "avatarUrl": "/assets/images/users/user-08.webp",
     "birthDate": "1988-10-11",
     "cityId": "city-08",
+    "gender": "female",
     "teachSkillId": "skill-008",
     "learnSubcategoryIds": [
       "drawing-illustration",
@@ -194,6 +202,7 @@
     "avatarUrl": "/assets/images/users/user-09.webp",
     "birthDate": "1995-01-16",
     "cityId": "city-09",
+    "gender": "female",
     "teachSkillId": "skill-009",
     "learnSubcategoryIds": [
       "photography",
@@ -217,6 +226,7 @@
     "avatarUrl": "/assets/images/users/user-10.webp",
     "birthDate": "2002-04-21",
     "cityId": "city-10",
+    "gender": "female",
     "teachSkillId": "skill-010",
     "learnSubcategoryIds": [
       "video-editing",
@@ -241,6 +251,7 @@
     "avatarUrl": "/assets/images/users/user-11.webp",
     "birthDate": "1986-07-01",
     "cityId": "city-11",
+    "gender": "female",
     "teachSkillId": "skill-011",
     "learnSubcategoryIds": [
       "music-sound",
@@ -264,6 +275,7 @@
     "avatarUrl": "/assets/images/users/user-12.webp",
     "birthDate": "1993-10-06",
     "cityId": "city-12",
+    "gender": "male",
     "teachSkillId": "skill-012",
     "learnSubcategoryIds": [
       "acting",
@@ -288,6 +300,7 @@
     "avatarUrl": "/assets/images/users/user-13.webp",
     "birthDate": "2000-01-11",
     "cityId": "city-13",
+    "gender": "female",
     "teachSkillId": "skill-013",
     "learnSubcategoryIds": [
       "creative-writing",
@@ -311,6 +324,7 @@
     "avatarUrl": "/assets/images/users/user-14.webp",
     "birthDate": "2007-04-16",
     "cityId": "city-14",
+    "gender": "male",
     "teachSkillId": "skill-014",
     "learnSubcategoryIds": [
       "art-therapy",
@@ -335,6 +349,7 @@
     "avatarUrl": "/assets/images/users/user-15.webp",
     "birthDate": "1991-07-21",
     "cityId": "city-15",
+    "gender": "female",
     "teachSkillId": "skill-015",
     "learnSubcategoryIds": [
       "decor-diy",
@@ -358,6 +373,7 @@
     "avatarUrl": "/assets/images/users/user-16.webp",
     "birthDate": "1998-10-01",
     "cityId": "city-01",
+    "gender": "female",
     "teachSkillId": "skill-016",
     "learnSubcategoryIds": [
       "english",
@@ -382,6 +398,7 @@
     "avatarUrl": "/assets/images/users/user-17.webp",
     "birthDate": "2005-01-06",
     "cityId": "city-02",
+    "gender": "male",
     "teachSkillId": "skill-017",
     "learnSubcategoryIds": [
       "french",
@@ -405,6 +422,7 @@
     "avatarUrl": "/assets/images/users/user-18.webp",
     "birthDate": "1989-04-11",
     "cityId": "city-03",
+    "gender": "male",
     "teachSkillId": "skill-018",
     "learnSubcategoryIds": [
       "spanish",
@@ -429,6 +447,7 @@
     "avatarUrl": "/assets/images/users/user-19.webp",
     "birthDate": "1996-07-16",
     "cityId": "city-04",
+    "gender": "female",
     "teachSkillId": "skill-019",
     "learnSubcategoryIds": [
       "german",
@@ -452,6 +471,7 @@
     "avatarUrl": "/assets/images/users/user-20.webp",
     "birthDate": "2003-10-21",
     "cityId": "city-05",
+    "gender": "female",
     "teachSkillId": "skill-020",
     "learnSubcategoryIds": [
       "chinese",
@@ -476,6 +496,7 @@
     "avatarUrl": "/assets/images/users/user-21.webp",
     "birthDate": "1987-01-01",
     "cityId": "city-06",
+    "gender": "male",
     "teachSkillId": "skill-021",
     "learnSubcategoryIds": [
       "japanese",
@@ -499,6 +520,7 @@
     "avatarUrl": "/assets/images/users/user-22.webp",
     "birthDate": "1994-04-06",
     "cityId": "city-07",
+    "gender": "female",
     "teachSkillId": "skill-022",
     "learnSubcategoryIds": [
       "language-exams",
@@ -523,6 +545,7 @@
     "avatarUrl": "/assets/images/users/user-23.webp",
     "birthDate": "2001-07-11",
     "cityId": "city-08",
+    "gender": "female",
     "teachSkillId": "skill-023",
     "learnSubcategoryIds": [
       "personal-development",
@@ -546,6 +569,7 @@
     "avatarUrl": "/assets/images/users/user-24.webp",
     "birthDate": "1985-10-16",
     "cityId": "city-09",
+    "gender": "male",
     "teachSkillId": "skill-024",
     "learnSubcategoryIds": [
       "learning-skills",
@@ -570,6 +594,7 @@
     "avatarUrl": "/assets/images/users/user-25.webp",
     "birthDate": "1992-01-21",
     "cityId": "city-10",
+    "gender": "female",
     "teachSkillId": "skill-025",
     "learnSubcategoryIds": [
       "cognitive-techniques",
@@ -593,6 +618,7 @@
     "avatarUrl": "/assets/images/users/user-26.webp",
     "birthDate": "1999-04-01",
     "cityId": "city-11",
+    "gender": "male",
     "teachSkillId": "skill-026",
     "learnSubcategoryIds": [
       "speed-reading",
@@ -617,6 +643,7 @@
     "avatarUrl": "/assets/images/users/user-27.webp",
     "birthDate": "2006-07-06",
     "cityId": "city-12",
+    "gender": "female",
     "teachSkillId": "skill-027",
     "learnSubcategoryIds": [
       "teaching-skills",
@@ -640,6 +667,7 @@
     "avatarUrl": "/assets/images/users/user-28.webp",
     "birthDate": "1990-10-11",
     "cityId": "city-13",
+    "gender": "female",
     "teachSkillId": "skill-028",
     "learnSubcategoryIds": [
       "coaching",
@@ -664,6 +692,7 @@
     "avatarUrl": "/assets/images/users/user-29.webp",
     "birthDate": "1997-01-16",
     "cityId": "city-14",
+    "gender": "male",
     "teachSkillId": "skill-029",
     "learnSubcategoryIds": [
       "cleaning-organization",
@@ -687,6 +716,7 @@
     "avatarUrl": "/assets/images/users/user-30.webp",
     "birthDate": "2004-04-21",
     "cityId": "city-15",
+    "gender": "male",
     "teachSkillId": "skill-030",
     "learnSubcategoryIds": [
       "home-finances",
@@ -711,6 +741,7 @@
     "avatarUrl": "/assets/images/users/user-31.webp",
     "birthDate": "1988-07-01",
     "cityId": "city-01",
+    "gender": "female",
     "teachSkillId": "skill-031",
     "learnSubcategoryIds": [
       "cooking",
@@ -734,6 +765,7 @@
     "avatarUrl": "/assets/images/users/user-32.webp",
     "birthDate": "1995-10-06",
     "cityId": "city-02",
+    "gender": "female",
     "teachSkillId": "skill-032",
     "learnSubcategoryIds": [
       "home-plants",
@@ -758,6 +790,7 @@
     "avatarUrl": "/assets/images/users/user-33.webp",
     "birthDate": "2002-01-11",
     "cityId": "city-03",
+    "gender": "male",
     "teachSkillId": "skill-033",
     "learnSubcategoryIds": [
       "repair",
@@ -781,6 +814,7 @@
     "avatarUrl": "/assets/images/users/user-34.webp",
     "birthDate": "1986-04-16",
     "cityId": "city-04",
+    "gender": "male",
     "teachSkillId": "skill-034",
     "learnSubcategoryIds": [
       "storage",
@@ -805,6 +839,7 @@
     "avatarUrl": "/assets/images/users/user-35.webp",
     "birthDate": "1993-07-21",
     "cityId": "city-05",
+    "gender": "male",
     "teachSkillId": "skill-035",
     "learnSubcategoryIds": [
       "yoga-meditation",
@@ -828,6 +863,7 @@
     "avatarUrl": "/assets/images/users/user-36.webp",
     "birthDate": "2000-10-01",
     "cityId": "city-06",
+    "gender": "female",
     "teachSkillId": "skill-036",
     "learnSubcategoryIds": [
       "nutrition-healthy-lifestyle",
@@ -852,6 +888,7 @@
     "avatarUrl": "/assets/images/users/user-37.webp",
     "birthDate": "2007-01-06",
     "cityId": "city-07",
+    "gender": "male",
     "teachSkillId": "skill-037",
     "learnSubcategoryIds": [
       "mental-health",
@@ -875,6 +912,7 @@
     "avatarUrl": "/assets/images/users/user-38.webp",
     "birthDate": "1991-04-11",
     "cityId": "city-08",
+    "gender": "female",
     "teachSkillId": "skill-038",
     "learnSubcategoryIds": [
       "mindfulness",
@@ -899,6 +937,7 @@
     "avatarUrl": "/assets/images/users/user-39.webp",
     "birthDate": "1998-07-16",
     "cityId": "city-09",
+    "gender": "male",
     "teachSkillId": "skill-039",
     "learnSubcategoryIds": [
       "physical-training",
@@ -922,6 +961,7 @@
     "avatarUrl": "/assets/images/users/user-40.webp",
     "birthDate": "2005-10-21",
     "cityId": "city-10",
+    "gender": "male",
     "teachSkillId": "skill-040",
     "learnSubcategoryIds": [
       "sleep-recovery",
@@ -946,6 +986,7 @@
     "avatarUrl": "/assets/images/users/user-41.webp",
     "birthDate": "1989-01-01",
     "cityId": "city-11",
+    "gender": "female",
     "teachSkillId": "skill-041",
     "learnSubcategoryIds": [
       "work-life-balance",
@@ -969,6 +1010,7 @@
     "avatarUrl": "/assets/images/users/user-42.webp",
     "birthDate": "1996-04-06",
     "cityId": "city-12",
+    "gender": "male",
     "teachSkillId": "skill-042",
     "learnSubcategoryIds": [
       "team-management",
@@ -993,6 +1035,7 @@
     "avatarUrl": "/assets/images/users/user-43.webp",
     "birthDate": "2003-07-11",
     "cityId": "city-13",
+    "gender": "female",
     "teachSkillId": "skill-043",
     "learnSubcategoryIds": [
       "team-management",
@@ -1016,6 +1059,7 @@
     "avatarUrl": "/assets/images/users/user-44.webp",
     "birthDate": "1987-10-16",
     "cityId": "city-14",
+    "gender": "male",
     "teachSkillId": "skill-044",
     "learnSubcategoryIds": [
       "marketing-advertising",
@@ -1040,6 +1084,7 @@
     "avatarUrl": "/assets/images/users/user-45.webp",
     "birthDate": "1994-01-21",
     "cityId": "city-15",
+    "gender": "female",
     "teachSkillId": "skill-045",
     "learnSubcategoryIds": [
       "sales-negotiations",
@@ -1063,6 +1108,7 @@
     "avatarUrl": "/assets/images/users/user-46.webp",
     "birthDate": "2001-04-01",
     "cityId": "city-01",
+    "gender": "female",
     "teachSkillId": "skill-046",
     "learnSubcategoryIds": [
       "personal-brand",
@@ -1087,6 +1133,7 @@
     "avatarUrl": "/assets/images/users/user-47.webp",
     "birthDate": "1985-07-06",
     "cityId": "city-02",
+    "gender": "female",
     "teachSkillId": "skill-047",
     "learnSubcategoryIds": [
       "resume-interview",
@@ -1110,6 +1157,7 @@
     "avatarUrl": "/assets/images/users/user-48.webp",
     "birthDate": "1992-10-11",
     "cityId": "city-03",
+    "gender": "female",
     "teachSkillId": "skill-048",
     "learnSubcategoryIds": [
       "time-management",
@@ -1134,6 +1182,7 @@
     "avatarUrl": "/assets/images/users/user-49.webp",
     "birthDate": "1999-01-16",
     "cityId": "city-04",
+    "gender": "female",
     "teachSkillId": "skill-049",
     "learnSubcategoryIds": [
       "project-management",
@@ -1157,6 +1206,7 @@
     "avatarUrl": "/assets/images/users/user-50.webp",
     "birthDate": "2006-04-21",
     "cityId": "city-05",
+    "gender": "male",
     "teachSkillId": "skill-050",
     "learnSubcategoryIds": [
       "entrepreneurship",

@@ -1,6 +1,6 @@
 import { Radio } from '@/shared/ui/Radio'
 
-import type { RoleValue } from './FiltersSidebar'
+import type { RoleValue } from './types'
 import styles from './FiltersSidebar.module.css'
 
 type RoleFilterProps = {

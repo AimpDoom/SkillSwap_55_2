@@ -1,33 +1,58 @@
 import { useState } from 'react'
+import type { Dispatch, SetStateAction } from 'react'
 
 import { CityFilter } from './CityFilter'
 import { GenderFilter } from './GenderFilter'
 import { RoleFilter } from './RoleFilter'
 import { SkillsFilter } from './SkillsFilter'
+import {
+  INITIAL_CATALOG_FILTERS,
+  type CatalogFilters,
+  type GenderValue,
+  type RoleValue,
+} from './types'
 import styles from './FiltersSidebar.module.css'
 
-export type RoleValue = 'all' | 'learn' | 'teach'
-export type GenderValue = 'any' | 'male' | 'female'
+type FiltersSidebarProps = {
+  filters: CatalogFilters
+  onChange: Dispatch<SetStateAction<CatalogFilters>>
+}
 
-export const FiltersSidebar = () => {
-  const [role, setRole] = useState<RoleValue>('all')
-  const [gender, setGender] = useState<GenderValue>('any')
-
-  const [selectedSkills, setSelectedSkills] = useState<string[]>([])
-  const [selectedCities, setSelectedCities] = useState<string[]>([])
-
+export const FiltersSidebar = ({ filters, onChange }: FiltersSidebarProps) => {
   const [openCategory, setOpenCategory] = useState<string | null>(null)
 
+  const { role, gender, selectedSkills, selectedCities } = filters
+
+  const changeRole = (value: RoleValue) => {
+    onChange((current) => ({
+      ...current,
+      role: value,
+    }))
+  }
+
+  const changeGender = (value: GenderValue) => {
+    onChange((current) => ({
+      ...current,
+      gender: value,
+    }))
+  }
+
   const toggleSkill = (skill: string) => {
-    setSelectedSkills((current) =>
-      current.includes(skill) ? current.filter((item) => item !== skill) : [...current, skill],
-    )
+    onChange((current) => ({
+      ...current,
+      selectedSkills: current.selectedSkills.includes(skill)
+        ? current.selectedSkills.filter((item) => item !== skill)
+        : [...current.selectedSkills, skill],
+    }))
   }
 
   const toggleCity = (city: string) => {
-    setSelectedCities((current) =>
-      current.includes(city) ? current.filter((item) => item !== city) : [...current, city],
-    )
+    onChange((current) => ({
+      ...current,
+      selectedCities: current.selectedCities.includes(city)
+        ? current.selectedCities.filter((item) => item !== city)
+        : [...current.selectedCities, city],
+    }))
   }
 
   const activeFiltersCount =
@@ -37,10 +62,7 @@ export const FiltersSidebar = () => {
     selectedCities.length
 
   const resetFilters = () => {
-    setRole('all')
-    setGender('any')
-    setSelectedSkills([])
-    setSelectedCities([])
+    onChange(INITIAL_CATALOG_FILTERS)
     setOpenCategory(null)
   }
 
@@ -64,7 +86,7 @@ export const FiltersSidebar = () => {
       </div>
 
       <div className={styles.filters}>
-        <RoleFilter value={role} onChange={setRole} />
+        <RoleFilter value={role} onChange={changeRole} />
 
         <SkillsFilter
           selectedSkills={selectedSkills}
@@ -73,7 +95,7 @@ export const FiltersSidebar = () => {
           onToggleOpen={setOpenCategory}
         />
 
-        <GenderFilter value={gender} onChange={setGender} />
+        <GenderFilter value={gender} onChange={changeGender} />
 
         <CityFilter selectedCities={selectedCities} onToggleCity={toggleCity} />
       </div>

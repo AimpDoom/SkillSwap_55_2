@@ -21,7 +21,7 @@ import userIcon from '@/shared/assets/icons/user.svg'
 import clockIcon from '@/shared/assets/icons/message-text.svg'
 import ideaIcon from '@/shared/assets/icons/idea.svg'
 import { Container } from '@/shared/ui/Container'
-import type { User } from '@/entities/user/model/types'
+import type { Gender, User } from '@/entities/user/model/types'
 import type { City } from '@/entities/city/model/types'
 
 interface CityOption {
@@ -52,7 +52,7 @@ interface ProfileFormData {
   email: string
   name: string
   birthday: string
-  gender: string
+  gender: Gender
   city: string
   about: string
   avatarUrl: string
@@ -114,6 +114,7 @@ export default function ProfilePage() {
       avatarUrl: data.avatarUrl || null,
       birthDate: data.birthday,
       cityId: data.city,
+      gender: data.gender,
       teachSkillId: '',
       learnSubcategoryIds: [],
       likesCount: 0,

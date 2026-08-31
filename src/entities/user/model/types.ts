@@ -7,6 +7,7 @@ export interface User {
   avatarUrl: string | null
   birthDate: string
   cityId: string
+  gender: Gender
   teachSkillId: string
   learnSubcategoryIds: string[]
   likesCount: number
