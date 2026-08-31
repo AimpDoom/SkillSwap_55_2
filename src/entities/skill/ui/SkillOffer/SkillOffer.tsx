@@ -15,7 +15,7 @@ import { Text } from '@/shared/ui/Text'
 import styles from './SkillOffer.module.css'
 
 interface SkillOfferProps {
-  skill: Skill
+  skill: Pick<Skill, 'title' | 'description' | 'imageUrls'>
   variant: 'confirmation' | 'default' | 'requested'
   categoryName: string
   subcategoryName: string
@@ -47,6 +47,7 @@ export function SkillOffer({
 
   const hasImages = imageUrls.length > 0
   const hasSeveralImages = imageUrls.length > 1
+  const isGalleryInteractive = variant !== 'confirmation'
 
   const mainImage = hasImages ? imageUrls[activeImageIndex] : ''
 
@@ -222,7 +223,7 @@ export function SkillOffer({
                 />
               )}
 
-              {hasSeveralImages && (
+              {isGalleryInteractive && hasSeveralImages && (
                 <>
                   <button
                     type="button"
@@ -253,23 +254,9 @@ export function SkillOffer({
 
             {hasSeveralImages && (
               <div className={styles.thumbnailsTrack}>
-                {thumbnailsToShow.map(
-                  ({ image, index }, thumbnailIndex) => (
-                    <button
-                      key={`${image}-${index}`}
-                      type="button"
-                      className={`${styles.thumbnailButton} ${
-                        index === activeImageIndex
-                          ? styles.thumbnailActive
-                          : ''
-                      }`}
-                      onClick={() =>
-                        setActiveImageIndex(index)
-                      }
-                      aria-label={`Открыть изображение ${
-                        index + 1
-                      }`}
-                    >
+                {thumbnailsToShow.map(({ image, index }, thumbnailIndex) => {
+                  const thumbnailContent = (
+                    <>
                       <img
                         src={image}
                         alt=""
@@ -295,9 +282,26 @@ export function SkillOffer({
                             </Text>
                           </div>
                         )}
+                    </>
+
+                  )
+
+                  return isGalleryInteractive ? (
+                    <button
+                      key={`${image}-${index}`}
+                      type="button"
+                      className={styles.thumbnailButton}
+                      onClick={() => setActiveImageIndex(index)}
+                      aria-label={`Открыть изображение ${index + 1}`}
+                    >
+                      {thumbnailContent}
                     </button>
-                  ),
-                )}
+                  ) : (
+                    <div key={`${image}-${index}`} className={styles.thumbnailButton}>
+                      {thumbnailContent}
+                    </div>
+                  )
+                })}
               </div>
             )}
           </div>

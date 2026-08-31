@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 
 import { Footer } from '@/components/widgets/Footer'
 import { Header } from '@/components/widgets/Header'
+import { getAuthUser, getRegisteredUsers } from '@/features/auth/model'
 import { ROUTES } from '@/shared/lib/constants'
 
 const CatalogPage = lazy(() => import('@/pages/CatalogPage'))
@@ -18,12 +19,22 @@ const ServerErrorPage = lazy(() => import('@/pages/ErrorPages/Error500Page'))
 
 function AppContent() {
   const location = useLocation()
+  const authUser = getAuthUser()
+  const registeredUser = authUser
+    ? getRegisteredUsers().find((record) => record.user.id === authUser.id)?.user
+    : null
 
   const isAuthPage = location.pathname === ROUTES.LOGIN || location.pathname === ROUTES.REGISTER
 
   return (
     <>
-      {!isAuthPage && <Header />}
+      {!isAuthPage && (
+        <Header
+          variant={authUser ? 'authorized' : 'default'}
+          userName={authUser?.name}
+          avatarSrc={registeredUser?.avatarUrl ?? undefined}
+        />
+      )}
 
       <Suspense fallback={<div>Загрузка...</div>}>
         <Routes>

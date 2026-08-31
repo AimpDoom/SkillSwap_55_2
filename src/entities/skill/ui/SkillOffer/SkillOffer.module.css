@@ -229,10 +229,6 @@
   cursor: pointer;
 }
 
-.thumbnailActive {
-  border-color: var(--color-accent-strong);
-}
-
 .thumbnailImg {
   display: block;
   width: 100%;
