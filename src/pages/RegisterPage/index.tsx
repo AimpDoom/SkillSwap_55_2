@@ -2,7 +2,7 @@ import { AuthLayout } from '@/features/auth/ui/AuthLayout'
 import { RegisterStepOne } from '@/features/auth/ui/RegisterStepOne'
 import { RegisterStepTwo } from '@/features/auth/ui/RegisterStepTwo'
 import { RegisterStepThree } from '@/features/auth/ui/RegisterStepThree'
-import { useRegistrationFlow } from '@/features/auth/model'
+import { completeRegistration, useRegistrationFlow } from '@/features/auth/model'
 import { Stepper } from '@/shared/ui/Stepper'
 import { PromoPanel } from '@/shared/ui/PromoPanel'
 import LightBulbImage from '@/shared/assets/images/light-bulb.svg?react'
@@ -65,7 +65,7 @@ export default function RegisterPage() {
             }}
             onNext={(values) => {
               saveSkill(values)
-              // TODO: создание и сохранение пользователя/навыка внутри onNext
+              completeRegistration({ ...draft, skill: values })
             }}
           />
         )

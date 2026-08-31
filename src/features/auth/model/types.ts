@@ -1,10 +1,17 @@
-import type { Gender } from '@/entities/user/model/types'
+import type { Skill } from '@/entities/skill/model/types'
+import type { Gender, User } from '@/entities/user/model/types'
 
 export interface AuthUser {
   id: string
   name: string
   email: string
   token: string
+}
+
+export type RegisteredUser = {
+  user: User
+  password: string
+  skill: Skill
 }
 
 export type AuthFormMode = 'login' | 'register'
@@ -16,8 +23,6 @@ export type AuthFormValues = {
 
 export type RegistrationStep = 1 | 2 | 3
 
-/** Данные профиля. Храним примитивы (id и строки), чтобы черновик
- *  сериализовался в localStorage без преобразований и совпадал по форме с `User` */
 export type RegistrationProfileDraft = {
   name: string
   birthDate: string | null
