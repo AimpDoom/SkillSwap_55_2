@@ -1,6 +1,6 @@
 import { Radio } from '@/shared/ui/Radio'
 
-import type { GenderValue } from './FiltersSidebar'
+import type { GenderValue } from './types'
 import styles from './FiltersSidebar.module.css'
 
 type GenderFilterProps = {
