@@ -50,7 +50,7 @@
 .notificationPopup {
   position: absolute;
   top: calc(100% + 8px);
-  right: 0;
+  right: -135px;
   z-index: 1000;
   animation: slide-down 0.2s ease;
 }
