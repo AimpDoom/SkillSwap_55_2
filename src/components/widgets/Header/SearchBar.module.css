@@ -1,5 +1,10 @@
+.searchWrapper {
+  position: relative;
+  flex-grow: 1;
+  min-width: 0;
+}
+
 .search {
-  flex-grow: 1; /* Растягиваем на всю доступную ширину */
   width: 100%;
 
   --input-start-icon-left: 12px;
@@ -35,4 +40,46 @@
   height: 24px;
   background-color: var(--color-text-secondary);
   mask: url('../../../shared/assets/icons/search.svg') center / contain no-repeat;
+}
+
+.suggestions {
+  position: absolute;
+  z-index: 200;
+  top: calc(100% + 8px);
+  left: 0;
+  overflow: hidden auto;
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 320px;
+  padding: 8px 0;
+  margin: 0;
+  list-style: none;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--border-radius-s);
+}
+
+.suggestionItem {
+  padding: 0;
+  margin: 0;
+}
+
+.suggestionButton {
+  cursor: pointer;
+  width: 100%;
+  padding: 10px 16px;
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-s);
+  color: var(--color-text-primary);
+  text-align: left;
+  background: transparent;
+  border: 0;
+}
+
+.suggestionButton:hover,
+.suggestionButton:focus-visible {
+  background-color: var(--color-bg-secondary);
+  outline: none;
 }
