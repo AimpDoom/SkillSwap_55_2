@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { getRegisteredUsers, saveAuthUser } from '@/features/auth/model'
 import EyeSlashIcon from '@/shared/assets/icons/eye-slash.svg?react'
 import EyeIcon from '@/shared/assets/icons/eye.svg?react'
 import { ROUTES } from '@/shared/lib/constants'
@@ -18,20 +19,34 @@ interface LoginFormValues {
 const GENERIC_ERROR = 'Email или пароль введены неверно. Пожалуйста проверьте правильность введённых данных.'
 
 export const LoginForm = () => {
+  const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false)
   const [loginError, setLoginError] = useState<string | null>(null)
   const { register, handleSubmit } = useForm<LoginFormValues>()
   const emailField = register('email')
   const passwordField = register('password')
 
-  // TODO: проверка пользователя по localStorage — следующий шаг
   const onSubmit = (values: LoginFormValues) => {
-    if (!values.email || !values.password) {
+    const email = values.email.trim()
+    const password = values.password
+
+    if (!email || !password) {
       setLoginError(GENERIC_ERROR)
       return
     }
+
+    const registeredUser = getRegisteredUsers().find(
+      (record) => record.user.email.toLowerCase() === email.toLowerCase(),
+    )
+
+    if (!registeredUser || registeredUser.password !== password) {
+      setLoginError(GENERIC_ERROR)
+      return
+    }
+
+    saveAuthUser(registeredUser.user)
     setLoginError(null)
-    console.log(values)
+    navigate(ROUTES.HOME)
   }
 
   return (

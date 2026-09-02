@@ -103,7 +103,9 @@ export function AuthorizedActions({ userName, avatarSrc }: AuthorizedActionsProp
 
         <Avatar className={styles.avatar} src={avatarSrc} alt={`Аватар пользователя ${userName}`} />
 
-        {isProfileMenuOpen && <ProfileMenu />}
+        {isProfileMenuOpen && (
+          <ProfileMenu onClose={() => setIsProfileMenuOpen(false)} />
+        )}
       </div>
     </div>
   )
