@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { ThreeDots } from 'react-loader-spinner'
+import { useSearchParams } from 'react-router-dom'
 
-import categories from '@/../public/db/categories.json'
-import cities from '@/../public/db/cities.json'
-import skills from '@/../public/db/skills.json'
-import users from '@/../public/db/users.json'
+import { fetchCities } from '@/api/cities'
+import { fetchCategories, fetchSkills } from '@/api/skills'
+import { fetchUsers } from '@/api/users'
 
 import { FiltersSidebar } from '@/components/widgets/FiltersSidebar'
 import {
@@ -13,13 +13,15 @@ import {
   type CatalogFilters,
 } from '@/components/widgets/FiltersSidebar/types'
 
+import type { SkillCategory } from '@/entities/category/model/types'
+import type { City } from '@/entities/city/model/types'
 import type { Skill } from '@/entities/skill/model/types'
 import type { User } from '@/entities/user/model/types'
 import { UserCard } from '@/entities/user/ui/UserCard'
 
 import chevronRightIcon from '@/shared/assets/icons/chevron-right.svg'
-import sortingArrows from '@/shared/assets/icons/sort.svg'
 import crossIcon from '@/shared/assets/icons/cross.svg'
+import sortingArrows from '@/shared/assets/icons/sort.svg'
 import { Button } from '@/shared/ui/Button'
 import { Container } from '@/shared/ui/Container'
 
@@ -46,12 +48,6 @@ type CatalogPageProps = {
 
 type SortOrder = 'newest' | 'oldest'
 
-const catalogUsers = users as User[]
-const catalogSkills = skills as Skill[]
-
-const popularUsers = getPopularUsers(catalogUsers)
-const newUsers = getNewUsers(catalogUsers)
-
 const roleLabels = {
   learn: 'Хочу научиться',
   teach: 'Могу научить',
@@ -62,64 +58,173 @@ const genderLabels = {
   female: 'Женский',
 }
 
-const skillLabels = new Map(
-  categories.flatMap((category) =>
-    category.subcategories.map((subcategory) => [subcategory.id, subcategory.name]),
-  ),
-)
-
-const cityLabels = new Map(cities.map((city) => [city.id, city.name]))
-
 export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
+  const [searchParams] = useSearchParams()
+
+  const [catalogUsers, setCatalogUsers] = useState<User[]>([])
+  const [catalogSkills, setCatalogSkills] = useState<Skill[]>([])
+  const [categories, setCategories] = useState<SkillCategory[]>([])
+  const [cities, setCities] = useState<City[]>([])
+
+  const [isDataLoading, setIsDataLoading] = useState(true)
+  const [dataError, setDataError] = useState(false)
+
   const [filters, setFilters] = useState<CatalogFilters>(INITIAL_CATALOG_FILTERS)
 
   const [sortOrder, setSortOrder] = useState<SortOrder>('newest')
 
   const [showAllPopular, setShowAllPopular] = useState(false)
+
   const [showAllNew, setShowAllNew] = useState(false)
+
   const [isLoading, setIsLoading] = useState(false)
 
   const [visibleFilteredCount, setVisibleFilteredCount] = useState(INITIAL_FILTERED_USERS_COUNT)
-
-  const [recommendedUsers] = useState<User[]>(() => shuffleUsers(catalogUsers))
 
   const [visibleRecommendedCount, setVisibleRecommendedCount] = useState(
     INITIAL_RECOMMENDED_USERS_COUNT,
   )
 
-  const visiblePopularUsers = showAllPopular ? popularUsers : popularUsers.slice(0, 3)
-
-  const visibleNewUsers = showAllNew ? newUsers : newUsers.slice(0, 3)
-
-  const visibleRecommendedUsers = recommendedUsers.slice(0, visibleRecommendedCount)
-
-  const hasMore = visibleRecommendedCount < recommendedUsers.length
-
-  const isFiltering = hasActiveCatalogFilters(filters)
-
   useEffect(() => {
-    onFilteringChange?.(isFiltering)
-  }, [isFiltering, onFilteringChange])
+    let isMounted = true
 
-  useEffect(() => {
-    if (!isFiltering) {
-      setSortOrder('newest')
+    const loadCatalogData = async () => {
+      try {
+        setIsDataLoading(true)
+        setDataError(false)
+
+        const [loadedUsers, loadedSkills, loadedCategories, loadedCities] = await Promise.all([
+          fetchUsers(),
+          fetchSkills(),
+          fetchCategories(),
+          fetchCities(),
+        ])
+
+        if (!isMounted) {
+          return
+        }
+
+        setCatalogUsers(loadedUsers)
+        setCatalogSkills(loadedSkills)
+        setCategories(loadedCategories)
+        setCities(loadedCities)
+      } catch {
+        if (isMounted) {
+          setDataError(true)
+        }
+      } finally {
+        if (isMounted) {
+          setIsDataLoading(false)
+        }
+      }
     }
-  }, [isFiltering])
 
-  const filteredUsers = useMemo(
-    () => filterCatalogUsers(catalogUsers, catalogSkills, filters),
-    [filters],
+    void loadCatalogData()
+
+    return () => {
+      isMounted = false
+    }
+  }, [])
+
+  const searchQuery = searchParams.get('search')?.trim().toLocaleLowerCase('ru-RU') ?? ''
+
+  const hasSearchQuery = searchQuery.length > 0
+
+  /*
+   * Поиск выполняется только по title навыка.
+   * После этого по authorId найденных навыков
+   * выбираются соответствующие пользователи.
+   */
+  const searchUsers = useMemo(() => {
+    if (!hasSearchQuery) {
+      return catalogUsers
+    }
+
+    const matchedAuthorIds = new Set(
+      catalogSkills
+        .filter((skill) => skill.title.toLocaleLowerCase('ru-RU').includes(searchQuery))
+        .map((skill) => skill.authorId),
+    )
+
+    return catalogUsers.filter((user) => matchedAuthorIds.has(user.id))
+  }, [catalogSkills, catalogUsers, hasSearchQuery, searchQuery])
+
+  /*
+   * Обычные секции каталога всегда формируются
+   * из полного каталога.
+   *
+   * При активном поиске они просто не отображаются.
+   */
+  const popularUsers = useMemo(() => getPopularUsers(catalogUsers), [catalogUsers])
+
+  const newUsers = useMemo(() => getNewUsers(catalogUsers), [catalogUsers])
+
+  const recommendedUsers = useMemo(() => shuffleUsers(catalogUsers), [catalogUsers])
+
+  const skillLabels = useMemo(
+    () =>
+      new Map(
+        categories.flatMap((category) =>
+          category.subcategories.map((subcategory) => [subcategory.id, subcategory.name]),
+        ),
+      ),
+    [categories],
   )
 
-  const sortedFilteredUsers = useMemo(() => {
-    return [...filteredUsers].sort((a, b) => {
+  const cityLabels = useMemo(() => new Map(cities.map((city) => [city.id, city.name])), [cities])
+
+  const hasActiveFilters = hasActiveCatalogFilters(filters)
+
+  /*
+   * Единый режим выдачи включается,
+   * если активен поиск ИЛИ хотя бы один фильтр.
+   */
+  const isResultsMode = hasSearchQuery || hasActiveFilters
+
+  useEffect(() => {
+    onFilteringChange?.(isResultsMode)
+  }, [isResultsMode, onFilteringChange])
+
+  /*
+   * Сортировку сбрасываем только после полного выхода
+   * из режима результатов — когда нет ни поиска,
+   * ни активных фильтров.
+   */
+  useEffect(() => {
+    if (!isResultsMode) {
+      setSortOrder('newest')
+    }
+  }, [isResultsMode])
+
+  /*
+   * При изменении поиска возвращаем пагинацию
+   * результатов в исходное состояние.
+   */
+  useEffect(() => {
+    setVisibleFilteredCount(INITIAL_FILTERED_USERS_COUNT)
+  }, [searchQuery])
+
+  /*
+   * Сначала применяется поиск,
+   * затем поверх найденных пользователей —
+   * существующая логика FiltersSidebar.
+   */
+  const resultUsers = useMemo(
+    () => filterCatalogUsers(searchUsers, catalogSkills, filters),
+    [catalogSkills, filters, searchUsers],
+  )
+
+  /*
+   * Существующая сортировка единого списка.
+   */
+  const sortedResultUsers = useMemo(() => {
+    return [...resultUsers].sort((a, b) => {
       const firstDate = Date.parse(a.createdAt)
       const secondDate = Date.parse(b.createdAt)
 
       return sortOrder === 'newest' ? secondDate - firstDate : firstDate - secondDate
     })
-  }, [filteredUsers, sortOrder])
+  }, [resultUsers, sortOrder])
 
   const activeFilterTags = useMemo<ActiveFilterTag[]>(() => {
     const tags: ActiveFilterTag[] = []
@@ -169,7 +274,7 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
     })
 
     return tags
-  }, [filters])
+  }, [cityLabels, filters, skillLabels])
 
   const handleRemoveFilter = (tag: ActiveFilterTag) => {
     setFilters((current) => {
@@ -201,16 +306,24 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
     })
   }
 
-  const visibleFilteredUsers = sortedFilteredUsers.slice(0, visibleFilteredCount)
+  const visibleResultUsers = sortedResultUsers.slice(0, visibleFilteredCount)
 
-  const hasMoreFilteredUsers = visibleFilteredCount < filteredUsers.length
+  const hasMoreResultUsers = visibleFilteredCount < resultUsers.length
 
   useEffect(() => {
     setVisibleFilteredCount(INITIAL_FILTERED_USERS_COUNT)
   }, [filters])
 
-  const loadMore = useCallback(() => {
-    if (isLoading || !hasMore) {
+  const visiblePopularUsers = showAllPopular ? popularUsers : popularUsers.slice(0, 3)
+
+  const visibleNewUsers = showAllNew ? newUsers : newUsers.slice(0, 3)
+
+  const visibleRecommendedUsers = recommendedUsers.slice(0, visibleRecommendedCount)
+
+  const hasMoreRecommendedUsers = visibleRecommendedCount < recommendedUsers.length
+
+  const loadMoreRecommendedUsers = useCallback(() => {
+    if (isLoading || !hasMoreRecommendedUsers) {
       return
     }
 
@@ -223,10 +336,10 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
 
       setIsLoading(false)
     }, 1000)
-  }, [isLoading, hasMore, recommendedUsers.length])
+  }, [hasMoreRecommendedUsers, isLoading, recommendedUsers.length])
 
-  const loadMoreFilteredUsers = useCallback(() => {
-    if (isLoading || !hasMoreFilteredUsers) {
+  const loadMoreResultUsers = useCallback(() => {
+    if (isLoading || !hasMoreResultUsers) {
       return
     }
 
@@ -234,18 +347,45 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
 
     setTimeout(() => {
       setVisibleFilteredCount((currentCount) =>
-        Math.min(currentCount + LOAD_BATCH_SIZE, filteredUsers.length),
+        Math.min(currentCount + LOAD_BATCH_SIZE, resultUsers.length),
       )
 
       setIsLoading(false)
     }, 1000)
-  }, [isLoading, hasMoreFilteredUsers, filteredUsers.length])
+  }, [hasMoreResultUsers, isLoading, resultUsers.length])
 
   const observerRef = useInfiniteScroll({
-    onLoadMore: isFiltering ? loadMoreFilteredUsers : loadMore,
-    hasMore: isFiltering ? hasMoreFilteredUsers : hasMore,
+    onLoadMore: isResultsMode ? loadMoreResultUsers : loadMoreRecommendedUsers,
+    hasMore: isResultsMode ? hasMoreResultUsers : hasMoreRecommendedUsers,
     isLoading,
   })
+
+  if (isDataLoading) {
+    return (
+      <main className={styles.page}>
+        <Container>
+          <div className={styles.loader}>
+            <ThreeDots
+              height="40"
+              width="40"
+              color="var(--color-text-secondary)"
+              ariaLabel="Загрузка каталога"
+            />
+          </div>
+        </Container>
+      </main>
+    )
+  }
+
+  if (dataError) {
+    return (
+      <main className={styles.page}>
+        <Container>
+          <p className={styles.emptyMessage}>Не удалось загрузить каталог</p>
+        </Container>
+      </main>
+    )
+  }
 
   return (
     <main className={styles.page}>
@@ -254,32 +394,35 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
           <FiltersSidebar filters={filters} onChange={setFilters} />
 
           <div className={styles.content}>
-            {isFiltering ? (
+            {isResultsMode ? (
               <section className={styles.section}>
-                <div className={styles.filterTags}>
-                  {activeFilterTags.map((tag) => (
-                    <div className={styles.filterTag} key={tag.id}>
-                      <span>{tag.label}</span>
+                {activeFilterTags.length > 0 && (
+                  <div className={styles.filterTags}>
+                    {activeFilterTags.map((tag) => (
+                      <div className={styles.filterTag} key={tag.id}>
+                        <span>{tag.label}</span>
 
-                      <button
-                        className={styles.filterTagRemove}
-                        type="button"
-                        onClick={() => handleRemoveFilter(tag)}
-                        aria-label={`Удалить фильтр ${tag.label}`}
-                      >
-                        <img
-                          className={styles.filterTagIcon}
-                          src={crossIcon}
-                          alt=""
-                          aria-hidden="true"
-                        />
-                      </button>
-                    </div>
-                  ))}
-                </div>
+                        <button
+                          className={styles.filterTagRemove}
+                          type="button"
+                          onClick={() => handleRemoveFilter(tag)}
+                          aria-label={`Удалить фильтр ${tag.label}`}
+                        >
+                          <img
+                            className={styles.filterTagIcon}
+                            src={crossIcon}
+                            alt=""
+                            aria-hidden="true"
+                          />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
                 <div className={styles.sectionHeader}>
                   <h2 className={styles.sectionTitle}>
-                    Подходящие предложения: {filteredUsers.length}
+                    Подходящие предложения: {resultUsers.length}
                   </h2>
 
                   <Button
@@ -295,18 +438,19 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
                       alt=""
                       aria-hidden="true"
                     />
+
                     <span>{sortOrder === 'newest' ? 'Сначала новые' : 'Сначала старые'}</span>
                   </Button>
                 </div>
 
-                {filteredUsers.length > 0 ? (
+                {resultUsers.length > 0 ? (
                   <div className={`${styles.cardsGrid} ${styles.filteredCardsGrid}`}>
-                    {visibleFilteredUsers.map((user) => (
+                    {visibleResultUsers.map((user) => (
                       <UserCard key={user.id} user={user} />
                     ))}
                   </div>
                 ) : (
-                  <p className={styles.emptyMessage}>По выбранным фильтрам ничего не найдено</p>
+                  <p className={styles.emptyMessage}>Ничего не найдено</p>
                 )}
 
                 {isLoading && (
@@ -320,7 +464,7 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
                   </div>
                 )}
 
-                {hasMoreFilteredUsers && <div ref={observerRef} className={styles.observer} />}
+                {hasMoreResultUsers && <div ref={observerRef} className={styles.observer} />}
               </section>
             ) : (
               <>
@@ -331,7 +475,7 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
                     <Button
                       variant="tertiary"
                       className={styles.showAllButton}
-                      onClick={() => setShowAllPopular(!showAllPopular)}
+                      onClick={() => setShowAllPopular((current) => !current)}
                       aria-expanded={showAllPopular}
                     >
                       {showAllPopular ? 'Скрыть' : 'Смотреть все'}
@@ -359,7 +503,7 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
                     <Button
                       variant="tertiary"
                       className={styles.showAllButton}
-                      onClick={() => setShowAllNew(!showAllNew)}
+                      onClick={() => setShowAllNew((current) => !current)}
                       aria-expanded={showAllNew}
                     >
                       {showAllNew ? 'Скрыть' : 'Смотреть все'}
@@ -402,7 +546,7 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
                     </div>
                   )}
 
-                  {hasMore && <div ref={observerRef} className={styles.observer} />}
+                  {hasMoreRecommendedUsers && <div ref={observerRef} className={styles.observer} />}
                 </section>
               </>
             )}
