@@ -1,8 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { ThreeDots } from 'react-loader-spinner'
-import { useSearchParams } from 'react-router-dom'
-
+import { useSearchParams, useLocation, useNavigate } from 'react-router-dom'
 import { fetchCities } from '@/api/cities'
 import { fetchCategories, fetchSkills } from '@/api/skills'
 import { fetchUsers } from '@/api/users'
@@ -18,6 +17,8 @@ import type { City } from '@/entities/city/model/types'
 import type { Skill } from '@/entities/skill/model/types'
 import type { User } from '@/entities/user/model/types'
 import { UserCard } from '@/entities/user/ui/UserCard'
+import { RegistrationSuccessModal } from '@/features/auth/ui/RegistrationSuccessModal'
+
 
 import chevronRightIcon from '@/shared/assets/icons/chevron-right.svg'
 import crossIcon from '@/shared/assets/icons/cross.svg'
@@ -60,6 +61,17 @@ const genderLabels = {
 
 export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
   const [searchParams] = useSearchParams()
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false)
+
+  useEffect(() => {
+    if (location.state?.showSuccessModal) {
+      setIsSuccessModalOpen(true)
+      navigate(location.pathname, { replace: true, state: {} })
+    }
+  }, [location, navigate])
 
   const [catalogUsers, setCatalogUsers] = useState<User[]>([])
   const [catalogSkills, setCatalogSkills] = useState<Skill[]>([])
@@ -130,11 +142,6 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
 
   const hasSearchQuery = searchQuery.length > 0
 
-  /*
-   * Поиск выполняется только по title навыка.
-   * После этого по authorId найденных навыков
-   * выбираются соответствующие пользователи.
-   */
   const searchUsers = useMemo(() => {
     if (!hasSearchQuery) {
       return catalogUsers
@@ -149,12 +156,6 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
     return catalogUsers.filter((user) => matchedAuthorIds.has(user.id))
   }, [catalogSkills, catalogUsers, hasSearchQuery, searchQuery])
 
-  /*
-   * Обычные секции каталога всегда формируются
-   * из полного каталога.
-   *
-   * При активном поиске они просто не отображаются.
-   */
   const popularUsers = useMemo(() => getPopularUsers(catalogUsers), [catalogUsers])
 
   const newUsers = useMemo(() => getNewUsers(catalogUsers), [catalogUsers])
@@ -175,48 +176,27 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
 
   const hasActiveFilters = hasActiveCatalogFilters(filters)
 
-  /*
-   * Единый режим выдачи включается,
-   * если активен поиск ИЛИ хотя бы один фильтр.
-   */
   const isResultsMode = hasSearchQuery || hasActiveFilters
 
   useEffect(() => {
     onFilteringChange?.(isResultsMode)
   }, [isResultsMode, onFilteringChange])
 
-  /*
-   * Сортировку сбрасываем только после полного выхода
-   * из режима результатов — когда нет ни поиска,
-   * ни активных фильтров.
-   */
   useEffect(() => {
     if (!isResultsMode) {
       setSortOrder('newest')
     }
   }, [isResultsMode])
 
-  /*
-   * При изменении поиска возвращаем пагинацию
-   * результатов в исходное состояние.
-   */
   useEffect(() => {
     setVisibleFilteredCount(INITIAL_FILTERED_USERS_COUNT)
   }, [searchQuery])
 
-  /*
-   * Сначала применяется поиск,
-   * затем поверх найденных пользователей —
-   * существующая логика FiltersSidebar.
-   */
   const resultUsers = useMemo(
     () => filterCatalogUsers(searchUsers, catalogSkills, filters),
     [catalogSkills, filters, searchUsers],
   )
 
-  /*
-   * Существующая сортировка единого списка.
-   */
   const sortedResultUsers = useMemo(() => {
     return [...resultUsers].sort((a, b) => {
       const firstDate = Date.parse(a.createdAt)
@@ -553,6 +533,10 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
           </div>
         </div>
       </Container>
+      <RegistrationSuccessModal
+        isOpen={isSuccessModalOpen}
+        onClose={() => setIsSuccessModalOpen(false)}
+      />
     </main>
   )
 }

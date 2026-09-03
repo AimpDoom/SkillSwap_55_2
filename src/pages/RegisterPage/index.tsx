@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 import { SkillOffer } from '@/entities/skill/ui/SkillOffer/SkillOffer'
 import { useCategories } from '@/entities/category/model/useCategories'
@@ -40,6 +40,7 @@ const STEP_PROMO = {
 
 export default function RegisterPage() {
   const navigate = useNavigate()
+  const location = useLocation()
   const { categories } = useCategories()
   const [previewSkill, setPreviewSkill] = useState<RegistrationSkillDraft | null>(null)
   const { currentStep, draft, saveAccount, saveProfile, saveSkill, goNext, goBack } =
@@ -64,7 +65,14 @@ export default function RegisterPage() {
 
     if (registeredUser) {
       setPreviewSkill(null)
-      navigate(ROUTES.HOME)
+      
+      const fromPath = location.state?.from
+
+      if (fromPath) {
+        navigate(fromPath, { state: { showSuccessModal: true } })
+      } else {
+        navigate(ROUTES.HOME, { state: { showSuccessModal: true } })
+      }
     }
   }
 

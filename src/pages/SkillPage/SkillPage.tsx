@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate, useLocation } from 'react-router-dom'
 
 import { fetchSubcategory, fetchCategories, fetchSkillById, fetchSkills } from '@/api/skills'
 import { fetchUserById, fetchUsers } from '@/api/users'
@@ -10,8 +10,11 @@ import { SkillOffer } from '@/entities/skill/ui/SkillOffer/SkillOffer'
 import type { User } from '@/entities/user/model/types'
 import { UserCard } from '@/entities/user/ui/UserCard/UserCard'
 
+import { getAuthUser } from '@/features/auth/model/authUtils'
+import { RegistrationSuccessModal } from '@/features/auth/ui/RegistrationSuccessModal'
 import { Container } from '@/shared/ui/Container'
 import { Pagination } from '@/shared/ui/Pagination'
+import { ROUTES } from '@/shared/lib/constants'
 
 import styles from './SkillPage.module.css'
 
@@ -19,6 +22,8 @@ const CARDS_PER_PAGE = 4
 
 export default function SkillPage() {
   const { id } = useParams<{ id: string }>()
+  const navigate = useNavigate()
+  const location = useLocation()
 
   const [skill, setSkill] = useState<Skill | null>(null)
   const [author, setAuthor] = useState<User | null>(null)
@@ -31,6 +36,15 @@ export default function SkillPage() {
 
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(false)
+
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false)
+
+  useEffect(() => {
+    if (location.state?.showSuccessModal) {
+      setIsSuccessModalOpen(true)
+      navigate(location.pathname, { replace: true, state: {} })
+    }
+  }, [location, navigate])
 
   useEffect(() => {
     async function loadSkillPage() {
@@ -121,6 +135,16 @@ export default function SkillPage() {
     )
   }, [similarUsers, currentPage])
 
+  const handleOfferExchange = () => {
+    const authUser = getAuthUser()
+
+    if (!authUser) {
+      navigate(ROUTES.REGISTER, {
+        state: { from: location.pathname },
+      })
+    }
+  }
+
   if (isLoading) {
     return (
       <main className={styles.page}>
@@ -158,6 +182,7 @@ export default function SkillPage() {
               variant="default"
               categoryName={categoryName}
               subcategoryName={subcategoryName}
+              onOfferExchange={handleOfferExchange}
             />
           </section>
         </div>
@@ -193,6 +218,11 @@ export default function SkillPage() {
           </section>
         )}
       </Container>
+
+      <RegistrationSuccessModal
+        isOpen={isSuccessModalOpen}
+        onClose={() => setIsSuccessModalOpen(false)}
+      />
     </main>
   )
 }
