@@ -12,9 +12,20 @@ type AvatarUploadButtonProps = {
   onChange?: (value: string | null) => void
   alt: string
   className?: string
+  icon?: React.ReactNode
+  avatarClassName?: string
+  uploadButtonClassName?: string
 }
 
-export function AvatarUploadButton({ value, onChange, alt, className }: AvatarUploadButtonProps) {
+export function AvatarUploadButton({
+  value,
+  onChange,
+  alt,
+  className,
+  icon,
+  avatarClassName,
+  uploadButtonClassName,
+}: AvatarUploadButtonProps) {
   const inputRef = useRef<HTMLInputElement>(null)
   const inputId = useId()
 
@@ -34,7 +45,7 @@ export function AvatarUploadButton({ value, onChange, alt, className }: AvatarUp
 
   return (
     <div className={clsx(styles.wrapper, className)}>
-      <Avatar src={value ?? undefined} alt={alt} className={styles.avatar} />
+      <Avatar src={value ?? undefined} alt={alt} className={clsx(styles.avatar, avatarClassName)} />
       <input
         ref={inputRef}
         id={inputId}
@@ -45,12 +56,12 @@ export function AvatarUploadButton({ value, onChange, alt, className }: AvatarUp
       />
       <button
         type="button"
-        className={styles.uploadButton}
+        className={clsx(styles.uploadButton, uploadButtonClassName)}
         aria-label="Загрузить фото"
         aria-controls={inputId}
         onClick={() => inputRef.current?.click()}
       >
-        <AddIcon className={styles.icon} aria-hidden="true" />
+        {icon ?? <AddIcon className={styles.icon} aria-hidden="true" />}
       </button>
     </div>
   )

@@ -1,28 +1,31 @@
 import { useState, useEffect } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 
-import axios from 'axios'
-
 import { Input } from '@/shared/ui/Input'
 import { Select } from '@/shared/ui/Select'
 import type { SelectOption } from '@/shared/ui/Select'
 import { Button } from '@/shared/ui/Button'
-import { Avatar } from '@/shared/ui/Avatar'
 import { Textarea } from '@/shared/ui/Textarea'
 import { Calendar } from '@/shared/ui/Calendar'
+import { AvatarUploadButton } from '@/shared/ui/AvatarUploadButton'
+import { Container } from '@/shared/ui/Container'
+import { fetchCities } from '@/api/cities'
 
 import styles from './ProfilePage.module.css'
 
 import editIcon from '@/shared/assets/icons/edit.svg'
-import galleryEditIcon from '@/shared/assets/icons/gallery-edit.svg'
 import requestIcon from '@/shared/assets/icons/request.svg'
 import likeIcon from '@/shared/assets/icons/like.svg'
 import userIcon from '@/shared/assets/icons/user.svg'
 import clockIcon from '@/shared/assets/icons/message-text.svg'
 import ideaIcon from '@/shared/assets/icons/idea.svg'
-import { Container } from '@/shared/ui/Container'
+import GalleryEditIcon from '@/shared/assets/icons/gallery-edit.svg?react'
+
 import type { Gender, User } from '@/entities/user/model/types'
-import type { City } from '@/entities/city/model/types'
+
+import { getAuthUser, getRegisteredUsers } from '@/features/auth/model'
+import type { AuthUser, RegisteredUser } from '@/features/auth/model'
+import { LOCAL_STORAGE_KEYS } from '@/shared/lib/constants'
 
 interface CityOption {
   value: string
@@ -30,10 +33,11 @@ interface CityOption {
 }
 
 const GENDER_OPTIONS: SelectOption[] = [
-  { value: '', label: 'Не указан' },
+  { value: 'unspecified', label: 'Не указан' },
   { value: 'male', label: 'Мужской' },
   { value: 'female', label: 'Женский' },
 ]
+
 const parseDateValue = (value: string): Date | null => {
   if (!value) return null
   const [year, month, day] = value.split('-').map(Number)
@@ -52,10 +56,10 @@ interface ProfileFormData {
   email: string
   name: string
   birthday: string
-  gender: Gender
+  gender: Gender | 'unspecified'
   city: string
   about: string
-  avatarUrl: string
+  avatarUrl: string | null
 }
 
 const MENU_ITEMS = [
@@ -66,9 +70,17 @@ const MENU_ITEMS = [
   { id: 'Личные данные', label: 'Личные данные', icon: userIcon },
 ]
 
+function saveRegisteredUsers(users: RegisteredUser[]): void {
+  localStorage.setItem(LOCAL_STORAGE_KEYS.REGISTERED_USERS, JSON.stringify(users))
+}
+
 export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState('Личные данные')
   const [cities, setCities] = useState<CityOption[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  const [saveSuccess, setSaveSuccess] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const {
     register,
@@ -76,54 +88,172 @@ export default function ProfilePage() {
     handleSubmit,
     formState: { errors },
     watch,
+    setValue,
+    reset,
   } = useForm<ProfileFormData>({
     defaultValues: {
-      email: 'Maria@gmail.com',
-      name: 'Мария',
-      birthday: '1995-10-28',
-      gender: 'female',
-      city: 'city-01',
-      about:
-        'Люблю учиться новому, особенно если это можно делать за чаем и в пижаме. Всегда готова пообщаться и обменяться чем-то интересным!',
-      avatarUrl: '',
+      email: '',
+      name: '',
+      birthday: '',
+      gender: 'unspecified',
+      city: '',
+      about: '',
+      avatarUrl: null,
     },
   })
-
-  useEffect(() => {
-    axios
-      .get<City[]>('/db/cities.json')
-      .then(({ data }) => {
-        setCities(
-          data.map((city) => ({
-            value: city.id,
-            label: city.name,
-          })),
-        )
-      })
-      .catch(console.error)
-  }, [])
 
   const avatar = watch('avatarUrl')
   const name = watch('name')
 
-  const onSubmit = (data: ProfileFormData) => {
-    const user: User = {
-      id: '',
-      name: data.name,
-      email: data.email,
-      avatarUrl: data.avatarUrl || null,
-      birthDate: data.birthday,
-      cityId: data.city,
-      gender: data.gender,
-      teachSkillId: '',
-      learnSubcategoryIds: [],
-      likesCount: 0,
-      createdAt: new Date().toISOString(),
-      about: data.about,
-      likedUserIds: [],
+  useEffect(() => {
+    const loadUserData = () => {
+      try {
+        setLoading(true)
+        setError(null)
+
+        const authUser = getAuthUser()
+
+        if (!authUser) {
+          setError('Пользователь не найден. Пожалуйста, войдите в систему.')
+          setLoading(false)
+          return
+        }
+
+        const registeredUsers = getRegisteredUsers()
+        const registeredUser = registeredUsers.find((entry) => entry.user.id === authUser.id)
+
+        if (!registeredUser) {
+          setError('Данные пользователя не найдены')
+          setLoading(false)
+          return
+        }
+
+        const userData = registeredUser.user
+
+        reset({
+          email: userData.email || '',
+          name: userData.name || '',
+          birthday: userData.birthDate || '',
+          gender: userData.gender || 'unspecified',
+          city: userData.cityId || '',
+          about: userData.about || '',
+          avatarUrl: userData.avatarUrl || null,
+        })
+
+        setLoading(false)
+      } catch (err) {
+        console.error('Error loading user data:', err)
+        setError('Ошибка загрузки данных пользователя')
+        setLoading(false)
+      }
     }
 
-    return user
+    loadUserData()
+  }, [reset])
+
+  useEffect(() => {
+    const loadCities = async () => {
+      try {
+        const citiesData = await fetchCities()
+        setCities(
+          citiesData.map((city) => ({
+            value: city.id,
+            label: city.name,
+          })),
+        )
+      } catch (err) {
+        console.error('Error loading cities:', err)
+        setError('Ошибка загрузки списка городов')
+      }
+    }
+
+    void loadCities()
+  }, [])
+
+  const onSubmit = async (data: ProfileFormData) => {
+    try {
+      setIsSubmitting(true)
+      setError(null)
+      setSaveSuccess(false)
+
+      const authUser = getAuthUser()
+
+      if (!authUser) {
+        setError('Пользователь не найден')
+        setIsSubmitting(false)
+        return
+      }
+
+      const registeredUsers = getRegisteredUsers()
+      const userIndex = registeredUsers.findIndex((entry) => entry.user.id === authUser.id)
+
+      if (userIndex === -1) {
+        setError('Данные пользователя не найдены')
+        setIsSubmitting(false)
+        return
+      }
+
+      const existingEntry = registeredUsers[userIndex]
+
+      const updatedUser: User = {
+        ...existingEntry.user,
+        name: data.name,
+        email: data.email,
+        birthDate: data.birthday,
+        gender: data.gender,
+        cityId: data.city,
+        about: data.about,
+        avatarUrl: data.avatarUrl || null,
+      }
+
+      const updatedEntry: RegisteredUser = {
+        ...existingEntry,
+        user: updatedUser,
+      }
+
+      registeredUsers[userIndex] = updatedEntry
+      saveRegisteredUsers(registeredUsers)
+
+      if (authUser.name !== data.name || authUser.email !== data.email) {
+        const updatedAuthUser: AuthUser = {
+          ...authUser,
+          name: data.name,
+          email: data.email,
+        }
+        localStorage.setItem(LOCAL_STORAGE_KEYS.AUTH_USER, JSON.stringify(updatedAuthUser))
+      }
+
+      setSaveSuccess(true)
+
+      setTimeout(() => {
+        setSaveSuccess(false)
+      }, 3000)
+    } catch (err) {
+      console.error('Error saving user data:', err)
+      setError('Ошибка сохранения данных')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  if (loading) {
+    return (
+      <main>
+        <Container>
+          <div>Загрузка...</div>
+        </Container>
+      </main>
+    )
+  }
+
+  if (error) {
+    return (
+      <main>
+        <Container>
+          <div className={styles.pageError}>{error}</div>
+        </Container>
+      </main>
+    )
   }
 
   return (
@@ -145,6 +275,10 @@ export default function ProfilePage() {
           </aside>
 
           <section className={styles.content}>
+            {saveSuccess && (
+              <div className={styles.successMessage}>Данные успешно сохранены</div>
+            )}
+
             <form className={styles.profileGrid} onSubmit={handleSubmit(onSubmit)}>
               <div className={styles.formFields}>
                 <Controller
@@ -152,6 +286,10 @@ export default function ProfilePage() {
                   control={control}
                   rules={{
                     required: 'Email обязателен',
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: 'Введите корректный email',
+                    },
                   }}
                   render={({ field: { ref: _ref, ...field } }) => (
                     <Input
@@ -213,7 +351,7 @@ export default function ProfilePage() {
                         placeholder="Выберите"
                         options={GENDER_OPTIONS}
                         value={GENDER_OPTIONS.find((option) => option.value === value) ?? null}
-                        onChange={(option) => onChange(option?.value ?? '')}
+                        onChange={(option) => onChange(option?.value ?? 'unspecified')}
                       />
                     )}
                   />
@@ -238,7 +376,7 @@ export default function ProfilePage() {
                   )}
                 />
 
-                <div className={styles.textareaContainer}>
+                <div>
                   <Textarea
                     label="О себе"
                     placeholder="Расскажите о себе..."
@@ -247,18 +385,22 @@ export default function ProfilePage() {
                     {...register('about')}
                   />
                 </div>
-                <Button className={styles.submitButton} type="submit">
-                  Сохранить
+
+                <Button className={styles.submitButton} type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? 'Сохранение...' : 'Сохранить'}
                 </Button>
               </div>
 
               <div className={styles.avatarContainer}>
-                <div className={styles.avatarWrapper}>
-                  <Avatar className={styles.profileAvatar} src={avatar} alt={name} />
-                  <button type="button" className={styles.avatarEditBtn}>
-                    <img src={galleryEditIcon} alt="" aria-hidden="true" />
-                  </button>
-                </div>
+                <AvatarUploadButton
+                  value={avatar}
+                  onChange={(newAvatar) => setValue('avatarUrl', newAvatar)}
+                  alt={name || 'Пользователь'}
+                  className={styles.avatarWrapper}
+                  avatarClassName={styles.profileAvatar}
+                  uploadButtonClassName={styles.profileUploadButton}
+                  icon={<GalleryEditIcon className={styles.profileUploadIcon} aria-hidden="true" />}
+                />
               </div>
             </form>
           </section>
