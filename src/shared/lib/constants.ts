@@ -5,6 +5,7 @@ export const ROUTES = {
   PROFILE: '/profile',
   FAVORITES: '/favorites',
   CREATE: '/create',
+  ABOUT: '/about',
   LOGIN: '/login',
   REGISTER: '/register',
   SERVER_ERROR: '/500',

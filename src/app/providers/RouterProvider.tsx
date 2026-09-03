@@ -16,6 +16,7 @@ const LoginPage = lazy(() => import('@/pages/LoginPage'))
 const RegisterPage = lazy(() => import('@/pages/RegisterPage'))
 const NotFoundPage = lazy(() => import('@/pages/ErrorPages/NotFoundPage'))
 const ServerErrorPage = lazy(() => import('@/pages/ErrorPages/Error500Page'))
+const AboutPage = lazy(() => import('@/pages/AboutPage'))
 
 function AppContent() {
   const location = useLocation()
@@ -42,6 +43,7 @@ function AppContent() {
           <Route path={ROUTES.SKILLS} element={<AllSkillsPage />} />
           <Route path={ROUTES.SKILL} element={<SkillPage />} />
           <Route path={ROUTES.FAVORITES} element={<FavoritesPage />} />
+          <Route path={ROUTES.ABOUT} element={<AboutPage />} />
 
           <Route path={ROUTES.LOGIN} element={<LoginPage />} />
           <Route path={ROUTES.REGISTER} element={<RegisterPage />} />
