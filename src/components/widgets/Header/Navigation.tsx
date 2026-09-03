@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { ROUTES } from '@/shared/lib/constants'
 
 import { AllSkillsDropdown } from './AllSkillsDropdown'
 import styles from './Navigation.module.css'
@@ -31,9 +33,9 @@ export function Navigation() {
 
   return (
     <nav className={styles.navigation} aria-label="Основная навигация">
-      <a className={styles.link} href="#about">
+      <Link className={styles.link} to={ROUTES.ABOUT}>
         О проекте
-      </a>
+      </Link>
 
       <div ref={skillsMenuRef}>
         <button

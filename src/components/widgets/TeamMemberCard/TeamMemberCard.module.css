@@ -1,0 +1,81 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 672px;
+  height: 435px;
+  padding: 40px 33px;
+  border-radius: var(--border-radius-s);
+  background: var(--color-bg-primary);
+  box-sizing: border-box;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.avatarWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.name {
+  margin: 0;
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-s);
+}
+
+.role {
+  margin: 0;
+}
+
+.about {
+  overflow-y: auto;
+}
+
+.description {
+  margin: 12px 0 0;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: auto;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-primary);
+  text-decoration: underline;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.githubIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}

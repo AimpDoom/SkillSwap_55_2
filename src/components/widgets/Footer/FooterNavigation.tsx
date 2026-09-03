@@ -8,9 +8,9 @@ export function FooterNavigation() {
   return (
     <nav className={styles.navigation} aria-label="Навигация в подвале">
       <div className={styles.column}>
-        <a className={styles.link} href="#about">
+        <Link className={styles.link} to={ROUTES.ABOUT}>
           О проекте
-        </a>
+        </Link>
 
         <Link className={styles.link} to={ROUTES.SKILLS}>
           Все навыки
