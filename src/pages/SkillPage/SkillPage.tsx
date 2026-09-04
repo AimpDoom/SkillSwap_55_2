@@ -9,12 +9,13 @@ import type { Skill } from '@/entities/skill/model/types'
 import { SkillOffer } from '@/entities/skill/ui/SkillOffer/SkillOffer'
 import type { User } from '@/entities/user/model/types'
 import { UserCard } from '@/entities/user/ui/UserCard/UserCard'
+import type { SwapRequest } from '@/entities/request/model/types'
 
 import { getAuthUser } from '@/features/auth/model/authUtils'
 import { RegistrationSuccessModal } from '@/features/auth/ui/RegistrationSuccessModal'
 import { Container } from '@/shared/ui/Container'
 import { Pagination } from '@/shared/ui/Pagination'
-import { ROUTES } from '@/shared/lib/constants'
+import { ROUTES, LOCAL_STORAGE_KEYS } from '@/shared/lib/constants'
 
 import styles from './SkillPage.module.css'
 
@@ -38,6 +39,7 @@ export default function SkillPage() {
   const [error, setError] = useState(false)
 
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false)
+  const [isExchangeRequested, setIsExchangeRequested] = useState(false)
 
   useEffect(() => {
     if (location.state?.showSuccessModal) {
@@ -112,6 +114,25 @@ export default function SkillPage() {
         setCategoryName(category?.name ?? '')
         setSubcategoryName(subcategory?.name ?? '')
         setSimilarUsers(relatedUsers)
+
+        const authUser = getAuthUser()
+        if (authUser) {
+          try {
+            const rawRequests = localStorage.getItem(LOCAL_STORAGE_KEYS.REQUESTS)
+            const requests: SwapRequest[] = rawRequests ? JSON.parse(rawRequests) : []
+
+            const hasDuplicate = requests.some(
+              (req) =>
+                req.fromUserId === authUser.id &&
+                req.toUserId === currentSkill.authorId &&
+                req.skillId === currentSkill.id,
+            )
+
+            setIsExchangeRequested(hasDuplicate)
+          } catch {
+            setIsExchangeRequested(false)
+          }
+        }
       } catch {
         setError(true)
       } finally {
@@ -142,6 +163,45 @@ export default function SkillPage() {
       navigate(ROUTES.REGISTER, {
         state: { from: location.pathname },
       })
+      return
+    }
+
+    if (!skill) return
+
+    try {
+      const rawRequests = localStorage.getItem(LOCAL_STORAGE_KEYS.REQUESTS)
+      const requests: SwapRequest[] = rawRequests ? JSON.parse(rawRequests) : []
+
+      const isDuplicate = requests.some(
+        (req) =>
+          req.fromUserId === authUser.id &&
+          req.toUserId === skill.authorId &&
+          req.skillId === skill.id,
+      )
+
+      if (isDuplicate) {
+        setIsExchangeRequested(true)
+        return
+      }
+
+      const now = new Date().toISOString()
+
+      const newRequest: SwapRequest = {
+        id: 'req_' + Math.random().toString(36).substring(2, 11) + '_' + Date.now(),
+        skillId: skill.id,
+        fromUserId: authUser.id,
+        toUserId: skill.authorId,
+        status: 'pending',
+        createdAt: now,
+        updatedAt: now,
+      }
+
+      requests.push(newRequest)
+      localStorage.setItem(LOCAL_STORAGE_KEYS.REQUESTS, JSON.stringify(requests))
+
+      setIsExchangeRequested(true)
+    } catch (e) {
+      console.error('Ошибка сохранения запроса в localStorage:', e)
     }
   }
 
@@ -179,7 +239,7 @@ export default function SkillPage() {
           <section className={styles.skill}>
             <SkillOffer
               skill={skill}
-              variant="default"
+              variant={isExchangeRequested ? 'requested' : 'default'}
               categoryName={categoryName}
               subcategoryName={subcategoryName}
               onOfferExchange={handleOfferExchange}
