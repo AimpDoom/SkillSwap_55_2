@@ -1,13 +1,21 @@
 import { configureStore } from '@reduxjs/toolkit'
-// Импортируй свои slice'ы здесь по мере их создания:
-// import skillsReducer from '@/entities/skill/model/skillsSlice'
-// import authReducer from '@/features/auth/model/authSlice'
+
+import { notificationsReducer, persistNotifications } from '@/entities/notification/model'
 
 export const store = configureStore({
   reducer: {
-    // skills: skillsReducer,
-    // auth: authReducer,
+    notifications: notificationsReducer,
   },
+})
+
+let previousNotificationItems = store.getState().notifications.items
+
+store.subscribe(() => {
+  const items = store.getState().notifications.items
+  if (items !== previousNotificationItems) {
+    previousNotificationItems = items
+    persistNotifications(items)
+  }
 })
 
 export type RootState = ReturnType<typeof store.getState>

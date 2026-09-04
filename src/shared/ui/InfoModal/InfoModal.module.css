@@ -4,7 +4,7 @@
   max-width: 100%;
   background-color: var(--color-bg-primary);
   border-radius: var(--border-radius-m);
-  padding: 60px 40px;
+  padding: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +19,8 @@
   margin-bottom: 32px;
 }
 
-.icon {
+.iconWrapper img,
+.iconWrapper svg {
   width: 75px;
   height: 75px;
   display: block;

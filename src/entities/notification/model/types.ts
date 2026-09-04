@@ -9,7 +9,7 @@ export interface Notification {
 }
 
 export interface NotificationCardProps {
-  notifications?: Notification[];
+  notifications: Notification[];
   onClose?: () => void;
   onNotificationRead?: (id: string | number) => void;
   onMarkAllAsRead?: () => void;

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useParams, useNavigate, useLocation } from 'react-router-dom'
 
 import { fetchSubcategory, fetchCategories, fetchSkillById, fetchSkills } from '@/api/skills'
@@ -13,18 +13,23 @@ import type { SwapRequest } from '@/entities/request/model/types'
 
 import { getAuthUser } from '@/features/auth/model/authUtils'
 import { RegistrationSuccessModal } from '@/features/auth/ui/RegistrationSuccessModal'
+import { ExchangeOfferedModal } from '@/features/exchange/ui/ExchangeOfferedModal'
 import { Container } from '@/shared/ui/Container'
 import { Pagination } from '@/shared/ui/Pagination'
 import { ROUTES, LOCAL_STORAGE_KEYS } from '@/shared/lib/constants'
+import { createExchangeAcceptedNotification, notificationCreated } from '@/entities/notification/model'
+import { useAppDispatch } from '@/store/hooks'
 
 import styles from './SkillPage.module.css'
 
 const CARDS_PER_PAGE = 4
+const EXCHANGE_ACCEPTED_DELAY_MS = 2000
 
 export default function SkillPage() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const location = useLocation()
+  const dispatch = useAppDispatch()
 
   const [skill, setSkill] = useState<Skill | null>(null)
   const [author, setAuthor] = useState<User | null>(null)
@@ -40,6 +45,13 @@ export default function SkillPage() {
 
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false)
   const [isExchangeRequested, setIsExchangeRequested] = useState(false)
+  const [isExchangeOfferedModalOpen, setIsExchangeOfferedModalOpen] = useState(false)
+
+  const exchangeAcceptedTimeoutRef = useRef<ReturnType<typeof setTimeout>>()
+
+  useEffect(() => {
+    return () => clearTimeout(exchangeAcceptedTimeoutRef.current)
+  }, [])
 
   useEffect(() => {
     if (location.state?.showSuccessModal) {
@@ -166,7 +178,7 @@ export default function SkillPage() {
       return
     }
 
-    if (!skill) return
+    if (!skill || !author) return
 
     try {
       const rawRequests = localStorage.getItem(LOCAL_STORAGE_KEYS.REQUESTS)
@@ -191,7 +203,7 @@ export default function SkillPage() {
         skillId: skill.id,
         fromUserId: authUser.id,
         toUserId: skill.authorId,
-        status: 'pending',
+        status: 'accepted',
         createdAt: now,
         updatedAt: now,
       }
@@ -200,6 +212,11 @@ export default function SkillPage() {
       localStorage.setItem(LOCAL_STORAGE_KEYS.REQUESTS, JSON.stringify(requests))
 
       setIsExchangeRequested(true)
+      setIsExchangeOfferedModalOpen(true)
+
+      exchangeAcceptedTimeoutRef.current = setTimeout(() => {
+        dispatch(notificationCreated(createExchangeAcceptedNotification(author, skill.id)))
+      }, EXCHANGE_ACCEPTED_DELAY_MS)
     } catch (e) {
       console.error('Ошибка сохранения запроса в localStorage:', e)
     }
@@ -282,6 +299,11 @@ export default function SkillPage() {
       <RegistrationSuccessModal
         isOpen={isSuccessModalOpen}
         onClose={() => setIsSuccessModalOpen(false)}
+      />
+
+      <ExchangeOfferedModal
+        isOpen={isExchangeOfferedModalOpen}
+        onClose={() => setIsExchangeOfferedModalOpen(false)}
       />
     </main>
   )

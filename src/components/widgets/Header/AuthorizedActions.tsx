@@ -1,10 +1,13 @@
-import { useState, useRef, useEffect } from 'react'
+import { useRef, useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import LikeIcon from '@/shared/assets/icons/like.svg?react'
 import NotificationIcon from '@/shared/assets/icons/notification.svg?react'
 import { Avatar } from '@/shared/ui/Avatar'
 import { IconButton } from '@/shared/ui/IconButton'
+import NotificationBanner from '@/shared/ui/NotificationBanner'
 import NotificationCard from '@/entities/notification/ui/NotificationCard'
-import { mockNotifications } from '@/entities/notification/model'
+import { clearRead, dismissToast, markAllAsRead, notificationRead } from '@/entities/notification/model'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { ProfileMenu } from './ProfileMenu'
 import styles from './AuthorizedActions.module.css'
 
@@ -14,9 +17,15 @@ type AuthorizedActionsProps = {
 }
 
 export function AuthorizedActions({ userName, avatarSrc }: AuthorizedActionsProps) {
+  const dispatch = useAppDispatch()
+  const navigate = useNavigate()
+
+  const notifications = useAppSelector((state) => state.notifications.items)
+  const toastIds = useAppSelector((state) => state.notifications.toastIds)
+  const unreadCount = notifications.filter((notification) => !notification.isRead).length
+
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false)
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false)
-  const [unreadCount, setUnreadCount] = useState(mockNotifications.filter((n) => !n.isRead).length)
 
   const toggleProfileMenu = () => {
     setIsProfileMenuOpen((prev) => !prev)
@@ -68,9 +77,11 @@ export function AuthorizedActions({ userName, avatarSrc }: AuthorizedActionsProp
     setIsNotificationsOpen(false)
   }
 
-  const handleUnreadCountChange = (count: number) => {
-    setUnreadCount(count)
-  }
+  const toastNotifications = toastIds
+    .map((toastId) => notifications.find((notification) => notification.id === toastId))
+    .filter((notification): notification is (typeof notifications)[number] =>
+      notification !== undefined && !notification.isRead,
+    )
 
   return (
     <div className={styles.actions}>
@@ -88,9 +99,11 @@ export function AuthorizedActions({ userName, avatarSrc }: AuthorizedActionsProp
         {isNotificationsOpen && (
           <div className={styles.notificationPopup}>
             <NotificationCard
-              notifications={mockNotifications}
+              notifications={notifications}
               onClose={closeNotifications}
-              onUnreadCountChange={handleUnreadCountChange}
+              onNotificationRead={(notificationId) => dispatch(notificationRead(notificationId))}
+              onMarkAllAsRead={() => dispatch(markAllAsRead())}
+              onClearRead={() => dispatch(clearRead())}
             />
           </div>
         )}
@@ -107,6 +120,22 @@ export function AuthorizedActions({ userName, avatarSrc }: AuthorizedActionsProp
           <ProfileMenu onClose={() => setIsProfileMenuOpen(false)} />
         )}
       </div>
+
+      {toastNotifications.length > 0 && (
+        <div className={styles.toastStack}>
+          {toastNotifications.map((notification) => (
+            <NotificationBanner
+              key={notification.id}
+              message={`${notification.user} ${notification.message}`}
+              onClose={() => dispatch(dismissToast(notification.id))}
+              onNavigate={() => {
+                dispatch(notificationRead(notification.id))
+                navigate(`/skill/${notification.skillId}`)
+              }}
+            />
+          ))}
+        </div>
+      )}
     </div>
   )
 }

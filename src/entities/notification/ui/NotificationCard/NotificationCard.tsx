@@ -1,34 +1,19 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/shared/ui/Button';
 import { Text } from '@/shared/ui/Text';
 import IdeaIcon from '@/shared/assets/icons/idea.svg?react';
 import { Notification, NotificationCardProps } from '../../model/types';
-import { mockNotifications } from '../../model/constants';
 import styles from './NotificationCard.module.css';
 
-interface NotificationCardExtendedProps extends NotificationCardProps {
-  onUnreadCountChange?: (count: number) => void;
-}
-
-const NotificationCard: React.FC<NotificationCardExtendedProps> = ({
-  notifications = mockNotifications,
+const NotificationCard: React.FC<NotificationCardProps> = ({
+  notifications,
   onClose,
   onNotificationRead,
   onMarkAllAsRead,
   onClearRead,
-  onUnreadCountChange,
 }) => {
   const navigate = useNavigate();
-  const [notificationList, setNotificationList] = useState<Notification[]>(notifications);
-
-  // Подсчет непрочитанных уведомлений
-  const unreadCount = notificationList.filter((n) => !n.isRead).length;
-
-  // Уведомляем родителя об изменении количества непрочитанных
-  useEffect(() => {
-    onUnreadCountChange?.(unreadCount);
-  }, [unreadCount, onUnreadCountChange]);
 
   // Закрытие по Escape
   useEffect(() => {
@@ -45,22 +30,15 @@ const NotificationCard: React.FC<NotificationCardExtendedProps> = ({
   }, [onClose]);
 
   // Разделяем уведомления на новые и просмотренные
-  const newNotifications = notificationList.filter((n) => !n.isRead);
-  const readNotifications = notificationList.filter((n) => n.isRead);
+  const newNotifications = notifications.filter((n) => !n.isRead);
+  const readNotifications = notifications.filter((n) => n.isRead);
 
   // Обработчик перехода на страницу навыка
   const handleNavigateToSkill = useCallback(
     (skillId: string, notificationId: string | number) => {
-      // Отмечаем уведомление как прочитанное
-      setNotificationList((prev) =>
-        prev.map((n) =>
-          n.id === notificationId ? { ...n, isRead: true } : n
-        )
-      );
-      
       onNotificationRead?.(notificationId);
       navigate(`/skill/${skillId}`);
-      
+
       if (onClose) onClose();
     },
     [navigate, onClose, onNotificationRead]
@@ -68,15 +46,11 @@ const NotificationCard: React.FC<NotificationCardExtendedProps> = ({
 
   // Обработчик отметки всех как прочитанных
   const handleMarkAllAsRead = useCallback(() => {
-    setNotificationList((prev) =>
-      prev.map((n) => ({ ...n, isRead: true }))
-    );
     onMarkAllAsRead?.();
   }, [onMarkAllAsRead]);
 
   // Обработчик очистки просмотренных
   const handleClearRead = useCallback(() => {
-    setNotificationList((prev) => prev.filter((n) => !n.isRead));
     onClearRead?.();
   }, [onClearRead]);
 
@@ -168,7 +142,7 @@ const NotificationCard: React.FC<NotificationCardExtendedProps> = ({
       )}
 
       {/* Пустое состояние */}
-      {notificationList.length === 0 && (
+      {notifications.length === 0 && (
         <div className={styles.emptyState}>
           <IdeaIcon className={styles.emptyIcon} />
           <Text variant="body" className={styles.emptyText}>

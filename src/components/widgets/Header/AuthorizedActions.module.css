@@ -56,6 +56,17 @@
   animation: slide-down 0.2s ease;
 }
 
+/* Стек тостов о принятии обмена */
+.toastStack {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 /* Анимации для уведомлений */
 @keyframes badge-appear {
   0% {
