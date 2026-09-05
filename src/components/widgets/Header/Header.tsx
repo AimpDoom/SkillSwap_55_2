@@ -14,11 +14,18 @@ export type HeaderVariant = 'default' | 'authorized' | 'minimal'
 type HeaderProps = {
   variant?: HeaderVariant
   onClose?: () => void
+  userId?: string
   userName?: string
   avatarSrc?: string
 }
 
-export function Header({ variant = 'default', onClose, userName = '', avatarSrc }: HeaderProps) {
+export function Header({
+  variant = 'default',
+  onClose,
+  userId = '',
+  userName = '',
+  avatarSrc,
+}: HeaderProps) {
   if (variant === 'minimal') {
     return (
       <header className={styles.minimalHeader}>
@@ -55,7 +62,7 @@ export function Header({ variant = 'default', onClose, userName = '', avatarSrc 
           <ThemeButton />
 
           {variant === 'authorized' ? (
-            <AuthorizedActions userName={userName} avatarSrc={avatarSrc} />
+            <AuthorizedActions userId={userId} userName={userName} avatarSrc={avatarSrc} />
           ) : (
             <AuthActions />
           )}

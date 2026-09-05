@@ -1,9 +1,4 @@
-export type RequestStatus =
-  | 'pending'
-  | 'accepted'
-  | 'rejected'
-  | 'inProgress'
-  | 'done'
+export type RequestStatus = 'pending' | 'accepted' | 'rejected' | 'inProgress' | 'done'
 
 export interface SwapRequest {
   id: string

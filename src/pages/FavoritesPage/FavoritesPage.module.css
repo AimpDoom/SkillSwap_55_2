@@ -1,0 +1,38 @@
+.page {
+  padding-block: 32px 64px;
+}
+
+.title {
+  margin: 0 0 24px;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 324px));
+  gap: 24px;
+}
+
+.cardsGrid > * {
+  width: 100%;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.emptyMessage {
+  margin: 0;
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-s);
+  color: var(--color-text-secondary);
+}

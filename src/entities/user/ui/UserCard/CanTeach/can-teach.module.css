@@ -12,15 +12,14 @@
   display: flex;
   gap: 4px;
   max-width: 100%;
-
 }
 
 .badgeContainer {
   display: flex;
   flex-direction: column;
-  gap: 8px
+  gap: 8px;
 }
 
 .profileBadgeContainer {
-  gap: 14px
+  gap: 14px;
 }

@@ -7,11 +7,7 @@ import LightBulbImage from '@/shared/assets/images/light-bulb.svg?react'
 export default function LoginPage() {
   return (
     <AuthLayout
-      heading={
-        <Text variant="h2">
-          Вход
-        </Text>
-      }
+      heading={<Text variant="h2">Вход</Text>}
       promo={
         <PromoPanel
           image={<LightBulbImage />}

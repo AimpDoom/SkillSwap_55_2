@@ -24,7 +24,9 @@ export function CanTeach({ skillId, header, variant }: CanTeachProperties) {
   }, [skillId])
 
   return (
-    <div className={clsx(styles.badgeContainer, variant === "profile"  && styles.profileBadgeContainer)}>
+    <div
+      className={clsx(styles.badgeContainer, variant === 'profile' && styles.profileBadgeContainer)}
+    >
       <Text variant="h4" className={styles.mainText}>
         {header}
       </Text>

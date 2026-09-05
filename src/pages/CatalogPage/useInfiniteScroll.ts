@@ -6,11 +6,7 @@ type UseInfiniteScrollProps = {
   isLoading: boolean
 }
 
-export const useInfiniteScroll = ({
-  onLoadMore,
-  hasMore,
-  isLoading,
-}: UseInfiniteScrollProps) => {
+export const useInfiniteScroll = ({ onLoadMore, hasMore, isLoading }: UseInfiniteScrollProps) => {
   const observerRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {

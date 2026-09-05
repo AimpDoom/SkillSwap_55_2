@@ -8,6 +8,10 @@
   gap: 20px;
 }
 
+.catalogCard {
+  max-width: 324px;
+}
+
 .userProfileCard {
   padding: 32px;
 }

@@ -17,11 +17,7 @@
     "likesCount": 7,
     "createdAt": "2025-01-01T00:00:00Z",
     "about": "Работаю, учусь и постоянно пробую новые хобби.",
-    "likedUserIds": [
-      "user-05",
-      "user-13",
-      "user-29"
-    ]
+    "likedUserIds": ["user-05", "user-13", "user-29"]
   },
   {
     "id": "user-02",
@@ -42,11 +38,7 @@
     "likesCount": 20,
     "createdAt": "2025-12-08T03:00:00Z",
     "about": "Люблю практику и спокойный темп обучения.",
-    "likedUserIds": [
-      "user-06",
-      "user-14",
-      "user-30"
-    ]
+    "likedUserIds": ["user-06", "user-14", "user-30"]
   },
   {
     "id": "user-03",
@@ -66,11 +58,7 @@
     "likesCount": 33,
     "createdAt": "2025-11-15T06:00:00Z",
     "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
-    "likedUserIds": [
-      "user-07",
-      "user-15",
-      "user-31"
-    ]
+    "likedUserIds": ["user-07", "user-15", "user-31"]
   },
   {
     "id": "user-04",
@@ -91,11 +79,7 @@
     "likesCount": 46,
     "createdAt": "2025-10-22T09:00:00Z",
     "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
-    "likedUserIds": [
-      "user-08",
-      "user-16",
-      "user-32"
-    ]
+    "likedUserIds": ["user-08", "user-16", "user-32"]
   },
   {
     "id": "user-05",
@@ -115,11 +99,7 @@
     "likesCount": 59,
     "createdAt": "2025-09-02T12:00:00Z",
     "about": "Люблю разбираться в новых темах и применять знания на практике.",
-    "likedUserIds": [
-      "user-09",
-      "user-17",
-      "user-33"
-    ]
+    "likedUserIds": ["user-09", "user-17", "user-33"]
   },
   {
     "id": "user-06",
@@ -140,11 +120,7 @@
     "likesCount": 72,
     "createdAt": "2025-08-09T15:00:00Z",
     "about": "Работаю, учусь и постоянно пробую новые хобби.",
-    "likedUserIds": [
-      "user-10",
-      "user-18",
-      "user-34"
-    ]
+    "likedUserIds": ["user-10", "user-18", "user-34"]
   },
   {
     "id": "user-07",
@@ -164,11 +140,7 @@
     "likesCount": 85,
     "createdAt": "2025-07-16T18:00:00Z",
     "about": "Люблю практику и спокойный темп обучения.",
-    "likedUserIds": [
-      "user-11",
-      "user-19",
-      "user-35"
-    ]
+    "likedUserIds": ["user-11", "user-19", "user-35"]
   },
   {
     "id": "user-08",
@@ -189,11 +161,7 @@
     "likesCount": 98,
     "createdAt": "2025-06-23T21:00:00Z",
     "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
-    "likedUserIds": [
-      "user-12",
-      "user-20",
-      "user-36"
-    ]
+    "likedUserIds": ["user-12", "user-20", "user-36"]
   },
   {
     "id": "user-09",
@@ -204,20 +172,11 @@
     "cityId": "city-09",
     "gender": "female",
     "teachSkillId": "skill-009",
-    "learnSubcategoryIds": [
-      "photography",
-      "video-editing",
-      "music-sound",
-      "acting"
-    ],
+    "learnSubcategoryIds": ["photography", "video-editing", "music-sound", "acting"],
     "likesCount": 111,
     "createdAt": "2025-05-03T00:00:00Z",
     "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
-    "likedUserIds": [
-      "user-13",
-      "user-21",
-      "user-37"
-    ]
+    "likedUserIds": ["user-13", "user-21", "user-37"]
   },
   {
     "id": "user-10",
@@ -238,11 +197,7 @@
     "likesCount": 124,
     "createdAt": "2025-04-10T03:00:00Z",
     "about": "Люблю разбираться в новых темах и применять знания на практике.",
-    "likedUserIds": [
-      "user-14",
-      "user-22",
-      "user-38"
-    ]
+    "likedUserIds": ["user-14", "user-22", "user-38"]
   },
   {
     "id": "user-11",
@@ -253,20 +208,11 @@
     "cityId": "city-11",
     "gender": "female",
     "teachSkillId": "skill-011",
-    "learnSubcategoryIds": [
-      "music-sound",
-      "acting",
-      "creative-writing",
-      "art-therapy"
-    ],
+    "learnSubcategoryIds": ["music-sound", "acting", "creative-writing", "art-therapy"],
     "likesCount": 137,
     "createdAt": "2025-03-17T06:00:00Z",
     "about": "Работаю, учусь и постоянно пробую новые хобби.",
-    "likedUserIds": [
-      "user-15",
-      "user-23",
-      "user-39"
-    ]
+    "likedUserIds": ["user-15", "user-23", "user-39"]
   },
   {
     "id": "user-12",
@@ -287,11 +233,7 @@
     "likesCount": 150,
     "createdAt": "2025-02-24T09:00:00Z",
     "about": "Люблю практику и спокойный темп обучения.",
-    "likedUserIds": [
-      "user-16",
-      "user-24",
-      "user-40"
-    ]
+    "likedUserIds": ["user-16", "user-24", "user-40"]
   },
   {
     "id": "user-13",
@@ -302,20 +244,11 @@
     "cityId": "city-13",
     "gender": "female",
     "teachSkillId": "skill-013",
-    "learnSubcategoryIds": [
-      "creative-writing",
-      "art-therapy",
-      "decor-diy",
-      "english"
-    ],
+    "learnSubcategoryIds": ["creative-writing", "art-therapy", "decor-diy", "english"],
     "likesCount": 12,
     "createdAt": "2025-01-04T12:00:00Z",
     "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
-    "likedUserIds": [
-      "user-17",
-      "user-25",
-      "user-41"
-    ]
+    "likedUserIds": ["user-17", "user-25", "user-41"]
   },
   {
     "id": "user-14",
@@ -326,21 +259,11 @@
     "cityId": "city-14",
     "gender": "male",
     "teachSkillId": "skill-014",
-    "learnSubcategoryIds": [
-      "art-therapy",
-      "decor-diy",
-      "english",
-      "french",
-      "project-management"
-    ],
+    "learnSubcategoryIds": ["art-therapy", "decor-diy", "english", "french", "project-management"],
     "likesCount": 25,
     "createdAt": "2025-12-11T15:00:00Z",
     "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
-    "likedUserIds": [
-      "user-18",
-      "user-26",
-      "user-42"
-    ]
+    "likedUserIds": ["user-18", "user-26", "user-42"]
   },
   {
     "id": "user-15",
@@ -351,20 +274,11 @@
     "cityId": "city-15",
     "gender": "female",
     "teachSkillId": "skill-015",
-    "learnSubcategoryIds": [
-      "decor-diy",
-      "english",
-      "french",
-      "spanish"
-    ],
+    "learnSubcategoryIds": ["decor-diy", "english", "french", "spanish"],
     "likesCount": 38,
     "createdAt": "2025-11-18T18:00:00Z",
     "about": "Люблю разбираться в новых темах и применять знания на практике.",
-    "likedUserIds": [
-      "user-19",
-      "user-27",
-      "user-43"
-    ]
+    "likedUserIds": ["user-19", "user-27", "user-43"]
   },
   {
     "id": "user-16",
@@ -375,21 +289,11 @@
     "cityId": "city-01",
     "gender": "female",
     "teachSkillId": "skill-016",
-    "learnSubcategoryIds": [
-      "english",
-      "french",
-      "spanish",
-      "german",
-      "entrepreneurship"
-    ],
+    "learnSubcategoryIds": ["english", "french", "spanish", "german", "entrepreneurship"],
     "likesCount": 51,
     "createdAt": "2025-10-25T21:00:00Z",
     "about": "Работаю, учусь и постоянно пробую новые хобби.",
-    "likedUserIds": [
-      "user-20",
-      "user-28",
-      "user-44"
-    ]
+    "likedUserIds": ["user-20", "user-28", "user-44"]
   },
   {
     "id": "user-17",
@@ -400,20 +304,11 @@
     "cityId": "city-02",
     "gender": "male",
     "teachSkillId": "skill-017",
-    "learnSubcategoryIds": [
-      "french",
-      "spanish",
-      "german",
-      "chinese"
-    ],
+    "learnSubcategoryIds": ["french", "spanish", "german", "chinese"],
     "likesCount": 64,
     "createdAt": "2025-09-05T00:00:00Z",
     "about": "Люблю практику и спокойный темп обучения.",
-    "likedUserIds": [
-      "user-21",
-      "user-29",
-      "user-45"
-    ]
+    "likedUserIds": ["user-21", "user-29", "user-45"]
   },
   {
     "id": "user-18",
@@ -424,21 +319,11 @@
     "cityId": "city-03",
     "gender": "male",
     "teachSkillId": "skill-018",
-    "learnSubcategoryIds": [
-      "spanish",
-      "german",
-      "chinese",
-      "japanese",
-      "drawing-illustration"
-    ],
+    "learnSubcategoryIds": ["spanish", "german", "chinese", "japanese", "drawing-illustration"],
     "likesCount": 77,
     "createdAt": "2025-08-12T03:00:00Z",
     "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
-    "likedUserIds": [
-      "user-22",
-      "user-30",
-      "user-46"
-    ]
+    "likedUserIds": ["user-22", "user-30", "user-46"]
   },
   {
     "id": "user-19",
@@ -449,20 +334,11 @@
     "cityId": "city-04",
     "gender": "female",
     "teachSkillId": "skill-019",
-    "learnSubcategoryIds": [
-      "german",
-      "chinese",
-      "japanese",
-      "language-exams"
-    ],
+    "learnSubcategoryIds": ["german", "chinese", "japanese", "language-exams"],
     "likesCount": 90,
     "createdAt": "2025-07-19T06:00:00Z",
     "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
-    "likedUserIds": [
-      "user-23",
-      "user-31",
-      "user-47"
-    ]
+    "likedUserIds": ["user-23", "user-31", "user-47"]
   },
   {
     "id": "user-20",
@@ -483,11 +359,7 @@
     "likesCount": 103,
     "createdAt": "2025-06-26T09:00:00Z",
     "about": "Люблю разбираться в новых темах и применять знания на практике.",
-    "likedUserIds": [
-      "user-24",
-      "user-32",
-      "user-48"
-    ]
+    "likedUserIds": ["user-24", "user-32", "user-48"]
   },
   {
     "id": "user-21",
@@ -507,11 +379,7 @@
     "likesCount": 116,
     "createdAt": "2025-05-06T12:00:00Z",
     "about": "Работаю, учусь и постоянно пробую новые хобби.",
-    "likedUserIds": [
-      "user-25",
-      "user-33",
-      "user-49"
-    ]
+    "likedUserIds": ["user-25", "user-33", "user-49"]
   },
   {
     "id": "user-22",
@@ -532,11 +400,7 @@
     "likesCount": 129,
     "createdAt": "2025-04-13T15:00:00Z",
     "about": "Люблю практику и спокойный темп обучения.",
-    "likedUserIds": [
-      "user-26",
-      "user-34",
-      "user-50"
-    ]
+    "likedUserIds": ["user-26", "user-34", "user-50"]
   },
   {
     "id": "user-23",
@@ -556,11 +420,7 @@
     "likesCount": 142,
     "createdAt": "2025-03-20T18:00:00Z",
     "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
-    "likedUserIds": [
-      "user-27",
-      "user-35",
-      "user-01"
-    ]
+    "likedUserIds": ["user-27", "user-35", "user-01"]
   },
   {
     "id": "user-24",
@@ -581,11 +441,7 @@
     "likesCount": 4,
     "createdAt": "2025-02-27T21:00:00Z",
     "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
-    "likedUserIds": [
-      "user-28",
-      "user-36",
-      "user-02"
-    ]
+    "likedUserIds": ["user-28", "user-36", "user-02"]
   },
   {
     "id": "user-25",
@@ -596,20 +452,11 @@
     "cityId": "city-10",
     "gender": "female",
     "teachSkillId": "skill-025",
-    "learnSubcategoryIds": [
-      "cognitive-techniques",
-      "speed-reading",
-      "teaching-skills",
-      "coaching"
-    ],
+    "learnSubcategoryIds": ["cognitive-techniques", "speed-reading", "teaching-skills", "coaching"],
     "likesCount": 17,
     "createdAt": "2025-01-07T00:00:00Z",
     "about": "Люблю разбираться в новых темах и применять знания на практике.",
-    "likedUserIds": [
-      "user-29",
-      "user-37",
-      "user-03"
-    ]
+    "likedUserIds": ["user-29", "user-37", "user-03"]
   },
   {
     "id": "user-26",
@@ -630,11 +477,7 @@
     "likesCount": 30,
     "createdAt": "2025-12-14T03:00:00Z",
     "about": "Работаю, учусь и постоянно пробую новые хобби.",
-    "likedUserIds": [
-      "user-30",
-      "user-38",
-      "user-04"
-    ]
+    "likedUserIds": ["user-30", "user-38", "user-04"]
   },
   {
     "id": "user-27",
@@ -654,11 +497,7 @@
     "likesCount": 43,
     "createdAt": "2025-11-21T06:00:00Z",
     "about": "Люблю практику и спокойный темп обучения.",
-    "likedUserIds": [
-      "user-31",
-      "user-39",
-      "user-05"
-    ]
+    "likedUserIds": ["user-31", "user-39", "user-05"]
   },
   {
     "id": "user-28",
@@ -679,11 +518,7 @@
     "likesCount": 56,
     "createdAt": "2025-10-01T09:00:00Z",
     "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
-    "likedUserIds": [
-      "user-32",
-      "user-40",
-      "user-06"
-    ]
+    "likedUserIds": ["user-32", "user-40", "user-06"]
   },
   {
     "id": "user-29",
@@ -694,20 +529,11 @@
     "cityId": "city-14",
     "gender": "male",
     "teachSkillId": "skill-029",
-    "learnSubcategoryIds": [
-      "cleaning-organization",
-      "home-finances",
-      "cooking",
-      "home-plants"
-    ],
+    "learnSubcategoryIds": ["cleaning-organization", "home-finances", "cooking", "home-plants"],
     "likesCount": 69,
     "createdAt": "2025-09-08T12:00:00Z",
     "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
-    "likedUserIds": [
-      "user-33",
-      "user-41",
-      "user-07"
-    ]
+    "likedUserIds": ["user-33", "user-41", "user-07"]
   },
   {
     "id": "user-30",
@@ -718,21 +544,11 @@
     "cityId": "city-15",
     "gender": "male",
     "teachSkillId": "skill-030",
-    "learnSubcategoryIds": [
-      "home-finances",
-      "cooking",
-      "home-plants",
-      "repair",
-      "art-therapy"
-    ],
+    "learnSubcategoryIds": ["home-finances", "cooking", "home-plants", "repair", "art-therapy"],
     "likesCount": 82,
     "createdAt": "2025-08-15T15:00:00Z",
     "about": "Люблю разбираться в новых темах и применять знания на практике.",
-    "likedUserIds": [
-      "user-34",
-      "user-42",
-      "user-08"
-    ]
+    "likedUserIds": ["user-34", "user-42", "user-08"]
   },
   {
     "id": "user-31",
@@ -743,20 +559,11 @@
     "cityId": "city-01",
     "gender": "female",
     "teachSkillId": "skill-031",
-    "learnSubcategoryIds": [
-      "cooking",
-      "home-plants",
-      "repair",
-      "storage"
-    ],
+    "learnSubcategoryIds": ["cooking", "home-plants", "repair", "storage"],
     "likesCount": 95,
     "createdAt": "2025-07-22T18:00:00Z",
     "about": "Работаю, учусь и постоянно пробую новые хобби.",
-    "likedUserIds": [
-      "user-35",
-      "user-43",
-      "user-09"
-    ]
+    "likedUserIds": ["user-35", "user-43", "user-09"]
   },
   {
     "id": "user-32",
@@ -767,21 +574,11 @@
     "cityId": "city-02",
     "gender": "female",
     "teachSkillId": "skill-032",
-    "learnSubcategoryIds": [
-      "home-plants",
-      "repair",
-      "storage",
-      "yoga-meditation",
-      "decor-diy"
-    ],
+    "learnSubcategoryIds": ["home-plants", "repair", "storage", "yoga-meditation", "decor-diy"],
     "likesCount": 108,
     "createdAt": "2025-06-02T21:00:00Z",
     "about": "Люблю практику и спокойный темп обучения.",
-    "likedUserIds": [
-      "user-36",
-      "user-44",
-      "user-10"
-    ]
+    "likedUserIds": ["user-36", "user-44", "user-10"]
   },
   {
     "id": "user-33",
@@ -792,20 +589,11 @@
     "cityId": "city-03",
     "gender": "male",
     "teachSkillId": "skill-033",
-    "learnSubcategoryIds": [
-      "repair",
-      "storage",
-      "yoga-meditation",
-      "nutrition-healthy-lifestyle"
-    ],
+    "learnSubcategoryIds": ["repair", "storage", "yoga-meditation", "nutrition-healthy-lifestyle"],
     "likesCount": 121,
     "createdAt": "2025-05-09T00:00:00Z",
     "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
-    "likedUserIds": [
-      "user-37",
-      "user-45",
-      "user-11"
-    ]
+    "likedUserIds": ["user-37", "user-45", "user-11"]
   },
   {
     "id": "user-34",
@@ -826,11 +614,7 @@
     "likesCount": 134,
     "createdAt": "2025-04-16T03:00:00Z",
     "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
-    "likedUserIds": [
-      "user-38",
-      "user-46",
-      "user-12"
-    ]
+    "likedUserIds": ["user-38", "user-46", "user-12"]
   },
   {
     "id": "user-35",
@@ -850,11 +634,7 @@
     "likesCount": 147,
     "createdAt": "2025-03-23T06:00:00Z",
     "about": "Люблю разбираться в новых темах и применять знания на практике.",
-    "likedUserIds": [
-      "user-39",
-      "user-47",
-      "user-13"
-    ]
+    "likedUserIds": ["user-39", "user-47", "user-13"]
   },
   {
     "id": "user-36",
@@ -875,11 +655,7 @@
     "likesCount": 9,
     "createdAt": "2025-02-03T09:00:00Z",
     "about": "Работаю, учусь и постоянно пробую новые хобби.",
-    "likedUserIds": [
-      "user-40",
-      "user-48",
-      "user-14"
-    ]
+    "likedUserIds": ["user-40", "user-48", "user-14"]
   },
   {
     "id": "user-37",
@@ -890,20 +666,11 @@
     "cityId": "city-07",
     "gender": "male",
     "teachSkillId": "skill-037",
-    "learnSubcategoryIds": [
-      "mental-health",
-      "mindfulness",
-      "physical-training",
-      "sleep-recovery"
-    ],
+    "learnSubcategoryIds": ["mental-health", "mindfulness", "physical-training", "sleep-recovery"],
     "likesCount": 22,
     "createdAt": "2025-01-10T12:00:00Z",
     "about": "Люблю практику и спокойный темп обучения.",
-    "likedUserIds": [
-      "user-41",
-      "user-49",
-      "user-15"
-    ]
+    "likedUserIds": ["user-41", "user-49", "user-15"]
   },
   {
     "id": "user-38",
@@ -924,11 +691,7 @@
     "likesCount": 35,
     "createdAt": "2025-12-17T15:00:00Z",
     "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
-    "likedUserIds": [
-      "user-42",
-      "user-50",
-      "user-16"
-    ]
+    "likedUserIds": ["user-42", "user-50", "user-16"]
   },
   {
     "id": "user-39",
@@ -948,11 +711,7 @@
     "likesCount": 48,
     "createdAt": "2025-11-24T18:00:00Z",
     "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
-    "likedUserIds": [
-      "user-43",
-      "user-01",
-      "user-17"
-    ]
+    "likedUserIds": ["user-43", "user-01", "user-17"]
   },
   {
     "id": "user-40",
@@ -973,11 +732,7 @@
     "likesCount": 61,
     "createdAt": "2025-10-04T21:00:00Z",
     "about": "Люблю разбираться в новых темах и применять знания на практике.",
-    "likedUserIds": [
-      "user-44",
-      "user-02",
-      "user-18"
-    ]
+    "likedUserIds": ["user-44", "user-02", "user-18"]
   },
   {
     "id": "user-41",
@@ -997,11 +752,7 @@
     "likesCount": 74,
     "createdAt": "2025-09-11T00:00:00Z",
     "about": "Работаю, учусь и постоянно пробую новые хобби.",
-    "likedUserIds": [
-      "user-45",
-      "user-03",
-      "user-19"
-    ]
+    "likedUserIds": ["user-45", "user-03", "user-19"]
   },
   {
     "id": "user-42",
@@ -1022,11 +773,7 @@
     "likesCount": 87,
     "createdAt": "2025-08-18T03:00:00Z",
     "about": "Люблю практику и спокойный темп обучения.",
-    "likedUserIds": [
-      "user-46",
-      "user-04",
-      "user-20"
-    ]
+    "likedUserIds": ["user-46", "user-04", "user-20"]
   },
   {
     "id": "user-43",
@@ -1046,11 +793,7 @@
     "likesCount": 100,
     "createdAt": "2025-07-25T06:00:00Z",
     "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
-    "likedUserIds": [
-      "user-47",
-      "user-05",
-      "user-21"
-    ]
+    "likedUserIds": ["user-47", "user-05", "user-21"]
   },
   {
     "id": "user-44",
@@ -1071,11 +814,7 @@
     "likesCount": 113,
     "createdAt": "2025-06-05T09:00:00Z",
     "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
-    "likedUserIds": [
-      "user-48",
-      "user-06",
-      "user-22"
-    ]
+    "likedUserIds": ["user-48", "user-06", "user-22"]
   },
   {
     "id": "user-45",
@@ -1095,11 +834,7 @@
     "likesCount": 126,
     "createdAt": "2025-05-12T12:00:00Z",
     "about": "Люблю разбираться в новых темах и применять знания на практике.",
-    "likedUserIds": [
-      "user-49",
-      "user-07",
-      "user-23"
-    ]
+    "likedUserIds": ["user-49", "user-07", "user-23"]
   },
   {
     "id": "user-46",
@@ -1120,11 +855,7 @@
     "likesCount": 139,
     "createdAt": "2025-04-19T15:00:00Z",
     "about": "Работаю, учусь и постоянно пробую новые хобби.",
-    "likedUserIds": [
-      "user-50",
-      "user-08",
-      "user-24"
-    ]
+    "likedUserIds": ["user-50", "user-08", "user-24"]
   },
   {
     "id": "user-47",
@@ -1144,11 +875,7 @@
     "likesCount": 1,
     "createdAt": "2025-03-26T18:00:00Z",
     "about": "Люблю практику и спокойный темп обучения.",
-    "likedUserIds": [
-      "user-01",
-      "user-09",
-      "user-25"
-    ]
+    "likedUserIds": ["user-01", "user-09", "user-25"]
   },
   {
     "id": "user-48",
@@ -1169,11 +896,7 @@
     "likesCount": 14,
     "createdAt": "2025-02-06T21:00:00Z",
     "about": "Интересуюсь творчеством, технологиями и саморазвитием.",
-    "likedUserIds": [
-      "user-02",
-      "user-10",
-      "user-26"
-    ]
+    "likedUserIds": ["user-02", "user-10", "user-26"]
   },
   {
     "id": "user-49",
@@ -1193,11 +916,7 @@
     "likesCount": 27,
     "createdAt": "2025-01-13T00:00:00Z",
     "about": "Ценю хорошие разговоры, новые идеи и обмен опытом.",
-    "likedUserIds": [
-      "user-03",
-      "user-11",
-      "user-27"
-    ]
+    "likedUserIds": ["user-03", "user-11", "user-27"]
   },
   {
     "id": "user-50",
@@ -1218,10 +937,6 @@
     "likesCount": 40,
     "createdAt": "2025-12-20T03:00:00Z",
     "about": "Люблю разбираться в новых темах и применять знания на практике.",
-    "likedUserIds": [
-      "user-04",
-      "user-12",
-      "user-28"
-    ]
+    "likedUserIds": ["user-04", "user-12", "user-28"]
   }
 ]

@@ -275,9 +275,7 @@ export default function ProfilePage() {
           </aside>
 
           <section className={styles.content}>
-            {saveSuccess && (
-              <div className={styles.successMessage}>Данные успешно сохранены</div>
-            )}
+            {saveSuccess && <div className={styles.successMessage}>Данные успешно сохранены</div>}
 
             <form className={styles.profileGrid} onSubmit={handleSubmit(onSubmit)}>
               <div className={styles.formFields}>

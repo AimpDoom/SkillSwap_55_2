@@ -138,7 +138,11 @@ export function ImageUpload({
         <ul className={styles.previews}>
           {images.map((src, index) => (
             <li key={src} className={styles.preview}>
-              <img className={styles.previewImage} src={src} alt={`Изображение навыка ${index + 1}`} />
+              <img
+                className={styles.previewImage}
+                src={src}
+                alt={`Изображение навыка ${index + 1}`}
+              />
               <button
                 type="button"
                 className={styles.removeButton}

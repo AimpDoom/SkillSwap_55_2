@@ -18,7 +18,13 @@ export interface CalendarProps {
 const formatDate = (date: Date) =>
   date.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' })
 
-export const Calendar = ({ label, error, placeholder = 'дд.мм.гггг', value, onChange }: CalendarProps) => {
+export const Calendar = ({
+  label,
+  error,
+  placeholder = 'дд.мм.гггг',
+  value,
+  onChange,
+}: CalendarProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [draft, setDraft] = useState<Date | undefined>(value ?? undefined)
   const wrapperRef = useRef<HTMLDivElement>(null)
@@ -56,8 +62,16 @@ export const Calendar = ({ label, error, placeholder = 'дд.мм.гггг', val
         </Text>
       )}
       <div className={styles.wrapper}>
-        <button type="button" className={clsx(styles.trigger, error && styles.triggerError)} onClick={handleOpen}>
-          <Text as="span" variant="body" className={clsx(styles.value, !value && styles.placeholder)}>
+        <button
+          type="button"
+          className={clsx(styles.trigger, error && styles.triggerError)}
+          onClick={handleOpen}
+        >
+          <Text
+            as="span"
+            variant="body"
+            className={clsx(styles.value, !value && styles.placeholder)}
+          >
             {value ? formatDate(value) : placeholder}
           </Text>
           <CalendarIcon className={styles.icon} />

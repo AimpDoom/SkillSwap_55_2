@@ -28,10 +28,7 @@ export function Pagination({
     return null
   }
 
-  const pages = Array.from(
-    { length: totalPages },
-    (_, index) => index + 1,
-  )
+  const pages = Array.from({ length: totalPages }, (_, index) => index + 1)
 
   const handlePrevious = () => {
     if (currentPage > 1) {
@@ -46,55 +43,38 @@ export function Pagination({
   }
 
   if (variant === 'compact') {
-  return (
-    <nav
-      className={clsx(
-        styles.compactPagination,
-        className,
-      )}
-      aria-label="Пагинация похожих предложений"
-    >
-      {currentPage > 1 && (
-        <button
-          type="button"
-          className={clsx(
-            styles.compactButton,
-            styles.compactButtonPrevious,
-          )}
-          onClick={handlePrevious}
-          aria-label="Предыдущие предложения"
-        >
-          <img
-            src={chevronRightIcon}
-            alt=""
-            aria-hidden="true"
-          />
-        </button>
-      )}
+    return (
+      <nav
+        className={clsx(styles.compactPagination, className)}
+        aria-label="Пагинация похожих предложений"
+      >
+        {currentPage > 1 && (
+          <button
+            type="button"
+            className={clsx(styles.compactButton, styles.compactButtonPrevious)}
+            onClick={handlePrevious}
+            aria-label="Предыдущие предложения"
+          >
+            <img src={chevronRightIcon} alt="" aria-hidden="true" />
+          </button>
+        )}
 
-      {currentPage < totalPages && (
-        <button
-          type="button"
-          className={styles.compactButton}
-          onClick={handleNext}
-          aria-label="Следующие предложения"
-        >
-          <img
-            src={chevronRightIcon}
-            alt=""
-            aria-hidden="true"
-          />
-        </button>
-      )}
-    </nav>
-  )
-}
+        {currentPage < totalPages && (
+          <button
+            type="button"
+            className={styles.compactButton}
+            onClick={handleNext}
+            aria-label="Следующие предложения"
+          >
+            <img src={chevronRightIcon} alt="" aria-hidden="true" />
+          </button>
+        )}
+      </nav>
+    )
+  }
 
   return (
-    <nav
-      className={clsx(styles.pagination, className)}
-      aria-label="Пагинация"
-    >
+    <nav className={clsx(styles.pagination, className)} aria-label="Пагинация">
       <Button
         type="button"
         variant="tertiary"
@@ -111,10 +91,7 @@ export function Pagination({
           return (
             <button
               key={page}
-              className={clsx(
-                styles.pageButton,
-                isActive && styles.active,
-              )}
+              className={clsx(styles.pageButton, isActive && styles.active)}
               type="button"
               aria-current={isActive ? 'page' : undefined}
               aria-label={`Страница ${page}`}

@@ -9,7 +9,7 @@ import clsx from 'clsx'
 
 interface WantToLearnProperties {
   skillsIds: string[]
-  header: string,
+  header: string
   variant: CardVariant
 }
 
@@ -32,11 +32,19 @@ export function WantToLearn({ skillsIds, header, variant }: WantToLearnPropertie
   }, [skillsIds])
 
   return (
-    <div className={clsx(styles.badgeContainer, variant === "profile" && styles.badgeProfileContainer)}>
-      <Text variant='h4' className={styles.mainText}>{header}</Text>
-      <div className={clsx( styles.skillsContainer, 
-        variant === 'catalog' && styles.skillsCatalogContainer,
-        variant === 'profile' && styles.skillsProfileContainer)}>
+    <div
+      className={clsx(styles.badgeContainer, variant === 'profile' && styles.badgeProfileContainer)}
+    >
+      <Text variant="h4" className={styles.mainText}>
+        {header}
+      </Text>
+      <div
+        className={clsx(
+          styles.skillsContainer,
+          variant === 'catalog' && styles.skillsCatalogContainer,
+          variant === 'profile' && styles.skillsProfileContainer,
+        )}
+      >
         {skillList.map((skill, index) => {
           if (index < 2 || variant === 'profile') {
             return (
@@ -54,7 +62,7 @@ export function WantToLearn({ skillsIds, header, variant }: WantToLearnPropertie
           return null
         })}
 
-        {(skillsIds.length - 2 > 0 && variant === 'catalog') && (
+        {skillsIds.length - 2 > 0 && variant === 'catalog' && (
           <Tag className={styles.skillBadge}>+{skillsIds.length - 2}</Tag>
         )}
       </div>

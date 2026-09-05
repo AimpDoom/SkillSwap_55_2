@@ -1,2 +1,2 @@
-export { default } from './NotificationCard';
-export type { NotificationCardProps } from '../../model/types';
+export { default } from './NotificationCard'
+export type { NotificationCardProps } from '../../model/types'

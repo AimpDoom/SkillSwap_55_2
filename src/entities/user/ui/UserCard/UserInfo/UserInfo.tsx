@@ -27,7 +27,9 @@ export const UserInfo = ({
   const age = calculateAge(birthDate)
   return (
     <div className={styles.userInfoContainer}>
-      <Text variant="h2" className={styles.userName}>{name}</Text>
+      <Text variant="h2" className={styles.userName}>
+        {name}
+      </Text>
       <Text variant="body" className={styles.userDetails}>
         {city?.name}, {age} {yearSpell(age)}
       </Text>

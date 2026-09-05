@@ -71,10 +71,7 @@ export function completeRegistration(draft: RegistrationDraft): AuthUser | null 
 
   const others = getRegisteredUsers().filter((entry) => entry.user.email !== record.user.email)
 
-  localStorage.setItem(
-    LOCAL_STORAGE_KEYS.REGISTERED_USERS,
-    JSON.stringify([...others, record]),
-  )
+  localStorage.setItem(LOCAL_STORAGE_KEYS.REGISTERED_USERS, JSON.stringify([...others, record]))
 
   return saveAuthUser(record.user)
 }

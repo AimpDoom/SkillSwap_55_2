@@ -38,7 +38,14 @@ const ValueContainer = (props: ValueContainerProps<MultiSelectOption, true>) => 
   )
 }
 
-export const MultiSelect = ({ label, error, placeholder, options, value, onChange }: MultiSelectProps) => {
+export const MultiSelect = ({
+  label,
+  error,
+  placeholder,
+  options,
+  value,
+  onChange,
+}: MultiSelectProps) => {
   return (
     <div className={styles.field}>
       {label && (

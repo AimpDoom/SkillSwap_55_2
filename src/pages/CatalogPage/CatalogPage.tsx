@@ -19,7 +19,6 @@ import type { User } from '@/entities/user/model/types'
 import { UserCard } from '@/entities/user/ui/UserCard'
 import { RegistrationSuccessModal } from '@/features/auth/ui/RegistrationSuccessModal'
 
-
 import chevronRightIcon from '@/shared/assets/icons/chevron-right.svg'
 import crossIcon from '@/shared/assets/icons/cross.svg'
 import sortingArrows from '@/shared/assets/icons/sort.svg'
@@ -424,7 +423,7 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
                 </div>
 
                 {resultUsers.length > 0 ? (
-                  <div className={`${styles.cardsGrid} ${styles.filteredCardsGrid}`}>
+                  <div className={styles.cardsGrid}>
                     {visibleResultUsers.map((user) => (
                       <UserCard key={user.id} user={user} />
                     ))}

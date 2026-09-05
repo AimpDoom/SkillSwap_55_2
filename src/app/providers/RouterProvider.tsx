@@ -32,6 +32,7 @@ function AppContent() {
       {!isAuthPage && (
         <Header
           variant={authUser ? 'authorized' : 'default'}
+          userId={authUser?.id}
           userName={authUser?.name}
           avatarSrc={registeredUser?.avatarUrl ?? undefined}
         />

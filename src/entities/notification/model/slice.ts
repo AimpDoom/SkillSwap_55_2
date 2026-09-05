@@ -12,7 +12,13 @@ interface NotificationsState {
 function loadNotifications(): Notification[] {
   try {
     const raw = localStorage.getItem(LOCAL_STORAGE_KEYS.NOTIFICATIONS)
-    return raw ? (JSON.parse(raw) as Notification[]) : []
+    const parsed = raw ? (JSON.parse(raw) as Notification[]) : []
+
+    if (!Array.isArray(parsed)) {
+      return []
+    }
+
+    return parsed.filter((notification) => typeof notification.recipientUserId === 'string')
   } catch {
     return []
   }
@@ -41,13 +47,17 @@ const notificationsSlice = createSlice({
         notification.isRead = true
       }
     },
-    markAllAsRead: (state) => {
-      state.items.forEach((item) => {
-        item.isRead = true
-      })
+    markAllAsRead: (state, action: PayloadAction<string>) => {
+      state.items
+        .filter((item) => item.recipientUserId === action.payload)
+        .forEach((item) => {
+          item.isRead = true
+        })
     },
-    clearRead: (state) => {
-      state.items = state.items.filter((item) => !item.isRead)
+    clearRead: (state, action: PayloadAction<string>) => {
+      state.items = state.items.filter(
+        (item) => item.recipientUserId !== action.payload || !item.isRead,
+      )
     },
     dismissToast: (state, action: PayloadAction<string | number>) => {
       state.toastIds = state.toastIds.filter((id) => id !== action.payload)

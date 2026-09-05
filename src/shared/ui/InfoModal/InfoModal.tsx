@@ -26,11 +26,7 @@ export function InfoModal({
   ariaLabel,
 }: InfoModalProps) {
   return (
-    <Modal
-      isOpen={isOpen}
-      onClose={onClose}
-      ariaLabel={ariaLabel}
-    >
+    <Modal isOpen={isOpen} onClose={onClose} ariaLabel={ariaLabel}>
       <div className={styles.content}>
         <div className={styles.iconWrapper}>{icon}</div>
 

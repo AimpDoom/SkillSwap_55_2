@@ -65,7 +65,7 @@ export default function RegisterPage() {
 
     if (registeredUser) {
       setPreviewSkill(null)
-      
+
       const fromPath = location.state?.from
 
       if (fromPath) {

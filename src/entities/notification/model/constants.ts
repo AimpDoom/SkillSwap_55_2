@@ -1,9 +1,10 @@
-import type { Notification } from './types';
+import type { Notification } from './types'
 
 // Мок-данные для примера
 export const mockNotifications: Notification[] = [
   {
     id: 1,
+    recipientUserId: 'mock-user',
     user: 'Николай',
     message: 'принял ваш обмен',
     detail: 'Перейдите в профиль, чтобы обсудить детали',
@@ -13,6 +14,7 @@ export const mockNotifications: Notification[] = [
   },
   {
     id: 2,
+    recipientUserId: 'mock-user',
     user: 'Татьяна',
     message: 'приняла ваш обмен',
     detail: 'Перейдите в профиль, чтобы обсудить детали',
@@ -22,6 +24,7 @@ export const mockNotifications: Notification[] = [
   },
   {
     id: 3,
+    recipientUserId: 'mock-user',
     user: 'Олег',
     message: 'принял ваш обмен',
     detail: 'Перейдите в профиль, чтобы обсудить детали',
@@ -31,6 +34,7 @@ export const mockNotifications: Notification[] = [
   },
   {
     id: 4,
+    recipientUserId: 'mock-user',
     user: 'Игорь',
     message: 'принял ваш обмен',
     detail: 'Перейдите в профиль, чтобы обсудить детали',
@@ -38,4 +42,4 @@ export const mockNotifications: Notification[] = [
     isRead: true,
     skillId: 'skill-4',
   },
-];
+]

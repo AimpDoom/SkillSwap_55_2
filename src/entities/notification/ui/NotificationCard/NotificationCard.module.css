@@ -1,9 +1,10 @@
 .notificationCard {
   width: 556px;
-  max-height: 616px;
+  max-height: min(616px, calc(100vh - 120px));
   background: var(--color-bg-primary);
   border-radius: var(--border-radius-s);
-  overflow: hidden;
+  overflow: hidden auto;
+  overscroll-behavior: contain;
   border: 1px solid var(--color-text-secondary);
   display: flex;
   flex-direction: column;
@@ -42,24 +43,22 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  max-height: 300px;
-  overflow-y: auto;
 }
 
-.notificationsList::-webkit-scrollbar {
+.notificationCard::-webkit-scrollbar {
   width: 4px;
 }
 
-.notificationsList::-webkit-scrollbar-track {
+.notificationCard::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.notificationsList::-webkit-scrollbar-thumb {
+.notificationCard::-webkit-scrollbar-thumb {
   background: var(--color-neutral);
   border-radius: 2px;
 }
 
-.notificationsList::-webkit-scrollbar-thumb:hover {
+.notificationCard::-webkit-scrollbar-thumb:hover {
   background: var(--color-text-secondary);
 }
 

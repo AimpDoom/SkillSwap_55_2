@@ -17,7 +17,10 @@ import { ExchangeOfferedModal } from '@/features/exchange/ui/ExchangeOfferedModa
 import { Container } from '@/shared/ui/Container'
 import { Pagination } from '@/shared/ui/Pagination'
 import { ROUTES, LOCAL_STORAGE_KEYS } from '@/shared/lib/constants'
-import { createExchangeAcceptedNotification, notificationCreated } from '@/entities/notification/model'
+import {
+  createExchangeAcceptedNotification,
+  notificationCreated,
+} from '@/entities/notification/model'
 import { useAppDispatch } from '@/store/hooks'
 
 import styles from './SkillPage.module.css'
@@ -80,13 +83,7 @@ export default function SkillPage() {
           return
         }
 
-        const [
-          currentAuthor,
-          categories,
-          subcategory,
-          allSkills,
-          allUsers,
-        ] = await Promise.all([
+        const [currentAuthor, categories, subcategory, allSkills, allUsers] = await Promise.all([
           fetchUserById(currentSkill.authorId),
           fetchCategories(),
           fetchSubcategory(currentSkill.subcategoryId),
@@ -115,9 +112,7 @@ export default function SkillPage() {
         )
 
         const relatedUsers = allUsers.filter(
-          (user) =>
-            user.id !== currentSkill.authorId &&
-            similarSkillIds.has(user.teachSkillId),
+          (user) => user.id !== currentSkill.authorId && similarSkillIds.has(user.teachSkillId),
         )
 
         setSkill(currentSkill)
@@ -155,17 +150,12 @@ export default function SkillPage() {
     loadSkillPage()
   }, [id])
 
-  const totalPages = Math.ceil(
-    similarUsers.length / CARDS_PER_PAGE,
-  )
+  const totalPages = Math.ceil(similarUsers.length / CARDS_PER_PAGE)
 
   const visibleSimilarUsers = useMemo(() => {
     const start = (currentPage - 1) * CARDS_PER_PAGE
 
-    return similarUsers.slice(
-      start,
-      start + CARDS_PER_PAGE,
-    )
+    return similarUsers.slice(start, start + CARDS_PER_PAGE)
   }, [similarUsers, currentPage])
 
   const handleOfferExchange = () => {
@@ -215,7 +205,9 @@ export default function SkillPage() {
       setIsExchangeOfferedModalOpen(true)
 
       exchangeAcceptedTimeoutRef.current = setTimeout(() => {
-        dispatch(notificationCreated(createExchangeAcceptedNotification(author, skill.id)))
+        dispatch(
+          notificationCreated(createExchangeAcceptedNotification(author, skill.id, authUser.id)),
+        )
       }, EXCHANGE_ACCEPTED_DELAY_MS)
     } catch (e) {
       console.error('Ошибка сохранения запроса в localStorage:', e)
@@ -247,15 +239,13 @@ export default function SkillPage() {
       <Container>
         <div className={styles.mainContent}>
           <aside className={styles.author}>
-            <UserCard
-              user={author}
-              variant="profile"
-            />
+            <UserCard user={author} variant="profile" />
           </aside>
 
           <section className={styles.skill}>
             <SkillOffer
               skill={skill}
+              userId={author.id}
               variant={isExchangeRequested ? 'requested' : 'default'}
               categoryName={categoryName}
               subcategoryName={subcategoryName}
@@ -266,20 +256,11 @@ export default function SkillPage() {
 
         {similarUsers.length > 0 && (
           <section className={styles.similar}>
-            <h2 className={styles.similarTitle}>
-              Похожие предложения
-            </h2>
+            <h2 className={styles.similarTitle}>Похожие предложения</h2>
 
-            <div
-              key={currentPage}
-              className={styles.similarCards}
-            >
+            <div key={currentPage} className={styles.similarCards}>
               {visibleSimilarUsers.map((user) => (
-                <UserCard
-                  key={user.id}
-                  user={user}
-                  variant="catalog"
-                />
+                <UserCard key={user.id} user={user} variant="catalog" />
               ))}
             </div>
 

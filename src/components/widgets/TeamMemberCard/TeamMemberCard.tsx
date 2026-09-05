@@ -15,7 +15,11 @@ export function TeamMemberCard({ name, role, about, github, githubUsername }: Te
     <article className={styles.card}>
       <div className={styles.header}>
         <div className={styles.avatarWrapper}>
-          <img className={styles.avatar} src={`https://github.com/${githubUsername}.png`} alt={name} />
+          <img
+            className={styles.avatar}
+            src={`https://github.com/${githubUsername}.png`}
+            alt={name}
+          />
         </div>
 
         <div className={styles.info}>

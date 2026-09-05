@@ -24,7 +24,9 @@ export default function NotFoundPage() {
         </div>
         <h1 className={styles.title}>Страница не найдена</h1>
         <p className={styles.description}>
-          К сожалению, эта страница недоступна. Вернитесь<br/>на главную страницу или попробуйте позже
+          К сожалению, эта страница недоступна. Вернитесь
+          <br />
+          на главную страницу или попробуйте позже
         </p>
         <div className={styles.buttonGroup}>
           <Button variant="secondary" onClick={handleReportError}>

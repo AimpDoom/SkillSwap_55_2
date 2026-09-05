@@ -1,10 +1,11 @@
-import React, { useCallback, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button } from '@/shared/ui/Button';
-import { Text } from '@/shared/ui/Text';
-import IdeaIcon from '@/shared/assets/icons/idea.svg?react';
-import { Notification, NotificationCardProps } from '../../model/types';
-import styles from './NotificationCard.module.css';
+import React, { useCallback, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Button } from '@/shared/ui/Button'
+import { Text } from '@/shared/ui/Text'
+import IdeaIcon from '@/shared/assets/icons/idea.svg?react'
+import { formatNotificationDate } from '@/entities/notification/model'
+import { Notification, NotificationCardProps } from '../../model/types'
+import styles from './NotificationCard.module.css'
 
 const NotificationCard: React.FC<NotificationCardProps> = ({
   notifications,
@@ -13,50 +14,51 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
   onMarkAllAsRead,
   onClearRead,
 }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   // Закрытие по Escape
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
       if (event.key === 'Escape' && onClose) {
-        onClose();
+        onClose()
       }
-    };
+    }
 
-    document.addEventListener('keydown', handleEsc);
+    document.addEventListener('keydown', handleEsc)
     return () => {
-      document.removeEventListener('keydown', handleEsc);
-    };
-  }, [onClose]);
+      document.removeEventListener('keydown', handleEsc)
+    }
+  }, [onClose])
 
   // Разделяем уведомления на новые и просмотренные
-  const newNotifications = notifications.filter((n) => !n.isRead);
-  const readNotifications = notifications.filter((n) => n.isRead);
+  const newNotifications = notifications.filter((n) => !n.isRead)
+  const readNotifications = notifications.filter((n) => n.isRead)
 
   // Обработчик перехода на страницу навыка
   const handleNavigateToSkill = useCallback(
     (skillId: string, notificationId: string | number) => {
-      onNotificationRead?.(notificationId);
-      navigate(`/skill/${skillId}`);
+      onNotificationRead?.(notificationId)
+      navigate(`/skill/${skillId}`)
 
-      if (onClose) onClose();
+      if (onClose) onClose()
     },
-    [navigate, onClose, onNotificationRead]
-  );
+    [navigate, onClose, onNotificationRead],
+  )
 
   // Обработчик отметки всех как прочитанных
   const handleMarkAllAsRead = useCallback(() => {
-    onMarkAllAsRead?.();
-  }, [onMarkAllAsRead]);
+    onMarkAllAsRead?.()
+  }, [onMarkAllAsRead])
 
   // Обработчик очистки просмотренных
   const handleClearRead = useCallback(() => {
-    onClearRead?.();
-  }, [onClearRead]);
+    onClearRead?.()
+  }, [onClearRead])
 
   // Рендер отдельного уведомления
   const renderNotification = (notification: Notification) => {
-    const { id, user, message, detail, skillId, date, isRead } = notification;
+    const { id, user, message, detail, skillId, date, isRead } = notification
+    const formattedDate = formatNotificationDate(date)
 
     return (
       <div key={id} className={styles.notificationItem}>
@@ -70,9 +72,9 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
               <Text variant="body" className={styles.mainText}>
                 {user} {message}
               </Text>
-              {date && (
+              {formattedDate && (
                 <Text variant="caption" className={styles.dateText}>
-                  {date}
+                  {formattedDate}
                 </Text>
               )}
             </div>
@@ -94,8 +96,8 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
           </div>
         )}
       </div>
-    );
-  };
+    )
+  }
 
   return (
     <div className={styles.notificationCard}>
@@ -114,9 +116,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
               Прочитать все
             </Button>
           </div>
-          <div className={styles.notificationsList}>
-            {newNotifications.map(renderNotification)}
-          </div>
+          <div className={styles.notificationsList}>{newNotifications.map(renderNotification)}</div>
         </div>
       )}
 
@@ -127,11 +127,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Text variant="h2" className={styles.sectionTitle}>
               Просмотренные
             </Text>
-            <Button
-              variant="tertiary"
-              className={styles.sectionAction}
-              onClick={handleClearRead}
-            >
+            <Button variant="tertiary" className={styles.sectionAction} onClick={handleClearRead}>
               Очистить
             </Button>
           </div>
@@ -151,7 +147,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default NotificationCard;
+export default NotificationCard

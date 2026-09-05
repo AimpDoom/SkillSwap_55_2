@@ -45,10 +45,10 @@ export const RegisterStepTwo = ({ initialValues, onBack, onNext }: RegisterStepT
 
   const [avatarUrl, setAvatarUrl] = useState<string | null>(initialValues?.avatarUrl ?? null)
   const [name, setName] = useState(initialValues?.name ?? '')
-  const [birthDate, setBirthDate] = useState<Date | null>(isoToDate(initialValues?.birthDate ?? null))
-  const [gender, setGender] = useState<Gender | 'unspecified' | null>(
-    initialValues?.gender ?? null,
+  const [birthDate, setBirthDate] = useState<Date | null>(
+    isoToDate(initialValues?.birthDate ?? null),
   )
+  const [gender, setGender] = useState<Gender | 'unspecified' | null>(initialValues?.gender ?? null)
   const [cityId, setCityId] = useState<string | null>(initialValues?.cityId ?? null)
   const [learnCategoryIds, setLearnCategoryIds] = useState<string[]>(
     initialValues?.learnCategoryIds ?? [],

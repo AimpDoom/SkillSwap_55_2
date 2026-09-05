@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
-import { Text } from '@/shared/ui/Text';
-import { Button } from '@/shared/ui/Button';
-import IdeaIcon from '@/shared/assets/icons/idea.svg?react';
-import CloseIcon from '@/shared/assets/icons/cross.svg?react';
-import styles from './NotificationBanner.module.css';
+import React, { useState } from 'react'
+import { Text } from '@/shared/ui/Text'
+import { Button } from '@/shared/ui/Button'
+import IdeaIcon from '@/shared/assets/icons/idea.svg?react'
+import CloseIcon from '@/shared/assets/icons/cross.svg?react'
+import styles from './NotificationBanner.module.css'
 
 export interface NotificationBannerProps {
   /** Текст уведомления */
-  message: string;
+  message: string
   /** Обработчик закрытия */
-  onClose?: () => void;
+  onClose?: () => void
   /** Обработчик перехода */
-  onNavigate?: () => void;
+  onNavigate?: () => void
   /** Текст кнопки перехода */
-  navigateText?: string;
+  navigateText?: string
   /** Автоматическое скрытие через указанное количество миллисекунд */
-  autoHideDuration?: number;
+  autoHideDuration?: number
   /** Дополнительный CSS-класс */
-  className?: string;
+  className?: string
 }
 
 export const NotificationBanner: React.FC<NotificationBannerProps> = ({
@@ -28,34 +28,34 @@ export const NotificationBanner: React.FC<NotificationBannerProps> = ({
   autoHideDuration,
   className = '',
 }) => {
-  const [isVisible, setIsVisible] = useState(true);
-  const [isHovered, setIsHovered] = useState(false);
+  const [isVisible, setIsVisible] = useState(true)
+  const [isHovered, setIsHovered] = useState(false)
 
   // Автоматическое скрытие
   React.useEffect(() => {
     if (autoHideDuration) {
       const timer = setTimeout(() => {
-        setIsVisible(false);
-        onClose();
-      }, autoHideDuration);
+        setIsVisible(false)
+        onClose()
+      }, autoHideDuration)
 
-      return () => clearTimeout(timer);
+      return () => clearTimeout(timer)
     }
-  }, [autoHideDuration, onClose]);
+  }, [autoHideDuration, onClose])
 
   const handleClose = () => {
-    setIsVisible(false);
-    onClose();
-  };
+    setIsVisible(false)
+    onClose()
+  }
 
   const handleNavigate = () => {
     if (onNavigate) {
-      onNavigate();
+      onNavigate()
     }
-  };
+  }
 
   if (!isVisible) {
-    return null;
+    return null
   }
 
   return (
@@ -76,28 +76,20 @@ export const NotificationBanner: React.FC<NotificationBannerProps> = ({
       </Text>
 
       {/* Кнопка закрытия */}
-      <button
-        className={styles.closeButton}
-        onClick={handleClose}
-        aria-label="Закрыть уведомление"
-      >
+      <button className={styles.closeButton} onClick={handleClose} aria-label="Закрыть уведомление">
         <CloseIcon />
       </button>
 
       {/* Кнопка "Перейти" - появляется при наведении */}
       {onNavigate && isHovered && (
         <div className={styles.navigateButtonWrapper}>
-          <Button
-            variant="tertiary"
-            className={styles.navigateButton}
-            onClick={handleNavigate}
-          >
+          <Button variant="tertiary" className={styles.navigateButton} onClick={handleNavigate}>
             {navigateText}
           </Button>
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default NotificationBanner;
+export default NotificationBanner

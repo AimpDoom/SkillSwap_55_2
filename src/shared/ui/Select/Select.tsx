@@ -62,7 +62,11 @@ export const Select = ({
           menu: () => styles.menu,
           menuList: () => styles.menuList,
           option: (state) =>
-            clsx(styles.option, state.isFocused && styles.optionFocused, state.isSelected && styles.optionSelected),
+            clsx(
+              styles.option,
+              state.isFocused && styles.optionFocused,
+              state.isSelected && styles.optionSelected,
+            ),
           noOptionsMessage: () => styles.noOptions,
         }}
         components={{

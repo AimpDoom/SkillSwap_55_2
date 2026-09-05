@@ -52,27 +52,12 @@
 
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 324px));
   gap: 24px;
 }
 
 .cardsGrid > * {
-  grid-column: span 2;
   width: 100%;
-}
-
-.cardsGrid > *:nth-last-child(2):nth-child(3n + 1),
-.cardsGrid > *:last-child:nth-child(3n + 2) {
-  grid-column: span 3;
-}
-
-.filteredCardsGrid > * {
-  grid-column: span 2;
-}
-
-.filteredCardsGrid > *:nth-last-child(2):nth-child(3n + 1),
-.filteredCardsGrid > *:last-child:nth-child(3n + 2) {
-  grid-column: span 2;
 }
 
 .observer {

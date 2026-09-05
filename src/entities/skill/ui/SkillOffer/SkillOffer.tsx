@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 import type { Skill } from '../../model/types'
 
@@ -6,16 +7,25 @@ import chevronRightIcon from '@/shared/assets/icons/chevron-right.svg'
 import clockIcon from '@/shared/assets/icons/clock.svg'
 import editIcon from '@/shared/assets/icons/edit.svg'
 import likeIcon from '@/shared/assets/icons/like.svg'
+import likeFilledIcon from '@/shared/assets/icons/like-filled.svg'
 import moreIcon from '@/shared/assets/icons/more-square.svg'
 import shareIcon from '@/shared/assets/icons/share.svg'
 import { Button } from '@/shared/ui/Button'
 import { IconButton } from '@/shared/ui/IconButton'
 import { Text } from '@/shared/ui/Text'
+import {
+  FAVORITES_CHANGED_EVENT,
+  isUserFavorite,
+  toggleFavoriteUser,
+} from '@/features/favorites/model/favorites'
+import { getAuthUser } from '@/features/auth/model'
+import { ROUTES } from '@/shared/lib/constants'
 
 import styles from './SkillOffer.module.css'
 
 interface SkillOfferProps {
   skill: Pick<Skill, 'title' | 'description' | 'imageUrls'>
+  userId?: string
   variant: 'confirmation' | 'default' | 'requested'
   categoryName: string
   subcategoryName: string
@@ -23,7 +33,6 @@ interface SkillOfferProps {
   onDone?: () => void
   onOfferExchange?: () => void
   onShare?: () => void
-  onFavorite?: () => void
   onMore?: () => void
 }
 
@@ -31,6 +40,7 @@ const MAX_THUMBNAILS = 3
 
 export function SkillOffer({
   skill,
+  userId,
   variant,
   categoryName,
   subcategoryName,
@@ -38,12 +48,28 @@ export function SkillOffer({
   onDone,
   onOfferExchange,
   onShare,
-  onFavorite,
   onMore,
 }: SkillOfferProps) {
   const { title, description, imageUrls = [] } = skill
 
   const [activeImageIndex, setActiveImageIndex] = useState(0)
+  const navigate = useNavigate()
+  const location = useLocation()
+  const [liked, setLiked] = useState(() => (userId ? isUserFavorite(userId) : false))
+
+  useEffect(() => {
+    if (!userId) return
+
+    const handleFavoritesChanged = () => {
+      setLiked(isUserFavorite(userId))
+    }
+
+    window.addEventListener(FAVORITES_CHANGED_EVENT, handleFavoritesChanged)
+
+    return () => {
+      window.removeEventListener(FAVORITES_CHANGED_EVENT, handleFavoritesChanged)
+    }
+  }, [userId])
 
   const hasImages = imageUrls.length > 0
   const hasSeveralImages = imageUrls.length > 1
@@ -57,18 +83,13 @@ export function SkillOffer({
 
   const thumbnailsToShow = thumbnails.slice(0, MAX_THUMBNAILS)
 
-  const remainingImagesCount = Math.max(
-    thumbnails.length - MAX_THUMBNAILS,
-    0,
-  )
+  const remainingImagesCount = Math.max(thumbnails.length - MAX_THUMBNAILS, 0)
 
   const handlePrevImage = () => {
     if (!hasSeveralImages) return
 
     setActiveImageIndex((currentIndex) =>
-      currentIndex === 0
-        ? imageUrls.length - 1
-        : currentIndex - 1,
+      currentIndex === 0 ? imageUrls.length - 1 : currentIndex - 1,
     )
   }
 
@@ -76,27 +97,34 @@ export function SkillOffer({
     if (!hasSeveralImages) return
 
     setActiveImageIndex((currentIndex) =>
-      currentIndex === imageUrls.length - 1
-        ? 0
-        : currentIndex + 1,
+      currentIndex === imageUrls.length - 1 ? 0 : currentIndex + 1,
     )
   }
 
+  const handleFavorite = () => {
+    if (!userId) return
+
+    if (!getAuthUser()) {
+      navigate(ROUTES.LOGIN, {
+        state: {
+          from: location.pathname + location.search + location.hash,
+        },
+      })
+      return
+    }
+    const newLikedState = toggleFavoriteUser(userId)
+    setLiked(newLikedState)
+  }
+
   return (
-    <article
-      className={styles.card}
-      aria-label="Предложение навыка"
-    >
+    <article className={styles.card} aria-label="Предложение навыка">
       {variant === 'confirmation' && (
         <header className={styles.confirmationHeaderBlock}>
           <Text variant="h2" className={styles.confirmationTitle}>
             Ваше предложение
           </Text>
 
-          <Text
-            variant="body"
-            className={styles.confirmationSubtitle}
-          >
+          <Text variant="body" className={styles.confirmationSubtitle}>
             Пожалуйста, проверьте и подтвердите правильность данных
           </Text>
         </header>
@@ -105,77 +133,44 @@ export function SkillOffer({
       <div className={styles.cardContent}>
         <section
           className={`${styles.infoBlock} ${
-            variant !== 'confirmation'
-              ? styles.infoBlockWithActions
-              : ''
+            variant !== 'confirmation' ? styles.infoBlockWithActions : ''
           }`}
         >
-          <Text
-            variant="h1"
-            as="h2"
-            className={styles.title}
-          >
+          <Text variant="h1" as="h2" className={styles.title}>
             {title}
           </Text>
 
-          <Text
-            variant="caption"
-            as="p"
-            className={styles.categoryPath}
-          >
+          <Text variant="caption" as="p" className={styles.categoryPath}>
             {categoryName} / {subcategoryName}
           </Text>
 
-          <Text
-            variant="body"
-            className={styles.description}
-          >
+          <Text variant="body" className={styles.description}>
             {description}
           </Text>
 
           <div className={styles.actionsArea}>
             {variant === 'confirmation' && (
               <div className={styles.btnGroup}>
-                <Button
-                  variant="secondary"
-                  onClick={onEdit}
-                  className={styles.editBtn}
-                >
+                <Button variant="secondary" onClick={onEdit} className={styles.editBtn}>
                   Редактировать
-                  <img
-                    src={editIcon}
-                    alt=""
-                    className={styles.btnIcon}
-                  />
+                  <img src={editIcon} alt="" className={styles.btnIcon} />
                 </Button>
 
-                <Button
-                  variant="primary"
-                  onClick={onDone}
-                  className={styles.doneBtn}
-                >
+                <Button variant="primary" onClick={onDone} className={styles.doneBtn}>
                   Готово
                 </Button>
               </div>
             )}
 
             {variant === 'default' && (
-              <Button
-                variant="primary"
-                onClick={onOfferExchange}
-                className={styles.fullWidthBtn}
-              >
+              <Button variant="primary" onClick={onOfferExchange} className={styles.fullWidthBtn}>
                 Предложить обмен
               </Button>
             )}
 
             {variant === 'requested' && (
               <div className={styles.statusBadge}>
-                <img
-                  src={clockIcon}
-                  alt=""
-                  className={styles.statusIcon}
-                />
+                <img src={clockIcon} alt="" className={styles.statusIcon} />
 
                 <Text variant="body" as="span">
                   Обмен предложен
@@ -189,9 +184,10 @@ export function SkillOffer({
           {variant !== 'confirmation' && (
             <div className={styles.topIconActions}>
               <IconButton
-                icon={<img src={likeIcon} alt="" />}
-                ariaLabel="Добавить в избранное"
-                onClick={onFavorite}
+                icon={<img src={liked ? likeFilledIcon : likeIcon} alt="" />}
+                ariaLabel={liked ? 'Убрать из избранного' : 'Добавить в избранное'}
+                aria-pressed={liked}
+                onClick={handleFavorite}
               />
 
               <IconButton
@@ -211,11 +207,7 @@ export function SkillOffer({
           <div className={styles.gallery}>
             <div className={styles.mainImageWrapper}>
               {mainImage ? (
-                <img
-                  src={mainImage}
-                  alt={title}
-                  className={styles.mainImage}
-                />
+                <img src={mainImage} alt={title} className={styles.mainImage} />
               ) : (
                 <div
                   className={styles.noImageFallback}
@@ -231,10 +223,7 @@ export function SkillOffer({
                     onClick={handlePrevImage}
                     aria-label="Предыдущее изображение"
                   >
-                    <img
-                      src={chevronRightIcon}
-                      alt=""
-                    />
+                    <img src={chevronRightIcon} alt="" />
                   </button>
 
                   <button
@@ -243,10 +232,7 @@ export function SkillOffer({
                     onClick={handleNextImage}
                     aria-label="Следующее изображение"
                   >
-                    <img
-                      src={chevronRightIcon}
-                      alt=""
-                    />
+                    <img src={chevronRightIcon} alt="" />
                   </button>
                 </>
               )}
@@ -257,33 +243,16 @@ export function SkillOffer({
                 {thumbnailsToShow.map(({ image, index }, thumbnailIndex) => {
                   const thumbnailContent = (
                     <>
-                      <img
-                        src={image}
-                        alt=""
-                        className={styles.thumbnailImg}
-                      />
+                      <img src={image} alt="" className={styles.thumbnailImg} />
 
-                      {thumbnailIndex ===
-                        MAX_THUMBNAILS - 1 &&
-                        remainingImagesCount > 0 && (
-                          <div
-                            className={
-                              styles.remainingOverlay
-                            }
-                          >
-                            <Text
-                              variant="body"
-                              as="span"
-                              className={
-                                styles.remainingText
-                              }
-                            >
-                              +{remainingImagesCount}
-                            </Text>
-                          </div>
-                        )}
+                      {thumbnailIndex === MAX_THUMBNAILS - 1 && remainingImagesCount > 0 && (
+                        <div className={styles.remainingOverlay}>
+                          <Text variant="body" as="span" className={styles.remainingText}>
+                            +{remainingImagesCount}
+                          </Text>
+                        </div>
+                      )}
                     </>
-
                   )
 
                   return isGalleryInteractive ? (

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { getRegisteredUsers, saveAuthUser } from '@/features/auth/model'
 import EyeSlashIcon from '@/shared/assets/icons/eye-slash.svg?react'
 import EyeIcon from '@/shared/assets/icons/eye.svg?react'
@@ -16,10 +16,13 @@ interface LoginFormValues {
   password: string
 }
 
-const GENERIC_ERROR = 'Email или пароль введены неверно. Пожалуйста проверьте правильность введённых данных.'
+const GENERIC_ERROR =
+  'Email или пароль введены неверно. Пожалуйста проверьте правильность введённых данных.'
 
 export const LoginForm = () => {
   const navigate = useNavigate()
+  const location = useLocation()
+
   const [showPassword, setShowPassword] = useState(false)
   const [loginError, setLoginError] = useState<string | null>(null)
   const { register, handleSubmit } = useForm<LoginFormValues>()
@@ -46,7 +49,9 @@ export const LoginForm = () => {
 
     saveAuthUser(registeredUser.user)
     setLoginError(null)
-    navigate(ROUTES.HOME)
+
+    const fromPath = location.state?.from ?? ROUTES.HOME
+    navigate(fromPath)
   }
 
   return (

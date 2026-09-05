@@ -6,21 +6,31 @@ import { Avatar } from '@/shared/ui/Avatar'
 import { IconButton } from '@/shared/ui/IconButton'
 import NotificationBanner from '@/shared/ui/NotificationBanner'
 import NotificationCard from '@/entities/notification/ui/NotificationCard'
-import { clearRead, dismissToast, markAllAsRead, notificationRead } from '@/entities/notification/model'
+import {
+  clearRead,
+  dismissToast,
+  markAllAsRead,
+  notificationRead,
+} from '@/entities/notification/model'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { ProfileMenu } from './ProfileMenu'
 import styles from './AuthorizedActions.module.css'
+import { ROUTES } from '@/shared/lib/constants'
 
 type AuthorizedActionsProps = {
+  userId: string
   userName: string
   avatarSrc?: string
 }
 
-export function AuthorizedActions({ userName, avatarSrc }: AuthorizedActionsProps) {
+export function AuthorizedActions({ userId, userName, avatarSrc }: AuthorizedActionsProps) {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
-  const notifications = useAppSelector((state) => state.notifications.items)
+  const allNotifications = useAppSelector((state) => state.notifications.items)
+  const notifications = allNotifications.filter(
+    (notification) => notification.recipientUserId === userId,
+  )
   const toastIds = useAppSelector((state) => state.notifications.toastIds)
   const unreadCount = notifications.filter((notification) => !notification.isRead).length
 
@@ -79,8 +89,9 @@ export function AuthorizedActions({ userName, avatarSrc }: AuthorizedActionsProp
 
   const toastNotifications = toastIds
     .map((toastId) => notifications.find((notification) => notification.id === toastId))
-    .filter((notification): notification is (typeof notifications)[number] =>
-      notification !== undefined && !notification.isRead,
+    .filter(
+      (notification): notification is (typeof notifications)[number] =>
+        notification !== undefined && !notification.isRead,
     )
 
   return (
@@ -102,23 +113,25 @@ export function AuthorizedActions({ userName, avatarSrc }: AuthorizedActionsProp
               notifications={notifications}
               onClose={closeNotifications}
               onNotificationRead={(notificationId) => dispatch(notificationRead(notificationId))}
-              onMarkAllAsRead={() => dispatch(markAllAsRead())}
-              onClearRead={() => dispatch(clearRead())}
+              onMarkAllAsRead={() => dispatch(markAllAsRead(userId))}
+              onClearRead={() => dispatch(clearRead(userId))}
             />
           </div>
         )}
       </div>
 
-      <IconButton icon={<LikeIcon />} ariaLabel="Избранное" />
+      <IconButton
+        icon={<LikeIcon />}
+        ariaLabel="Избранное"
+        onClick={() => navigate(ROUTES.FAVORITES)}
+      />
 
       <div className={styles.user} ref={profileMenuRef} onClick={toggleProfileMenu}>
         <span className={styles.userName}>{userName}</span>
 
         <Avatar className={styles.avatar} src={avatarSrc} alt={`Аватар пользователя ${userName}`} />
 
-        {isProfileMenuOpen && (
-          <ProfileMenu onClose={() => setIsProfileMenuOpen(false)} />
-        )}
+        {isProfileMenuOpen && <ProfileMenu onClose={() => setIsProfileMenuOpen(false)} />}
       </div>
 
       {toastNotifications.length > 0 && (

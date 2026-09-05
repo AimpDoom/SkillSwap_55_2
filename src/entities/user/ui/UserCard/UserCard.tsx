@@ -13,12 +13,12 @@ import { LOCAL_STORAGE_KEYS, ROUTES } from '@/shared/lib/constants'
 import { Text } from '@/shared/ui/Text'
 import clsx from 'clsx'
 
-export type CardVariant = "catalog" | "profile";
+export type CardVariant = 'catalog' | 'profile'
 
 interface UserCardProps {
-  user: User,
+  user: User
   variant?: CardVariant
-} 
+}
 
 export const UserCard = ({ user, variant = 'catalog' }: UserCardProps) => {
   const authUser = getAuthUser()
@@ -42,11 +42,17 @@ export const UserCard = ({ user, variant = 'catalog' }: UserCardProps) => {
   }
 
   return (
-    <article 
-      className={clsx(styles.userCard, variant === "profile" && styles.userProfileCard) } 
-      aria-label={(variant === "catalog" ? 
-        `карточка пользователя ${user.name}` : 
-        `профиль пользователя ${user.name}`)}>
+    <article
+      className={clsx(
+        styles.userCard,
+        variant === 'catalog' ? styles.catalogCard : styles.userProfileCard,
+      )}
+      aria-label={
+        variant === 'catalog'
+          ? `карточка пользователя ${user.name}`
+          : `профиль пользователя ${user.name}`
+      }
+    >
       <div className={styles.cardTopBlock}>
         <Avatar
           src={user.avatarUrl || ''}
@@ -54,16 +60,24 @@ export const UserCard = ({ user, variant = 'catalog' }: UserCardProps) => {
           className={styles.userImage}
         />
         <UserInfo name={user.name} cityId={user.cityId} birthDate={user.birthDate} />
-        {variant === "catalog" && <LikeButton userId={user.id} likeCount={user.likesCount} />}
+        {variant === 'catalog' && <LikeButton userId={user.id} likeCount={user.likesCount} />}
       </div>
-      {(variant === "profile") && 
-         <Text variant="body" as="p" className={styles.aboutText}>
+      {variant === 'profile' && (
+        <Text variant="body" as="p" className={styles.aboutText}>
           {user.about}
         </Text>
-      }
+      )}
       <div className={styles.cardMiddleBlock}>
-        <CanTeach variant={variant} skillId={user.teachSkillId} header= {`Может научить${variant === 'catalog'? ':' : ''}`} />
-        <WantToLearn variant={variant} skillsIds={user.learnSubcategoryIds} header={`Хочет научиться${variant === 'catalog'? ':' : ''}`} />
+        <CanTeach
+          variant={variant}
+          skillId={user.teachSkillId}
+          header={`Может научить${variant === 'catalog' ? ':' : ''}`}
+        />
+        <WantToLearn
+          variant={variant}
+          skillsIds={user.learnSubcategoryIds}
+          header={`Хочет научиться${variant === 'catalog' ? ':' : ''}`}
+        />
       </div>
       {variant === 'catalog' &&
         (isExchangeRequested ? (

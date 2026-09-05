@@ -1,11 +1,18 @@
 import styles from './like-button.module.css'
 
+import { useLocation, useNavigate } from 'react-router-dom'
 import { IconButton } from '@/shared/ui/IconButton'
 import LikedIcon from '@/shared/assets/icons/like-filled.svg'
 import UnlikedIcon from '@/shared/assets/icons/like.svg'
-import { useLocalStorage } from '@/shared/hooks/useLocalStorage'
-import { LOCAL_STORAGE_KEYS } from '@/shared/lib/constants'
 import { Text } from '@/shared/ui/Text'
+import {
+  FAVORITES_CHANGED_EVENT,
+  isUserFavorite,
+  toggleFavoriteUser,
+} from '@/features/favorites/model/favorites'
+import { getAuthUser } from '@/features/auth/model'
+import { ROUTES } from '@/shared/lib/constants'
+import { useEffect, useState } from 'react'
 
 type LikeButtonProps = {
   userId: string
@@ -13,12 +20,35 @@ type LikeButtonProps = {
 }
 
 export function LikeButton({ userId, likeCount }: LikeButtonProps) {
-  const [favorites, setFavorites] = useLocalStorage<string[]>(LOCAL_STORAGE_KEYS.FAVORITES, [])
+  const navigate = useNavigate()
+  const location = useLocation()
 
-  const liked = favorites.includes(userId)
+  const [liked, setLiked] = useState<boolean>(() => isUserFavorite(userId))
+  useEffect(() => {
+    const handleFavoritesChanged = () => {
+      setLiked(isUserFavorite(userId))
+    }
+
+    window.addEventListener(FAVORITES_CHANGED_EVENT, handleFavoritesChanged)
+
+    return () => {
+      window.removeEventListener(FAVORITES_CHANGED_EVENT, handleFavoritesChanged)
+    }
+  }, [userId])
 
   const handleLikeClick = () => {
-    setFavorites((prev) => (liked ? prev.filter((id) => id !== userId) : [...prev, userId]))
+    if (!getAuthUser()) {
+      navigate(ROUTES.LOGIN, {
+        state: {
+          from: location.pathname + location.search + location.hash,
+        },
+      })
+
+      return
+    }
+
+    const newLikedState = toggleFavoriteUser(userId)
+    setLiked(newLikedState)
   }
 
   const displayedLikeCount = likeCount + Number(liked)
