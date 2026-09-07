@@ -1,4 +1,4 @@
-import type { User } from '@/entities/user/model/types'
+import type { User } from '@/entities/user'
 
 const SECTION_USERS_LIMIT = 9
 

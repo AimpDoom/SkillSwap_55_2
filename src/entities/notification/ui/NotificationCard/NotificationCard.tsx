@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { Button } from '@/shared/ui/Button'
 import { Text } from '@/shared/ui/Text'
 import IdeaIcon from '@/shared/assets/icons/idea.svg?react'
-import { formatNotificationDate } from '@/entities/notification/model'
-import { Notification, NotificationCardProps } from '../../model/types'
+import { formatNotificationDate } from '../../model'
+import type { Notification, NotificationCardProps } from '../../model/types'
 import styles from './NotificationCard.module.css'
 
 const NotificationCard: React.FC<NotificationCardProps> = ({
@@ -65,7 +65,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         {/* Первый контейнер: иконка + текст */}
         <div className={styles.notificationContent}>
           <div className={styles.notificationIcon}>
-            <IdeaIcon />
+            <IdeaIcon aria-hidden="true" />
           </div>
           <div className={styles.notificationTextWrapper}>
             <div className={styles.notificationHeader}>
@@ -140,7 +140,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
       {/* Пустое состояние */}
       {notifications.length === 0 && (
         <div className={styles.emptyState}>
-          <IdeaIcon className={styles.emptyIcon} />
+          <IdeaIcon className={styles.emptyIcon} aria-hidden="true" />
           <Text variant="body" className={styles.emptyText}>
             Нет уведомлений
           </Text>

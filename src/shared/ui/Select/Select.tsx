@@ -75,6 +75,7 @@ export const Select = ({
             return (
               <ChevronDownIcon
                 className={clsx(styles.chevron, props.selectProps.menuIsOpen && styles.chevronOpen)}
+                aria-hidden="true"
               />
             )
           },
@@ -86,7 +87,7 @@ export const Select = ({
               onClick={() => props.clearValue()}
               aria-label="Очистить"
             >
-              <CrossIcon className={styles.clearIcon} />
+              <CrossIcon className={styles.clearIcon} aria-hidden="true" />
             </button>
           ),
           IndicatorSeparator: () => null,

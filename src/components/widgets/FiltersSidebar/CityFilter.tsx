@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import cities from '@/../public/db/cities.json'
+import { useCities } from '@/entities/city'
 import chevronDown from '@/shared/assets/icons/chevron-down.svg'
 import chevronUp from '@/shared/assets/icons/chevron-up.svg'
 import { Checkbox } from '@/shared/ui/Checkbox'
@@ -16,6 +16,7 @@ const INITIAL_CITIES_COUNT = 5
 
 export const CityFilter = ({ selectedCities, onToggleCity }: CityFilterProps) => {
   const [showAllCities, setShowAllCities] = useState(false)
+  const { cities } = useCities()
 
   const visibleCities = showAllCities ? cities : cities.slice(0, INITIAL_CITIES_COUNT)
 

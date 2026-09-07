@@ -99,7 +99,7 @@ function InputImpl(
               disabled={disabled}
               onClick={openDatePicker}
             >
-              {endIcon}
+              <span aria-hidden="true">{endIcon}</span>
             </button>
           ) : (
             <span className={styles.endIcon} aria-hidden="true">

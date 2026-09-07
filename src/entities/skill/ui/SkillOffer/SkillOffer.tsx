@@ -13,20 +13,17 @@ import shareIcon from '@/shared/assets/icons/share.svg'
 import { Button } from '@/shared/ui/Button'
 import { IconButton } from '@/shared/ui/IconButton'
 import { Text } from '@/shared/ui/Text'
-import {
-  FAVORITES_CHANGED_EVENT,
-  isUserFavorite,
-  toggleFavoriteUser,
-} from '@/features/favorites/model/favorites'
-import { getAuthUser } from '@/features/auth/model'
+import { FAVORITES_CHANGED_EVENT, isUserFavorite, toggleFavoriteUser } from '@/features/favorites'
+import { getAuthUser } from '@/features/auth'
 import { ROUTES } from '@/shared/lib/constants'
 
 import styles from './SkillOffer.module.css'
+import clsx from 'clsx'
 
 interface SkillOfferProps {
   skill: Pick<Skill, 'title' | 'description' | 'imageUrls'>
   userId?: string
-  variant: 'confirmation' | 'default' | 'requested'
+  variant: 'confirmation' | 'default' | 'requested' | 'profile'
   categoryName: string
   subcategoryName: string
   onEdit?: () => void
@@ -117,7 +114,10 @@ export function SkillOffer({
   }
 
   return (
-    <article className={styles.card} aria-label="Предложение навыка">
+    <article
+      className={clsx(styles.card, variant === 'profile' && styles.profileCard)}
+      aria-label="Предложение навыка"
+    >
       {variant === 'confirmation' && (
         <header className={styles.confirmationHeaderBlock}>
           <Text variant="h2" className={styles.confirmationTitle}>
@@ -133,7 +133,7 @@ export function SkillOffer({
       <div className={styles.cardContent}>
         <section
           className={`${styles.infoBlock} ${
-            variant !== 'confirmation' ? styles.infoBlockWithActions : ''
+            variant === 'default' || variant === 'requested' ? styles.infoBlockWithActions : ''
           }`}
         >
           <Text variant="h1" as="h2" className={styles.title}>
@@ -153,7 +153,7 @@ export function SkillOffer({
               <div className={styles.btnGroup}>
                 <Button variant="secondary" onClick={onEdit} className={styles.editBtn}>
                   Редактировать
-                  <img src={editIcon} alt="" className={styles.btnIcon} />
+                  <img src={editIcon} alt="" className={styles.btnIcon} aria-hidden="true" />
                 </Button>
 
                 <Button variant="primary" onClick={onDone} className={styles.doneBtn}>
@@ -170,7 +170,7 @@ export function SkillOffer({
 
             {variant === 'requested' && (
               <div className={styles.statusBadge}>
-                <img src={clockIcon} alt="" className={styles.statusIcon} />
+                <img src={clockIcon} alt="" className={styles.statusIcon} aria-hidden="true" />
 
                 <Text variant="body" as="span">
                   Обмен предложен
@@ -181,7 +181,7 @@ export function SkillOffer({
         </section>
 
         <section className={styles.mediaColumn}>
-          {variant !== 'confirmation' && (
+          {(variant === 'default' || variant === 'requested') && (
             <div className={styles.topIconActions}>
               <IconButton
                 icon={<img src={liked ? likeFilledIcon : likeIcon} alt="" />}
@@ -223,7 +223,7 @@ export function SkillOffer({
                     onClick={handlePrevImage}
                     aria-label="Предыдущее изображение"
                   >
-                    <img src={chevronRightIcon} alt="" />
+                    <img src={chevronRightIcon} alt="" aria-hidden="true" />
                   </button>
 
                   <button
@@ -232,7 +232,7 @@ export function SkillOffer({
                     onClick={handleNextImage}
                     aria-label="Следующее изображение"
                   >
-                    <img src={chevronRightIcon} alt="" />
+                    <img src={chevronRightIcon} alt="" aria-hidden="true" />
                   </button>
                 </>
               )}

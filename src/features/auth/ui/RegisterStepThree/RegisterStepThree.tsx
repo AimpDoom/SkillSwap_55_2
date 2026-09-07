@@ -1,12 +1,16 @@
 import { useMemo, useState } from 'react'
-import { useCategories } from '@/entities/category/model/useCategories'
-import type { RegistrationSkillDraft } from '@/features/auth/model'
+import { useCategories } from '@/entities/category'
+import type { RegistrationSkillDraft } from '../../model'
 import { Button } from '@/shared/ui/Button'
 import { ImageUpload } from '@/shared/ui/ImageUpload'
 import { Input } from '@/shared/ui/Input'
 import { Select, type SelectOption } from '@/shared/ui/Select'
 import { Textarea } from '@/shared/ui/Textarea'
 import styles from './RegisterStepThree.module.css'
+
+const TITLE_MIN_LENGTH = 3
+const TITLE_MAX_LENGTH = 50
+const DESCRIPTION_MAX_LENGTH = 500
 
 export interface RegisterStepThreeProps {
   initialValues: RegistrationSkillDraft | null
@@ -77,12 +81,42 @@ export const RegisterStepThree = ({ initialValues, onBack, onNext }: RegisterSte
 
   const validate = (): StepThreeErrors => {
     const nextErrors: StepThreeErrors = {}
-    if (!title.trim()) nextErrors.title = 'Введите название навыка'
-    if (!categoryId) nextErrors.category = 'Выберите категорию'
-    if (!subcategoryId) nextErrors.subcategory = 'Выберите подкатегорию'
-    if (!description.trim()) nextErrors.description = 'Введите описание'
+
+    const trimmedTitle = title.trim()
+    const trimmedDescription = description.trim()
+
+    if (!trimmedTitle) {
+      nextErrors.title = 'Введите название навыка'
+    } else if (trimmedTitle.length < TITLE_MIN_LENGTH) {
+      nextErrors.title = `Минимум ${TITLE_MIN_LENGTH} символа`
+    } else if (trimmedTitle.length > TITLE_MAX_LENGTH) {
+      nextErrors.title = `Максимум ${TITLE_MAX_LENGTH} символов`
+    }
+
+    if (!categoryId) {
+      nextErrors.category = 'Выберите категорию'
+    }
+
+    if (!subcategoryId) {
+      nextErrors.subcategory = 'Выберите подкатегорию'
+    }
+
+    if (!trimmedDescription) {
+      nextErrors.description = 'Введите описание'
+    } else if (trimmedDescription.length > DESCRIPTION_MAX_LENGTH) {
+      nextErrors.description = `Максимум ${DESCRIPTION_MAX_LENGTH} символов`
+    }
+
     return nextErrors
   }
+
+  const isFormValid =
+    title.trim().length >= TITLE_MIN_LENGTH &&
+    title.trim().length <= TITLE_MAX_LENGTH &&
+    Boolean(categoryId) &&
+    Boolean(subcategoryId) &&
+    description.trim().length > 0 &&
+    description.trim().length <= DESCRIPTION_MAX_LENGTH
 
   const collectValues = (): RegistrationSkillDraft => ({
     title,
@@ -101,6 +135,11 @@ export const RegisterStepThree = ({ initialValues, onBack, onNext }: RegisterSte
     }
   }
 
+  const titleLengthError =
+    title.length > 0 && title.trim().length < TITLE_MIN_LENGTH
+      ? `Минимум ${TITLE_MIN_LENGTH} символа`
+      : undefined
+
   return (
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
       <div className={styles.inputs}>
@@ -109,7 +148,8 @@ export const RegisterStepThree = ({ initialValues, onBack, onNext }: RegisterSte
           label="Название навыка"
           placeholder="Введите название вашего навыка"
           value={title}
-          error={errors.title}
+          maxLength={TITLE_MAX_LENGTH}
+          error={errors.title ?? titleLengthError}
           onChange={(event) => {
             setTitle(event.target.value)
             setErrors((prev) => ({ ...prev, title: undefined }))
@@ -137,6 +177,7 @@ export const RegisterStepThree = ({ initialValues, onBack, onNext }: RegisterSte
           placeholder="Коротко опишите, чему можете научить"
           rows={4}
           value={description}
+          maxLength={DESCRIPTION_MAX_LENGTH}
           error={errors.description}
           onChange={(event) => {
             setDescription(event.target.value)
@@ -149,7 +190,7 @@ export const RegisterStepThree = ({ initialValues, onBack, onNext }: RegisterSte
         <Button type="button" variant="secondary" onClick={() => onBack(collectValues())}>
           Назад
         </Button>
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="primary" disabled={!isFormValid}>
           Продолжить
         </Button>
       </div>

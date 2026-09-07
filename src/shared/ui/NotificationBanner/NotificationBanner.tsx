@@ -67,7 +67,7 @@ export const NotificationBanner: React.FC<NotificationBannerProps> = ({
     >
       {/* Иконка лампочки */}
       <div className={styles.iconWrapper}>
-        <IdeaIcon />
+        <IdeaIcon aria-hidden="true" />
       </div>
 
       {/* Текст уведомления */}
@@ -77,7 +77,7 @@ export const NotificationBanner: React.FC<NotificationBannerProps> = ({
 
       {/* Кнопка закрытия */}
       <button className={styles.closeButton} onClick={handleClose} aria-label="Закрыть уведомление">
-        <CloseIcon />
+        <CloseIcon aria-hidden="true" />
       </button>
 
       {/* Кнопка "Перейти" - появляется при наведении */}

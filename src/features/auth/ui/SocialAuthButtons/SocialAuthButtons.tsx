@@ -8,11 +8,12 @@ export const SocialAuthButtons = () => {
   return (
     <div className={styles.wrapper}>
       <Button variant="social" disabled>
-        <GoogleIcon className={styles.icon} />
+        <GoogleIcon className={styles.icon} aria-hidden="true" />
         Продолжить с Google
       </Button>
+
       <Button variant="social" disabled>
-        <AppleIcon className={styles.icon} />
+        <AppleIcon className={styles.icon} aria-hidden="true" />
         Продолжить с Apple
       </Button>
       <div className={styles.divider}>

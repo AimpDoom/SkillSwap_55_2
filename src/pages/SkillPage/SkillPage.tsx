@@ -4,23 +4,20 @@ import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import { fetchSubcategory, fetchCategories, fetchSkillById, fetchSkills } from '@/api/skills'
 import { fetchUserById, fetchUsers } from '@/api/users'
 
-import type { SkillCategory } from '@/entities/category/model/types'
-import type { Skill } from '@/entities/skill/model/types'
-import { SkillOffer } from '@/entities/skill/ui/SkillOffer/SkillOffer'
-import type { User } from '@/entities/user/model/types'
-import { UserCard } from '@/entities/user/ui/UserCard/UserCard'
-import type { SwapRequest } from '@/entities/request/model/types'
+import type { SkillCategory } from '@/entities/category'
+import type { Skill } from '@/entities/skill'
+import { SkillOffer } from '@/entities/skill'
+import type { User } from '@/entities/user'
+import { UserCard } from '@/entities/user'
 
-import { getAuthUser } from '@/features/auth/model/authUtils'
+import { getAuthUser } from '@/features/auth'
 import { RegistrationSuccessModal } from '@/features/auth/ui/RegistrationSuccessModal'
-import { ExchangeOfferedModal } from '@/features/exchange/ui/ExchangeOfferedModal'
+import { ExchangeOfferedModal } from '@/features/exchange'
 import { Container } from '@/shared/ui/Container'
 import { Pagination } from '@/shared/ui/Pagination'
-import { ROUTES, LOCAL_STORAGE_KEYS } from '@/shared/lib/constants'
-import {
-  createExchangeAcceptedNotification,
-  notificationCreated,
-} from '@/entities/notification/model'
+import { ROUTES } from '@/shared/lib/constants'
+import { createExchangeAcceptedNotification, notificationCreated } from '@/entities/notification'
+import { createExchangeRequest, hasExchangeRequest } from '@/features/exchange'
 import { useAppDispatch } from '@/store/hooks'
 
 import styles from './SkillPage.module.css'
@@ -123,22 +120,15 @@ export default function SkillPage() {
         setSimilarUsers(relatedUsers)
 
         const authUser = getAuthUser()
+
         if (authUser) {
-          try {
-            const rawRequests = localStorage.getItem(LOCAL_STORAGE_KEYS.REQUESTS)
-            const requests: SwapRequest[] = rawRequests ? JSON.parse(rawRequests) : []
-
-            const hasDuplicate = requests.some(
-              (req) =>
-                req.fromUserId === authUser.id &&
-                req.toUserId === currentSkill.authorId &&
-                req.skillId === currentSkill.id,
-            )
-
-            setIsExchangeRequested(hasDuplicate)
-          } catch {
-            setIsExchangeRequested(false)
-          }
+          setIsExchangeRequested(
+            hasExchangeRequest({
+              fromUserId: authUser.id,
+              toUserId: currentSkill.authorId,
+              skillId: currentSkill.id,
+            }),
+          )
         }
       } catch {
         setError(true)
@@ -170,48 +160,25 @@ export default function SkillPage() {
 
     if (!skill || !author) return
 
-    try {
-      const rawRequests = localStorage.getItem(LOCAL_STORAGE_KEYS.REQUESTS)
-      const requests: SwapRequest[] = rawRequests ? JSON.parse(rawRequests) : []
+    const request = createExchangeRequest({
+      fromUserId: authUser.id,
+      toUserId: skill.authorId,
+      skillId: skill.id,
+    })
 
-      const isDuplicate = requests.some(
-        (req) =>
-          req.fromUserId === authUser.id &&
-          req.toUserId === skill.authorId &&
-          req.skillId === skill.id,
-      )
-
-      if (isDuplicate) {
-        setIsExchangeRequested(true)
-        return
-      }
-
-      const now = new Date().toISOString()
-
-      const newRequest: SwapRequest = {
-        id: 'req_' + Math.random().toString(36).substring(2, 11) + '_' + Date.now(),
-        skillId: skill.id,
-        fromUserId: authUser.id,
-        toUserId: skill.authorId,
-        status: 'accepted',
-        createdAt: now,
-        updatedAt: now,
-      }
-
-      requests.push(newRequest)
-      localStorage.setItem(LOCAL_STORAGE_KEYS.REQUESTS, JSON.stringify(requests))
-
+    if (!request) {
       setIsExchangeRequested(true)
-      setIsExchangeOfferedModalOpen(true)
-
-      exchangeAcceptedTimeoutRef.current = setTimeout(() => {
-        dispatch(
-          notificationCreated(createExchangeAcceptedNotification(author, skill.id, authUser.id)),
-        )
-      }, EXCHANGE_ACCEPTED_DELAY_MS)
-    } catch (e) {
-      console.error('Ошибка сохранения запроса в localStorage:', e)
+      return
     }
+
+    setIsExchangeRequested(true)
+    setIsExchangeOfferedModalOpen(true)
+
+    exchangeAcceptedTimeoutRef.current = setTimeout(() => {
+      dispatch(
+        notificationCreated(createExchangeAcceptedNotification(author, skill.id, authUser.id)),
+      )
+    }, EXCHANGE_ACCEPTED_DELAY_MS)
   }
 
   if (isLoading) {

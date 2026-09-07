@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
-import type { AuthFormValues } from '@/features/auth/model'
+import type { AuthFormValues } from '../../model'
 import EyeSlashIcon from '@/shared/assets/icons/eye-slash.svg?react'
 import EyeIcon from '@/shared/assets/icons/eye.svg?react'
 import { Button } from '@/shared/ui/Button'
@@ -62,7 +62,7 @@ export const RegisterStepOne = ({ initialValues, onNext }: RegisterStepOneProps)
               onClick={() => setShowPassword((prev) => !prev)}
               aria-label={showPassword ? 'Скрыть пароль' : 'Показать пароль'}
             >
-              {showPassword ? <EyeSlashIcon /> : <EyeIcon />}
+              {showPassword ? <EyeSlashIcon aria-hidden="true" /> : <EyeIcon aria-hidden="true" />}
             </button>
           }
           {...register('password')}

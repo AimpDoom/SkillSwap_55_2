@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 
 import { Footer } from '@/components/widgets/Footer'
 import { Header } from '@/components/widgets/Header'
-import { getAuthUser, getRegisteredUsers } from '@/features/auth/model'
+import { getAuthUser, getRegisteredUsers } from '@/features/auth'
 import { ROUTES } from '@/shared/lib/constants'
 
 const CatalogPage = lazy(() => import('@/pages/CatalogPage'))

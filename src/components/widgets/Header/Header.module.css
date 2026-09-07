@@ -33,6 +33,8 @@
 
 .minimalHeader {
   width: 100%;
+  padding-block: 20px 4px;
+  background-color: var(--color-bg-secondary);
 }
 
 .minimalContent {
@@ -40,6 +42,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  min-height: 80px;
 }
 
 .closeButton {

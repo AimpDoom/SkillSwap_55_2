@@ -17,6 +17,8 @@ export type ImageUploadProps = {
 }
 
 const DEFAULT_MAX_COUNT = 10
+const MAX_FILE_SIZE = 2 * 1024 * 1024
+const ALLOWED_IMAGE_TYPES = ['image/jpeg', 'image/png']
 
 export function ImageUpload({
   value,
@@ -47,7 +49,7 @@ export function ImageUpload({
     // и только потом отсекаем по свободным слотам — чтобы повторно выбранные
     // (уже добавленные) файлы не съедали лимит.
     const files = Array.from(fileList)
-      .filter((file) => file.type.startsWith('image/'))
+      .filter((file) => ALLOWED_IMAGE_TYPES.includes(file.type) && file.size <= MAX_FILE_SIZE)
       .slice(0, maxCount)
 
     const results = await Promise.allSettled(files.map((file) => resizeImageToDataUrl(file)))
@@ -108,7 +110,7 @@ export function ImageUpload({
         ref={inputRef}
         id={inputId}
         type="file"
-        accept="image/*"
+        accept="image/jpeg,image/png"
         multiple
         className={styles.input}
         onChange={handleInputChange}

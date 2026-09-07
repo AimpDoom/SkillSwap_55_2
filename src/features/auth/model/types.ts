@@ -1,5 +1,5 @@
-import type { Skill } from '@/entities/skill/model/types'
-import type { Gender, User } from '@/entities/user/model/types'
+import type { Skill } from '@/entities/skill'
+import type { Gender, User } from '@/entities/user'
 
 export interface AuthUser {
   id: string

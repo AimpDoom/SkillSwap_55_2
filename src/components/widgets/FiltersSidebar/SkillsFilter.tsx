@@ -1,4 +1,4 @@
-import categories from '@/../public/db/categories.json'
+import { useCategories } from '@/entities/category'
 import chevronDown from '@/shared/assets/icons/chevron-down.svg'
 import chevronUp from '@/shared/assets/icons/chevron-up.svg'
 import checkboxDone from '@/shared/assets/icons/checkbox-done.svg'
@@ -21,6 +21,8 @@ export const SkillsFilter = ({
   onToggleSkill,
   onToggleOpen,
 }: SkillsFilterProps) => {
+  const { categories } = useCategories()
+
   return (
     <section className={styles.group}>
       <h3 className={styles.sectionTitle}>Навыки</h3>

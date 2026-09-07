@@ -5,13 +5,8 @@ import NotificationIcon from '@/shared/assets/icons/notification.svg?react'
 import { Avatar } from '@/shared/ui/Avatar'
 import { IconButton } from '@/shared/ui/IconButton'
 import NotificationBanner from '@/shared/ui/NotificationBanner'
-import NotificationCard from '@/entities/notification/ui/NotificationCard'
-import {
-  clearRead,
-  dismissToast,
-  markAllAsRead,
-  notificationRead,
-} from '@/entities/notification/model'
+import { NotificationCard } from '@/entities/notification'
+import { clearRead, dismissToast, markAllAsRead, notificationRead } from '@/entities/notification'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { ProfileMenu } from './ProfileMenu'
 import styles from './AuthorizedActions.module.css'

@@ -17,9 +17,11 @@ export const AuthLayout = ({ heading, form, promo }: AuthLayoutProps) => {
   return (
     <>
       <Header variant="minimal" onClose={() => navigate(ROUTES.HOME)} />
+
       <Container>
         <div className={styles.content}>
           <div className={styles.heading}>{heading}</div>
+
           <div className={styles.columns}>
             <div className={styles.column}>{form}</div>
             <div className={styles.column}>{promo}</div>

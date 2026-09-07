@@ -83,6 +83,7 @@ export const MultiSelect = ({
           DropdownIndicator: (props) => (
             <ChevronDownIcon
               className={clsx(styles.chevron, props.selectProps.menuIsOpen && styles.chevronOpen)}
+              aria-hidden="true"
             />
           ),
           IndicatorSeparator: () => null,

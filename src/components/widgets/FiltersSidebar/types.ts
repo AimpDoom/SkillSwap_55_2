@@ -1,6 +1,8 @@
+import type { Gender } from '@/entities/user'
+
 export type RoleValue = 'all' | 'learn' | 'teach'
 
-export type GenderValue = 'any' | 'male' | 'female'
+export type GenderValue = 'any' | Gender
 
 export type CatalogFilters = {
   role: RoleValue

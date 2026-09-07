@@ -10,6 +10,9 @@ import { Calendar } from '@/shared/ui/Calendar'
 import { AvatarUploadButton } from '@/shared/ui/AvatarUploadButton'
 import { Container } from '@/shared/ui/Container'
 import { fetchCities } from '@/api/cities'
+import { useCategories } from '@/entities/category'
+import { SkillOffer } from '@/entities/skill'
+import { Text } from '@/shared/ui/Text'
 
 import styles from './ProfilePage.module.css'
 
@@ -21,11 +24,15 @@ import clockIcon from '@/shared/assets/icons/message-text.svg'
 import ideaIcon from '@/shared/assets/icons/idea.svg'
 import GalleryEditIcon from '@/shared/assets/icons/gallery-edit.svg?react'
 
-import type { Gender, User } from '@/entities/user/model/types'
+import type { Gender, User } from '@/entities/user'
 
-import { getAuthUser, getRegisteredUsers } from '@/features/auth/model'
-import type { AuthUser, RegisteredUser } from '@/features/auth/model'
-import { LOCAL_STORAGE_KEYS } from '@/shared/lib/constants'
+import {
+  getAuthUser,
+  getRegisteredUsers,
+  saveRegisteredUsers,
+  updateAuthUser,
+} from '@/features/auth'
+import type { RegisteredUser } from '@/features/auth'
 
 interface CityOption {
   value: string
@@ -70,10 +77,6 @@ const MENU_ITEMS = [
   { id: 'Личные данные', label: 'Личные данные', icon: userIcon },
 ]
 
-function saveRegisteredUsers(users: RegisteredUser[]): void {
-  localStorage.setItem(LOCAL_STORAGE_KEYS.REGISTERED_USERS, JSON.stringify(users))
-}
-
 export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState('Личные данные')
   const [cities, setCities] = useState<CityOption[]>([])
@@ -81,6 +84,9 @@ export default function ProfilePage() {
   const [error, setError] = useState<string | null>(null)
   const [saveSuccess, setSaveSuccess] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [profileRecord, setProfileRecord] = useState<RegisteredUser | null>(null)
+
+  const { categories } = useCategories()
 
   const {
     register,
@@ -128,6 +134,8 @@ export default function ProfilePage() {
           return
         }
 
+        setProfileRecord(registeredUser)
+
         const userData = registeredUser.user
 
         reset({
@@ -141,8 +149,7 @@ export default function ProfilePage() {
         })
 
         setLoading(false)
-      } catch (err) {
-        console.error('Error loading user data:', err)
+      } catch {
         setError('Ошибка загрузки данных пользователя')
         setLoading(false)
       }
@@ -161,8 +168,7 @@ export default function ProfilePage() {
             label: city.name,
           })),
         )
-      } catch (err) {
-        console.error('Error loading cities:', err)
+      } catch {
         setError('Ошибка загрузки списка городов')
       }
     }
@@ -215,12 +221,10 @@ export default function ProfilePage() {
       saveRegisteredUsers(registeredUsers)
 
       if (authUser.name !== data.name || authUser.email !== data.email) {
-        const updatedAuthUser: AuthUser = {
-          ...authUser,
+        updateAuthUser({
           name: data.name,
           email: data.email,
-        }
-        localStorage.setItem(LOCAL_STORAGE_KEYS.AUTH_USER, JSON.stringify(updatedAuthUser))
+        })
       }
 
       setSaveSuccess(true)
@@ -228,13 +232,22 @@ export default function ProfilePage() {
       setTimeout(() => {
         setSaveSuccess(false)
       }, 3000)
-    } catch (err) {
-      console.error('Error saving user data:', err)
+    } catch {
       setError('Ошибка сохранения данных')
     } finally {
       setIsSubmitting(false)
     }
   }
+
+  const profileSkill = profileRecord?.skill ?? null
+
+  const profileSkillCategory = categories.find(
+    (category) => category.id === profileSkill?.categoryId,
+  )
+
+  const profileSkillSubcategory = profileSkillCategory?.subcategories.find(
+    (subcategory) => subcategory.id === profileSkill?.subcategoryId,
+  )
 
   if (loading) {
     return (
@@ -274,133 +287,174 @@ export default function ProfilePage() {
             ))}
           </aside>
 
-          <section className={styles.content}>
-            {saveSuccess && <div className={styles.successMessage}>Данные успешно сохранены</div>}
+          <section
+            className={`${styles.content} ${
+              activeTab === 'Мои навыки' ? styles.skillsContent : ''
+            }`}
+          >
+            {activeTab === 'Личные данные' && (
+              <>
+                {saveSuccess && (
+                  <div className={styles.successMessage}>Данные успешно сохранены</div>
+                )}
 
-            <form className={styles.profileGrid} onSubmit={handleSubmit(onSubmit)}>
-              <div className={styles.formFields}>
-                <Controller
-                  name="email"
-                  control={control}
-                  rules={{
-                    required: 'Email обязателен',
-                    pattern: {
-                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: 'Введите корректный email',
-                    },
-                  }}
-                  render={({ field: { ref: _ref, ...field } }) => (
-                    <Input
-                      {...field}
-                      label="Почта"
-                      placeholder="example@mail.com"
-                      error={errors.email?.message}
-                      endIcon={
-                        <img src={editIcon} className={styles.editIcon} alt="" aria-hidden="true" />
+                <form className={styles.profileGrid} onSubmit={handleSubmit(onSubmit)}>
+                  <div className={styles.formFields}>
+                    <Controller
+                      name="email"
+                      control={control}
+                      rules={{
+                        required: 'Email обязателен',
+                        pattern: {
+                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                          message: 'Введите корректный email',
+                        },
+                      }}
+                      render={({ field: { ref: _ref, ...field } }) => (
+                        <Input
+                          {...field}
+                          label="Почта"
+                          placeholder="example@mail.com"
+                          error={errors.email?.message}
+                          endIcon={
+                            <img
+                              src={editIcon}
+                              className={styles.editIcon}
+                              alt=""
+                              aria-hidden="true"
+                            />
+                          }
+                        />
+                      )}
+                    />
+
+                    <button type="button" className={styles.passwordButton}>
+                      Изменить пароль
+                    </button>
+
+                    <Controller
+                      name="name"
+                      control={control}
+                      rules={{ required: 'Имя обязательно' }}
+                      render={({ field: { ref: _ref, ...field } }) => (
+                        <Input
+                          {...field}
+                          label="Имя"
+                          placeholder="Ваше имя"
+                          error={errors.name?.message}
+                          endIcon={
+                            <img
+                              src={editIcon}
+                              className={styles.editIcon}
+                              alt=""
+                              aria-hidden="true"
+                            />
+                          }
+                        />
+                      )}
+                    />
+
+                    <div className={styles.rowFields}>
+                      <Controller
+                        name="birthday"
+                        control={control}
+                        rules={{
+                          required: 'Укажите дату рождения',
+                        }}
+                        render={({ field: { value, onChange } }) => (
+                          <Calendar
+                            label="Дата рождения"
+                            value={parseDateValue(value)}
+                            onChange={(date) => onChange(formatDateValue(date))}
+                            error={errors.birthday?.message}
+                          />
+                        )}
+                      />
+
+                      <Controller
+                        name="gender"
+                        control={control}
+                        render={({ field: { value, onChange } }) => (
+                          <Select
+                            label="Пол"
+                            placeholder="Выберите"
+                            options={GENDER_OPTIONS}
+                            value={GENDER_OPTIONS.find((option) => option.value === value) ?? null}
+                            onChange={(option) => onChange(option?.value ?? 'unspecified')}
+                          />
+                        )}
+                      />
+                    </div>
+
+                    <Controller
+                      name="city"
+                      control={control}
+                      rules={{
+                        required: 'Выберите город',
+                      }}
+                      render={({ field: { value, onChange } }) => (
+                        <Select
+                          label="Город"
+                          placeholder="Выберите город"
+                          options={cities}
+                          value={cities.find((option) => option.value === value) ?? null}
+                          onChange={(option) => onChange(option?.value ?? '')}
+                          error={errors.city?.message}
+                          isSearchable
+                        />
+                      )}
+                    />
+
+                    <div>
+                      <Textarea
+                        label="О себе"
+                        placeholder="Расскажите о себе..."
+                        withIcon
+                        endIcon={<img src={editIcon} alt="" aria-hidden="true" />}
+                        {...register('about')}
+                      />
+                    </div>
+
+                    <Button className={styles.submitButton} type="submit" disabled={isSubmitting}>
+                      {isSubmitting ? 'Сохранение...' : 'Сохранить'}
+                    </Button>
+                  </div>
+
+                  <div className={styles.avatarContainer}>
+                    <AvatarUploadButton
+                      value={avatar}
+                      onChange={(newAvatar) => setValue('avatarUrl', newAvatar)}
+                      alt={name || 'Пользователь'}
+                      className={styles.avatarWrapper}
+                      avatarClassName={styles.profileAvatar}
+                      uploadButtonClassName={styles.profileUploadButton}
+                      icon={
+                        <GalleryEditIcon className={styles.profileUploadIcon} aria-hidden="true" />
                       }
                     />
-                  )}
-                />
+                  </div>
+                </form>
+              </>
+            )}
 
-                <button type="button" className={styles.passwordButton}>
-                  Изменить пароль
-                </button>
+            {activeTab === 'Мои навыки' && (
+              <div className={styles.tabContent}>
+                <Text variant="h2">Мои навыки</Text>
 
-                <Controller
-                  name="name"
-                  control={control}
-                  rules={{ required: 'Имя обязательно' }}
-                  render={({ field: { ref: _ref, ...field } }) => (
-                    <Input
-                      {...field}
-                      label="Имя"
-                      placeholder="Ваше имя"
-                      error={errors.name?.message}
-                      endIcon={
-                        <img src={editIcon} className={styles.editIcon} alt="" aria-hidden="true" />
-                      }
-                    />
-                  )}
-                />
-
-                <div className={styles.rowFields}>
-                  <Controller
-                    name="birthday"
-                    control={control}
-                    rules={{
-                      required: 'Укажите дату рождения',
-                    }}
-                    render={({ field: { value, onChange } }) => (
-                      <Calendar
-                        label="Дата рождения"
-                        value={parseDateValue(value)}
-                        onChange={(date) => onChange(formatDateValue(date))}
-                        error={errors.birthday?.message}
-                      />
-                    )}
+                {profileSkill ? (
+                  <SkillOffer
+                    skill={profileSkill}
+                    variant="profile"
+                    categoryName={profileSkillCategory?.name ?? ''}
+                    subcategoryName={profileSkillSubcategory?.name ?? ''}
                   />
-
-                  <Controller
-                    name="gender"
-                    control={control}
-                    render={({ field: { value, onChange } }) => (
-                      <Select
-                        label="Пол"
-                        placeholder="Выберите"
-                        options={GENDER_OPTIONS}
-                        value={GENDER_OPTIONS.find((option) => option.value === value) ?? null}
-                        onChange={(option) => onChange(option?.value ?? 'unspecified')}
-                      />
-                    )}
-                  />
-                </div>
-
-                <Controller
-                  name="city"
-                  control={control}
-                  rules={{
-                    required: 'Выберите город',
-                  }}
-                  render={({ field: { value, onChange } }) => (
-                    <Select
-                      label="Город"
-                      placeholder="Выберите город"
-                      options={cities}
-                      value={cities.find((option) => option.value === value) ?? null}
-                      onChange={(option) => onChange(option?.value ?? '')}
-                      error={errors.city?.message}
-                      isSearchable
-                    />
-                  )}
-                />
-
-                <div>
-                  <Textarea
-                    label="О себе"
-                    placeholder="Расскажите о себе..."
-                    withIcon
-                    endIcon={<img src={editIcon} alt="" aria-hidden="true" />}
-                    {...register('about')}
-                  />
-                </div>
-
-                <Button className={styles.submitButton} type="submit" disabled={isSubmitting}>
-                  {isSubmitting ? 'Сохранение...' : 'Сохранить'}
-                </Button>
+                ) : (
+                  <Text variant="body" as="p">
+                    У вас пока нет созданных навыков
+                  </Text>
+                )}
               </div>
-
-              <div className={styles.avatarContainer}>
-                <AvatarUploadButton
-                  value={avatar}
-                  onChange={(newAvatar) => setValue('avatarUrl', newAvatar)}
-                  alt={name || 'Пользователь'}
-                  className={styles.avatarWrapper}
-                  avatarClassName={styles.profileAvatar}
-                  uploadButtonClassName={styles.profileUploadButton}
-                  icon={<GalleryEditIcon className={styles.profileUploadIcon} aria-hidden="true" />}
-                />
-              </div>
-            </form>
+            )}
           </section>
         </div>
       </Container>

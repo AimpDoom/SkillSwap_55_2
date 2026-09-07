@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 324px 1fr;
   gap: 24px;
+  min-height: 708px;
   margin: 40px 0;
   align-items: stretch;
 }
@@ -169,4 +170,16 @@
 
 .profileUploadIcon path {
   fill: var(--color-text-primary);
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.skillsContent {
+  padding: 0;
+  background: transparent;
 }

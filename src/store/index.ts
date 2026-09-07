@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import { notificationsReducer, persistNotifications } from '@/entities/notification/model'
+import { notificationsReducer, persistNotifications } from '@/entities/notification'
 
 export const store = configureStore({
   reducer: {

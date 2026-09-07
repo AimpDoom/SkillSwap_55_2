@@ -8,5 +8,6 @@ export {
   markAllAsRead,
   clearRead,
   dismissToast,
-  persistNotifications,
 } from './slice'
+
+export { getNotifications, persistNotifications } from './notificationStorage'

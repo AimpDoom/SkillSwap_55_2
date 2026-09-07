@@ -1,17 +1,18 @@
-import type { Skill } from '@/entities/skill/model/types'
-import type { User } from '@/entities/user/model/types'
-import type { AuthUser, RegisteredUser, RegistrationDraft } from '@/features/auth/model/types'
+import type { Skill } from '@/entities/skill'
+import type { User } from '@/entities/user'
+import type { AuthUser, RegisteredUser, RegistrationDraft } from './types'
 import { LOCAL_STORAGE_KEYS } from '@/shared/lib/constants'
 import { generateId } from '@/shared/lib/helpers'
+import { getStorageItem, setStorageItem } from '@/shared/lib/storage'
+
 import { saveAuthUser } from './authUtils'
 
 export function getRegisteredUsers(): RegisteredUser[] {
-  try {
-    const raw = localStorage.getItem(LOCAL_STORAGE_KEYS.REGISTERED_USERS)
-    return raw ? (JSON.parse(raw) as RegisteredUser[]) : []
-  } catch {
-    return []
-  }
+  return getStorageItem<RegisteredUser[]>(LOCAL_STORAGE_KEYS.REGISTERED_USERS, [])
+}
+
+export function saveRegisteredUsers(users: RegisteredUser[]): void {
+  setStorageItem(LOCAL_STORAGE_KEYS.REGISTERED_USERS, users)
 }
 
 export function buildRegisteredUser(draft: RegistrationDraft): RegisteredUser | null {
@@ -71,7 +72,7 @@ export function completeRegistration(draft: RegistrationDraft): AuthUser | null 
 
   const others = getRegisteredUsers().filter((entry) => entry.user.email !== record.user.email)
 
-  localStorage.setItem(LOCAL_STORAGE_KEYS.REGISTERED_USERS, JSON.stringify([...others, record]))
+  setStorageItem(LOCAL_STORAGE_KEYS.REGISTERED_USERS, [...others, record])
 
   return saveAuthUser(record.user)
 }

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 import { fetchSkills } from '@/api/skills'
-import type { Skill } from '@/entities/skill/model/types'
+import type { Skill } from '@/entities/skill'
 import { ROUTES } from '@/shared/lib/constants'
 import { Input } from '@/shared/ui/Input'
 

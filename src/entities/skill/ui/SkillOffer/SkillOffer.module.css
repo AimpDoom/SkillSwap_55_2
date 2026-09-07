@@ -248,3 +248,9 @@
 .remainingText {
   color: var(--color-text-primary);
 }
+
+/* --- Profile Card --- */
+.profileCard {
+  background: var(--color-bg-primary);
+  padding: 40px;
+}

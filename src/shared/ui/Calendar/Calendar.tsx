@@ -74,7 +74,7 @@ export const Calendar = ({
           >
             {value ? formatDate(value) : placeholder}
           </Text>
-          <CalendarIcon className={styles.icon} />
+          <CalendarIcon className={styles.icon} aria-hidden="true" />
         </button>
 
         {isOpen && (

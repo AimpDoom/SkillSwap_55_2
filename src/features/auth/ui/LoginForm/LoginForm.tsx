@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { getRegisteredUsers, saveAuthUser } from '@/features/auth/model'
+import { getRegisteredUsers, saveAuthUser } from '../../model'
 import EyeSlashIcon from '@/shared/assets/icons/eye-slash.svg?react'
 import EyeIcon from '@/shared/assets/icons/eye.svg?react'
 import { ROUTES } from '@/shared/lib/constants'
@@ -81,7 +81,7 @@ export const LoginForm = () => {
               onClick={() => setShowPassword((prev) => !prev)}
               aria-label={showPassword ? 'Скрыть пароль' : 'Показать пароль'}
             >
-              {showPassword ? <EyeSlashIcon /> : <EyeIcon />}
+              {showPassword ? <EyeSlashIcon aria-hidden="true" /> : <EyeIcon aria-hidden="true" />}
             </button>
           }
           {...passwordField}

@@ -3,14 +3,14 @@ import { WantToLearn } from './WantToLearn/WantToLearn'
 import { UserInfo } from './UserInfo/UserInfo'
 import { CanTeach } from './CanTeach/CanTeach'
 import styles from './user-card.module.css'
-import type { SwapRequest } from '@/entities/request/model/types'
-import type { User } from '@/entities/user/model/types'
-import { getAuthUser } from '@/features/auth/model/authUtils'
+import type { User } from '../../model/types'
+import { getAuthUser } from '@/features/auth'
 import clockIcon from '@/shared/assets/icons/clock.svg'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Button } from '@/shared/ui/Button'
-import { LOCAL_STORAGE_KEYS, ROUTES } from '@/shared/lib/constants'
 import { Text } from '@/shared/ui/Text'
+import { hasExchangeRequest } from '@/features/exchange'
+import { ROUTES } from '@/shared/lib/constants'
 import clsx from 'clsx'
 
 export type CardVariant = 'catalog' | 'profile'
@@ -23,23 +23,13 @@ interface UserCardProps {
 export const UserCard = ({ user, variant = 'catalog' }: UserCardProps) => {
   const authUser = getAuthUser()
 
-  let isExchangeRequested = false
-
-  if (authUser) {
-    try {
-      const rawRequests = localStorage.getItem(LOCAL_STORAGE_KEYS.REQUESTS)
-      const requests: SwapRequest[] = rawRequests ? JSON.parse(rawRequests) : []
-
-      isExchangeRequested = requests.some(
-        (request) =>
-          request.fromUserId === authUser.id &&
-          request.toUserId === user.id &&
-          request.skillId === user.teachSkillId,
-      )
-    } catch {
-      isExchangeRequested = false
-    }
-  }
+  const isExchangeRequested = authUser
+    ? hasExchangeRequest({
+        fromUserId: authUser.id,
+        toUserId: user.id,
+        skillId: user.teachSkillId,
+      })
+    : false
 
   return (
     <article

@@ -1,6 +1,6 @@
 import type { CatalogFilters } from '@/components/widgets/FiltersSidebar/types'
-import type { Skill } from '@/entities/skill/model/types'
-import type { User } from '@/entities/user/model/types'
+import type { Skill } from '@/entities/skill'
+import type { User } from '@/entities/user'
 
 export const hasActiveCatalogFilters = (filters: CatalogFilters): boolean => {
   return (

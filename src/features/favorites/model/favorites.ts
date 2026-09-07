@@ -1,5 +1,4 @@
-import { getAuthUser, getRegisteredUsers } from '@/features/auth/model'
-import { LOCAL_STORAGE_KEYS } from '@/shared/lib/constants'
+import { getAuthUser, getRegisteredUsers, saveRegisteredUsers } from '@/features/auth'
 
 export const FAVORITES_CHANGED_EVENT = 'favorites-changed'
 
@@ -46,7 +45,7 @@ export function toggleFavoriteUser(userId: string): boolean {
       likedUserIds,
     },
   }
-  localStorage.setItem(LOCAL_STORAGE_KEYS.REGISTERED_USERS, JSON.stringify(registeredUsers))
+  saveRegisteredUsers(registeredUsers)
   window.dispatchEvent(new Event(FAVORITES_CHANGED_EVENT))
 
   return !isFavorite

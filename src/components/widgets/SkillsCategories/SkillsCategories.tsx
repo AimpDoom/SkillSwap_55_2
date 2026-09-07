@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 
 import { fetchCategories } from '@/api/skills'
-import type { SkillCategory } from '@/entities/category/model/types'
+import type { SkillCategory } from '@/entities/category'
 import bookIcon from '@/shared/assets/icons/categories/book.svg'
 import briefcaseIcon from '@/shared/assets/icons/categories/briefcase.svg'
 import globalIcon from '@/shared/assets/icons/categories/global.svg'

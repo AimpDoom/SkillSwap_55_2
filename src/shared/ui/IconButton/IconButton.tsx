@@ -22,7 +22,9 @@ export function IconButton({
       className={clsx(styles.button, className)}
       aria-label={ariaLabel}
     >
-      {icon}
+      <span className={styles.icon} aria-hidden="true">
+        {icon}
+      </span>
     </button>
   )
 }

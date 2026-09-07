@@ -1,5 +1,5 @@
-import type { Skill } from '@/entities/skill/model/types'
-import type { SkillCategory, SkillSubcategory } from '@/entities/category/model/types'
+import type { Skill } from '@/entities/skill'
+import type { SkillCategory, SkillSubcategory } from '@/entities/category'
 
 const BASE_URL = '/db'
 

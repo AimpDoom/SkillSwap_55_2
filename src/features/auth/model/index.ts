@@ -1,6 +1,11 @@
-export { clearAuthUser, getAuthUser, saveAuthUser } from './authUtils'
+export { clearAuthUser, getAuthUser, saveAuthUser, updateAuthUser } from './authUtils'
 
-export { buildRegisteredUser, completeRegistration, getRegisteredUsers } from './registration'
+export {
+  buildRegisteredUser,
+  completeRegistration,
+  getRegisteredUsers,
+  saveRegisteredUsers,
+} from './registration'
 
 export { useRegistrationFlow } from './registrationFlow'
 

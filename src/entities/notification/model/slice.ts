@@ -1,7 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
-import { LOCAL_STORAGE_KEYS } from '@/shared/lib/constants'
-
+import { getNotifications } from './notificationStorage'
 import type { Notification } from './types'
 
 interface NotificationsState {
@@ -9,27 +8,8 @@ interface NotificationsState {
   toastIds: Array<string | number>
 }
 
-function loadNotifications(): Notification[] {
-  try {
-    const raw = localStorage.getItem(LOCAL_STORAGE_KEYS.NOTIFICATIONS)
-    const parsed = raw ? (JSON.parse(raw) as Notification[]) : []
-
-    if (!Array.isArray(parsed)) {
-      return []
-    }
-
-    return parsed.filter((notification) => typeof notification.recipientUserId === 'string')
-  } catch {
-    return []
-  }
-}
-
-export function persistNotifications(items: Notification[]) {
-  localStorage.setItem(LOCAL_STORAGE_KEYS.NOTIFICATIONS, JSON.stringify(items))
-}
-
 const initialState: NotificationsState = {
-  items: loadNotifications(),
+  items: getNotifications(),
   toastIds: [],
 }
 

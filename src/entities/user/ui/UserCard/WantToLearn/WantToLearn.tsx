@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import styles from './want-to-learn.module.css'
 import { fetchCategories } from '@/api/skills'
-import type { SkillSubcategory } from '@/entities/category/model/types'
+import type { SkillSubcategory } from '@/entities/category'
 import { Tag, TagVariant } from '@/shared/ui/Tag/Tag'
 import { Text } from '@/shared/ui/Text'
 import { CardVariant } from '../UserCard'

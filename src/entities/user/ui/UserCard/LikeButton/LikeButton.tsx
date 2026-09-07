@@ -5,12 +5,8 @@ import { IconButton } from '@/shared/ui/IconButton'
 import LikedIcon from '@/shared/assets/icons/like-filled.svg'
 import UnlikedIcon from '@/shared/assets/icons/like.svg'
 import { Text } from '@/shared/ui/Text'
-import {
-  FAVORITES_CHANGED_EVENT,
-  isUserFavorite,
-  toggleFavoriteUser,
-} from '@/features/favorites/model/favorites'
-import { getAuthUser } from '@/features/auth/model'
+import { FAVORITES_CHANGED_EVENT, isUserFavorite, toggleFavoriteUser } from '@/features/favorites'
+import { getAuthUser } from '@/features/auth'
 import { ROUTES } from '@/shared/lib/constants'
 import { useEffect, useState } from 'react'
 

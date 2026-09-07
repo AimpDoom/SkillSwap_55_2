@@ -28,7 +28,9 @@ export function InfoModal({
   return (
     <Modal isOpen={isOpen} onClose={onClose} ariaLabel={ariaLabel}>
       <div className={styles.content}>
-        <div className={styles.iconWrapper}>{icon}</div>
+        <div className={styles.iconWrapper} aria-hidden="true">
+          {icon}
+        </div>
 
         <div className={styles.contentBlock}>
           <div className={styles.textBlock}>

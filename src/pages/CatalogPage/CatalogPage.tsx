@@ -12,13 +12,12 @@ import {
   type CatalogFilters,
 } from '@/components/widgets/FiltersSidebar/types'
 
-import type { SkillCategory } from '@/entities/category/model/types'
-import type { City } from '@/entities/city/model/types'
-import type { Skill } from '@/entities/skill/model/types'
-import type { User } from '@/entities/user/model/types'
-import { UserCard } from '@/entities/user/ui/UserCard'
+import type { SkillCategory } from '@/entities/category'
+import type { City } from '@/entities/city'
+import type { Skill } from '@/entities/skill'
+import type { User } from '@/entities/user'
+import { UserCard } from '@/entities/user'
 import { RegistrationSuccessModal } from '@/features/auth/ui/RegistrationSuccessModal'
-
 import chevronRightIcon from '@/shared/assets/icons/chevron-right.svg'
 import crossIcon from '@/shared/assets/icons/cross.svg'
 import sortingArrows from '@/shared/assets/icons/sort.svg'

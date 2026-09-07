@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 
-import { SkillOffer } from '@/entities/skill/ui/SkillOffer/SkillOffer'
-import { useCategories } from '@/entities/category/model/useCategories'
+import { SkillOffer } from '@/entities/skill'
+import { useCategories } from '@/entities/category'
 import { AuthLayout } from '@/features/auth/ui/AuthLayout'
 import { RegisterStepOne } from '@/features/auth/ui/RegisterStepOne'
 import { RegisterStepTwo } from '@/features/auth/ui/RegisterStepTwo'
@@ -11,7 +11,7 @@ import {
   completeRegistration,
   type RegistrationSkillDraft,
   useRegistrationFlow,
-} from '@/features/auth/model'
+} from '@/features/auth'
 import { Modal } from '@/shared/ui/Modal'
 import { Stepper } from '@/shared/ui/Stepper'
 import { PromoPanel } from '@/shared/ui/PromoPanel'
