@@ -18,7 +18,7 @@ import type { Skill } from '@/entities/skill'
 import type { User } from '@/entities/user'
 import { UserCard } from '@/entities/user'
 import { RegistrationSuccessModal } from '@/features/auth/ui/RegistrationSuccessModal'
-import chevronRightIcon from '@/shared/assets/icons/chevron-right.svg'
+import ChevronRightIcon from '@/shared/assets/icons/chevron-right.svg?react'
 import SortIcon from '@/shared/assets/icons/sort.svg?react'
 import { Button } from '@/shared/ui/Button'
 import { Container } from '@/shared/ui/Container'
@@ -450,12 +450,7 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
                       {showAllPopular ? (
                         <span className={styles.crossIcon} aria-hidden="true" />
                       ) : (
-                        <img
-                          className={styles.arrow}
-                          src={chevronRightIcon}
-                          alt=""
-                          aria-hidden="true"
-                        />
+                        <ChevronRightIcon className={styles.arrow} aria-hidden="true" />
                       )}
                     </Button>
                   </div>
@@ -482,12 +477,7 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
                       {showAllNew ? (
                         <span className={styles.crossIcon} aria-hidden="true" />
                       ) : (
-                        <img
-                          className={styles.arrow}
-                          src={chevronRightIcon}
-                          alt=""
-                          aria-hidden="true"
-                        />
+                        <ChevronRightIcon className={styles.arrow} aria-hidden="true" />
                       )}
                     </Button>
                   </div>

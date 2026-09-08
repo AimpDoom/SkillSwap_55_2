@@ -38,11 +38,22 @@
 
 .showAllButton {
   gap: 8px;
+  color: var(--color-text-primary);
 }
 
 .arrow {
+  flex-shrink: 0;
   width: 24px;
   height: 24px;
+  color: currentcolor;
+}
+
+.arrow path[fill='#253017'] {
+  fill: currentcolor;
+}
+
+.arrow path[stroke='#253017'] {
+  stroke: currentcolor;
 }
 
 .crossIcon {
