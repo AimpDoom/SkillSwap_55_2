@@ -1,6 +1,6 @@
 import { Text } from '@/shared/ui/Text'
+
 import styles from './TeamMemberCard.module.css'
-import githubIcon from '@/shared/assets/icons/githubIcon.svg'
 
 type TeamMemberCardProps = {
   name: string
@@ -49,7 +49,8 @@ export function TeamMemberCard({ name, role, about, github, githubUsername }: Te
         </Text>
 
         <a className={styles.link} href={github} target="_blank" rel="noopener noreferrer">
-          <img className={styles.githubIcon} src={githubIcon} alt="" aria-hidden="true" />
+          <span className={styles.githubIcon} aria-hidden="true" />
+
           <span>{github}</span>
         </a>
       </div>

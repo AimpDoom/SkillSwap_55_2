@@ -19,8 +19,7 @@ import type { User } from '@/entities/user'
 import { UserCard } from '@/entities/user'
 import { RegistrationSuccessModal } from '@/features/auth/ui/RegistrationSuccessModal'
 import chevronRightIcon from '@/shared/assets/icons/chevron-right.svg'
-import crossIcon from '@/shared/assets/icons/cross.svg'
-import sortingArrows from '@/shared/assets/icons/sort.svg'
+import SortIcon from '@/shared/assets/icons/sort.svg?react'
 import { Button } from '@/shared/ui/Button'
 import { Container } from '@/shared/ui/Container'
 
@@ -386,12 +385,7 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
                           onClick={() => handleRemoveFilter(tag)}
                           aria-label={`Удалить фильтр ${tag.label}`}
                         >
-                          <img
-                            className={styles.filterTagIcon}
-                            src={crossIcon}
-                            alt=""
-                            aria-hidden="true"
-                          />
+                          <span className={styles.filterTagIcon} aria-hidden="true" />
                         </button>
                       </div>
                     ))}
@@ -410,12 +404,7 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
                       setSortOrder((current) => (current === 'newest' ? 'oldest' : 'newest'))
                     }
                   >
-                    <img
-                      className={styles.sortIcon}
-                      src={sortingArrows}
-                      alt=""
-                      aria-hidden="true"
-                    />
+                    <SortIcon className={styles.sortIcon} aria-hidden="true" />
 
                     <span>{sortOrder === 'newest' ? 'Сначала новые' : 'Сначала старые'}</span>
                   </Button>
@@ -458,12 +447,16 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
                     >
                       {showAllPopular ? 'Скрыть' : 'Смотреть все'}
 
-                      <img
-                        className={showAllPopular ? styles.crossIcon : styles.arrow}
-                        src={showAllPopular ? crossIcon : chevronRightIcon}
-                        alt=""
-                        aria-hidden="true"
-                      />
+                      {showAllPopular ? (
+                        <span className={styles.crossIcon} aria-hidden="true" />
+                      ) : (
+                        <img
+                          className={styles.arrow}
+                          src={chevronRightIcon}
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      )}
                     </Button>
                   </div>
 
@@ -486,12 +479,16 @@ export default function CatalogPage({ onFilteringChange }: CatalogPageProps) {
                     >
                       {showAllNew ? 'Скрыть' : 'Смотреть все'}
 
-                      <img
-                        className={showAllNew ? styles.crossIcon : styles.arrow}
-                        src={showAllNew ? crossIcon : chevronRightIcon}
-                        alt=""
-                        aria-hidden="true"
-                      />
+                      {showAllNew ? (
+                        <span className={styles.crossIcon} aria-hidden="true" />
+                      ) : (
+                        <img
+                          className={styles.arrow}
+                          src={chevronRightIcon}
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      )}
                     </Button>
                   </div>
 

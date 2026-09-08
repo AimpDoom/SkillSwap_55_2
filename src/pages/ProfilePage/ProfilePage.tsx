@@ -17,11 +17,11 @@ import { Text } from '@/shared/ui/Text'
 import styles from './ProfilePage.module.css'
 
 import editIcon from '@/shared/assets/icons/edit.svg'
-import requestIcon from '@/shared/assets/icons/request.svg'
-import likeIcon from '@/shared/assets/icons/like.svg'
-import userIcon from '@/shared/assets/icons/user.svg'
-import clockIcon from '@/shared/assets/icons/message-text.svg'
-import ideaIcon from '@/shared/assets/icons/idea.svg'
+import RequestIcon from '@/shared/assets/icons/request.svg?react'
+import LikeIcon from '@/shared/assets/icons/like.svg?react'
+import UserIcon from '@/shared/assets/icons/user.svg?react'
+import ClockIcon from '@/shared/assets/icons/message-text.svg?react'
+import IdeaIcon from '@/shared/assets/icons/idea.svg?react'
 import GalleryEditIcon from '@/shared/assets/icons/gallery-edit.svg?react'
 
 import type { Gender, User } from '@/entities/user'
@@ -70,11 +70,11 @@ interface ProfileFormData {
 }
 
 const MENU_ITEMS = [
-  { id: 'Заявки', label: 'Заявки', icon: requestIcon },
-  { id: 'Мои обмены', label: 'Мои обмены', icon: clockIcon },
-  { id: 'Избранное', label: 'Избранное', icon: likeIcon },
-  { id: 'Мои навыки', label: 'Мои навыки', icon: ideaIcon },
-  { id: 'Личные данные', label: 'Личные данные', icon: userIcon },
+  { id: 'Заявки', label: 'Заявки', icon: RequestIcon },
+  { id: 'Мои обмены', label: 'Мои обмены', icon: ClockIcon },
+  { id: 'Избранное', label: 'Избранное', icon: LikeIcon },
+  { id: 'Мои навыки', label: 'Мои навыки', icon: IdeaIcon },
+  { id: 'Личные данные', label: 'Личные данные', icon: UserIcon },
 ]
 
 export default function ProfilePage() {
@@ -274,17 +274,24 @@ export default function ProfilePage() {
       <Container>
         <div className={styles.container}>
           <aside className={styles.sidebar}>
-            {MENU_ITEMS.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                className={`${styles.menuButton} ${activeTab === item.id ? styles.activeButton : ''}`}
-                onClick={() => setActiveTab(item.id)}
-              >
-                <img src={item.icon} className={styles.menuIcon} alt="" aria-hidden="true" />
-                {item.label}
-              </button>
-            ))}
+            {MENU_ITEMS.map((item) => {
+              const MenuIcon = item.icon
+
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  className={`${styles.menuButton} ${
+                    activeTab === item.id ? styles.activeButton : ''
+                  }`}
+                  onClick={() => setActiveTab(item.id)}
+                >
+                  <MenuIcon className={styles.menuIcon} aria-hidden="true" />
+
+                  {item.label}
+                </button>
+              )
+            })}
           </aside>
 
           <section

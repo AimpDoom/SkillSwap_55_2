@@ -98,9 +98,13 @@
 }
 
 .btnIcon {
+  flex-shrink: 0;
   width: 24px;
   height: 24px;
-  flex-shrink: 0;
+}
+
+.btnIcon path {
+  fill: currentcolor;
 }
 
 .statusBadge {
@@ -182,25 +186,16 @@
   width: 40px;
   height: 40px;
   padding: 8px;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
   border: 0;
   border-radius: 50%;
-  background-color: var(--color-bg-secondary);
   cursor: pointer;
   transform: translateY(-50%);
 }
 
-.arrowButton img {
-  display: block;
-  width: 24px;
-  height: 24px;
-}
-
 .arrowButtonLeft {
   left: 16px;
-}
-
-.arrowButtonLeft img {
-  transform: rotate(180deg);
 }
 
 .arrowButtonRight {
@@ -253,4 +248,18 @@
 .profileCard {
   background: var(--color-bg-primary);
   padding: 40px;
+}
+
+.arrowIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-text-primary);
+}
+
+.arrowIcon path[fill='#253017'] {
+  fill: currentcolor;
+}
+
+.arrowButtonLeft .arrowIcon {
+  transform: rotate(180deg);
 }

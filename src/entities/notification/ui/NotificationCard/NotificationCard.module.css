@@ -38,6 +38,21 @@
   color: var(--color-accent);
 }
 
+.notificationIcon svg,
+.emptyIcon {
+  color: var(--color-text-primary);
+}
+
+.notificationIcon svg path[stroke='#253017'],
+.emptyIcon path[stroke='#253017'] {
+  stroke: currentcolor;
+}
+
+.notificationIcon svg path[fill='#253017'],
+.emptyIcon path[fill='#253017'] {
+  fill: currentcolor;
+}
+
 /* Список уведомлений */
 .notificationsList {
   display: flex;

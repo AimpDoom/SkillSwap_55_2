@@ -5,14 +5,19 @@
 }
 
 .icon {
+  flex-shrink: 0;
   width: 20px;
   height: 20px;
 }
 
+.appleIcon {
+  color: var(--color-text-primary);
+}
+
 .divider {
   display: flex;
-  align-items: center;
   gap: 4px;
+  align-items: center;
   margin-top: 8px;
 }
 

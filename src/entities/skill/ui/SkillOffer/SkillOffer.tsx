@@ -3,9 +3,9 @@ import { useLocation, useNavigate } from 'react-router-dom'
 
 import type { Skill } from '../../model/types'
 
-import chevronRightIcon from '@/shared/assets/icons/chevron-right.svg'
+import ChevronRightIcon from '@/shared/assets/icons/chevron-right.svg?react'
 import clockIcon from '@/shared/assets/icons/clock.svg'
-import editIcon from '@/shared/assets/icons/edit.svg'
+import EditIcon from '@/shared/assets/icons/edit.svg?react'
 import likeIcon from '@/shared/assets/icons/like.svg'
 import likeFilledIcon from '@/shared/assets/icons/like-filled.svg'
 import moreIcon from '@/shared/assets/icons/more-square.svg'
@@ -152,9 +152,9 @@ export function SkillOffer({
             {variant === 'confirmation' && (
               <div className={styles.btnGroup}>
                 <Button variant="secondary" onClick={onEdit} className={styles.editBtn}>
-                  Редактировать
-                  <img src={editIcon} alt="" className={styles.btnIcon} aria-hidden="true" />
-                </Button>
+  Редактировать
+  <EditIcon className={styles.btnIcon} aria-hidden="true" />
+</Button>
 
                 <Button variant="primary" onClick={onDone} className={styles.doneBtn}>
                   Готово
@@ -223,7 +223,10 @@ export function SkillOffer({
                     onClick={handlePrevImage}
                     aria-label="Предыдущее изображение"
                   >
-                    <img src={chevronRightIcon} alt="" aria-hidden="true" />
+                    <ChevronRightIcon
+  className={styles.arrowIcon}
+  aria-hidden="true"
+/>
                   </button>
 
                   <button
@@ -232,7 +235,10 @@ export function SkillOffer({
                     onClick={handleNextImage}
                     aria-label="Следующее изображение"
                   >
-                    <img src={chevronRightIcon} alt="" aria-hidden="true" />
+                    <ChevronRightIcon
+  className={styles.arrowIcon}
+  aria-hidden="true"
+/>
                   </button>
                 </>
               )}

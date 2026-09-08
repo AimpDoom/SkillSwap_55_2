@@ -1,6 +1,6 @@
 import { clsx } from 'clsx'
 
-import chevronRightIcon from '@/shared/assets/icons/chevron-right.svg'
+import ChevronRightIcon from '@/shared/assets/icons/chevron-right.svg?react'
 import { Button } from '@/shared/ui/Button'
 
 import styles from './Pagination.module.css'
@@ -55,7 +55,7 @@ export function Pagination({
             onClick={handlePrevious}
             aria-label="Предыдущие предложения"
           >
-            <img src={chevronRightIcon} alt="" aria-hidden="true" />
+            <ChevronRightIcon className={styles.compactArrowIcon} aria-hidden="true" />
           </button>
         )}
 
@@ -66,7 +66,7 @@ export function Pagination({
             onClick={handleNext}
             aria-label="Следующие предложения"
           >
-            <img src={chevronRightIcon} alt="" aria-hidden="true" />
+            <ChevronRightIcon className={styles.compactArrowIcon} aria-hidden="true" />
           </button>
         )}
       </nav>

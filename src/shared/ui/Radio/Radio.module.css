@@ -25,14 +25,16 @@
   flex: 0 0 24px;
   width: 24px;
   height: 24px;
-  background-image: url('../../assets/icons/radio-empty.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 24px 24px;
+  background-color: var(--color-text-primary);
+  mask-image: url('../../assets/icons/radio-empty.svg');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 24px 24px;
 }
 
 .input:checked + .visual {
-  background-image: url('../../assets/icons/radio-active.svg');
+  background-color: var(--color-accent);
+  mask-image: url('../../assets/icons/radio-active.svg');
 }
 
 .input:focus-visible + .visual {

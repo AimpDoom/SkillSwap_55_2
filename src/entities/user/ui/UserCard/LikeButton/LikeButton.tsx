@@ -1,14 +1,13 @@
-import styles from './like-button.module.css'
-
-import { useLocation, useNavigate } from 'react-router-dom'
-import { IconButton } from '@/shared/ui/IconButton'
-import LikedIcon from '@/shared/assets/icons/like-filled.svg'
-import UnlikedIcon from '@/shared/assets/icons/like.svg'
-import { Text } from '@/shared/ui/Text'
-import { FAVORITES_CHANGED_EVENT, isUserFavorite, toggleFavoriteUser } from '@/features/favorites'
-import { getAuthUser } from '@/features/auth'
-import { ROUTES } from '@/shared/lib/constants'
 import { useEffect, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+
+import { getAuthUser } from '@/features/auth'
+import { FAVORITES_CHANGED_EVENT, isUserFavorite, toggleFavoriteUser } from '@/features/favorites'
+import { ROUTES } from '@/shared/lib/constants'
+import { IconButton } from '@/shared/ui/IconButton'
+import { Text } from '@/shared/ui/Text'
+
+import styles from './like-button.module.css'
 
 type LikeButtonProps = {
   userId: string
@@ -20,6 +19,7 @@ export function LikeButton({ userId, likeCount }: LikeButtonProps) {
   const location = useLocation()
 
   const [liked, setLiked] = useState<boolean>(() => isUserFavorite(userId))
+
   useEffect(() => {
     const handleFavoritesChanged = () => {
       setLiked(isUserFavorite(userId))
@@ -44,20 +44,26 @@ export function LikeButton({ userId, likeCount }: LikeButtonProps) {
     }
 
     const newLikedState = toggleFavoriteUser(userId)
+
     setLiked(newLikedState)
   }
 
   const displayedLikeCount = likeCount + Number(liked)
 
+  const heartIcon = (
+    <span className={`${styles.heartIcon} ${liked ? styles.heartLiked : styles.heartUnliked}`} />
+  )
+
   return (
     <div className={styles.likeContainer}>
       <IconButton
-        icon={<img src={liked ? LikedIcon : UnlikedIcon} alt="" />}
+        icon={heartIcon}
         ariaLabel={liked ? 'Убрать лайк' : 'Поставить лайк'}
         onClick={handleLikeClick}
         aria-pressed={liked}
         className={styles.like}
       />
+
       <Text variant="caption">{displayedLikeCount}</Text>
     </div>
   )

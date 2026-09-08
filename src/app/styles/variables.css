@@ -77,4 +77,63 @@
   --tertiary-bg-active-color: var(--primary-bg-default-color);
   --tertiary-bg-disabled-color: var(--primary-bg-disabled-color);
   --tertiary-text-disabled-color: var(--secondary-disabled-color);
+  --color-icon-primary: var(--color-text-primary);
+  --color-icon-secondary: var(--color-text-secondary);
+  --color-icon-accent: var(--color-accent-strong);
+  --primary-text-default-color: var(--color-text-primary);
+}
+
+body[data-theme='dark'] {
+  /* Palette */
+  --color-lilac: #806a96;
+  --color-sand: #8f8352;
+  --color-peach: #8e6859;
+  --color-pink: #8f647d;
+  --color-sky: #58798a;
+  --color-mint: #5f7f5e;
+  --color-neutral: #657087;
+
+  /* UI-colors */
+  --color-bg-primary: #23281f;
+  --color-bg-secondary: #171c15;
+  --color-text-primary: #f4f7ef;
+  --color-text-secondary: #c0c8b8;
+  --color-accent: #9dcb68;
+  --color-accent-strong: #d8efb6;
+  --color-error: #ff806a;
+  --color-disabled: #474d42;
+  --color-border-menu: #697261;
+
+  /* tag-colors */
+  --color-tag-business: var(--color-lilac);
+  --color-tag-languages: var(--color-sand);
+  --color-tag-home: var(--color-peach);
+  --color-tag-art: var(--color-pink);
+  --color-tag-education: var(--color-sky);
+  --color-tag-health: var(--color-mint);
+  --color-tag-neutral: var(--color-neutral);
+
+  /* buttons */
+  --primary-bg-default-color: var(--color-accent);
+  --primary-bg-hover-color: #b8dc8a;
+  --primary-bg-active-color: #7baa49;
+  --primary-text-active-color: #182010;
+  --primary-bg-disabled-color: var(--color-disabled);
+  --secondary-bg-color: var(--color-bg-primary);
+  --secondary-border: 1px solid var(--color-accent);
+  --secondary-border-hover: 1px solid var(--primary-bg-hover-color);
+  --secondary-color-hover: var(--color-text-primary);
+  --secondary-border-active: 1px solid var(--color-accent-strong);
+  --secondary-disabled-color: #7e8679;
+  --secondary-disabled-border: 1px solid var(--color-disabled);
+  --tertiary-bg-color: var(--color-bg-primary);
+  --tertiary-bg-hover-color: #333a2f;
+  --tertiary-bg-active-color: #46533b;
+  --tertiary-bg-disabled-color: var(--color-disabled);
+  --tertiary-text-disabled-color: var(--secondary-disabled-color);
+  --focus-ring-color: rgb(157 203 104 / 55%);
+  --color-icon-primary: #f5f7ef;
+  --color-icon-secondary: #b7c29f;
+  --color-icon-accent: #abd27a;
+  --primary-text-default-color: #182010;
 }

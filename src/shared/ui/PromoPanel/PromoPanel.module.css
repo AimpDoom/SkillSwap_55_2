@@ -11,3 +11,11 @@
 .title {
   margin-top: 40px;
 }
+
+.panel > svg path[fill='#253017'] {
+  fill: var(--color-text-primary);
+}
+
+.panel > svg path[stroke='#253017'] {
+  stroke: var(--color-text-primary);
+}

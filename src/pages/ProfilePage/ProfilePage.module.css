@@ -44,9 +44,18 @@
 }
 
 .menuIcon {
+  flex-shrink: 0;
   width: 20px;
   height: 20px;
-  object-fit: contain;
+  color: currentcolor;
+}
+
+.menuIcon path[fill='#253017'] {
+  fill: currentcolor;
+}
+
+.menuIcon path[stroke='#253017'] {
+  stroke: currentcolor;
 }
 
 .content {

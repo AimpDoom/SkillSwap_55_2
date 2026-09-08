@@ -55,3 +55,17 @@
 .buttonGroup button {
   min-width: 218px;
 }
+
+.errorImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.errorImage path[fill='#253017'] {
+  fill: var(--color-text-primary);
+}
+
+.errorImage path[stroke='#253017'] {
+  stroke: var(--color-text-primary);
+}

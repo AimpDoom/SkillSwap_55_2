@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { ROUTES } from '@/shared/lib/constants'
 import { Button } from '@/shared/ui/Button'
 import styles from '../ErrorPages.module.css'
-import notFoundImage from '@/shared/assets/images/error404.svg'
+import NotFoundImage from '@/shared/assets/images/error404.svg?react'
 
 export default function NotFoundPage() {
   const navigate = useNavigate()
@@ -20,7 +20,10 @@ export default function NotFoundPage() {
     <main className={styles.container}>
       <div className={styles.content}>
         <div className={styles.imageWrapper}>
-          <img src={notFoundImage} alt="Страница не найдена" loading="lazy" decoding="async" />
+          <NotFoundImage
+  className={styles.errorImage}
+  aria-label="Страница не найдена"
+/>
         </div>
         <h1 className={styles.title}>Страница не найдена</h1>
         <p className={styles.description}>

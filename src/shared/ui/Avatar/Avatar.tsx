@@ -1,7 +1,7 @@
 import { clsx } from 'clsx'
 import { useEffect, useState } from 'react'
 
-import userCircleIcon from '@/shared/assets/icons/user-circle-big.svg'
+import UserCircleIcon from '@/shared/assets/icons/user-circle-big.svg?react'
 
 import styles from './Avatar.module.css'
 
@@ -29,7 +29,10 @@ export function Avatar({ src, alt, className = '' }: AvatarProps) {
       {showImage ? (
         <img className={styles.image} src={src} alt={alt} onError={() => setHasError(true)} />
       ) : (
-        <img className={styles.fallback} src={userCircleIcon} alt="" aria-hidden="true" />
+        <UserCircleIcon
+  className={styles.fallback}
+  aria-hidden="true"
+/>
       )}
     </div>
   )
