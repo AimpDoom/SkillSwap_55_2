@@ -38,6 +38,7 @@
 }
 
 .active {
+  color: var(--primary-text-default-color);
   background-color: var(--color-accent);
 }
 

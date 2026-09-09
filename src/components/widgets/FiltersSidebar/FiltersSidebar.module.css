@@ -144,6 +144,11 @@
 .chevronIcon {
   width: 16px;
   height: 8px;
+  color: var(--color-text-primary);
+}
+
+.chevronIcon path[fill='#253017'] {
+  fill: currentcolor;
 }
 
 .category {

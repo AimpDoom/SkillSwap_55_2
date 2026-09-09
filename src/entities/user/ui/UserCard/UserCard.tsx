@@ -5,7 +5,7 @@ import { CanTeach } from './CanTeach/CanTeach'
 import styles from './user-card.module.css'
 import type { User } from '../../model/types'
 import { getAuthUser } from '@/features/auth'
-import clockIcon from '@/shared/assets/icons/clock.svg'
+import ClockIcon from '@/shared/assets/icons/clock.svg?react'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Button } from '@/shared/ui/Button'
 import { Text } from '@/shared/ui/Text'
@@ -72,7 +72,7 @@ export const UserCard = ({ user, variant = 'catalog' }: UserCardProps) => {
       {variant === 'catalog' &&
         (isExchangeRequested ? (
           <div className={styles.exchangeRequested} aria-label="Обмен предложен">
-            <img className={styles.statusIcon} src={clockIcon} alt="" aria-hidden="true" />
+            <ClockIcon className={styles.statusIcon} aria-hidden="true" />
             <Text variant="body" as="span">
               Обмен предложен
             </Text>

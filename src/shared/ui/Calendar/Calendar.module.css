@@ -149,8 +149,8 @@
 }
 
 .daySelected .dayButton {
+  color: var(--primary-text-default-color);
   background-color: var(--color-accent);
-  color: var(--color-text-primary);
 }
 
 .dayDisabled .dayButton {

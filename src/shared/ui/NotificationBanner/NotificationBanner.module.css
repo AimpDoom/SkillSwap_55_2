@@ -16,7 +16,7 @@
 .iconWrapper {
   width: 24px;
   height: 24px;
-  color: var(--color-text-primary);
+  color: var(--primary-text-default-color);
 }
 
 /* Кнопка закрытия */
@@ -31,7 +31,11 @@
   height: 24px;
   cursor: pointer;
   transition: background 0.2s ease;
-  color: var(--color-text-primary);
+  color: var(--primary-text-default-color);
+}
+
+.message {
+  color: var(--primary-text-default-color);
 }
 
 /* Кнопка "Перейти" - появляется при наведении в правом нижнем углу */

@@ -73,4 +73,9 @@
   display: block;
   width: 11px;
   height: 11px;
+  color: currentcolor;
+}
+
+.closeIcon path[fill='#253017'] {
+  fill: currentcolor;
 }

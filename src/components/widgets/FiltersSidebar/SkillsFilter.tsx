@@ -1,6 +1,6 @@
 import { useCategories } from '@/entities/category'
-import chevronDown from '@/shared/assets/icons/chevron-down.svg'
-import chevronUp from '@/shared/assets/icons/chevron-up.svg'
+import ChevronDownIcon from '@/shared/assets/icons/chevron-down.svg?react'
+import ChevronUpIcon from '@/shared/assets/icons/chevron-up.svg?react'
 import { Checkbox } from '@/shared/ui/Checkbox'
 
 import styles from './FiltersSidebar.module.css'
@@ -84,11 +84,11 @@ export const SkillsFilter = ({
                   <span className={styles.optionText}>{category.name}</span>
 
                   <span className={styles.chevron} aria-hidden="true">
-                    <img
-                      className={styles.chevronIcon}
-                      src={isOpen ? chevronUp : chevronDown}
-                      alt=""
-                    />
+                  {isOpen ? (
+                    <ChevronUpIcon className={styles.chevronIcon} aria-hidden="true" />
+                  ) : (
+                    <ChevronDownIcon className={styles.chevronIcon} aria-hidden="true" />
+                  )}
                   </span>
                 </button>
               </div>

@@ -16,7 +16,7 @@ import { Text } from '@/shared/ui/Text'
 
 import styles from './ProfilePage.module.css'
 
-import editIcon from '@/shared/assets/icons/edit.svg'
+import EditIcon from '@/shared/assets/icons/edit.svg?react'
 import RequestIcon from '@/shared/assets/icons/request.svg?react'
 import LikeIcon from '@/shared/assets/icons/like.svg?react'
 import UserIcon from '@/shared/assets/icons/user.svg?react'
@@ -324,12 +324,7 @@ export default function ProfilePage() {
                           placeholder="example@mail.com"
                           error={errors.email?.message}
                           endIcon={
-                            <img
-                              src={editIcon}
-                              className={styles.editIcon}
-                              alt=""
-                              aria-hidden="true"
-                            />
+                            <EditIcon className={styles.editIcon} aria-hidden="true" />
                           }
                         />
                       )}
@@ -350,12 +345,7 @@ export default function ProfilePage() {
                           placeholder="Ваше имя"
                           error={errors.name?.message}
                           endIcon={
-                            <img
-                              src={editIcon}
-                              className={styles.editIcon}
-                              alt=""
-                              aria-hidden="true"
-                            />
+                            <EditIcon className={styles.editIcon} aria-hidden="true" />
                           }
                         />
                       )}
@@ -417,7 +407,7 @@ export default function ProfilePage() {
                         label="О себе"
                         placeholder="Расскажите о себе..."
                         withIcon
-                        endIcon={<img src={editIcon} alt="" aria-hidden="true" />}
+                        endIcon={<EditIcon className={styles.editIcon} aria-hidden="true" />}
                         {...register('about')}
                       />
                     </div>

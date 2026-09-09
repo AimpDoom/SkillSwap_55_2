@@ -81,6 +81,9 @@
   --color-icon-secondary: var(--color-text-secondary);
   --color-icon-accent: var(--color-accent-strong);
   --primary-text-default-color: var(--color-text-primary);
+
+  /* overlay */
+  --color-media-overlay: rgb(247 235 229 / 75%);
 }
 
 body[data-theme='dark'] {
@@ -136,4 +139,7 @@ body[data-theme='dark'] {
   --color-icon-secondary: #b7c29f;
   --color-icon-accent: #abd27a;
   --primary-text-default-color: #182010;
+
+  /* overlay */
+  --color-media-overlay: rgb(23 28 21 / 75%);
 }
