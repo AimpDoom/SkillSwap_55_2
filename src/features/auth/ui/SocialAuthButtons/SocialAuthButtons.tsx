@@ -2,6 +2,7 @@ import AppleIcon from '@/shared/assets/icons/auth/apple.svg?react'
 import GoogleIcon from '@/shared/assets/icons/auth/google.svg?react'
 import { Button } from '@/shared/ui/Button'
 import { Text } from '@/shared/ui/Text'
+
 import styles from './SocialAuthButtons.module.css'
 
 export const SocialAuthButtons = () => {
@@ -13,14 +14,17 @@ export const SocialAuthButtons = () => {
       </Button>
 
       <Button variant="social" disabled>
-        <AppleIcon className={styles.icon} aria-hidden="true" />
+        <AppleIcon className={`${styles.icon} ${styles.appleIcon}`} aria-hidden="true" />
         Продолжить с Apple
       </Button>
+
       <div className={styles.divider}>
         <span className={styles.line} />
+
         <Text variant="body" className={styles.dividerText}>
           или
         </Text>
+
         <span className={styles.line} />
       </div>
     </div>

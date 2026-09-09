@@ -17,7 +17,7 @@
 }
 
 .primaryButton {
-  color: var(--color-text-primary);
+  color: var(--primary-text-default-color);
   background-color: var(--primary-bg-default-color);
 }
 

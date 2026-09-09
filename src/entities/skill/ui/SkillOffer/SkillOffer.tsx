@@ -3,13 +3,13 @@ import { useLocation, useNavigate } from 'react-router-dom'
 
 import type { Skill } from '../../model/types'
 
-import chevronRightIcon from '@/shared/assets/icons/chevron-right.svg'
-import clockIcon from '@/shared/assets/icons/clock.svg'
-import editIcon from '@/shared/assets/icons/edit.svg'
-import likeIcon from '@/shared/assets/icons/like.svg'
-import likeFilledIcon from '@/shared/assets/icons/like-filled.svg'
-import moreIcon from '@/shared/assets/icons/more-square.svg'
-import shareIcon from '@/shared/assets/icons/share.svg'
+import ChevronRightIcon from '@/shared/assets/icons/chevron-right.svg?react'
+import ClockIcon from '@/shared/assets/icons/clock.svg?react'
+import EditIcon from '@/shared/assets/icons/edit.svg?react'
+import LikeIcon from '@/shared/assets/icons/like.svg?react'
+import LikeFilledIcon from '@/shared/assets/icons/like-filled.svg?react'
+import MoreIcon from '@/shared/assets/icons/more-square.svg?react'
+import ShareIcon from '@/shared/assets/icons/share.svg?react'
 import { Button } from '@/shared/ui/Button'
 import { IconButton } from '@/shared/ui/IconButton'
 import { Text } from '@/shared/ui/Text'
@@ -152,9 +152,9 @@ export function SkillOffer({
             {variant === 'confirmation' && (
               <div className={styles.btnGroup}>
                 <Button variant="secondary" onClick={onEdit} className={styles.editBtn}>
-                  Редактировать
-                  <img src={editIcon} alt="" className={styles.btnIcon} aria-hidden="true" />
-                </Button>
+  Редактировать
+  <EditIcon className={styles.btnIcon} aria-hidden="true" />
+</Button>
 
                 <Button variant="primary" onClick={onDone} className={styles.doneBtn}>
                   Готово
@@ -170,7 +170,7 @@ export function SkillOffer({
 
             {variant === 'requested' && (
               <div className={styles.statusBadge}>
-                <img src={clockIcon} alt="" className={styles.statusIcon} aria-hidden="true" />
+                <ClockIcon className={styles.statusIcon} aria-hidden="true" />
 
                 <Text variant="body" as="span">
                   Обмен предложен
@@ -184,20 +184,26 @@ export function SkillOffer({
           {(variant === 'default' || variant === 'requested') && (
             <div className={styles.topIconActions}>
               <IconButton
-                icon={<img src={liked ? likeFilledIcon : likeIcon} alt="" />}
+                icon={
+                  liked ? (
+                    <LikeFilledIcon aria-hidden="true" />
+                  ) : (
+                    <LikeIcon className={styles.actionIcon} aria-hidden="true" />
+                  )
+                }
                 ariaLabel={liked ? 'Убрать из избранного' : 'Добавить в избранное'}
                 aria-pressed={liked}
                 onClick={handleFavorite}
               />
 
               <IconButton
-                icon={<img src={shareIcon} alt="" />}
+                icon={<ShareIcon className={styles.actionIcon} aria-hidden="true" />}
                 ariaLabel="Поделиться навыком"
                 onClick={onShare}
               />
 
               <IconButton
-                icon={<img src={moreIcon} alt="" />}
+                icon={<MoreIcon className={styles.actionIcon} aria-hidden="true" />}
                 ariaLabel="Дополнительное меню"
                 onClick={onMore}
               />
@@ -223,7 +229,10 @@ export function SkillOffer({
                     onClick={handlePrevImage}
                     aria-label="Предыдущее изображение"
                   >
-                    <img src={chevronRightIcon} alt="" aria-hidden="true" />
+                    <ChevronRightIcon
+  className={styles.arrowIcon}
+  aria-hidden="true"
+/>
                   </button>
 
                   <button
@@ -232,7 +241,10 @@ export function SkillOffer({
                     onClick={handleNextImage}
                     aria-label="Следующее изображение"
                   >
-                    <img src={chevronRightIcon} alt="" aria-hidden="true" />
+                    <ChevronRightIcon
+  className={styles.arrowIcon}
+  aria-hidden="true"
+/>
                   </button>
                 </>
               )}

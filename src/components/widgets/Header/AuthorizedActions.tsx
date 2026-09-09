@@ -94,7 +94,7 @@ export function AuthorizedActions({ userId, userName, avatarSrc }: AuthorizedAct
       <div className={styles.notificationWrapper} ref={wrapperRef}>
         <div className={styles.notificationButtonWrapper}>
           <IconButton
-            icon={<NotificationIcon />}
+            icon={<NotificationIcon className={styles.actionIcon} />}
             ariaLabel="Уведомления"
             onClick={toggleNotifications}
           />
@@ -116,7 +116,7 @@ export function AuthorizedActions({ userId, userName, avatarSrc }: AuthorizedAct
       </div>
 
       <IconButton
-        icon={<LikeIcon />}
+        icon={<LikeIcon className={styles.actionIcon} />}
         ariaLabel="Избранное"
         onClick={() => navigate(ROUTES.FAVORITES)}
       />

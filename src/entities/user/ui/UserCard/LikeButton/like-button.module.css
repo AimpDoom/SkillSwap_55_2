@@ -11,10 +11,26 @@
 .like {
   width: 24px;
   height: 24px;
-  cursor: pointer;
   padding: 0;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: all 0.2s ease;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.heartIcon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+.heartUnliked {
+  background-color: var(--color-text-primary);
+  mask-image: url('../../../../../shared/assets/icons/like.svg');
+}
+
+.heartLiked {
+  background-color: var(--color-accent);
+  mask-image: url('../../../../../shared/assets/icons/like-filled.svg');
 }

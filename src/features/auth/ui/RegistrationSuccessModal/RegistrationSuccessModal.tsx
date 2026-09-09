@@ -1,5 +1,5 @@
 import { InfoModal } from '@/shared/ui/InfoModal'
-import doneIcon from '@/shared/assets/icons/done.svg'
+import DoneIcon from '@/shared/assets/icons/done.svg?react'
 
 type RegistrationSuccessModalProps = {
   isOpen: boolean
@@ -12,7 +12,7 @@ export function RegistrationSuccessModal({ isOpen, onClose }: RegistrationSucces
       isOpen={isOpen}
       onClose={onClose}
       ariaLabel="Успешное создание предложения"
-      icon={<img src={doneIcon} alt="" />}
+      icon={<DoneIcon />}
       title="Ваше предложение создано"
       description="Теперь вы можете предложить обмен"
     />

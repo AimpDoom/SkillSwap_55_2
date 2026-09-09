@@ -16,6 +16,7 @@
 .iconWrapper {
   width: 24px;
   height: 24px;
+  color: var(--primary-text-default-color);
 }
 
 /* Кнопка закрытия */
@@ -30,6 +31,11 @@
   height: 24px;
   cursor: pointer;
   transition: background 0.2s ease;
+  color: var(--primary-text-default-color);
+}
+
+.message {
+  color: var(--primary-text-default-color);
 }
 
 /* Кнопка "Перейти" - появляется при наведении в правом нижнем углу */
@@ -47,6 +53,19 @@
   padding: 8px 12px;
   font-size: var(--font-size-xs);
   height: 32px;
+}
+
+.iconWrapper svg path[stroke='#253017'] {
+  stroke: currentcolor;
+}
+
+.iconWrapper svg path[fill='#253017'] {
+  fill: currentcolor;
+}
+
+
+.closeButton svg path[fill='#253017'] {
+  fill: currentcolor;
 }
 
 /* Анимация появления кнопки */

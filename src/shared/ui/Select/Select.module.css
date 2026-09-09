@@ -131,6 +131,14 @@
   transition: transform 0.15s ease;
 }
 
+.chevron path[fill='#253017'] {
+  fill: currentcolor;
+}
+
+.clearIcon path[fill='#253017'] {
+  fill: currentcolor;
+}
+
 .chevronOpen {
   transform: rotate(180deg);
 }

@@ -12,6 +12,9 @@ body {
   line-height: var(--line-height-s);
   color: var(--color-text-primary);
   background-color: var(--color-bg-secondary);
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

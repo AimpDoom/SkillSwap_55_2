@@ -1,9 +1,6 @@
 import { useCategories } from '@/entities/category'
-import chevronDown from '@/shared/assets/icons/chevron-down.svg'
-import chevronUp from '@/shared/assets/icons/chevron-up.svg'
-import checkboxDone from '@/shared/assets/icons/checkbox-done.svg'
-import checkboxEmpty from '@/shared/assets/icons/checkbox-empty.svg'
-import checkboxRemove from '@/shared/assets/icons/checkbox-remove.svg'
+import ChevronDownIcon from '@/shared/assets/icons/chevron-down.svg?react'
+import ChevronUpIcon from '@/shared/assets/icons/chevron-up.svg?react'
 import { Checkbox } from '@/shared/ui/Checkbox'
 
 import styles from './FiltersSidebar.module.css'
@@ -36,6 +33,7 @@ export const SkillsFilter = ({
           ).length
 
           const isChecked = selectedCount === category.subcategories.length
+
           const isPartial = selectedCount > 0 && !isChecked
 
           const handleCategoryClick = (e: React.MouseEvent) => {
@@ -56,6 +54,12 @@ export const SkillsFilter = ({
             }
           }
 
+          const checkboxStateClass = isChecked
+            ? styles.categoryCheckboxChecked
+            : isPartial
+              ? styles.categoryCheckboxPartial
+              : styles.categoryCheckboxEmpty
+
           return (
             <div className={styles.category} key={category.id}>
               <div className={styles.categoryRow}>
@@ -65,9 +69,8 @@ export const SkillsFilter = ({
                   onClick={handleCategoryClick}
                   aria-label={`Выбрать категорию ${category.name}`}
                 >
-                  <img
-                    src={isChecked ? checkboxDone : isPartial ? checkboxRemove : checkboxEmpty}
-                    alt=""
+                  <span
+                    className={`${styles.categoryCheckboxVisual} ${checkboxStateClass}`}
                     aria-hidden="true"
                   />
                 </button>
@@ -81,11 +84,11 @@ export const SkillsFilter = ({
                   <span className={styles.optionText}>{category.name}</span>
 
                   <span className={styles.chevron} aria-hidden="true">
-                    <img
-                      className={styles.chevronIcon}
-                      src={isOpen ? chevronUp : chevronDown}
-                      alt=""
-                    />
+                  {isOpen ? (
+                    <ChevronUpIcon className={styles.chevronIcon} aria-hidden="true" />
+                  ) : (
+                    <ChevronDownIcon className={styles.chevronIcon} aria-hidden="true" />
+                  )}
                   </span>
                 </button>
               </div>

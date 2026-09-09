@@ -27,6 +27,14 @@
   object-fit: contain;
 }
 
+.iconWrapper svg path[fill='#253017'] {
+  fill: var(--color-text-primary);
+}
+
+.iconWrapper svg path[stroke='#253017'] {
+  stroke: var(--color-text-primary);
+}
+
 .contentBlock {
   width: 100%;
   display: flex;

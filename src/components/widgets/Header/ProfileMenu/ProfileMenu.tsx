@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { clearAuthUser } from '@/features/auth'
-import logoutIcon from '@/shared/assets/icons/logout.svg'
+import LogoutIcon from '@/shared/assets/icons/logout.svg?react'
 import { ROUTES } from '@/shared/lib/constants'
 import { Text } from '@/shared/ui/Text'
 import styles from './ProfileMenu.module.css'
@@ -37,7 +37,7 @@ export function ProfileMenu({ onClose }: ProfileMenuProps) {
         <Text variant="h4" as="span">
           Выйти из аккаунта
         </Text>
-        <img src={logoutIcon} alt="" aria-hidden="true" />
+        <LogoutIcon className={styles.logoutIcon} aria-hidden="true" />
       </button>
     </div>
   )

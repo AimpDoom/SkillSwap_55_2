@@ -16,7 +16,16 @@
   display: inline-flex;
   align-items: center;
   cursor: pointer;
-  color: var(--secondary-disabled-color);
+  color: var(--color-text-secondary);
+}
+
+.eyeButton svg {
+  width: 24px;
+  height: 24px;
+}
+
+.eyeButton svg path[fill='#253017'] {
+  fill: currentcolor;
 }
 
 .loginLink {

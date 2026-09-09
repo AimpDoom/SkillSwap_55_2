@@ -3,7 +3,7 @@ import { AuthActions } from './AuthActions'
 import { Navigation } from './Navigation'
 import { SearchBar } from './SearchBar'
 import { ThemeButton } from './ThemeButton'
-import closeIcon from '@/shared/assets/icons/cross.svg'
+import CloseIcon from '@/shared/assets/icons/cross.svg?react'
 import { Button } from '@/shared/ui/Button'
 import styles from './Header.module.css'
 import { AuthorizedActions } from './AuthorizedActions'
@@ -41,7 +41,7 @@ export function Header({
           >
             <span>Закрыть</span>
 
-            <img className={styles.closeIcon} src={closeIcon} alt="" aria-hidden="true" />
+            <CloseIcon className={styles.closeIcon} aria-hidden="true" />
           </Button>
         </Container>
       </header>

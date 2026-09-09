@@ -49,14 +49,14 @@
 
 .resetIcon {
   display: block;
+  flex-shrink: 0;
   width: 11px;
   height: 11px;
-  background-color: var(--color-accent-strong);
+  background-color: currentcolor;
   mask-image: url('../../../shared/assets/icons/cross.svg');
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
-  flex-shrink: 0;
 }
 
 .resetButton:hover {
@@ -144,6 +144,11 @@
 .chevronIcon {
   width: 16px;
   height: 8px;
+  color: var(--color-text-primary);
+}
+
+.chevronIcon path[fill='#253017'] {
+  fill: currentcolor;
 }
 
 .category {
@@ -221,9 +226,28 @@
   cursor: pointer;
 }
 
-.categoryCheckbox img {
+.categoryCheckboxVisual {
+  display: block;
   width: 24px;
   height: 24px;
+  background-color: var(--color-text-primary);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 24px 24px;
+}
+
+.categoryCheckboxEmpty {
+  mask-image: url('../../../shared/assets/icons/checkbox-empty.svg');
+}
+
+.categoryCheckboxChecked {
+  background-color: var(--color-accent);
+  mask-image: url('../../../shared/assets/icons/checkbox-done.svg');
+}
+
+.categoryCheckboxPartial {
+  background-color: var(--color-accent);
+  mask-image: url('../../../shared/assets/icons/checkbox-remove.svg');
 }
 
 .categoryCheckbox:focus-visible {

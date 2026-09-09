@@ -1,23 +1,48 @@
 import { useEffect, useState } from 'react'
 
-import moonIcon from '@/shared/assets/icons/moon.svg'
-import sunIcon from '@/shared/assets/icons/sun.svg'
+import { LOCAL_STORAGE_KEYS } from '@/shared/lib/constants'
 import { IconButton } from '@/shared/ui/IconButton'
 
 import styles from './ThemeButton.module.css'
 
-export function ThemeButton() {
-  const [isDark, setIsDark] = useState(() => document.body.getAttribute('data-theme') === 'dark')
+type Theme = 'light' | 'dark'
 
-  useEffect(() => {
-    document.body.setAttribute('data-theme', isDark ? 'dark' : 'light')
-  }, [isDark])
+function getInitialTheme(): Theme {
+  const bodyTheme = document.body.getAttribute('data-theme')
 
-  const toggleTheme = () => {
-    setIsDark((prev) => !prev)
+  if (bodyTheme === 'dark' || bodyTheme === 'light') {
+    return bodyTheme
   }
 
-  const icon = <img className={styles.icon} src={isDark ? sunIcon : moonIcon} alt="" />
+  try {
+    const savedTheme = localStorage.getItem(LOCAL_STORAGE_KEYS.THEME)
+
+    return savedTheme === 'dark' ? 'dark' : 'light'
+  } catch {
+    return 'light'
+  }
+}
+
+export function ThemeButton() {
+  const [theme, setTheme] = useState<Theme>(getInitialTheme)
+
+  const isDark = theme === 'dark'
+
+  useEffect(() => {
+    document.body.setAttribute('data-theme', theme)
+
+    try {
+      localStorage.setItem(LOCAL_STORAGE_KEYS.THEME, theme)
+    } catch {
+      // localStorage может быть недоступен
+    }
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'))
+  }
+
+  const icon = <span className={`${styles.icon} ${isDark ? styles.sun : styles.moon}`} />
 
   return (
     <IconButton

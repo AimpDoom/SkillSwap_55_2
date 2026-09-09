@@ -2,4 +2,16 @@
   display: block;
   width: 24px;
   height: 24px;
+  background-color: var(--color-text-primary);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+.moon {
+  mask-image: url('../../../shared/assets/icons/moon.svg');
+}
+
+.sun {
+  mask-image: url('../../../shared/assets/icons/sun.svg');
 }
