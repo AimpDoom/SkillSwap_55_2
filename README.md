@@ -41,15 +41,15 @@ SkillSwap — веб-приложение для обмена навыками �
 
 ### Home Page
 
-![Home](./assets/Home.png)
+![Home](./assets/Home.JPG)
 
 ### Profile Page
 
-![Profile](./assets/Profile.png)
+![Profile](./assets/Profile.JPG)
 
 ### Contacts
 
-![Contacts](./assets/Contacts.png)
+![Contacts](./assets/Contacts.JPG)
 
 ## 🚀 Запуск
 
