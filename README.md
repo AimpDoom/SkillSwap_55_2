@@ -1,20 +1,30 @@
 # SkillSwap
 
-SkillSwap — веб-приложение для обмена навыками между пользователями. Пользователи могут создавать профиль, добавлять навыки, находить людей с нужными компетенциями и отправлять заявки на обмен опытом.
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)
+![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-764ABC?logo=redux)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite)
+![License](https://img.shields.io/badge/License-Educational-green)
 
-Проект разработан командой с использованием React, TypeScript и архитектуры Feature-Sliced Design (FSD).
+SkillSwap is a web application that connects users interested in exchanging skills and knowledge. Users can create profiles, browse other users, discover new skills, and send exchange requests.
 
-## ✨ Основные возможности
+The project was developed by a team using React, TypeScript, and the Feature-Sliced Design (FSD) architecture.
 
-- Регистрация и авторизация пользователей
-- Создание и редактирование профиля
-- Поиск пользователей по навыкам
-- Просмотр карточек пользователей и навыков
-- Добавление пользователей в избранное
-- Отправка заявок на обмен навыками
-- Адаптивный интерфейс
+---
 
-## 🛠️ Технологии
+## ✨ Features
+
+- User authentication and authorization
+- User profile management
+- Browse users and skills
+- Search users by skills
+- Favorites management
+- Skill exchange requests
+- Responsive user interface
+
+---
+
+## 🛠️ Tech Stack
 
 - React
 - TypeScript
@@ -27,15 +37,19 @@ SkillSwap — веб-приложение для обмена навыками �
 - Prettier
 - GitHub Actions
 
-## 👨‍💻 Мой вклад
+---
 
-В рамках проекта я:
+## 👨‍💻 My Contribution
 
-- участвовал в проектировании архитектуры приложения по методологии FSD;
-- реализовал функциональность профиля пользователя;
-- разработал переиспользуемые UI-компоненты;
-- участвовал в интеграции REST API;
-- работал в команде с использованием Git Flow, Pull Request и Code Review.
+As part of the development team, I:
+
+- Participated in designing the application architecture using Feature-Sliced Design (FSD).
+- Implemented user profile functionality.
+- Developed reusable UI components.
+- Integrated REST API into the application.
+- Collaborated with the team using Git Flow, Pull Requests, and Code Review.
+
+---
 
 ## 📸 Screenshots
 
@@ -51,9 +65,69 @@ SkillSwap — веб-приложение для обмена навыками �
 
 ![Contacts](./assets/Contacts.JPG)
 
-## 🚀 Запуск
+---
+
+## 🚀 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/AimpDoom/SkillSwap_55_2.git
+```
+
+Navigate to the project folder:
+
+```bash
+cd SkillSwap_55_2
+```
+
+Install dependencies:
 
 ```bash
 npm install
+```
+
+Start the development server:
+
+```bash
 npm run dev
 ```
+
+The application will be available at:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 📁 Project Structure
+
+The project follows the **Feature-Sliced Design (FSD)** architecture, providing a scalable and maintainable codebase.
+
+```
+src/
+├── app/
+├── entities/
+├── features/
+├── pages/
+├── shared/
+└── widgets/
+```
+
+---
+
+## 🤝 Team Workflow
+
+The project was developed following a collaborative workflow using:
+
+- Git Flow
+- Pull Requests
+- Code Review
+- GitHub Actions
+
+---
+
+## 📄 License
+
+Educational project created as part of frontend development practice.
